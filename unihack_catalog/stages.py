@@ -404,6 +404,18 @@ def stage_taxonomy_classification(record: EnrichedRecord) -> EnrichedRecord:
         record.classpath = Classpath(dept=dept, **{"class": cls}, fine=fine,
                                      candidate_ids=[classpath])
         return record
+    # Brand-prefix fallback: Milwaukee/Dewalt/Makita/Festool/etc. rows that miss
+    # every keyword are power tools, not "Other".
+    try:
+        from .reference_loader import _tool_brand_fallback
+        fb = _tool_brand_fallback(text)
+    except Exception:
+        fb = None
+    if fb and fb[0] != "Other":
+        dept, cls, fine, classpath = fb
+        record.classpath = Classpath(dept=dept, **{"class": cls}, fine=fine,
+                                     candidate_ids=[classpath])
+        return record
     record.classpath = Classpath(dept="Other", **{"class": "Other"}, fine="Other", candidate_ids=[])
     return record
 
@@ -469,7 +481,11 @@ def _generic_extraction(raw_text: str) -> Dict[str, Any]:
     volt = re.search(r'\b(\d+)\s*v\b', t)
     if volt:
         out["Voltage Rating"] = (int(volt.group(1)), "V")
-    amp = re.search(r'\b(\d+)\s*a\b', t)
+    amp = re.search(r'\b(\d+(?:\.\d+)?)\s*Amp(?:s|ere)?\b', t, re.IGNORECASE)
+    if not amp:
+        # Bare "15A" is legit only mid-description; reject MPN-prefix codes
+        # like "37418A Kichler" or "9A-570-240".
+        amp = re.search(r'(?i:(?<=\s|[-/])(\d+(?:\.\d+)?)\s*a)\b(?=\s*[a-z]|/[a-z0-9]|\s*\d+\s*[vW])', t)
     if amp:
         out["Amperage Rating"] = (int(amp.group(1)), "A")
     dba = re.search(r'\b(\d+)\s*dba\b', t)

@@ -1,5 +1,23 @@
 # Gauntlet Loop — Live Progress
 
+## Phase 2b — held-out accuracy loop (bar 1: PASSED, 2026-08-19)
+
+Bar: held-out 25% of the 1000-row sample (seed 7, stratified by fine class) — blind fresh-context critic picks our extraction over the recovered r1 baseline; zero dual-pass (traceability) failures; gold rows still byte-exact.
+
+**Holdout (277 rows):** attrs/row **1.347**, Other **2.5%**, dual-pass fails **0**, gold **118/118**. All-999: attrs/row 1.410, Other 28 (2.8%), dpf 0.
+**Critic A/B (blind subagent, our round-2 export vs recovered baseline `baseline_holdout_r1.csv`):** **B WINS** — 2.5% vs 38.6% Other, 1.35 vs 0.71 attrs/row, 0 traceability violations both. Flagged 9 sanity issues in B: 7 ft→in Size conversions + 2 amperage MPN false-positives — all fixed (below), verified in pkl after every fix.
+
+What landed:
+- New categories + extractors: railing, mortar, appliances, windows-doors, roofing-siding, ceiling-tiles, power-tools (EXTRACTORS registry); ~130 taxonomy keywords (lighting family, GE Café, electrical, fasteners, power/hand tools, safety/PPE, building round 2); brand fallback `_tool_brand_fallback` (milw|dewalt|makita|festool|... → Power Tools) in `match_taxonomy` + `stage_taxonomy_classification`.
+- **Dual-pass 44 → 0**: all synthesized Type/Material labels replaced with verbatim text phrases ("Sliding Patio Door"→"Patio", "Wall Light"→"Wall Lt", "High Pressure Sodium"→"Sodium", "Ice & Water Shield"→"Ice Guard", "Metal Roof Panel"→"Premier Rib"/"Rib", "Ceiling Tile"→"Fissured", "Box Hanger"→"Hanger", "Cord Connector"→"Cord Conn", "Welder Outlet"→"Welder", power-tools/appliances verbatim, "Aluminum"→"Alum"). Every value now traces to raw text.
+- **Units**: `_pair_units`/`_PAIR_RE` size pairs are foot-mark aware — "4'x65'" → "4 ft x 65 ft", "6'x36\"" → "6 ft x 36 in", "2\"x50'" → "2 in x 50 ft" (regex fix: unit captured AFTER token b; also handles "8'-6\"" → "8 ft").
+- **Amperage**: generic + electrical bare-A regexes now require mid-description position `(?<=\s|[-/])` + electrical-context lookahead — kills MPN-prefix FPs ("37418A Kichler", "3000A Whiteside", "9A-570-240") while keeping "15A Mini Outlet", "200A Load Cntr", "4 Amp Charger". Scoped `(?i:...)` keeps the lookahead case-sensitive.
+- Baseline recovery: harness overwrites `scripts/baseline_holdout.csv` every run — original preserved as `baseline_holdout_r1.csv` (0.707 / 38.6% / 246 rows) via git-stash of `unihack_catalog/`, run old code, pop.
+
+Final verified state: 18 amperage rows, all legit (2 gold + 2 load centers + 13 15A outlets/switches/GFCIs + 1 charger); remaining foot-mark Size rows are correct cross-sections ("6x6-10'" → "6 in x 6 in"); dpf 0.
+
+_Trap: Windows pyc staleness — edit and compile within the same second makes Python trust a stale `__pycache__`. After edits, run `python -B` or purge `__pycache__` before trusting runs._
+
 ## Phase 2 — held-out accuracy loop (2026-08-19, round 0 baseline)
 
 Bar: organizers' gold answers (`Unihack_ Expected Output - Delivery Format.csv`, 2 rows × 252 cols) + the 1000-row sample input. Success: ≥85% gold-populated cells byte-exact with per-value provenance; deep accuracy on the real held-out categories; abstention over guessing.

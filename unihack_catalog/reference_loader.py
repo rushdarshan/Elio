@@ -1,5 +1,6 @@
 import os
 import math
+import re
 import pandas as pd
 from typing import Dict, List, Any
 
@@ -158,6 +159,158 @@ TAXONOMY_KEYWORDS: Dict[str, tuple] = {
     "cement": ("Building Materials", "Concrete & Masonry", "Concrete Products", "Building Materials>Concrete & Masonry>Concrete Products"),
     "window": ("Building Materials", "Windows & Doors", "Windows", "Building Materials>Windows & Doors>Windows"),
     "door": ("Building Materials", "Windows & Doors", "Doors", "Building Materials>Windows & Doors>Doors"),
+    # --- Round 2 sweep: mined from the 383-row Other diagnosis (gauntlet loop bar 1) ---
+    # Lighting family
+    "wall light": ("Lighting", "Light Fixtures", "Wall Lighting", "Lighting>Light Fixtures>Wall Lighting"),
+    "wall lt": ("Lighting", "Light Fixtures", "Wall Lighting", "Lighting>Light Fixtures>Wall Lighting"),
+    "bath light": ("Lighting", "Light Fixtures", "Vanity Lighting", "Lighting>Light Fixtures>Vanity Lighting"),
+    "ceiling light": ("Lighting", "Light Fixtures", "Ceiling Fixtures", "Lighting>Light Fixtures>Ceiling Fixtures"),
+    "ceiling lt": ("Lighting", "Light Fixtures", "Ceiling Fixtures", "Lighting>Light Fixtures>Ceiling Fixtures"),
+    "chand": ("Lighting", "Light Fixtures", "Chandeliers", "Lighting>Light Fixtures>Chandeliers"),
+    "sconce": ("Lighting", "Light Fixtures", "Wall Lighting", "Lighting>Light Fixtures>Wall Lighting"),
+    "incan": ("Lighting", "Light Bulbs", "Incandescent Bulbs", "Lighting>Light Bulbs>Incandescent Bulbs"),
+    "sodium": ("Lighting", "Light Bulbs", "LED Bulbs", "Lighting>Light Bulbs>LED Bulbs"),
+    "highbay": ("Lighting", "Light Fixtures", "High Bay Lighting", "Lighting>Light Fixtures>High Bay Lighting"),
+    "downlight": ("Lighting", "Light Fixtures", "Recessed Lighting", "Lighting>Light Fixtures>Recessed Lighting"),
+    "down light": ("Lighting", "Light Fixtures", "Recessed Lighting", "Lighting>Light Fixtures>Recessed Lighting"),
+    "down lt": ("Lighting", "Light Fixtures", "Recessed Lighting", "Lighting>Light Fixtures>Recessed Lighting"),
+    "flashlight": ("Lighting", "Portable Lighting", "Flashlights", "Lighting>Portable Lighting>Flashlights"),
+    "flash light": ("Lighting", "Portable Lighting", "Flashlights", "Lighting>Portable Lighting>Flashlights"),
+    "flashlt": ("Lighting", "Portable Lighting", "Flashlights", "Lighting>Portable Lighting>Flashlights"),
+    "work light": ("Lighting", "Portable Lighting", "Work Lights", "Lighting>Portable Lighting>Work Lights"),
+    "headlight": ("Lighting", "Portable Lighting", "Headlamps", "Lighting>Portable Lighting>Headlamps"),
+    "clip light": ("Lighting", "Portable Lighting", "Clip Lights", "Lighting>Portable Lighting>Clip Lights"),
+    "shop light": ("Lighting", "Light Fixtures", "Shop Lighting", "Lighting>Light Fixtures>Shop Lighting"),
+    "strip light": ("Lighting", "Light Fixtures", "Strip Lighting", "Lighting>Light Fixtures>Strip Lighting"),
+    "motion": ("Lighting", "Light Fixtures", "Motion Sensor Lighting", "Lighting>Light Fixtures>Motion Sensor Lighting"),
+    "light": ("Lighting", "Light Fixtures", "Ceiling Fixtures", "Lighting>Light Fixtures>Ceiling Fixtures"),
+    "a15": ("Lighting", "Light Bulbs", "LED Bulbs", "Lighting>Light Bulbs>LED Bulbs"),
+    "t9": ("Lighting", "Light Bulbs", "Fluorescent Bulbs", "Lighting>Light Bulbs>Fluorescent Bulbs"),
+    # GE Cafe appliances
+    "refrigerator": ("Appliances", "Refrigerators", "Refrigerators", "Appliances>Refrigerators>Refrigerators"),
+    "freezer": ("Appliances", "Refrigerators", "Freezers", "Appliances>Refrigerators>Freezers"),
+    "coffee": ("Appliances", "Coffee & Espresso", "Coffee Makers", "Appliances>Coffee & Espresso>Coffee Makers"),
+    "espresso": ("Appliances", "Coffee & Espresso", "Espresso Machines", "Appliances>Coffee & Espresso>Espresso Machines"),
+    "cooktop": ("Appliances", "Cooking", "Cooktops", "Appliances>Cooking>Cooktops"),
+    "toaster": ("Appliances", "Cooking", "Toasters", "Appliances>Cooking>Toasters"),
+    "beverage": ("Appliances", "Refrigerators", "Beverage Centers", "Appliances>Refrigerators>Beverage Centers"),
+    "mocrowave": ("Appliances", "Cooking", "Microwaves", "Appliances>Cooking>Microwaves"),
+    # Electrical
+    "load center": ("Electrical", "Load Centers", "Load Centers", "Electrical>Load Centers>Load Centers"),
+    "load cntr": ("Electrical", "Load Centers", "Load Centers", "Electrical>Load Centers>Load Centers"),
+    "wallplate": ("Electrical", "Devices", "Wall Plates", "Electrical>Devices>Wall Plates"),
+    "wall plate": ("Electrical", "Devices", "Wall Plates", "Electrical>Devices>Wall Plates"),
+    "decor plate": ("Electrical", "Devices", "Wall Plates", "Electrical>Devices>Wall Plates"),
+    "timer": ("Electrical", "Devices", "Timers", "Electrical>Devices>Timers"),
+    "so cord": ("Electrical", "Wire & Cable", "SO Cord", "Electrical>Wire & Cable>SO Cord"),
+    "cord grip": ("Electrical", "Fittings", "Cord Grips", "Electrical>Fittings>Cord Grips"),
+    "cord conn": ("Electrical", "Fittings", "Connectors", "Electrical>Fittings>Connectors"),
+    "welder": ("Electrical", "Devices", "Receptacles", "Electrical>Devices>Receptacles"),
+    "wall tap": ("Electrical", "Devices", "Adapters", "Electrical>Devices>Adapters"),
+    "voltage detector": ("Electrical", "Testers", "Voltage Testers", "Electrical>Testers>Voltage Testers"),
+    "box": ("Electrical", "Electrical Boxes", "Electrical Boxes", "Electrical>Electrical Boxes>Electrical Boxes"),
+    "cover": ("Electrical", "Electrical Boxes", "Box Covers", "Electrical>Electrical Boxes>Box Covers"),
+    "hanger": ("Electrical", "Electrical Boxes", "Box Hangers", "Electrical>Electrical Boxes>Box Hangers"),
+    # Fasteners
+    "nailer": ("Hardware & Tools", "Fasteners", "Nailers", "Hardware & Tools>Fasteners>Nailers"),
+    "stapler": ("Hardware & Tools", "Fasteners", "Staplers", "Hardware & Tools>Fasteners>Staplers"),
+    "tacker": ("Hardware & Tools", "Fasteners", "Staplers", "Hardware & Tools>Fasteners>Staplers"),
+    "staple": ("Hardware & Tools", "Fasteners", "Staples", "Hardware & Tools>Fasteners>Staples"),
+    "nail": ("Hardware & Tools", "Fasteners", "Nails", "Hardware & Tools>Fasteners>Nails"),
+    "screw": ("Hardware & Tools", "Fasteners", "Screws", "Hardware & Tools>Fasteners>Screws"),
+    "collated": ("Hardware & Tools", "Fasteners", "Collated Fasteners", "Hardware & Tools>Fasteners>Collated Fasteners"),
+    # Power tools
+    "impact wrench": ("Hardware & Tools", "Power Tools", "Impact Wrenches", "Hardware & Tools>Power Tools>Impact Wrenches"),
+    "impact driver": ("Hardware & Tools", "Power Tools", "Impact Drivers", "Hardware & Tools>Power Tools>Impact Drivers"),
+    "impact": ("Hardware & Tools", "Power Tools", "Impact Drivers", "Hardware & Tools>Power Tools>Impact Drivers"),
+    "angle grinder": ("Hardware & Tools", "Power Tools", "Angle Grinders", "Hardware & Tools>Power Tools>Angle Grinders"),
+    "die grinder": ("Hardware & Tools", "Power Tools", "Grinders", "Hardware & Tools>Power Tools>Grinders"),
+    "grinder": ("Hardware & Tools", "Power Tools", "Grinders", "Hardware & Tools>Power Tools>Grinders"),
+    "ratchet": ("Hardware & Tools", "Power Tools", "Ratchets", "Hardware & Tools>Power Tools>Ratchets"),
+    "rachet": ("Hardware & Tools", "Power Tools", "Ratchets", "Hardware & Tools>Power Tools>Ratchets"),
+    "cross line": ("Hardware & Tools", "Measuring Tools", "Laser Levels", "Hardware & Tools>Measuring Tools>Laser Levels"),
+    "laser": ("Hardware & Tools", "Measuring Tools", "Laser Levels", "Hardware & Tools>Measuring Tools>Laser Levels"),
+    "sander": ("Hardware & Tools", "Power Tools", "Sanders", "Hardware & Tools>Power Tools>Sanders"),
+    "planer": ("Hardware & Tools", "Power Tools", "Planers", "Hardware & Tools>Power Tools>Planers"),
+    "jointer": ("Hardware & Tools", "Power Tools", "Jointers", "Hardware & Tools>Power Tools>Jointers"),
+    "shaper": ("Hardware & Tools", "Power Tools", "Shapers", "Hardware & Tools>Power Tools>Shapers"),
+    "blower": ("Hardware & Tools", "Power Tools", "Blowers", "Hardware & Tools>Power Tools>Blowers"),
+    "vacuum": ("Hardware & Tools", "Power Tools", "Vacuums", "Hardware & Tools>Power Tools>Vacuums"),
+    "dust extractor": ("Hardware & Tools", "Power Tools", "Dust Extractors", "Hardware & Tools>Power Tools>Dust Extractors"),
+    "rotary tool": ("Hardware & Tools", "Power Tools", "Rotary Tools", "Hardware & Tools>Power Tools>Rotary Tools"),
+    "charger": ("Hardware & Tools", "Power Tools", "Chargers", "Hardware & Tools>Power Tools>Chargers"),
+    "battery mount": ("Hardware & Tools", "Power Tools", "Battery Mounts", "Hardware & Tools>Power Tools>Battery Mounts"),
+    "battery": ("Hardware & Tools", "Power Tools", "Batteries", "Hardware & Tools>Power Tools>Batteries"),
+    "power supply": ("Hardware & Tools", "Power Tools", "Power Supplies", "Hardware & Tools>Power Tools>Power Supplies"),
+    "grease gun": ("Hardware & Tools", "Power Tools", "Grease Guns", "Hardware & Tools>Power Tools>Grease Guns"),
+    "screwdriver": ("Hardware & Tools", "Hand Tools", "Screwdrivers", "Hardware & Tools>Hand Tools>Screwdrivers"),
+    "speaker": ("Hardware & Tools", "Power Tools", "Jobsite Radios & Speakers", "Hardware & Tools>Power Tools>Jobsite Radios & Speakers"),
+    "surge": ("Hardware & Tools", "Power Tools", "Power Supplies", "Hardware & Tools>Power Tools>Power Supplies"),
+    "starter kit": ("Hardware & Tools", "Power Tools", "Power Tool Kits", "Hardware & Tools>Power Tools>Power Tool Kits"),
+    "dado": ("Hardware & Tools", "Power Tool Accessories", "Dado Sets", "Hardware & Tools>Power Tool Accessories>Dado Sets"),
+    "planer knives": ("Hardware & Tools", "Power Tool Accessories", "Planer Knives", "Hardware & Tools>Power Tool Accessories>Planer Knives"),
+    "hole dozer": ("Hardware & Tools", "Power Tool Accessories", "Hole Saws", "Hardware & Tools>Power Tool Accessories>Hole Saws"),
+    "mechanics set": ("Hardware & Tools", "Hand Tools", "Mechanics Tool Sets", "Hardware & Tools>Hand Tools>Mechanics Tool Sets"),
+    "spks": ("Hardware & Tools", "Hand Tools", "Screwdriver Sets", "Hardware & Tools>Hand Tools>Screwdriver Sets"),
+    "universal joint": ("Hardware & Tools", "Power Tool Accessories", "Universal Joints", "Hardware & Tools>Power Tool Accessories>Universal Joints"),
+    "organizer": ("Hardware & Tools", "Storage", "Tool Organizers", "Hardware & Tools>Storage>Tool Organizers"),
+    "tool chest": ("Hardware & Tools", "Storage", "Tool Chests", "Hardware & Tools>Storage>Tool Chests"),
+    "fence": ("Hardware & Tools", "Power Tool Accessories", "Saw Fences", "Hardware & Tools>Power Tool Accessories>Saw Fences"),
+    "stock feeder": ("Hardware & Tools", "Power Tool Accessories", "Stock Feeders", "Hardware & Tools>Power Tool Accessories>Stock Feeders"),
+    "paper bag": ("Hardware & Tools", "Power Tool Accessories", "Vacuum Bags", "Hardware & Tools>Power Tool Accessories>Vacuum Bags"),
+    "mason line": ("Hardware & Tools", "Measuring Tools", "Layout Tools", "Hardware & Tools>Measuring Tools>Layout Tools"),
+    "chalk": ("Hardware & Tools", "Measuring Tools", "Layout Tools", "Hardware & Tools>Measuring Tools>Layout Tools"),
+    "rafter": ("Hardware & Tools", "Measuring Tools", "Layout Tools", "Hardware & Tools>Measuring Tools>Layout Tools"),
+    "bigcal": ("Hardware & Tools", "Measuring Tools", "Calipers", "Hardware & Tools>Measuring Tools>Calipers"),
+    "caliper": ("Hardware & Tools", "Measuring Tools", "Calipers", "Hardware & Tools>Measuring Tools>Calipers"),
+    "plug cutter": ("Hardware & Tools", "Power Tool Accessories", "Plug Cutters", "Hardware & Tools>Power Tool Accessories>Plug Cutters"),
+    "magazine": ("Hardware & Tools", "Fasteners", "Nailer Accessories", "Hardware & Tools>Fasteners>Nailer Accessories"),
+    "wrench": ("Hardware & Tools", "Hand Tools", "Wrenches", "Hardware & Tools>Hand Tools>Wrenches"),
+    "snip": ("Hardware & Tools", "Hand Tools", "Snips", "Hardware & Tools>Hand Tools>Snips"),
+    "knife": ("Hardware & Tools", "Hand Tools", "Knives", "Hardware & Tools>Hand Tools>Knives"),
+    "file": ("Hardware & Tools", "Hand Tools", "Files", "Hardware & Tools>Hand Tools>Files"),
+    "grip": ("Hardware & Tools", "Hand Tools", "Grips", "Hardware & Tools>Hand Tools>Grips"),
+    # Safety / PPE
+    "glove": ("Hardware & Tools", "Safety", "Work Gloves", "Hardware & Tools>Safety>Work Gloves"),
+    "glasses": ("Hardware & Tools", "Safety", "Safety Eyewear", "Hardware & Tools>Safety>Safety Eyewear"),
+    "black frame": ("Hardware & Tools", "Safety", "Safety Eyewear", "Hardware & Tools>Safety>Safety Eyewear"),
+    "hoodie": ("Hardware & Tools", "Safety", "Heated Apparel", "Hardware & Tools>Safety>Heated Apparel"),
+    "heated": ("Hardware & Tools", "Safety", "Heated Apparel", "Hardware & Tools>Safety>Heated Apparel"),
+    "hearing": ("Hardware & Tools", "Safety", "Hearing Protection", "Hardware & Tools>Safety>Hearing Protection"),
+    "bottle": ("Hardware & Tools", "Safety", "Insulated Bottles", "Hardware & Tools>Safety>Insulated Bottles"),
+    "extinguisher": ("Hardware & Tools", "Safety", "Fire Extinguishers", "Hardware & Tools>Safety>Fire Extinguishers"),
+    "smoke": ("Hardware & Tools", "Safety", "Smoke Detectors", "Hardware & Tools>Safety>Smoke Detectors"),
+    "alarm": ("Hardware & Tools", "Safety", "Smoke Detectors", "Hardware & Tools>Safety>Smoke Detectors"),
+    # Building materials round 2
+    "railing": ("Building Materials", "Decking", "Railings", "Building Materials>Decking>Railings"),
+    "rail": ("Building Materials", "Decking", "Railings", "Building Materials>Decking>Railings"),
+    "baluster": ("Building Materials", "Decking", "Railings", "Building Materials>Decking>Railings"),
+    "post": ("Building Materials", "Decking", "Deck Posts", "Building Materials>Decking>Deck Posts"),
+    "sleeve": ("Building Materials", "Decking", "Deck Posts", "Building Materials>Decking>Deck Posts"),
+    "mortar": ("Building Materials", "Concrete & Masonry", "Mortar", "Building Materials>Concrete & Masonry>Mortar"),
+    "patio": ("Building Materials", "Windows & Doors", "Sliding Doors", "Building Materials>Windows & Doors>Sliding Doors"),
+    "skylight": ("Building Materials", "Windows & Doors", "Skylights", "Building Materials>Windows & Doors>Skylights"),
+    "skylt": ("Building Materials", "Windows & Doors", "Skylights", "Building Materials>Windows & Doors>Skylights"),
+    "hopper": ("Building Materials", "Windows & Doors", "Windows", "Building Materials>Windows & Doors>Windows"),
+    "slider": ("Building Materials", "Windows & Doors", "Sliding Doors", "Building Materials>Windows & Doors>Sliding Doors"),
+    "threshold": ("Building Materials", "Windows & Doors", "Thresholds", "Building Materials>Windows & Doors>Thresholds"),
+    "rib": ("Building Materials", "Roofing", "Metal Roofing", "Building Materials>Roofing>Metal Roofing"),
+    "ice guard": ("Building Materials", "Roofing", "Ice & Water Shield", "Building Materials>Roofing>Ice & Water Shield"),
+    "eaveguard": ("Building Materials", "Roofing", "Ice & Water Shield", "Building Materials>Roofing>Ice & Water Shield"),
+    "shingle": ("Building Materials", "Roofing", "Shingles", "Building Materials>Roofing>Shingles"),
+    "duration": ("Building Materials", "Roofing", "Shingles", "Building Materials>Roofing>Shingles"),
+    "soffit": ("Building Materials", "Exterior", "Soffit", "Building Materials>Exterior>Soffit"),
+    "soff": ("Building Materials", "Exterior", "Soffit", "Building Materials>Exterior>Soffit"),
+    "rainscreen": ("Building Materials", "Exterior", "Weather Barriers", "Building Materials>Exterior>Weather Barriers"),
+    "smart lap": ("Building Materials", "Siding", "Exterior Siding", "Building Materials>Siding>Exterior Siding"),
+    "smart pan": ("Building Materials", "Siding", "Exterior Siding", "Building Materials>Siding>Exterior Siding"),
+    "sheathing": ("Building Materials", "Plywood & Panels", "Sheathing", "Building Materials>Plywood & Panels>Sheathing"),
+    "doug fir": ("Building Materials", "Framing Lumber", "Lumber Boards", "Building Materials>Framing Lumber>Lumber Boards"),
+    "fissured": ("Building Materials", "Ceiling Tiles", "Ceiling Tiles", "Building Materials>Ceiling Tiles>Ceiling Tiles"),
+    "bdl": ("Building Materials", "Roofing", "Shingles", "Building Materials>Roofing>Shingles"),
+    "gate": ("Building Materials", "Lattice & Fencing", "Gates", "Building Materials>Lattice & Fencing>Gates"),
+    "gate valve": ("Plumbing", "Fittings", "Valves", "Plumbing>Fittings>Valves"),
+    "water heater": ("Plumbing", "Water Heaters", "Water Heaters", "Plumbing>Water Heaters>Water Heaters"),
 }
 
 
@@ -167,6 +320,19 @@ def match_taxonomy(text: str) -> tuple:
     for kw, entry in sorted(TAXONOMY_KEYWORDS.items(), key=lambda kv: len(kv[0]), reverse=True):
         if kw in t:
             return entry
+    return _tool_brand_fallback(t)
+
+
+# Tool brands whose rows are power tools even when no category keyword appears.
+_TOOL_BRAND_PREFIX = re.compile(
+    r"^(?:milw|dewalt|makita|festool|mafell|irwin|fisch|senco|paslode|bigcal|"
+    r"craftsman|bosch|atomic|prebena|m18|m12)\b")
+
+
+def _tool_brand_fallback(text: str) -> tuple:
+    if _TOOL_BRAND_PREFIX.match(str(text)):
+        return ("Hardware & Tools", "Power Tools", "Power Tools",
+                "Hardware & Tools>Power Tools>Power Tools")
     return ("Other", "Other", "Other", "")
 
 

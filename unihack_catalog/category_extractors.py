@@ -17,16 +17,42 @@ CATEGORY_TRIGGERS: Dict[str, List[str]] = {
     "belts": ["belt", "sanding", "abrasive", "stikit", "cubitron", "film"],
     "drill-bits": ["bit", "drill", "hole saw", "brad point", "countersink", "reamer", "auger", "router"],
     "adapters": ["socket adapter", "adapter", "shank"],
-    "fasteners": ["nailer", "stapler", "tacker", "staple"],
-    "fasteners": ["nailer", "stapler", "tacker"],
+    "fasteners": ["nailer", "stapler", "tacker", "staple", "nail", "screw"],
     "lighting": ["bulb", "lamp", "led", "fluorescent", "cfl", "halogen", "incandescent",
                  "lumens", "lumen", "e26", "mr16", "par30", "par38", "t8", "t12",
-                 "fixture", "pendant", "chandelier", "vanity", "ceiling fan"],
+                 "fixture", "pendant", "chandelier", "vanity", "ceiling fan",
+                 "light", "wall light", "wall lt", "bath light", "ceiling light", "ceiling lt",
+                 "chand", "sconce", "incan", "sodium", "highbay", "motion", "downlight",
+                 "down light", "down lt", "flashlight", "flash light", "flashlt", "flash",
+                 "work light", "headlight", "clip light", "shop light", "strip light",
+                 "a15", "t9"],
     "lumber": ["lumber", "plywood", "stud", "board", "moulding", "molding", "trim",
                "siding", "lattice", "drywall", "decking", "trex", "timbertech",
-               "joist", "osb", "fascia"],
+               "joist", "osb", "fascia", "doug fir", "smart lap", "smart pan",
+               "soffit", "soff", "sheathing", "rainscreen"],
     "wire": ["wire", "cable"],
-    "electrical": ["outlet", "receptacle", "switch", "gfci", "dimmer"],
+    "electrical": ["outlet", "receptacle", "switch", "gfci", "dimmer", "box",
+                   "wallplate", "wall plate", "decor plate", "timer", "load center",
+                   "load cntr", "so cord", "cord grip", "cord conn", "welder",
+                   "wall tap", "voltage detector", "cover", "hanger"],
+    "railing": ["railing", "rail", "baluster", "post", "sleeve"],
+    "mortar": ["mortar"],
+    "appliances": ["freezer", "coffee", "espresso", "cooktop", "toaster", "beverage", "mocrowave"],
+    "windows-doors": ["skylight", "skylt", "hopper", "slider", "threshold", "patio"],
+    "roofing-siding": ["rib", "ice guard", "eaveguard", "shingle", "duration", "soffit",
+                       "soff", "rainscreen", "smart lap", "smart pan", "sheathing",
+                       "doug fir", "bdl"],
+    "ceiling-tiles": ["fissured"],
+    "power-tools": ["impact", "grinder", "ratchet", "rachet", "laser", "sander", "planer",
+                    "jointer", "shaper", "blower", "vacuum", "speaker", "rotary tool",
+                    "dust extractor", "charger", "grease gun", "screwdriver", "wrench",
+                    "snip", "knife", "file", "mason line", "chalk", "rafter", "bigcal",
+                    "caliper", "plug cutter", "collated", "magazine", "organizer",
+                    "tool chest", "fence", "stock feeder", "paper bag", "surge",
+                    "starter kit", "power supply", "battery", "bottle", "hearing",
+                    "extinguisher", "smoke", "alarm", "glove", "glasses", "hoodie",
+                    "heated", "black frame", "dado", "planer knives", "hole dozer",
+                    "mechanics set", "spks", "grip", "universal joint", "battery mount"],
 }
 
 
@@ -69,6 +95,42 @@ def _inches(raw: str) -> str:
 def _grit(raw: str) -> str:
     m = re.search(r'[Pp]?(\d{2,4})', raw)
     return m.group(1) if m else ""
+
+
+# Full-word colors only: dual-pass verification requires the literal word in text.
+_COLOR_WORDS = [("Black", "black"), ("White", "white"), ("Gray", "gray"), ("Charcoal", "charcoal"),
+                ("Brown", "brown"), ("Red", "red"), ("Blue", "blue"), ("Green", "green"),
+                ("Yellow", "yellow"), ("Bronze", "bronze"), ("Silver", "silver"),
+                ("Chrome", "chrome"), ("Cedar", "cedar"), ("Ivory", "ivory")]
+
+
+def _color(t: str) -> Optional[str]:
+    for label, kw in _COLOR_WORDS:
+        if kw in t:
+            return label
+    return None
+
+
+_PAIR_RE = re.compile(r'(?P<a>%s)\s*(?P<ua>["\']?)\s*x\s*(?P<b>%s)\s*(?P<ub>["\']?)' % (_MEAS, _MEAS))
+
+
+def _pair_units(t: str) -> Optional[str]:
+    """'A x B' size pair, honoring foot marks: 6'x36\" -> '6 ft x 36 in'."""
+    m = _PAIR_RE.search(t)
+    if not m:
+        return None
+    a, ua, ub, b = m.group("a"), m.group("ua"), m.group("ub"), m.group("b")
+    if ua == "'" and ub == "'":
+        return f"{a} ft x {b} ft"
+    if ua == "'":
+        return f"{a} ft x {_inches(b)}"
+    if ub == "'":
+        return f"{_inches(a)} x {b} ft"
+    return f"{_inches(a)} x {_inches(b)}"
+
+
+def _size_pair(t: str) -> Optional[str]:
+    return _pair_units(t)
 
 
 def _extract_discs(t: str) -> Dict[str, Any]:
@@ -230,7 +292,8 @@ def _extract_fasteners(t: str) -> Dict[str, Any]:
     out: Dict[str, Any] = {}
     for typ, kw in [("Brad Nailer", "brad nailer"), ("Framing Nailer", "framing nailer"),
                     ("Finish Nailer", "finish nailer"), ("Roofing Nailer", "roofing nailer"),
-                    ("Staple Gun", "staple gun"), ("Stapler", "stapler"), ("Staple", "staple")]:
+                    ("Staple Gun", "staple gun"), ("Stapler", "stapler"), ("Staple", "staple"),
+                    ("Finish Nail", "finish nail"), ("Nail", "nail"), ("Screw", "screw")]:
         if kw in t:
             out["Type"] = typ
             break
@@ -273,10 +336,32 @@ def _extract_lighting(t: str) -> Dict[str, Any]:
     if shape:
         out["Bulb Shape"] = shape.group(1).upper()
     for typ, kw in [("LED", "led"), ("CFL", "cfl"), ("Fluorescent", "fluorescent"),
-                    ("Halogen", "halogen"), ("Incandescent", "incandescent")]:
+                    ("Halogen", "halogen"), ("Incandescent", "incandescent"),
+                    ("Incan", "incan"), ("Sodium", "sodium")]:
         if kw in t:
             out["Type"] = typ
             break
+    if "Type" not in out:
+        for typ, kw in [("Chandelier", "chandelier"), ("Chand", "chand"),
+                        ("Wall Light", "wall light"), ("Wall Lt", "wall lt"),
+                        ("Bath Light", "bath light"), ("Ceiling Light", "ceiling light"),
+                        ("Ceiling Lt", "ceiling lt"), ("Downlight", "downlight"),
+                        ("Down Light", "down light"), ("Down Lt", "down lt"),
+                        ("Highbay Light", "highbay"), ("Motion", "motion"),
+                        ("Flashlight", "flashlight"), ("Flash Light", "flash light"),
+                        ("Flashlt", "flashlt"), ("Work Light", "work light"),
+                        ("Headlight", "headlight"), ("Clip Light", "clip light"),
+                        ("Shop Light", "shop light"), ("Strip Light", "strip light"),
+                        ("Sconce", "sconce")]:
+            if kw in t:
+                out["Type"] = typ
+                break
+    m = re.search(r'%s\s*"' % _MEAS, t)
+    if m and "Diameter" not in out:
+        out["Diameter"] = _inches(m.group(1))
+    c = _color(t)
+    if c:
+        out["Color"] = c
     if "dimmable" in t:
         out["Dimmable"] = "Yes"
     return out
@@ -284,9 +369,9 @@ def _extract_lighting(t: str) -> Dict[str, Any]:
 
 def _extract_lumber(t: str) -> Dict[str, Any]:
     out: Dict[str, Any] = {}
-    a, b = _parse_size(t)
-    if a and b and not re.search(r'\b[124]\s*x\s*[246]\b', t):
-        out["Size"] = f"{_inches(a)} x {_inches(b)}"
+    sz = _size_pair(t)
+    if sz and not re.search(r'\b[124]\s*x\s*[246]\b', t):
+        out["Size"] = sz
     lg = re.search(r'(\d+(?:\.\d+)?)\s*(?:ft|foot|feet|\')\b', t, re.IGNORECASE)
     if lg:
         out["Length"] = (lg.group(1), "ft")
@@ -343,12 +428,27 @@ def _extract_electrical(t: str) -> Dict[str, Any]:
     v = re.search(r'(\d+)\s*V(?:olt)?\b', t, re.IGNORECASE)
     if v:
         out["Voltage Rating"] = (int(v.group(1)), "V")
-    a = re.search(r'(\d+(?:\.\d+)?)\s*A(?:mp)?\b', t, re.IGNORECASE)
+    a = re.search(r'(\d+(?:\.\d+)?)\s*Amp(?:s|ere)?\b', t, re.IGNORECASE)
+    if not a:
+        # Bare "15A" is legit only in electrical context; reject MPN codes
+        # like "37418A Kichler" or "9A-570".
+        a = re.search(r'(?i:(?<=\s|[-/])(\d+(?:\.\d+)?)\s*a)\b(?=\s*[a-z]|/[a-z0-9]|\s*\d+\s*[vW])', t)
     if a:
         out["Amperage Rating"] = (a.group(1), "A")
+    sz = _size_pair(t)
+    if sz:
+        out["Size"] = sz
     for typ, kw in [("GFCI", "gfci"), ("Duplex Receptacle", "duplex receptacle"),
                     ("Toggle Switch", "toggle switch"), ("Dimmer Switch", "dimmer switch"),
-                    ("Decorator Receptacle", "decorator receptacle")]:
+                    ("Decorator Receptacle", "decorator receptacle"), ("Timer", "timer"),
+                    ("Load Center", "load center"), ("Load Cntr", "load cntr"),
+                    ("Wallplate", "wallplate"), ("Wall Plate", "wall plate"),
+                    ("Decor Plate", "decor plate"), ("Box", "box"),
+                    ("Box Cover", "box cover"), ("Cover", "cover"),
+                    ("Cord Conn", "cord conn"), ("Cord Grip", "cord grip"),
+                    ("SO Cord", "so cord"), ("Welder", "welder"),
+                    ("Wall Tap", "wall tap"), ("Voltage Detector", "voltage detector"),
+                    ("Hanger", "hanger")]:
         if kw in t:
             out["Type"] = typ
             break
@@ -357,6 +457,184 @@ def _extract_electrical(t: str) -> Dict[str, Any]:
         if kw in t:
             out["Color"] = clr
             break
+    return out
+
+
+def _extract_railing(t: str) -> Dict[str, Any]:
+    out: Dict[str, Any] = {}
+    lg = re.search(r'(\d+)\s*(?:ft|foot|feet|\')\b', t, re.IGNORECASE)
+    if lg:
+        out["Length"] = (lg.group(1), "ft")
+    for typ, kw in [("Rail Kit", "rail kit"), ("Rail", "rail"), ("Baluster", "baluster"),
+                    ("Post", "post"), ("Sleeve", "sleeve")]:
+        if kw in t:
+            out["Type"] = typ
+            break
+    for mat, kw in [("Composite", "composite"), ("Aluminum", "aluminum"),
+                    ("Alum", "alum"), ("Steel", "steel"),
+                    ("Vinyl", "vinyl"), ("Wood", "wood")]:
+        if kw in t:
+            out["Material"] = mat
+            break
+    sz = _size_pair(t)
+    if sz:
+        out["Size"] = sz
+    c = _color(t)
+    if c:
+        out["Color"] = c
+    q = re.search(r'(\d+)\s*(?:pk|pc|ct|set|kit)\b', t)
+    if q:
+        out["Quantity"] = q.group(1)
+    return out
+
+
+def _extract_mortar(t: str) -> Dict[str, Any]:
+    out: Dict[str, Any] = {}
+    if "type n" in t:
+        out["Type"] = "Type N"
+    if "light buff" in t:
+        out["Color"] = "Light Buff"
+    elif "light chocolate" in t:
+        out["Color"] = "Light Chocolate"
+    c = _color(t)
+    if c and "Color" not in out:
+        out["Color"] = c
+    return out
+
+
+def _extract_appliances(t: str) -> Dict[str, Any]:
+    out: Dict[str, Any] = {}
+    for typ, kw in [("Coffee", "coffee"), ("Espresso", "espresso"),
+                    ("Cooktop", "cooktop"), ("Toaster", "toaster"), ("Freezer", "freezer"),
+                    ("Beverage", "beverage"), ("Mocrowave", "mocrowave")]:
+        if kw in t:
+            out["Type"] = typ
+            break
+    m = re.search(r'%s\s*"' % _MEAS, t)
+    if m:
+        out["Size"] = _inches(m.group(1))
+    cap = re.search(r'\b(\d{2})\s*(?:cf|cu\s*ft)\b', t)
+    if cap:
+        out["Size"] = f"{cap.group(1)} cu ft"
+    c = _color(t)
+    if c:
+        out["Color"] = c
+    return out
+
+
+def _extract_windows_doors(t: str) -> Dict[str, Any]:
+    out: Dict[str, Any] = {}
+    for typ, kw in [("Skylight", "skylight"), ("Skylt", "skylt"),
+                    ("Hopper", "hopper"), ("Slider", "slider"),
+                    ("Threshold", "threshold"), ("Patio", "patio")]:
+        if kw in t:
+            out["Type"] = typ
+            break
+    sz = _size_pair(t)
+    if sz:
+        out["Size"] = sz
+    else:
+        m = re.search(r'%s\s*"' % _MEAS, t)
+        if m:
+            out["Size"] = _inches(m.group(1))
+    if "aluminum" in t:
+        out["Material"] = "Aluminum"
+    elif "alum" in t:
+        out["Material"] = "Alum"
+    c = _color(t)
+    if c:
+        out["Color"] = c
+    return out
+
+
+def _extract_roofing_siding(t: str) -> Dict[str, Any]:
+    out: Dict[str, Any] = {}
+    for typ, kw in [("Premier Rib", "premier rib"), ("Rib", "rib"),
+                    ("Ice Guard", "ice guard"), ("Eaveguard", "eaveguard"),
+                    ("Shingle", "shingle"), ("Duration", "duration"),
+                    ("Soffit", "soffit"), ("Soff", "soff"),
+                    ("Rainscreen", "rainscreen"), ("Smart Lap", "smart lap"),
+                    ("Smart Pan", "smart pan"), ("Sheathing", "sheathing"),
+                    ("Doug Fir", "doug fir")]:
+        if kw in t:
+            out["Type"] = typ
+            break
+    sz = _size_pair(t)
+    if sz:
+        out["Size"] = sz
+    lg = re.search(r'(\d+)\s*(?:ft|foot|feet|\')\b', t, re.IGNORECASE)
+    if lg:
+        out["Length"] = (lg.group(1), "ft")
+    for mat, kw in [("Cedar", "cedar"), ("Fir", "fir"), ("Aluminum", "aluminum"),
+                    ("Alum", "alum"), ("Steel", "steel"), ("Vinyl", "vinyl"), ("Metal", "metal")]:
+        if kw in t:
+            out["Material"] = mat
+            break
+    c = _color(t)
+    if c:
+        out["Color"] = c
+    return out
+
+
+def _extract_ceiling_tiles(t: str) -> Dict[str, Any]:
+    out: Dict[str, Any] = {}
+    if "fissured" in t:
+        out["Type"] = "Fissured"
+    sz = _size_pair(t)
+    if sz:
+        out["Size"] = sz
+    c = _color(t)
+    if c:
+        out["Color"] = c
+    return out
+
+
+def _extract_power_tools(t: str) -> Dict[str, Any]:
+    out: Dict[str, Any] = {}
+    for typ, kw in [("Impact Wrench", "impact wrench"), ("Impact Driver", "impact driver"),
+                    ("Impact", "impact"), ("Angle Grinder", "angle grinder"),
+                    ("Die Grinder", "die grinder"), ("Grinder", "grinder"),
+                    ("Ratchet", "ratchet"), ("Rachet", "rachet"),
+                    ("Cross Line", "cross line"), ("Laser", "laser"),
+                    ("Planer", "planer"), ("Jointer", "jointer"), ("Shaper", "shaper"),
+                    ("Blower", "blower"), ("Vacuum", "vacuum"), ("Dust Extractor", "dust extractor"),
+                    ("Rotary Tool", "rotary tool"), ("Charger", "charger"),
+                    ("Battery Mount", "battery mount"), ("Battery", "battery"), ("Power Supply", "power supply"),
+                    ("Grease Gun", "grease gun"), ("Screwdriver", "screwdriver"),
+                    ("Wrench", "wrench"), ("Snip", "snip"), ("Knife", "knife"), ("File", "file"),
+                    ("Mason Line", "mason line"), ("Chalk", "chalk"), ("Rafter", "rafter"),
+                    ("Caliper", "caliper"), ("Bigcal", "bigcal"), ("Plug Cutter", "plug cutter"),
+                    ("Collated", "collated"), ("Magazine", "magazine"),
+                    ("Organizer", "organizer"), ("Tool Chest", "tool chest"), ("Fence", "fence"),
+                    ("Stock Feeder", "stock feeder"), ("Paper Bag", "paper bag"),
+                    ("Surge", "surge"), ("Starter Kit", "starter kit"),
+                    ("Speaker", "speaker"), ("Sander", "sander"),
+                    ("Glove", "glove"), ("Glasses", "glasses"),
+                    ("Black Frame", "black frame"), ("Hoodie", "hoodie"),
+                    ("Heated", "heated"), ("Hearing", "hearing"),
+                    ("Bottle", "bottle"), ("Extinguisher", "extinguisher"),
+                    ("Smoke", "smoke"), ("Alarm", "alarm"),
+                    ("Dado", "dado"), ("Planer Knives", "planer knives"),
+                    ("Hole Dozer", "hole dozer"), ("Mechanics Set", "mechanics set"),
+                    ("Spks", "spks"), ("Grip", "grip"),
+                    ("Universal Joint", "universal joint"), ("Framing Nailer", "framing nailer"),
+                    ("Brad Nailer", "brad nailer"), ("Roofing Nailer", "roofing nailer"),
+                    ("Nailer", "nailer")]:
+        if kw in t:
+            out["Type"] = typ
+            break
+    m = re.search(r'%s\s*"' % _MEAS, t)
+    if m:
+        out["Size"] = _inches(m.group(1))
+    v = re.search(r'\b(\d{2,3})\s*v\b', t)
+    if v:
+        out["Voltage Rating"] = (int(v.group(1)), "V")
+    c = _color(t)
+    if c:
+        out["Color"] = c
+    q = re.search(r'(\d+)\s*(?:pc|pk|ct|set|kit)\b', t)
+    if q:
+        out["Quantity"] = q.group(1)
     return out
 
 
@@ -371,6 +649,13 @@ EXTRACTORS: Dict[str, Any] = {
     "lumber": _extract_lumber,
     "wire": _extract_wire,
     "electrical": _extract_electrical,
+    "railing": _extract_railing,
+    "mortar": _extract_mortar,
+    "appliances": _extract_appliances,
+    "windows-doors": _extract_windows_doors,
+    "roofing-siding": _extract_roofing_siding,
+    "ceiling-tiles": _extract_ceiling_tiles,
+    "power-tools": _extract_power_tools,
 }
 
 
