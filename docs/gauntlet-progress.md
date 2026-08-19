@@ -1,5 +1,16 @@
 # Gauntlet Loop — Live Progress
 
+## Phase 2c — Bar 2: export regeneration + end-to-end audit (2026-08-19, PASSED)
+
+Regenerated `Unihack_Full_Export_1000.csv` + `demo_export_50.csv` via new `scripts/regen_exports.py`, field-by-field diff vs committed round-3 exports, blind fresh-context critic on old vs new.
+
+**Blind critic verdict: NEW objectively better — zero regressions.** Verified independently: Other 384 → 28; +730 cells vs 22 removed (all 22 = amperage MPN garbage, honest abstention); all desc rewrites token-traceable; 10 fewer-cell rows all legit abstentions. Named gaps (all fixed same pass):
+- **Other rows under-enriched (28 → 8):** root cause `_TOOL_BRAND_PREFIX.match()` anchored at string start — MPN prefix always beat the brand. Fix: `\b...\b` + `.search`. Plus keywords: abranet/hiolit/granat/gr pro → Sanding Belts & Sheets (13 abrasive rows), adj base → Incandescent Bulbs (2 Philips), planing → Planers (Mafell), hydraulic driver → Impact Drivers (Milw M18). Category triggers extended to match.
+- **Unitless belts sizes invented units:** "80x133" (mm Festool sheets) was emitted as "80 in x 133 in" — now verbatim "80 x 133" when no quote appears in text.
+- **Triplex wire conductor count:** "6/6/6" / "2/2/4" → Number of Conductors 3 (was 6/2); gauge = first segment.
+
+**Final numbers:** holdout 277: attrs/row **1.368**, Other **0.7%** (bar ≤5%), dual-pass **0**, gold **118/118**. Export: 69.4 cells/row (old 68.7), Other 8/1000 (old 384), 750 cells added / 22 removed (all honest), demo 70.7 cells/row. Gold export-level: same 5 pre-existing blessed blanks (PART_NUMBER/SKU + "5.0" vs "5"), zero regressions.
+
 ## Phase 2b — held-out accuracy loop (bar 1: PASSED, 2026-08-19)
 
 Bar: held-out 25% of the 1000-row sample (seed 7, stratified by fine class) — blind fresh-context critic picks our extraction over the recovered r1 baseline; zero dual-pass (traceability) failures; gold rows still byte-exact.

@@ -84,6 +84,10 @@ TAXONOMY_KEYWORDS: Dict[str, tuple] = {
     "abrasive": ("Hardware & Tools", "Power Tool Accessories", "Sanding Belts & Sheets", "Hardware & Tools>Power Tool Accessories>Sanding Belts & Sheets"),
     "stikit": ("Hardware & Tools", "Power Tool Accessories", "Sanding Belts & Sheets", "Hardware & Tools>Power Tool Accessories>Sanding Belts & Sheets"),
     "cubitron": ("Hardware & Tools", "Power Tool Accessories", "Sanding Belts & Sheets", "Hardware & Tools>Power Tool Accessories>Sanding Belts & Sheets"),
+    "abranet": ("Hardware & Tools", "Power Tool Accessories", "Sanding Belts & Sheets", "Hardware & Tools>Power Tool Accessories>Sanding Belts & Sheets"),
+    "hiolit": ("Hardware & Tools", "Power Tool Accessories", "Sanding Belts & Sheets", "Hardware & Tools>Power Tool Accessories>Sanding Belts & Sheets"),
+    "granat": ("Hardware & Tools", "Power Tool Accessories", "Sanding Belts & Sheets", "Hardware & Tools>Power Tool Accessories>Sanding Belts & Sheets"),
+    "gr pro": ("Hardware & Tools", "Power Tool Accessories", "Sanding Belts & Sheets", "Hardware & Tools>Power Tool Accessories>Sanding Belts & Sheets"),
     "hole saw": ("Hardware & Tools", "Power Tool Accessories", "Drill Bits", "Hardware & Tools>Power Tool Accessories>Drill Bits"),
     "step bit": ("Hardware & Tools", "Power Tool Accessories", "Drill Bits", "Hardware & Tools>Power Tool Accessories>Drill Bits"),
     "brad": ("Hardware & Tools", "Power Tool Accessories", "Drill Bits", "Hardware & Tools>Power Tool Accessories>Drill Bits"),
@@ -115,6 +119,7 @@ TAXONOMY_KEYWORDS: Dict[str, tuple] = {
     "fluorescent": ("Lighting", "Light Bulbs", "Fluorescent Bulbs", "Lighting>Light Bulbs>Fluorescent Bulbs"),
     "cfl": ("Lighting", "Light Bulbs", "Fluorescent Bulbs", "Lighting>Light Bulbs>Fluorescent Bulbs"),
     "incandescent": ("Lighting", "Light Bulbs", "Incandescent Bulbs", "Lighting>Light Bulbs>Incandescent Bulbs"),
+    "adj base": ("Lighting", "Light Bulbs", "Incandescent Bulbs", "Lighting>Light Bulbs>Incandescent Bulbs"),
     "halogen": ("Lighting", "Light Bulbs", "Halogen Bulbs", "Lighting>Light Bulbs>Halogen Bulbs"),
     "t8": ("Lighting", "Light Bulbs", "Fluorescent Bulbs", "Lighting>Light Bulbs>Fluorescent Bulbs"),
     "t12": ("Lighting", "Light Bulbs", "Fluorescent Bulbs", "Lighting>Light Bulbs>Fluorescent Bulbs"),
@@ -222,6 +227,7 @@ TAXONOMY_KEYWORDS: Dict[str, tuple] = {
     # Power tools
     "impact wrench": ("Hardware & Tools", "Power Tools", "Impact Wrenches", "Hardware & Tools>Power Tools>Impact Wrenches"),
     "impact driver": ("Hardware & Tools", "Power Tools", "Impact Drivers", "Hardware & Tools>Power Tools>Impact Drivers"),
+    "hydraulic driver": ("Hardware & Tools", "Power Tools", "Impact Drivers", "Hardware & Tools>Power Tools>Impact Drivers"),
     "impact": ("Hardware & Tools", "Power Tools", "Impact Drivers", "Hardware & Tools>Power Tools>Impact Drivers"),
     "angle grinder": ("Hardware & Tools", "Power Tools", "Angle Grinders", "Hardware & Tools>Power Tools>Angle Grinders"),
     "die grinder": ("Hardware & Tools", "Power Tools", "Grinders", "Hardware & Tools>Power Tools>Grinders"),
@@ -232,6 +238,7 @@ TAXONOMY_KEYWORDS: Dict[str, tuple] = {
     "laser": ("Hardware & Tools", "Measuring Tools", "Laser Levels", "Hardware & Tools>Measuring Tools>Laser Levels"),
     "sander": ("Hardware & Tools", "Power Tools", "Sanders", "Hardware & Tools>Power Tools>Sanders"),
     "planer": ("Hardware & Tools", "Power Tools", "Planers", "Hardware & Tools>Power Tools>Planers"),
+    "planing": ("Hardware & Tools", "Power Tools", "Planers", "Hardware & Tools>Power Tools>Planers"),
     "jointer": ("Hardware & Tools", "Power Tools", "Jointers", "Hardware & Tools>Power Tools>Jointers"),
     "shaper": ("Hardware & Tools", "Power Tools", "Shapers", "Hardware & Tools>Power Tools>Shapers"),
     "blower": ("Hardware & Tools", "Power Tools", "Blowers", "Hardware & Tools>Power Tools>Blowers"),
@@ -325,12 +332,12 @@ def match_taxonomy(text: str) -> tuple:
 
 # Tool brands whose rows are power tools even when no category keyword appears.
 _TOOL_BRAND_PREFIX = re.compile(
-    r"^(?:milw|dewalt|makita|festool|mafell|irwin|fisch|senco|paslode|bigcal|"
+    r"\b(?:milw|dewalt|makita|festool|mafell|irwin|fisch|senco|paslode|bigcal|"
     r"craftsman|bosch|atomic|prebena|m18|m12)\b")
 
 
 def _tool_brand_fallback(text: str) -> tuple:
-    if _TOOL_BRAND_PREFIX.match(str(text)):
+    if _TOOL_BRAND_PREFIX.search(str(text)):
         return ("Hardware & Tools", "Power Tools", "Power Tools",
                 "Hardware & Tools>Power Tools>Power Tools")
     return ("Other", "Other", "Other", "")

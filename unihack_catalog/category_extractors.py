@@ -14,7 +14,7 @@ from typing import Dict, Any, Tuple, List, Optional
 CATEGORY_TRIGGERS: Dict[str, List[str]] = {
     "discs": ["disc", "cut-off", "cutoff", "cut off", "wheel", "grinding", "flap"],
     "blades": ["blade", "teeth"],
-    "belts": ["belt", "sanding", "abrasive", "stikit", "cubitron", "film"],
+    "belts": ["belt", "sanding", "abrasive", "stikit", "cubitron", "film", "abranet", "hiolit", "granat", "gr pro"],
     "drill-bits": ["bit", "drill", "hole saw", "brad point", "countersink", "reamer", "auger", "router"],
     "adapters": ["socket adapter", "adapter", "shank"],
     "fasteners": ["nailer", "stapler", "tacker", "staple", "nail", "screw"],
@@ -25,7 +25,7 @@ CATEGORY_TRIGGERS: Dict[str, List[str]] = {
                  "chand", "sconce", "incan", "sodium", "highbay", "motion", "downlight",
                  "down light", "down lt", "flashlight", "flash light", "flashlt", "flash",
                  "work light", "headlight", "clip light", "shop light", "strip light",
-                 "a15", "t9"],
+                 "a15", "t9", "adj base"],
     "lumber": ["lumber", "plywood", "stud", "board", "moulding", "molding", "trim",
                "siding", "lattice", "drywall", "decking", "trex", "timbertech",
                "joist", "osb", "fascia", "doug fir", "smart lap", "smart pan",
@@ -220,7 +220,12 @@ def _extract_belts(t: str) -> Dict[str, Any]:
     out: Dict[str, Any] = {}
     a, b = _parse_size(t)
     if a and b:
-        out["Size"] = f"{_inches(a)} x {_inches(b)}"
+        # ponytail: unitless pairs ("80x133" = mm sanding sheets) stay verbatim;
+        # only quoted dims get unit conversion.
+        if re.search(r'["\']', t):
+            out["Size"] = f"{_inches(a)} x {_inches(b)}"
+        else:
+            out["Size"] = f"{a} x {b}"
     grit = re.search(r'[Pp]\s*(\d{2,4})', t)
     if grit:
         out["Grit"] = grit.group(1)
@@ -399,14 +404,15 @@ def _extract_lumber(t: str) -> Dict[str, Any]:
 def _extract_wire(t: str) -> Dict[str, Any]:
     out: Dict[str, Any] = {}
     g = re.search(r'\b(\d{1,2})\s*(?:AWG|ga|gauge)\b', t, re.IGNORECASE)
-    cond = re.search(r'\b(\d{1,2})/(\d)\b', t)
+    cond = re.search(r'\b(\d{1,2})/(\d{1,2})(?:/(\d{1,2}))?\b', t)
     if g:
         out["Wire Gauge"] = (int(g.group(1)), "AWG")
     elif cond:
         # ponytail: slash-style gauge ("14/2" = 14 AWG, 2 conductors, no suffix)
         out["Wire Gauge"] = (int(cond.group(1)), "AWG")
     if cond:
-        out["Number of Conductors"] = int(cond.group(2))
+        # triplex "6/6/6" or "2/2/4" = 3 conductors at the first gauge
+        out["Number of Conductors"] = 3 if cond.group(3) else int(cond.group(2))
     lg = re.search(r'(\d+(?:\.\d+)?)\s*(?:ft|foot|feet|\')\b', t, re.IGNORECASE)
     if lg:
         out["Length"] = (lg.group(1), "ft")
