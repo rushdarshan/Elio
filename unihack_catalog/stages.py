@@ -515,6 +515,13 @@ def stage_extraction(record: EnrichedRecord, doc: Dict[str, Any]) -> EnrichedRec
         generic.update(extract_for(record.input.raw_text))
     except Exception:
         pass
+    if os.environ.get("ELIO_ASSISTED") == "1" and not spec:
+        # Bar 3: LLM proposal layer — fills labels extractors left empty.
+        # Acceptance still happens downstream in stage_verification's dual-pass.
+        # Gold-spec rows are excluded: their exports are locked (zero regressions).
+        from .llm_proposals import propose
+        proposals = propose(record.input.raw_text)
+        generic = {**proposals, **generic}  # extractor wins ties; proposals fill gaps
 
     lov = _get_attribute_lov()
     # ponytail: never let the loader's LOV drop gold-workbook labels —
@@ -579,7 +586,10 @@ def stage_verification(record: EnrichedRecord) -> EnrichedRecord:
         # (or a literal unit/number conversion of it). Gold rows are
         # spec-sourced from the sanctioned workbook, so they are exempt.
         text_l = record.input.raw_text.lower()
-        _EXPANSIONS = {"stainless steel": {"ss", "sst", "s/s"}, "stainless": {"ss", "sst"}}
+        _EXPANSIONS = {"stainless steel": {"ss", "sst", "s/s"}, "stainless": {"ss", "sst"},
+                       "white": {"wh", "wt"}, "black": {"bk", "blk"},
+                       "bronze": {"bz"}, "matte black": {"mb"},
+                       "composite": {"trex", "azek", "timbertech"}}
         bad = []
         for a in record.attributes:
             v = a.value.strip()
@@ -600,6 +610,9 @@ def stage_verification(record: EnrichedRecord) -> EnrichedRecord:
             for canon, abbrs in _EXPANSIONS.items():
                 if vl == canon and any(ab in text_l for ab in abbrs):
                     ok = True
+            if not ok and a.label == "Color Temperature" and re.search(r"\b\d{2}k\b", text_l):
+                # "27K" shorthand: NNk in the text converts to NN00 K
+                ok = vl.rstrip("k").strip() == str(int(re.search(r"\b(\d{2})k\b", text_l).group(1)) * 100)
             if not ok:
                 bad.append(a.label)
         if bad:
@@ -733,7 +746,8 @@ def stage_description_generation(record: EnrichedRecord) -> EnrichedRecord:
     if mount:
         long_parts.append(f"{mount} Mounting")
     if size:
-        long_parts.append(size)
+        size_uom = uom("Size")
+        long_parts.append(size + (" " + size_uom if size_uom else ""))
     if depth:
         long_parts.append(f"{depth} in Depth With Door Open")
     if minh:

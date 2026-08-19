@@ -642,6 +642,9 @@ ATTRIBUTE_LOV: Dict[str, list] = {
     "Luminous Flux": [], "Color Temperature": [], "Base Type": [], "Bulb Shape": [],
     "Wire Gauge": [], "Number of Conductors": [], "Length": [], "Nominal Size": [],
     "Grade": [], "Species": [], "Gauge": [],
+    # Bar-3 proposal layer labels
+    "Battery Platform": ["M12", "M18", "M28", "12V", "18V", "20V"],
+    "Horsepower": [],
 }
 
 

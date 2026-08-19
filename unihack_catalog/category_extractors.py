@@ -139,7 +139,8 @@ def _extract_discs(t: str) -> Dict[str, Any]:
     if tri:
         # ponytail: 5"x.045"x7/8" = diameter x thickness x arbor
         g2 = tri.group(2)
-        thick = ("0" + g2 if g2.startswith(".") else str(int(g2))) + " in"
+        # ponytail: fractional thickness ("1/8") stays verbatim; ".045" -> "0.045"
+        thick = (g2 if "/" in g2 else ("0" + g2 if g2.startswith(".") else str(int(g2)))) + " in"
         out["Diameter"] = _inches(tri.group(1))
         out["Thickness"] = thick
         out["Arbor Size"] = _inches(tri.group(3))

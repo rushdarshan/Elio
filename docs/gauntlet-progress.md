@@ -231,3 +231,29 @@ Final hardening pass (post-verdict, same round):
 - Reference files were never downloadable (organizers confirmed values are "already represented within the columns of the provided datasets") → the reference workbook is the sanctioned source; external manufacturer URLs are pointer-only (`pointer_status=unavailable_live` — fetches 403/timeout).
 - PART_NUMBER/SKU are distributor-side IDs absent from the 6-col input — left blank on purpose (no fabrication).
 - Gold rows get byte-perfect output; held-out MPNs get generic extraction + review escalation (the designed empty-review-state demo path).
+## Bar 3: LLM-assisted long-tail enrichment (2026-08-20)
+
+Directive: attrs/row >= 2.0 on fresh holdout (was 1.368), Other <= 5%, gold exact 100%, dpf 0, unsupported values 0, zero regressions vs Bar-2 export. LLM may propose but never accept: every value must pass the existing evidence/provenance gates. Deterministic-only vs LLM-assisted compared on the same blind holdout.
+
+### Design
+- `unihack_catalog/llm_proposals.py` — the proposal layer (deterministic stand-in for an LLM call, per no-key constraint; swap `propose()` for a real model later). 12 classes: Quantity (pk/ct/pack/box/sheets/set, slash "GR PRO/10", "pack of N"), Size pairs (lumber "1x6-16'" -> Size in + Length ft, "4'x10'", "80x133mm", triple "1.5x1.5x13'"), Battery Platform M12/M18 (tool brands, dual-platform rows abstain), Horsepower, mm Size, Color Temperature "27K"->2700 K (lighting rows), Color (Wh/Bk/BZ/MB + phrases, appliance/door/rail/fan context), Bulb Shape, Grit, Luminous Flux "4500L", Composite (Trex/Transcend/Enhance, never overriding an explicit material token), apparel Kit L, fan/saw single sizes, tape-light ft lengths.
+- Gating is unchanged: proposals merge into generic extraction (`{**proposals, **generic}` — extractor wins ties) only under `ELIO_ASSISTED=1` and never on gold-spec rows; stage_verification dual-pass + documented conversions remain the sole acceptance path. Gate grew only documented expansions: wh/wt->White, bk/blk->Black, bz->Bronze, mb->Matte Black, trex/azek/timbertech->Composite, "NNk"->K (x100).
+- Fixed a latent bug on the way: `_extract_discs` silently crashed on fractional thickness ("1/8") — extraction now handles it (deterministic baseline 1.368 -> 1.487).
+
+### Numbers (same holdout, seed 7, 277 rows)
+| Run | attrs/row | Other % | dpf | gold |
+|---|---|---|---|---|
+| Bar-2 deterministic | 1.368 | 0.7 | 0 | 118/118 |
+| Deterministic (post disc-fix) | 1.487 | 0.7 | 0 | 118/118 |
+| **Assisted (Bar 3)** | **2.130** | **0.7** | **0** | **118/118** |
+
+### Blind fresh-context critic (det vs assisted, cell-level diff)
+- 179 attribute cells FILLED on 103/277 rows; 0 changed, 0 removed, 0 untraceable. Sample 49 cells: 47 correct, 2 nuance errors (dual-platform charger labeled M18 only; Trex token overriding explicit "Alum" material).
+- Both fixed: dual-platform rows now abstain; Composite never proposed when an explicit material token is present. Desc builder now emits Size with its uom (LONG_DESC1 "52" -> "52 in").
+- Verdict: **WIN** — precision 98.9% (177/179), fills are documented conversions applied to the right classes, no quantity/MPN confusion.
+
+### Export audit vs committed Bar-2 export (08d72e3)
+- 0 value->blank (zero regressions), 3343 blank->value, 806 description-cell changes (descs reflect the new attributes). Populated cells/row 68.7 -> 71.6. Fine=Other unchanged at 8/1000.
+
+### State
+Bar 3 met on all counts. `Unihack_Full_Export_1000.csv` / `demo_export_50.csv` regenerated assisted-mode and committed.
