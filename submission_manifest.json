@@ -27,8 +27,8 @@
       "role": "frozen-export"
     },
     "docs/FREEZE.md": {
-      "sha256": "ea01ab16fb5432f78168b16bbbf0b6a233c46e4dafd6e7c439cfe48e3c2ff10e",
-      "size": 4180,
+      "sha256": "3e2130b0f1781bd68773ec696079f986d312a76225372286c5240c76d76411c6",
+      "size": 4403,
       "role": "frozen-doc"
     },
     "docs/gauntlet-progress.md": {
@@ -134,6 +134,16 @@
     "scripts/verify_manifest.py": {
       "sha256": "eafe910784dd6115c41d2f5da37e4bdf928ce8ec87397333ee2ea765aba753e7",
       "size": 4949,
+      "role": "generated"
+    },
+    "scripts/verify_everything.py": {
+      "sha256": "eb460c9e2846eaedbef56d2b6c257bfa08d56c15813dfaa5d978b95ae9f7f945",
+      "size": 7592,
+      "role": "generated"
+    },
+    "artifacts/metrics.json": {
+      "sha256": "927de22ba280623487b553e7a4925d96bcf96a68635d061e0aeb7441f118a3ec",
+      "size": 1419,
       "role": "generated"
     }
   }

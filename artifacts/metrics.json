@@ -1,0 +1,27 @@
+{
+  "generated": "2026-08-20",
+  "freeze_commit": "38db2af",
+  "gates": {
+    "gold": "118/118",
+    "dpf": 0,
+    "other_pct": 0.4,
+    "attrs_per_row": 2.156,
+    "adversarial": "589/589 @ 100%",
+    "provenance": 1.0,
+    "regressions": 0,
+    "blind_critic": "17-1 (7 ties)",
+    "fresh_upload": "8/8",
+    "export_252": true
+  },
+  "sources": {
+    "attrs_per_row": "seed-7 holdout, assisted (FREEZE.md:33) \u2014 `$env:ELIO_ASSISTED=\"1\"; python -B scripts/gauntlet_holdout_eval.py`",
+    "other_pct": "seed-7 holdout, assisted (FREEZE.md:34) \u2014 same command",
+    "dual_pass_fails": "seed-7 + adversarial holdouts (FREEZE.md:35,37) \u2014 gauntlet_holdout_eval.py / adversarial_eval.py",
+    "gold": "live gate (FREEZE.md:36) \u2014 2 gold rows vs delivery workbook; 16 excluded cells = 8 input cols x 2 rows (134 populated \u2212 16)",
+    "adversarial": "adversarial holdout replay, 277 rows / 589 accepted values (FREEZE.md:38) \u2014 `python -B scripts/adversarial_eval.py`",
+    "provenance": "adversarial holdout (FREEZE.md:39) \u2014 same command",
+    "regressions": "full-export diff vs Bar 3 229ba70 (FREEZE.md:40) \u2014 committed record",
+    "blind_critic": "blind critic A/B, 26 contested rows (FREEZE.md:42) \u2014 committed judgment snapshot",
+    "fresh_upload": "fresh-upload end-to-end, 8 invented adversarial rows (FREEZE.md:43) \u2014 committed record"
+  }
+}

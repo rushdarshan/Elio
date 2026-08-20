@@ -5,8 +5,9 @@ catalog: brand / OEM / distributor kept as distinct typed edges, closed-taxonomy
 classpath, evidence-grounded attributes, constrained descriptions, and an honest
 abstention decision — every emitted value traces to the source text.
 
-Built for UniHack 2026. Gold-bar: **130/130 populated cells byte-exact** against
-the official delivery-format workbook (2 rows × 252 cols), verified with a
+Built for UniHack 2026. Gold-bar: **118/118 evaluated gold cells byte-exact**
+against the official delivery-format workbook (2 rows × 252 cols; 134 populated
+cells, 16 excluded as the 8 input columns × 2 rows), verified with a
 dual-pass (value must appear in source text or be a literal unit conversion).
 
 ## Pipeline
@@ -36,21 +37,16 @@ dual-pass (value must appear in source text or be a literal unit conversion).
 
 | Check | Result |
 |---|---|
-| Gold byte-exact (incl. MFR URLs) | 130/130 |
+| Gold byte-exact (incl. MFR URLs) | 118/118 evaluated (16 excluded = 8 input cols × 2 rows) |
 | Dual-pass verification failures | 0 |
 | Brand resolved (1000-row sample) | 866/1000 |
 | Unknown Manufacturer (honest abstention) | 134 (distributors / no-signal / blacklisted) |
-| Avg attributes/row | 0.74 |
+| Avg attributes/row (seed-7 holdout, assisted) | 2.156 |
 
-Run the gold check:
+Run the gold check (and every headline gate):
 
 ```bash
-python -c "import pandas as pd, sys; sys.path.insert(0,'.'); \
-from unihack_catalog.stages import run_pipeline; \
-gold=pd.read_csv('Unihack_ Expected Output - Delivery Format.csv', encoding='utf-8-sig'); \
-df=pd.read_csv('Unihack_ Sample Dataset - Input.csv', encoding='utf-8-sig'); \
-exact=pop=0; \
-[None for _,gr in gold.iterrows() for c in (lambda cols:(exact:=exact+(str(run_pipeline(df[df['Mfg_Part_Num'].str.upper()==str(gr['Mfg_Part_Num'])].iloc[0].to_dict())[1].get(c,''))==str(gr[c])),pop:=pop+1,True)[2] if c not in ('PART_NUMBER','SKU - MY_PART_NUMBER') for c in [x for x in gold.columns if pd.notna(gr[x]) and str(gr[x])!=''])]; print(f'{exact}/{pop}')"
+python -B scripts\verify_everything.py   # live gold gate: 118 evaluated, 16 excluded = 8 input cols x 2 rows
 ```
 
 ## Plan

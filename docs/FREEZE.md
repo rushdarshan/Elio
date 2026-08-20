@@ -62,6 +62,11 @@ end-to-end run.
 ## Reproduce
 
 ```powershell
+# ONE COMMAND — every headline gate + canonical metrics.json (60-90s):
+python -B scripts\verify_everything.py
+#   --full reruns the heavy evals (seed-7 holdout + adversarial replay)
+
+# individual gates (fallback detail):
 # assisted exports (proposal layer on):
 $env:ELIO_ASSISTED="1"; python -B scripts\regen_exports.py
 # seed-7 holdout (purge cache first):
