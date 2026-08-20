@@ -52,7 +52,8 @@ CATEGORY_TRIGGERS: Dict[str, List[str]] = {
                     "starter kit", "power supply", "battery", "bottle", "hearing",
                     "extinguisher", "smoke", "alarm", "glove", "glasses", "hoodie",
                     "heated", "black frame", "dado", "planer knives", "hole dozer",
-                    "mechanics set", "spks", "grip", "universal joint", "battery mount"],
+                    "mechanics set", "spks", "grip", "universal joint", "battery mount",
+                    "pwr supply", "jumpstart", "jump starter", "holster"],
 }
 
 
@@ -106,7 +107,7 @@ _COLOR_WORDS = [("Black", "black"), ("White", "white"), ("Gray", "gray"), ("Char
 
 def _color(t: str) -> Optional[str]:
     for label, kw in _COLOR_WORDS:
-        if kw in t:
+        if re.search(rf"\b{kw}\b", t):
             return label
     return None
 
@@ -589,6 +590,13 @@ def _extract_ceiling_tiles(t: str) -> Dict[str, Any]:
         out["Type"] = "Fissured"
     sz = _size_pair(t)
     if sz:
+        # Ceiling tiles are sized in feet (2x2, 2x4). Only convert when the
+        # pair matches the foot convention; never trust an arbitrary digit pair
+        # (a "24x24" tile is 24 inches, not 24 feet).
+        m = re.match(r"^(\d+)\s*(?:in|ft)?\s*x\s*(\d+)\s*(?:in|ft)?$", sz)
+        if m and "in" in sz and '"' not in t and "inch" not in t and "in." not in t:
+            if int(m.group(1)) <= 6 and int(m.group(2)) <= 6:
+                sz = sz.replace("in", "ft")
         out["Size"] = sz
     c = _color(t)
     if c:
@@ -606,7 +614,9 @@ def _extract_power_tools(t: str) -> Dict[str, Any]:
                     ("Planer", "planer"), ("Jointer", "jointer"), ("Shaper", "shaper"),
                     ("Blower", "blower"), ("Vacuum", "vacuum"), ("Dust Extractor", "dust extractor"),
                     ("Rotary Tool", "rotary tool"), ("Charger", "charger"),
-                    ("Battery Mount", "battery mount"), ("Battery", "battery"), ("Power Supply", "power supply"),
+                    ("Battery Mount", "battery mount"), ("Battery", "battery"),
+                    ("Jumpstart", "jumpstart"), ("Jump Starter", "jump starter"),
+                    ("Pwr Supply", "pwr supply"), ("Power Supply", "power supply"),
                     ("Grease Gun", "grease gun"), ("Screwdriver", "screwdriver"),
                     ("Wrench", "wrench"), ("Snip", "snip"), ("Knife", "knife"), ("File", "file"),
                     ("Mason Line", "mason line"), ("Chalk", "chalk"), ("Rafter", "rafter"),
@@ -626,7 +636,7 @@ def _extract_power_tools(t: str) -> Dict[str, Any]:
                     ("Spks", "spks"), ("Grip", "grip"),
                     ("Universal Joint", "universal joint"), ("Framing Nailer", "framing nailer"),
                     ("Brad Nailer", "brad nailer"), ("Roofing Nailer", "roofing nailer"),
-                    ("Nailer", "nailer")]:
+                    ("Holster", "holster"), ("Nailer", "nailer")]:
         if kw in t:
             out["Type"] = typ
             break

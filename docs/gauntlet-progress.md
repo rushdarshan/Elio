@@ -257,3 +257,17 @@ Directive: attrs/row >= 2.0 on fresh holdout (was 1.368), Other <= 5%, gold exac
 
 ### State
 Bar 3 met on all counts. `Unihack_Full_Export_1000.csv` / `demo_export_50.csv` regenerated assisted-mode and committed.
+
+
+## Bar 4 — Adversarial-hardened pipeline (FROZEN, tag bar-4-freeze)
+
+Blind-critic-validated hardening pass on top of Bar 3. Seed-7 holdout:
+2.156 attrs/row (was 2.13), Other 0.4% (was 0.7%), dpf 0, gold 118/118.
+Adversarial holdout (277 difficulty-stratified rows, 589 accepted values):
+0 untraceable, 100% gate precision, 100% provenance. Full-export diff vs
+229ba70: 0 losses of correct values (8 removed cells were verified false
+positives: 6 false LG-brand, 2 "Blue" from Blue**tooth**). 14 classification
+corrections (trimmers->Power Tools, sled->Other, pencil lead->Power Tools,
+shears blade->Saw Blades, holster->Tool Organizers, gate->Gates,
+jumpstart->Power Supplies). Blind critic A/B: 17-1 (7 ties). Fresh-upload
+end-to-end: PASS. See docs/FREEZE.md.

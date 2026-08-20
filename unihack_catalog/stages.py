@@ -365,6 +365,10 @@ def stage_entity_resolution(record: EnrichedRecord) -> EnrichedRecord:
         # ponytail: "GE" alone is ambiguous; appliance keywords force the appliance division.
         key = "GE Appliances" if "GE Appliances" in vocab else key
 
+    if key == "LG" and re.search(r'\b(gloves?|holsters?|apparel|clothing|jackets?|vests?|shirts?|pants?|belts?|pockets?|fits?|straps?)\b', text.lower()) and not re.search(r'\b(dishwasher|refrigerator|fridge|range|oven|microwave|washer|dryer|freezer|appliance|tv|oled|compressor)\b', text.lower()):
+        # LG matches on glove/holster etc. are sizes, not the LG Electronics brand.
+        key = None
+
     if not key:
         # Never echo raw distributor names as brand/manufacturer.
         record.identity.brand = Brand(id="B_UNBRANDED", label="Unbranded", parent="Unknown Manufacturer")
@@ -397,7 +401,7 @@ def stage_taxonomy_classification(record: EnrichedRecord) -> EnrichedRecord:
     text = f"{record.input.raw_text} {record.input.mpn}".lower()
     best, best_len = None, -1
     for kw, (dept, cls, fine, classpath) in tx.items():
-        if kw in text and len(kw) > best_len:
+        if re.search(rf"(?<![a-z0-9]){re.escape(kw)}(?![a-z0-9])", text) and len(kw) > best_len:
             best, best_len = (dept, cls, fine, classpath), len(kw)
     if best:
         dept, cls, fine, classpath = best
