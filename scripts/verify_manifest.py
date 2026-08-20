@@ -57,9 +57,12 @@ MANIFEST_FILES = [
 
 def sha256(path: Path) -> str:
     h = hashlib.sha256()
+    # Line-ending normalization: core.autocrlf makes working-tree vs fresh-clone
+    # bytes differ (LF vs CRLF). Hash the content with \r stripped so the
+    # manifest verifies identically on any checkout (R10 fresh-clone gate).
     with open(path, "rb") as f:
         for chunk in iter(lambda: f.read(65536), b""):
-            h.update(chunk)
+            h.update(chunk.replace(b"\r\n", b"\n"))
     return h.hexdigest()
 
 
