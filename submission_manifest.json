@@ -1,0 +1,140 @@
+{
+  "header": {
+    "freeze_commit": "38db2af",
+    "freeze_tag": "bar-4-freeze",
+    "generated": "2026-08-20",
+    "python": "3.13.7",
+    "deps": {
+      "pandas": "2.3.0",
+      "pydantic": "2.12.3",
+      "openai": "2.45.0"
+    }
+  },
+  "files": {
+    "Unihack_Full_Export_1000.csv": {
+      "sha256": "5c33765805397e36209a3f6b3d5985f2f65c710de53bec215c907a94b17d26a6",
+      "size": 1240423,
+      "role": "frozen-export"
+    },
+    "demo_export_50.csv": {
+      "sha256": "0d8cb6fdccfd93fd26dddcbd3aa4b5d53a79f94598d78242075d5e0e2a1f83ef",
+      "size": 69220,
+      "role": "frozen-export"
+    },
+    "demo_input_50.csv": {
+      "sha256": "a4d0b31416755d402ceb9e0e2224ef1fc57d38936e13dd4c04acbc4be545d8ab",
+      "size": 6730,
+      "role": "frozen-export"
+    },
+    "docs/FREEZE.md": {
+      "sha256": "ea01ab16fb5432f78168b16bbbf0b6a233c46e4dafd6e7c439cfe48e3c2ff10e",
+      "size": 4180,
+      "role": "frozen-doc"
+    },
+    "docs/gauntlet-progress.md": {
+      "sha256": "4b291b2f454c238978b2363aaa55f01b03cb81ac3aa75a495ee9cd14df272264",
+      "size": 27987,
+      "role": "frozen-doc"
+    },
+    "unihack_catalog/verification_ledger.py": {
+      "sha256": "1ab862538677f626d5c8c9bbe77d368401c08e1f668c8f16d1010ce3a489b0d9",
+      "size": 6427,
+      "role": "frozen-tooling"
+    },
+    "scripts/adversarial_critic.py": {
+      "sha256": "1c6e78da0c4ddfc7b26ec32e158c67aa79ed51415ba2ede91a9d44bfbb14a001",
+      "size": 4296,
+      "role": "frozen-eval"
+    },
+    "scripts/adversarial_eval.py": {
+      "sha256": "dcc04be9132452874242a60956d23897956b51e2781e9ee182e920e2c8ed3377",
+      "size": 6569,
+      "role": "frozen-eval"
+    },
+    "scripts/adversarial_holdout.csv": {
+      "sha256": "ae61e98c411507bd9bea73390206dcb671ceb403acd17aff966ce6db96743728",
+      "size": 341743,
+      "role": "frozen-eval"
+    },
+    "scripts/adversarial_inspect.py": {
+      "sha256": "f8628e34ba1b80718f3d6759d9278384aef7708f2c6e7c7766e7b54b7e51e13d",
+      "size": 2195,
+      "role": "frozen-eval"
+    },
+    "scripts/adversarial_inspected.txt": {
+      "sha256": "7aca5f9fb482fdd9f5d13eda9d9d15cf1bc3d80deffbbfa7116d450d3323d992",
+      "size": 79799,
+      "role": "frozen-eval"
+    },
+    "scripts/adversarial_mpns.json": {
+      "sha256": "4f5461bcf418b3574846e89f1ecfdb0b42035344102586f53d88a4dc22fa9654",
+      "size": 3383,
+      "role": "frozen-eval"
+    },
+    "scripts/baseline_holdout.csv": {
+      "sha256": "f9e9bf31503716e08c2a49ecafc9987c345d3767ad3882cdc808ce2aa0292968",
+      "size": 341831,
+      "role": "frozen-eval"
+    },
+    "scripts/baseline_holdout_assisted.csv": {
+      "sha256": "c2147532518b788762006b455329fc55d8f5b6422ccbfadf52bb10d3598c100a",
+      "size": 344222,
+      "role": "frozen-eval"
+    },
+    "scripts/baseline_holdout_det.csv": {
+      "sha256": "708638f3d6b984660e3a0542dcbb0952992a3af4faea57801f79424dd6230fc3",
+      "size": 341366,
+      "role": "frozen-eval"
+    },
+    "scripts/baseline_holdout_r1.csv": {
+      "sha256": "bcdd10cc196ef8528e2ba607dd21a20c9d218bd4a76428888a7730d76d556ccf",
+      "size": 287410,
+      "role": "frozen-eval"
+    },
+    "scripts/gauntlet_holdout_eval.py": {
+      "sha256": "2bb47e7e34403b6ad96e33f13feac28f90fb97bd0e055f84c2147c925e57e238",
+      "size": 4519,
+      "role": "frozen-eval"
+    },
+    "scripts/holdout_mpns.json": {
+      "sha256": "d03bae0aacbbc64d43fee51dcf24a5c06d6e4bf757ce2f77207e4df5b7a1cedd",
+      "size": 3324,
+      "role": "frozen-eval"
+    },
+    "scripts/holdout_round2.csv": {
+      "sha256": "f4cd4d1e5bf85eab2b26976ca5dc2ebc264e25e7a695c2d8fd618c90226f4c92",
+      "size": 332936,
+      "role": "frozen-eval"
+    },
+    "scripts/rules_linter.py": {
+      "sha256": "d973da0620887dd9112c54d2b2cc115480c02e3a92c45d8eda1c6e85db7b1c24",
+      "size": 1798,
+      "role": "frozen-tooling"
+    },
+    "scripts/export_rules_map.py": {
+      "sha256": "39dd6567a4d25df971ba0150bb9d2026f8a711bb81ee7d908c0529b3843b11a2",
+      "size": 14176,
+      "role": "frozen-tooling"
+    },
+    "rules_map.html": {
+      "sha256": "697a7187294cebe16989f3d73f58657801f83e10b43f2802fd3833f336afa87d",
+      "size": 217437,
+      "role": "frozen-artifact"
+    },
+    "docs/ideation/2026-08-20-submission-surface-ideation.md": {
+      "sha256": "e27f65246e92191daa5adbb2e7cbcc34144290e1bb620be8cdf7bb3d976896a6",
+      "size": 9581,
+      "role": "origin-doc"
+    },
+    "scripts/check_freeze.py": {
+      "sha256": "89ccc3507ad0f0a5ee1d29fcf0d691a200965066d3b87da2ee2974612347d418",
+      "size": 3049,
+      "role": "generated"
+    },
+    "scripts/verify_manifest.py": {
+      "sha256": "eafe910784dd6115c41d2f5da37e4bdf928ce8ec87397333ee2ea765aba753e7",
+      "size": 4949,
+      "role": "generated"
+    }
+  }
+}
