@@ -152,7 +152,7 @@
       "role": "generated"
     },
     "demo.html": {
-      "sha256": "2b990ca52b8e60f1a2f41f9ece85131b42be909c9e7f4cf35fe7789e0e5dc498",
+      "sha256": "bd663b0a12767279bdef9dec196250f6f0cf5cf2025976796a755a208be630ab",
       "size": 1015915,
       "role": "generated"
     },
@@ -162,7 +162,7 @@
       "role": "generated"
     },
     "artifacts/evidence.json": {
-      "sha256": "f94d73806a5f9e565741a7d51a4ba205c8a86925d4df36a338596f0de30b9482",
+      "sha256": "eec319fc2d12ab0bf5fe5cd926d5d341741a7fabac4823a8c648f3e7c5c906a8",
       "size": 918684,
       "role": "generated"
     },

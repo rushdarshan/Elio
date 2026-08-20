@@ -1317,7 +1317,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 8"
         },
         {
@@ -1326,7 +1326,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 9"
         },
         {
@@ -1335,7 +1335,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 10"
         },
         {
@@ -1344,7 +1344,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 11"
         },
         {
@@ -1832,7 +1832,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 8"
         },
         {
@@ -1841,7 +1841,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 9"
         },
         {
@@ -1850,7 +1850,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 10"
         },
         {
@@ -1859,7 +1859,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 11"
         },
         {
@@ -2347,7 +2347,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 8"
         },
         {
@@ -2356,7 +2356,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 9"
         },
         {
@@ -2365,7 +2365,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 10"
         },
         {
@@ -2374,7 +2374,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 11"
         },
         {
@@ -2862,7 +2862,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 8"
         },
         {
@@ -2871,7 +2871,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 9"
         },
         {
@@ -2880,7 +2880,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 10"
         },
         {
@@ -2889,7 +2889,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 11"
         },
         {
@@ -3377,7 +3377,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 8"
         },
         {
@@ -3386,7 +3386,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 9"
         },
         {
@@ -3395,7 +3395,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 10"
         },
         {
@@ -3404,7 +3404,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 11"
         },
         {
@@ -3874,7 +3874,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 9"
         },
         {
@@ -3883,7 +3883,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 10"
         },
         {
@@ -3892,7 +3892,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 11"
         },
         {
@@ -4344,7 +4344,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 8"
         },
         {
@@ -4353,7 +4353,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 9"
         },
         {
@@ -4362,7 +4362,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 10"
         },
         {
@@ -4371,7 +4371,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 11"
         },
         {
@@ -4850,7 +4850,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 8"
         },
         {
@@ -4859,7 +4859,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 9"
         },
         {
@@ -4868,7 +4868,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 10"
         },
         {
@@ -4877,7 +4877,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 11"
         },
         {
@@ -5329,7 +5329,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 8"
         },
         {
@@ -5338,7 +5338,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 9"
         },
         {
@@ -5347,7 +5347,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 10"
         },
         {
@@ -5356,7 +5356,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 11"
         },
         {
@@ -5835,7 +5835,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 8"
         },
         {
@@ -5844,7 +5844,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 9"
         },
         {
@@ -5853,7 +5853,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 10"
         },
         {
@@ -5862,7 +5862,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 11"
         },
         {
@@ -6314,7 +6314,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 8"
         },
         {
@@ -6323,7 +6323,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 9"
         },
         {
@@ -6332,7 +6332,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 10"
         },
         {
@@ -6341,7 +6341,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 11"
         },
         {
@@ -6802,7 +6802,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 8"
         },
         {
@@ -6811,7 +6811,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 9"
         },
         {
@@ -6820,7 +6820,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 10"
         },
         {
@@ -6829,7 +6829,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 11"
         },
         {
@@ -7290,7 +7290,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 8"
         },
         {
@@ -7299,7 +7299,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 9"
         },
         {
@@ -7308,7 +7308,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 10"
         },
         {
@@ -7317,7 +7317,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 11"
         },
         {
@@ -7796,7 +7796,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 8"
         },
         {
@@ -7805,7 +7805,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 9"
         },
         {
@@ -7814,7 +7814,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 10"
         },
         {
@@ -7823,7 +7823,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 11"
         },
         {
@@ -8284,7 +8284,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 8"
         },
         {
@@ -8293,7 +8293,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 9"
         },
         {
@@ -8302,7 +8302,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 10"
         },
         {
@@ -8311,7 +8311,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 11"
         },
         {
@@ -8790,7 +8790,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 8"
         },
         {
@@ -8799,7 +8799,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 9"
         },
         {
@@ -8808,7 +8808,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 10"
         },
         {
@@ -8817,7 +8817,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 11"
         },
         {
@@ -9314,7 +9314,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 9"
         },
         {
@@ -9323,7 +9323,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 10"
         },
         {
@@ -9332,7 +9332,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 11"
         },
         {
@@ -9829,7 +9829,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 9"
         },
         {
@@ -9838,7 +9838,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 10"
         },
         {
@@ -9847,7 +9847,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 11"
         },
         {
@@ -10299,7 +10299,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 8"
         },
         {
@@ -10308,7 +10308,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 9"
         },
         {
@@ -10317,7 +10317,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 10"
         },
         {
@@ -10326,7 +10326,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 11"
         },
         {
@@ -10787,7 +10787,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 8"
         },
         {
@@ -10796,7 +10796,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 9"
         },
         {
@@ -10805,7 +10805,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 10"
         },
         {
@@ -10814,7 +10814,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 11"
         },
         {
@@ -11293,7 +11293,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 8"
         },
         {
@@ -11302,7 +11302,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 9"
         },
         {
@@ -11311,7 +11311,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 10"
         },
         {
@@ -11320,7 +11320,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 11"
         },
         {
@@ -11790,7 +11790,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 8"
         },
         {
@@ -11799,7 +11799,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 9"
         },
         {
@@ -11808,7 +11808,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 10"
         },
         {
@@ -11817,7 +11817,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 11"
         },
         {
@@ -12305,7 +12305,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 8"
         },
         {
@@ -12314,7 +12314,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 9"
         },
         {
@@ -12323,7 +12323,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 10"
         },
         {
@@ -12332,7 +12332,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 11"
         },
         {
@@ -12793,7 +12793,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 8"
         },
         {
@@ -12802,7 +12802,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 9"
         },
         {
@@ -12811,7 +12811,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 10"
         },
         {
@@ -12820,7 +12820,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 11"
         },
         {
@@ -13290,7 +13290,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 8"
         },
         {
@@ -13299,7 +13299,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 9"
         },
         {
@@ -13308,7 +13308,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 10"
         },
         {
@@ -13317,7 +13317,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 11"
         },
         {
@@ -13750,7 +13750,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 8"
         },
         {
@@ -13759,7 +13759,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 9"
         },
         {
@@ -13768,7 +13768,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 10"
         },
         {
@@ -13777,7 +13777,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 11"
         },
         {
@@ -14247,7 +14247,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 8"
         },
         {
@@ -14256,7 +14256,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 9"
         },
         {
@@ -14265,7 +14265,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 10"
         },
         {
@@ -14274,7 +14274,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 11"
         },
         {
@@ -14716,7 +14716,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 8"
         },
         {
@@ -14725,7 +14725,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 9"
         },
         {
@@ -14734,7 +14734,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 10"
         },
         {
@@ -14743,7 +14743,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 11"
         },
         {
@@ -15213,7 +15213,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 8"
         },
         {
@@ -15222,7 +15222,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 9"
         },
         {
@@ -15231,7 +15231,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 10"
         },
         {
@@ -15240,7 +15240,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 11"
         },
         {
@@ -15682,7 +15682,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 8"
         },
         {
@@ -15691,7 +15691,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 9"
         },
         {
@@ -15700,7 +15700,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 10"
         },
         {
@@ -15709,7 +15709,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 11"
         },
         {
@@ -16170,7 +16170,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 8"
         },
         {
@@ -16179,7 +16179,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 9"
         },
         {
@@ -16188,7 +16188,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 10"
         },
         {
@@ -16197,7 +16197,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 11"
         },
         {
@@ -16703,7 +16703,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 8"
         },
         {
@@ -16712,7 +16712,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 9"
         },
         {
@@ -16721,7 +16721,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 10"
         },
         {
@@ -16730,7 +16730,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 11"
         },
         {
@@ -17182,7 +17182,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 8"
         },
         {
@@ -17191,7 +17191,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 9"
         },
         {
@@ -17200,7 +17200,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 10"
         },
         {
@@ -17209,7 +17209,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 11"
         },
         {
@@ -17651,7 +17651,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 8"
         },
         {
@@ -17660,7 +17660,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 9"
         },
         {
@@ -17669,7 +17669,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 10"
         },
         {
@@ -17678,7 +17678,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 11"
         },
         {
@@ -18139,7 +18139,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 8"
         },
         {
@@ -18148,7 +18148,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 9"
         },
         {
@@ -18157,7 +18157,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 10"
         },
         {
@@ -18166,7 +18166,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 11"
         },
         {
@@ -18636,7 +18636,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 8"
         },
         {
@@ -18645,7 +18645,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 9"
         },
         {
@@ -18654,7 +18654,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 10"
         },
         {
@@ -18663,7 +18663,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 11"
         },
         {
@@ -19105,7 +19105,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 8"
         },
         {
@@ -19114,7 +19114,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 9"
         },
         {
@@ -19123,7 +19123,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 10"
         },
         {
@@ -19132,7 +19132,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 11"
         },
         {
@@ -19583,7 +19583,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 8"
         },
         {
@@ -19592,7 +19592,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 9"
         },
         {
@@ -19601,7 +19601,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 10"
         },
         {
@@ -19610,7 +19610,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 11"
         },
         {
@@ -20061,7 +20061,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 8"
         },
         {
@@ -20070,7 +20070,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 9"
         },
         {
@@ -20079,7 +20079,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 10"
         },
         {
@@ -20088,7 +20088,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 11"
         },
         {
@@ -20539,7 +20539,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 8"
         },
         {
@@ -20548,7 +20548,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 9"
         },
         {
@@ -20557,7 +20557,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 10"
         },
         {
@@ -20566,7 +20566,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 11"
         },
         {
@@ -21036,7 +21036,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 9"
         },
         {
@@ -21045,7 +21045,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 10"
         },
         {
@@ -21054,7 +21054,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 11"
         },
         {
@@ -21542,7 +21542,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 8"
         },
         {
@@ -21551,7 +21551,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 9"
         },
         {
@@ -21560,7 +21560,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 10"
         },
         {
@@ -21569,7 +21569,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 11"
         },
         {
@@ -22048,7 +22048,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 9"
         },
         {
@@ -22057,7 +22057,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 10"
         },
         {
@@ -22066,7 +22066,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 11"
         },
         {
@@ -22563,7 +22563,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 8"
         },
         {
@@ -22572,7 +22572,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 9"
         },
         {
@@ -22581,7 +22581,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 10"
         },
         {
@@ -22590,7 +22590,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 11"
         },
         {
@@ -23051,7 +23051,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 8"
         },
         {
@@ -23060,7 +23060,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 9"
         },
         {
@@ -23069,7 +23069,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 10"
         },
         {
@@ -23078,7 +23078,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Size, Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Size, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 11"
         },
         {
@@ -23530,7 +23530,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 9"
         },
         {
@@ -23539,7 +23539,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 10"
         },
         {
@@ -23548,7 +23548,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 11"
         },
         {
@@ -24018,7 +24018,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 9"
         },
         {
@@ -24027,7 +24027,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 10"
         },
         {
@@ -24036,7 +24036,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 11"
         },
         {
@@ -24506,7 +24506,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 9"
         },
         {
@@ -24515,7 +24515,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 10"
         },
         {
@@ -24524,7 +24524,7 @@
           "value": null,
           "uom": "",
           "status": "abstained",
-          "reason": "Flight-critical attributes missing: Depth With Door Open, Minimum Height, Maximum Height",
+          "reason": "Flight-critical attributes missing: Depth With Door Open, Maximum Height, Minimum Height",
           "export_column": "ATTRIBUTE_VALUE 11"
         },
         {
