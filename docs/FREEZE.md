@@ -68,6 +68,12 @@ $env:ELIO_ASSISTED="1"; python -B scripts\regen_exports.py
 Remove-Item scripts\.gauntlet_results.pkl; python -B scripts\gauntlet_holdout_eval.py
 # adversarial holdout gate replay (real gate + expansions):
 python -B scripts\adversarial_eval.py   # deterministic; assisted numbers in table above
+# UAT verification ledger (6 cases):
+python -B unihack_catalog\verification_ledger.py
+# rules sanity linter (standalone, read-only):
+python -B scripts\rules_linter.py
+# interactive rules map (Vis.js, opens in a browser):
+python -B scripts\export_rules_map.py   # -> rules_map.html
 ```
 
 Evidence set: `scripts/baseline_holdout*.csv`, `scripts/holdout_mpns.json`,
