@@ -27,8 +27,8 @@
       "role": "frozen-export"
     },
     "docs/FREEZE.md": {
-      "sha256": "3e2130b0f1781bd68773ec696079f986d312a76225372286c5240c76d76411c6",
-      "size": 4403,
+      "sha256": "33e87511c6f0cad04d144801877fcfded95a4fd44fafc60b9f770beefbca05a1",
+      "size": 5092,
       "role": "frozen-doc"
     },
     "docs/gauntlet-progress.md": {
@@ -132,13 +132,13 @@
       "role": "generated"
     },
     "scripts/verify_manifest.py": {
-      "sha256": "7bfce46dbbfd8ca88c4865823b297454572e86b1fc95257686b1d6e976c56b57",
-      "size": 5204,
+      "sha256": "f8f078700f249f10f4140a9ba91b96a36342d426ee7fe634ea89736cddf4a8e7",
+      "size": 5359,
       "role": "generated"
     },
     "scripts/verify_everything.py": {
-      "sha256": "eb460c9e2846eaedbef56d2b6c257bfa08d56c15813dfaa5d978b95ae9f7f945",
-      "size": 7592,
+      "sha256": "748bcfbac3e23393148bd48f1e5c24505c5a61ed0a82d35c60a6b3df025bb905",
+      "size": 10287,
       "role": "generated"
     },
     "scripts/build_evidence.py": {
@@ -149,6 +149,11 @@
     "scripts/build_demo_html.py": {
       "sha256": "4c39ef45f8e1a699a589c8890d3b5800310e230acc474348c5ed13727648fa6a",
       "size": 10673,
+      "role": "generated"
+    },
+    "scripts/build_decision_log.py": {
+      "sha256": "29ca61955e24f0ecaf9fbc7d44d81b3ad4a35c640db641eeff24378fe5219099",
+      "size": 5065,
       "role": "generated"
     },
     "demo.html": {
@@ -164,6 +169,16 @@
     "artifacts/evidence.json": {
       "sha256": "eec319fc2d12ab0bf5fe5cd926d5d341741a7fabac4823a8c648f3e7c5c906a8",
       "size": 918684,
+      "role": "generated"
+    },
+    "artifacts/decision_log.jsonl": {
+      "sha256": "d550fffed7bfd37d3f219cdb5392008853181710cb84e4a0ace5690a96ad92bf",
+      "size": 932704,
+      "role": "generated"
+    },
+    "artifacts/acceptance_table.md": {
+      "sha256": "e9b13b830140cd4532a30a54314a155cc058b8f245a4000961fea376cb109fc4",
+      "size": 950,
       "role": "generated"
     },
     "docs/DISCLOSURE.md": {
