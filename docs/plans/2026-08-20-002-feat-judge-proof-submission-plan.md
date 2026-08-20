@@ -1,7 +1,7 @@
 ---
 title: ELIO Judge-Proof Submission
 type: feat
-status: active
+status: complete
 date: 2026-08-20
 origin: docs/ideation/2026-08-20-submission-surface-ideation.md
 ---
