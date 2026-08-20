@@ -7,3 +7,7 @@ session-*.md
 ours_output.json
 competitors/uni-hack/
 gauntlet-loop/
+# regenerable evidence cache — untracked via `git rm --cached` (bar 8: clean git status)
+scripts/.gauntlet_results.pkl
+# live agent tooling vendored in the working tree — must not ship
+.agents/
