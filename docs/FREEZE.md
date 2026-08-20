@@ -1,6 +1,6 @@
 # FREEZE — Bar 4 (adversarial-hardened pipeline)
 
-Frozen at commit `<FILLED BY COMMIT>` (tag `bar-4-freeze`), superseding the
+Frozen at commit `38db2af` (tag `bar-4-freeze`), superseding the
 Bar 3 freeze intent (ticket #5). Every gate in the acceptance table passed
 on the seed-7 holdout, the difficulty-stratified adversarial holdout, the
 full-export diff vs `229ba70`, a blind critic A/B, and a fresh-upload
