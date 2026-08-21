@@ -575,7 +575,11 @@ def stage_verification(record: EnrichedRecord) -> EnrichedRecord:
     if not [a for a in record.attributes if a.value]:
         reasons.append("No attributes extracted.")
     a_map = _attr_map(record)
-    critical = {"Size", "Depth With Door Open", "Minimum Height", "Maximum Height"}
+    # Enforce flight-critical attributes only for Appliances
+    if record.classpath.dept == "Appliances":
+        critical = {"Size", "Depth With Door Open", "Minimum Height", "Maximum Height"}
+    else:
+        critical = set()
     gold_t = GOLD_ATTR_TRIPLES.get(record.input.mpn.upper(), {})
     missing_critical = [l for l in critical
                         if l not in a_map or not a_map[l].value]
