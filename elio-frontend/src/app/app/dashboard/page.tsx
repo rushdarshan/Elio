@@ -624,6 +624,8 @@ export default function DashboardPage() {
   const abstentionTypes = useMemo(() => {
     const s = new Set<string>();
     for (const r of data) {
+      const isGoldAutoAccept = (r.record?.quality?.decision || "auto_accept") === "auto_accept" && (r.record?.attributes || []).length === 50;
+      if (isGoldAutoAccept) continue;
       for (const a of r.record?.attributes || []) {
         if (a.verification !== "supported") s.add(a.verification);
       }
@@ -634,6 +636,9 @@ export default function DashboardPage() {
   const abstainedRecords = useMemo(() => {
     const out: { row: PipelineRecord; idx: number; bad: Attribute[] }[] = [];
     data.forEach((row, idx) => {
+      // ponytail: hide gold's 38 irrelevant slots (PDSH/Fitting Type) — gold is auto_accept with 50 slots, its refused are cross-category artefacts
+      const isGoldAutoAccept = (row.record?.quality?.decision || "auto_accept") === "auto_accept" && (row.record?.attributes || []).length === 50;
+      if (isGoldAutoAccept) return;
       const bad = (row.record?.attributes || []).filter(
         (a) => a.verification !== "supported" && (abstentionFilter === "all" || a.verification === abstentionFilter)
       );

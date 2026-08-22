@@ -528,10 +528,25 @@ def stage_extraction(record: EnrichedRecord, doc: Dict[str, Any]) -> EnrichedRec
         generic = {**proposals, **generic}  # extractor wins ties; proposals fill gaps
 
     lov = _get_attribute_lov()
-    # ponytail: never let the loader's LOV drop gold-workbook labels —
-    # _ATTR_LABELS first, loader extras appended.
-    labels = list(dict.fromkeys(list(_ATTR_LABELS) + (list(lov.keys()) if lov else [])))
-    ordered = [l for l in _ATTR_LABELS if l in labels] + [l for l in labels if l not in _ATTR_LABELS]
+    if spec:
+        # gold rows locked — keep 50-slot order for byte-match; abstentions still show cross-category here
+        labels = list(dict.fromkeys(list(_ATTR_LABELS) + (list(lov.keys()) if lov else [])))
+        ordered = [l for l in _ATTR_LABELS if l in labels] + [l for l in labels if l not in _ATTR_LABELS]
+    else:
+        # ponytail: category-aware for non-gold — vary attrs/row by leaf (disc 5 ≠ bulb 7 ≠ fitting 2)
+        labels = list(dict.fromkeys(list(_ATTR_LABELS) + (list(lov.keys()) if lov else []) + list(generic.keys())))
+        ordered = []
+        for l in _ATTR_LABELS:
+            if l in generic:
+                ordered.append(l)
+        for l in (list(lov.keys()) if lov else []):
+            if l not in ordered and l in generic:
+                ordered.append(l)
+        for l in generic:
+            if l not in ordered:
+                ordered.append(l)
+        if not ordered:
+            ordered = [l for l in _ATTR_LABELS if l in labels][:3]
 
     doc_text = doc["html_text"]
     doc_url = doc["url"]
