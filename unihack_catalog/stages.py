@@ -530,8 +530,24 @@ def stage_extraction(record: EnrichedRecord, doc: Dict[str, Any]) -> EnrichedRec
     lov = _get_attribute_lov()
     # ponytail: gold rows follow the reference workbook itself — same labels,
     # same order, same values as the sanctioned source (no 50-slot ask).
+    # Non-gold rows stay category-aware: vary attrs/row by leaf.
     gt = GOLD_ATTR_TRIPLES.get(record.input.mpn.upper(), {})
-    ordered = list(gt.keys()) or list(spec.keys())
+    if gt or spec:
+        ordered = list(gt.keys()) or list(spec.keys())
+    else:
+        labels = list(dict.fromkeys(list(_ATTR_LABELS) + (list(lov.keys()) if lov else []) + list(generic.keys())))
+        ordered = []
+        for l in _ATTR_LABELS:
+            if l in generic:
+                ordered.append(l)
+        for l in (list(lov.keys()) if lov else []):
+            if l not in ordered and l in generic:
+                ordered.append(l)
+        for l in generic:
+            if l not in ordered:
+                ordered.append(l)
+        if not ordered:
+            ordered = [l for l in _ATTR_LABELS if l in labels][:3]
 
     doc_text = doc["html_text"]
     doc_url = doc["url"]
