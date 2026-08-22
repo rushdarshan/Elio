@@ -55,6 +55,15 @@ MANIFEST_FILES = [
     ("docs/DISCLOSURE.md", "generated"),
     ("docs/RED_TEAM.md", "generated"),
     ("docs/PITCH.md", "generated"),
+    ("scripts/receipt_chain.py", "proof-tool"),
+    ("scripts/build_receipt.py", "proof-tool"),
+    ("scripts/build_frontend_receipt.py", "proof-tool"),
+    ("scripts/verify_receipt.py", "proof-tool"),
+    ("scripts/test_receipt.py", "proof-test"),
+    ("scripts/judge_walk.py", "proof-tool"),
+    ("artifacts/receipt.json", "proof-artifact"),
+    ("elio-frontend/public/data/receipt_chain.json", "proof-artifact"),
+    ("docs/00-START_HERE.md", "cold-start-doc"),
 ]
 
 

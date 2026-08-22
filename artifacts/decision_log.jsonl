@@ -1,4 +1,4 @@
-{"type": "header", "freeze_commit": "38db2af", "generated": "2026-08-20", "python": "3.13.7", "source": "artifacts/evidence.json", "source_input": "demo_input_50.csv"}
+{"type": "header", "freeze_commit": "38db2af", "generated": "2026-08-22", "python": "3.13.7", "source": "artifacts/evidence.json", "source_input": "demo_input_50.csv"}
 {"type": "mpn", "mpn": "PDSH4816AF", "fine": "Dishwashers", "dept": "Appliances"}
 {"seq": 1, "type": "decision", "mpn": "PDSH4816AF", "attribute": "Series", "status": "accepted", "gate": "dual-pass", "value": "Professional Series", "uom": "", "evidence": {"text": "E, Dishwasher, Professional Series, PDSH4816AF\nIN", "char_span": [640, 659], "kind": "workbook"}, "confidence": 0.95, "verification": "supported", "export_column": "ATTRIBUTE_VALUE 1", "reason": null}
 {"seq": 2, "type": "decision", "mpn": "PDSH4816AF", "attribute": "Number of Wash Cycles", "status": "accepted", "gate": "dual-pass", "value": "5", "uom": "", "evidence": {"text": "DISHWASHER LEG 5 SST 120V 15A 5", "char_span": [701, 702], "kind": "workbook"}, "confidence": 0.95, "verification": "supported", "export_column": "ATTRIBUTE_VALUE 3", "reason": null}

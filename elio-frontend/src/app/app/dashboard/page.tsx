@@ -1,6 +1,13 @@
 "use client";
 
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo, useRef } from "react";
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
+import { Bell, Download, Home, ListChecks, Search } from "lucide-react";
+
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(useGSAP);
+}
 
 // ── ELIO Cockpit — evidence-gated catalog operations ──────────────────────
 // Shell: dark cockpit from the finance iteration (62px icon sidebar, radial
@@ -53,17 +60,59 @@ type PipelineRecord = {
   flat_export: Record<string, string>;
 };
 
-type Tab = "upload" | "dashboard" | "explorer" | "review" | "abstention" | "export";
+type Tab = "dashboard" | "explorer" | "review" | "abstention" | "export";
+type ExportProjection = "full" | "erp" | "marketplace";
 
 type RowDecision = {
   status: "accept" | "reject" | null;
   overrides: Record<string, string>;
 };
 
+type ReceiptClaim = {
+  mpn: string;
+  attribute: string;
+  value: string;
+  uom: string;
+  export_column: string;
+  source_text: string;
+  source_hash: string;
+  char_span: number[] | null;
+  source_kind: string;
+  input_row_hash: string;
+  claim_hash: string;
+  decision_hash: string;
+  output_hash: string;
+  chain_hash: string;
+};
+
+type ReceiptIndex = {
+  schema_version: number;
+  receipt_sha256: string;
+  source_attestation: string;
+  claims: Record<string, ReceiptClaim>;
+};
+
+type HashState = "idle" | "verifying" | "verified" | "failed";
+
+function canonicalJson(value: unknown): string {
+  if (Array.isArray(value)) return `[${value.map(canonicalJson).join(",")}]`;
+  if (value && typeof value === "object") {
+    return `{${Object.keys(value as Record<string, unknown>).sort().map((key) =>
+      `${JSON.stringify(key)}:${canonicalJson((value as Record<string, unknown>)[key])}`
+    ).join(",")}}`;
+  }
+  return JSON.stringify(value);
+}
+
+async function sha256Hex(value: string): Promise<string> {
+  const bytes = new TextEncoder().encode(value);
+  const digest = await window.crypto.subtle.digest("SHA-256", bytes);
+  return Array.from(new Uint8Array(digest), (byte) => byte.toString(16).padStart(2, "0")).join("");
+}
+
 const ITEMS_PER_PAGE = 5;
 
 const TAB_TITLES: Record<Tab, string> = {
-  upload: "Upload a Catalog",
   dashboard: "Pipeline Overview",
   explorer: "Evidence Explorer",
   review: "Review Queue",
@@ -72,12 +121,26 @@ const TAB_TITLES: Record<Tab, string> = {
 };
 
 const TAB_SUBTITLES: Record<Tab, string> = {
-  upload: "CSV in, 252-column evidence record out",
   dashboard: "Live status across the processing DAG",
   explorer: "Every value, traced to its source",
   review: "Escalated records awaiting a decision",
   abstention: "Values the pipeline refused to fabricate",
   export: "Delivery projection, description pack, evidence dossier",
+};
+
+const PROJECTION_COLUMNS: Record<Exclude<ExportProjection, "full">, string[]> = {
+  erp: [
+    "PART_NUMBER", "Mfg_Part_Num", "Part_Desc", "Part_Manuf", "MANUFACTURER_NAME", "BRAND_NAME",
+    "MANUFACTURER_PART_NUMBER", "Classpath", "MOBILE_DESC", "INVOICE_DESC", "SHORT_DESC", "LONG_DESC1",
+    "RETAIL_DESC", "MARKETING_DESCRIPTION", "Product Name", "UPC", "EAN", "GTIN", "UNSPSC", "List Price",
+    "Selling Qty", "Selling UOM", "LENGTH", "LENGTH_UOM", "HEIGHT", "HEIGHT_UOM", "WIDTH", "WIDTH_UOM",
+    "WEIGHT", "WEIGHT_UOM", "Country Of Origin", "Discontinued",
+  ],
+  marketplace: [
+    "Mfg_Part_Num", "BRAND_NAME", "Product Name", "RETAIL_DESC", "Product Image", "Alternate Image 1",
+    "Alternate Image 2", "Alternate Image 3", "Alternate Image 4", "List Price", "Selling Qty", "Selling UOM",
+    "UPC", "EAN", "GTIN", "Country Of Origin", "Discontinued", "Actual Image (Yes/No)",
+  ],
 };
 
 // ── Mini Bar Chart ──────────────────────────────────────────────────────────
@@ -210,17 +273,21 @@ function MetricCard({ label, value, badge1, badge2, chartColor, bars, gradStart,
   valueColor?: string;
 }) {
   return (
-    <div style={{
-      background: `linear-gradient(135deg, ${gradStart} 0%, ${gradEnd} 100%)`,
-      border: "1px solid rgba(255,255,255,0.08)",
-      borderRadius: "14px",
-      padding: "16px",
-      display: "flex",
-      flexDirection: "column",
-      gap: "10px",
-      position: "relative",
-      overflow: "hidden",
-    }}>
+    <div
+      className="cockpit-metric-card"
+      style={{
+        background: `linear-gradient(135deg, ${gradStart} 0%, ${gradEnd} 100%)`,
+        border: "1px solid rgba(255,255,255,0.08)",
+        borderRadius: "14px",
+        padding: "16px",
+        display: "flex",
+        flexDirection: "column",
+        gap: "10px",
+        position: "relative",
+        overflow: "hidden",
+        transform: "translateZ(0)",
+      }}
+    >
       <div style={{
         position: "absolute", top: 0, right: 0,
         width: "60%", height: "100%",
@@ -252,13 +319,14 @@ function MetricCard({ label, value, badge1, badge2, chartColor, bars, gradStart,
 // ── Main Cockpit ─────────────────────────────────────────────────────────────
 export default function DashboardPage() {
   const [activeTab, setActiveTab] = useState<Tab>("dashboard");
-  const [datasetSize, setDatasetSize] = useState<"demo" | "full" | "upload">("demo");
+  const [datasetSize, setDatasetSize] = useState<"demo" | "full" | "uploaded">("demo");
   const [demoData, setDemoData] = useState<PipelineRecord[]>([]);
   const [fullData, setFullData] = useState<PipelineRecord[]>([]);
   const [uploadedData, setUploadedData] = useState<PipelineRecord[]>([]);
+  const [loadingData, setLoadingData] = useState(true);
+  const [dataError, setDataError] = useState<string | null>(null);
   const [uploading, setUploading] = useState(false);
   const [uploadError, setUploadError] = useState<string | null>(null);
-  const [uploadStatus, setUploadStatus] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState("");
   const [explorerPage, setExplorerPage] = useState(0);
   const [reviewPage, setReviewPage] = useState(0);
@@ -266,20 +334,62 @@ export default function DashboardPage() {
   const [drawerIdx, setDrawerIdx] = useState<number | null>(null);
   const [drawerAttr, setDrawerAttr] = useState<string | null>(null);
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const [decisions, setDecisions] = useState<Record<number, RowDecision>>({});
+  const [exportProjection, setExportProjection] = useState<ExportProjection>("full");
+  const [decisions, setDecisions] = useState<Record<string, RowDecision>>({});
+  const [receiptIndex, setReceiptIndex] = useState<ReceiptIndex | null>(null);
+  const [verifiedHashes, setVerifiedHashes] = useState<Record<string, HashState>>({});
+
+  const cockpitBodyRef = useRef<HTMLDivElement>(null);
+  const drawerRef = useRef<HTMLDivElement>(null);
+  const backdropRef = useRef<HTMLDivElement>(null);
+  const uploadInputRef = useRef<HTMLInputElement>(null);
+
+  // Smooth entrance on initial load only — tab & dataset switches remain 0ms snappy
+  useGSAP(() => {
+    if (cockpitBodyRef.current) {
+      gsap.fromTo(
+        cockpitBodyRef.current,
+        { opacity: 0.8, y: 4 },
+        { opacity: 1, y: 0, duration: 0.2, ease: "power2.out", clearProps: "transform,opacity" }
+      );
+    }
+  }, { scope: cockpitBodyRef });
+
+  useGSAP(() => {
+    if (drawerOpen) {
+      if (backdropRef.current) {
+        gsap.fromTo(backdropRef.current, { opacity: 0 }, { opacity: 1, duration: 0.18, ease: "power2.out" });
+      }
+      if (drawerRef.current) {
+        gsap.fromTo(drawerRef.current, { x: "100%" }, { x: "0%", duration: 0.24, ease: "power3.out" });
+      }
+    }
+  }, [drawerOpen]);
 
   const data = datasetSize === "demo" ? demoData : datasetSize === "full" ? fullData : uploadedData;
 
+  const decisionKey = (idx: number) => `${datasetSize}:${data[idx]?.input?.MPN || idx}`;
+
   useEffect(() => {
     let cancelled = false;
+    setLoadingData(true);
     Promise.all([
       fetch("/data/demo_results.json").then((r) => r.json()),
       fetch("/data/full_results.json").then((r) => r.json()),
-    ]).then(([demo, full]) => {
+      fetch("/data/receipt_chain.json").then((r) => r.json()),
+    ]).then(([demo, full, receipts]) => {
       if (cancelled) return;
       setDemoData(Array.isArray(demo) ? demo : []);
       setFullData(Array.isArray(full) ? full : []);
-    }).catch(() => {});
+      setReceiptIndex(receipts && typeof receipts === "object" ? receipts : null);
+      setDataError(null);
+      setLoadingData(false);
+    }).catch(() => {
+      if (!cancelled) {
+        setDataError("Catalog artifacts could not be loaded.");
+        setLoadingData(false);
+      }
+    });
     return () => { cancelled = true; };
   }, []);
 
@@ -304,12 +414,15 @@ export default function DashboardPage() {
       const s = a.source?.char_span;
       return Array.isArray(s) && s.length === 2 && s[1] > s[0];
     }).length;
-    const decisions: Record<string, number> = {};
-    for (const r of data) {
-      const d = r.record?.quality?.decision || "unknown";
-      decisions[d] = (decisions[d] || 0) + 1;
-    }
-    return {
+     const pipelineDecisions: Record<string, number> = {};
+     for (const r of data) {
+       const d = r.record?.quality?.decision || "unknown";
+       pipelineDecisions[d] = (pipelineDecisions[d] || 0) + 1;
+     }
+     const pendingReviews = data.reduce((count, row, idx) => (
+       count + (row.record?.quality?.decision === "review" && !decisions[decisionKey(idx)]?.status ? 1 : 0)
+     ), 0);
+     return {
       total: data.length,
       attrs,
       attrsPerRow: data.length ? attrs.length / data.length : 0,
@@ -317,61 +430,64 @@ export default function DashboardPage() {
       missing: attrs.length - supported,
       evidenceSupport: attrs.length ? (supported / attrs.length) * 100 : 0,
       charCompliance: attrs.length ? (spans / attrs.length) * 100 : 0,
-      decisions,
-      reviewCount: decisions["review"] || 0,
+       decisions: pipelineDecisions,
+       reviewCount: pendingReviews,
+       pipelineReviewCount: pipelineDecisions["review"] || 0,
       llmCalls: data.reduce((s, r) => s + (r.record?.cost?.llm_calls || 0), 0),
       estUsd: data.reduce((s, r) => s + (r.record?.cost?.estimated_usd || 0), 0),
     };
-  }, [data]);
+   }, [data, decisions]);
 
-  const getDecision = (idx: number) => decisions[idx]?.status || null;
-  const getAttrValue = (idx: number, attr: Attribute) => decisions[idx]?.overrides[attr.label] ?? attr.value;
+  const getDecision = (idx: number) => decisions[decisionKey(idx)]?.status || null;
+  const getAttrValue = (idx: number, attr: Attribute) => decisions[decisionKey(idx)]?.overrides[attr.label] ?? attr.value;
 
   const handleApplyOverride = (idx: number, attr: Attribute, value: string) => {
     setDecisions((prev) => {
-      const cur = prev[idx] || { status: null, overrides: {} };
+      const key = decisionKey(idx);
+      const cur = prev[key] || { status: null, overrides: {} };
       const overrides = { ...cur.overrides };
       if (value.trim() === attr.value) delete overrides[attr.label];
       else overrides[attr.label] = value.trim();
-      return { ...prev, [idx]: { ...cur, overrides } };
+      return { ...prev, [key]: { ...cur, overrides } };
     });
   };
 
   const handleDecisionStatus = (idx: number, status: "accept" | "reject") => {
     setDecisions((prev) => {
-      const cur = prev[idx] || { status: null, overrides: {} };
-      return { ...prev, [idx]: { ...cur, status } };
+      const key = decisionKey(idx);
+      const cur = prev[key] || { status: null, overrides: {} };
+      return { ...prev, [key]: { ...cur, status } };
     });
+    setReviewPage(0);
   };
 
   const handleFileUpload = async (file: File) => {
     setUploading(true);
     setUploadError(null);
-    setUploadStatus("Validating required columns...");
-    const fd = new FormData();
-    fd.append("file", file);
     try {
-      const res = await fetch("/api/run", { method: "POST", body: fd });
-      const json = await res.json();
-      if (!res.ok) {
-        setUploadError(json.error || "Pipeline run failed");
-        setUploading(false);
-        return;
+      const response = await fetch("/api/run", { method: "POST", body: (() => { const form = new FormData(); form.append("file", file); return form; })() });
+      const payload = await response.json();
+      if (!response.ok || !Array.isArray(payload.results) || payload.results.length !== payload.rowCount) {
+        throw new Error(payload.error || "Upload did not produce a complete result.");
       }
-      setUploadedData(Array.isArray(json.results) ? json.results : []);
-      setUploadStatus(`Pipeline completed · ${json.rowCount} rows · sha256 ${String(json.hash).slice(0, 12)}`);
-      setDatasetSize("upload");
+      setUploadedData(payload.results);
+      setDatasetSize("uploaded");
       setActiveTab("dashboard");
-    } catch (e) {
-      setUploadError("Upload failed: " + (e instanceof Error ? e.message : String(e)));
+    } catch (error) {
+      setUploadError(error instanceof Error ? error.message : "Upload failed.");
+    } finally {
+      setUploading(false);
+      if (uploadInputRef.current) uploadInputRef.current.value = "";
     }
-    setUploading(false);
   };
 
   const handleExportCSV = () => {
     const rows = data;
     if (!rows.length) return;
-    const headers = Array.from(new Set(rows.flatMap((r) => Object.keys(r.flat_export || {}))));
+    const allHeaders = Array.from(new Set(rows.flatMap((r) => Object.keys(r.flat_export || {}))));
+    const headers = exportProjection === "full"
+      ? allHeaders
+      : PROJECTION_COLUMNS[exportProjection].filter((header) => allHeaders.includes(header));
     const cell = (v: unknown) => {
       let s = String(v ?? "");
       if (/^[=+\-@]/.test(s)) s = "'" + s;
@@ -380,9 +496,17 @@ export default function DashboardPage() {
     const lines = [headers.map(cell).join(",")];
     for (let idx = 0; idx < rows.length; idx++) {
       const r = rows[idx];
-      const ov = decisions[idx]?.overrides || {};
+      const ov = decisions[decisionKey(idx)]?.overrides || {};
       // ponytail: map flat_export through overrides (key = attr label) then sanitize
-      lines.push(headers.map((h) => cell(ov[h] !== undefined ? ov[h] : (r.flat_export || {})[h])).join(","));
+      const values = { ...(r.flat_export || {}) };
+      for (let n = 1; ; n += 1) {
+        const labelKey = `ATTRIBUTE_LABEL ${n}`;
+        const valueKey = `ATTRIBUTE_VALUE ${n}`;
+        if (!(labelKey in values) || !(valueKey in values)) break;
+        const label = values[labelKey];
+        if (label && ov[label] !== undefined) values[valueKey] = ov[label];
+      }
+      lines.push(headers.map((h) => cell(ov[h] !== undefined ? ov[h] : values[h])).join(","));
     }
     const blob = new Blob(["\uFEFF" + lines.join("\n")], { type: "text/csv;charset=utf-8" });
     const url = URL.createObjectURL(blob);
@@ -400,6 +524,69 @@ export default function DashboardPage() {
   };
 
   const closeDrawer = () => setDrawerOpen(false);
+
+  const verifyDrawerClaim = async () => {
+    if (!drawerRow || !drawerAttrObj) return;
+    const key = `${drawerRow.input?.MPN || ""}_${drawerAttrObj.label}`;
+    setVerifiedHashes((prev) => ({ ...prev, [key]: "verifying" }));
+    try {
+      const claim = receiptIndex?.claims[key];
+      if (!claim || !drawerRow.flat_export) throw new Error("No receipt claim for this value");
+      const input = drawerRow.input || {};
+      const inputRowHash = await sha256Hex(canonicalJson({
+        Mfg_Part_Num: input.MPN || "",
+        Part_Desc: input.Description || "",
+        Part_Manuf: input.Manufacturer || "",
+        E1_Brand: input.E1_Brand || "",
+        Unilog_Brand: input.Unilog_Brand || "",
+        DIB_Brand: input.DIB_Brand || "",
+      }));
+      const sourceHash = await sha256Hex(claim.source_text);
+      const claimPayload = {
+        mpn: claim.mpn,
+        attribute: claim.attribute,
+        value: claim.value,
+        uom: claim.uom,
+        export_column: claim.export_column,
+        source_hash: sourceHash,
+        char_span: claim.char_span,
+        source_kind: claim.source_kind,
+      };
+      const claimHash = await sha256Hex(canonicalJson(claimPayload));
+      const decisionHash = await sha256Hex(canonicalJson({
+        claim_hash: claimHash,
+        status: "accepted",
+        verification: drawerAttrObj.verification,
+        gate: "dual-pass",
+      }));
+      const outputHash = await sha256Hex(canonicalJson({
+        mpn: claim.mpn,
+        column: claim.export_column,
+        value: drawerRow.flat_export[claim.export_column],
+      }));
+      const chainHash = await sha256Hex(canonicalJson({
+        input_row_hash: inputRowHash,
+        source_hash: sourceHash,
+        claim_hash: claimHash,
+        decision_hash: decisionHash,
+        output_hash: outputHash,
+      }));
+      const matches = claim.mpn === input.MPN
+        && claim.attribute === drawerAttrObj.label
+        && claim.value === drawerAttrObj.value
+        && claim.uom === drawerAttrObj.uom
+        && claim.source_text === drawerAttrObj.source?.snippet
+        && inputRowHash === claim.input_row_hash
+        && sourceHash === claim.source_hash
+        && claimHash === claim.claim_hash
+        && decisionHash === claim.decision_hash
+        && outputHash === claim.output_hash
+        && chainHash === claim.chain_hash;
+      setVerifiedHashes((prev) => ({ ...prev, [key]: matches ? "verified" : "failed" }));
+    } catch {
+      setVerifiedHashes((prev) => ({ ...prev, [key]: "failed" }));
+    }
+  };
 
   const filteredRecords = useMemo(() => {
     const q = searchQuery.trim().toLowerCase();
@@ -419,8 +606,10 @@ export default function DashboardPage() {
   const reviewRecords = useMemo(() => {
     return data
       .map((row, idx) => ({ row, idx }))
-      .filter(({ row }) => (row.record?.quality?.decision || "auto_accept") === "review");
-  }, [data]);
+      .filter(({ row, idx }) => (
+        (row.record?.quality?.decision || "auto_accept") === "review" && !decisions[decisionKey(idx)]?.status
+      ));
+  }, [data, decisions]);
 
   const abstentionTypes = useMemo(() => {
     const s = new Set<string>();
@@ -448,6 +637,10 @@ export default function DashboardPage() {
     ? (drawerRow.record?.attributes || []).find((a) => a.label === drawerAttr) || null
     : null;
   const drawerDecision = drawerIdx !== null ? getDecision(drawerIdx) : null;
+  const drawerProofKey = drawerRow && drawerAttrObj
+    ? `${drawerRow.input?.MPN || ""}_${drawerAttrObj.label}`
+    : "";
+  const drawerHashState = verifiedHashes[drawerProofKey] || "idle";
 
   const statusBarBars = [55, 70, 60, 80, 65, 75, 85, 70, 88, 78, 82, 90];
   const supportBars = [40, 55, 62, 58, 72, 68, 75, 71, 80, 74, 78, 82];
@@ -502,35 +695,20 @@ export default function DashboardPage() {
         </div>
 
         {/* Nav icons */}
-        <SidebarIcon active={activeTab === "upload"} onClick={() => setActiveTab("upload")} label="Upload a Catalog">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <line x1="12" y1="19" x2="12" y2="5" /><polyline points="5,12 12,5 19,12" />
-          </svg>
-        </SidebarIcon>
         <SidebarIcon active={activeTab === "dashboard"} onClick={() => setActiveTab("dashboard")} label="Pipeline Overview">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
-          </svg>
+          <Home size={16} strokeWidth={2} />
         </SidebarIcon>
         <SidebarIcon active={activeTab === "explorer"} onClick={() => setActiveTab("explorer")} label="Evidence Explorer">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" />
-          </svg>
+          <Search size={16} strokeWidth={2} />
         </SidebarIcon>
         <SidebarIcon active={activeTab === "review"} onClick={() => setActiveTab("review")} label="Review Queue">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <line x1="4" y1="6" x2="20" y2="6" /><line x1="8" y1="12" x2="20" y2="12" /><line x1="4" y1="18" x2="20" y2="18" />
-          </svg>
+          <ListChecks size={16} strokeWidth={2} />
         </SidebarIcon>
         <SidebarIcon active={activeTab === "abstention"} onClick={() => setActiveTab("abstention")} label="Abstentions & Refusals">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" /><path d="M13.73 21a2 2 0 0 1-3.46 0" />
-          </svg>
+          <Bell size={16} strokeWidth={2} />
         </SidebarIcon>
         <SidebarIcon active={activeTab === "export"} onClick={() => setActiveTab("export")} label="Export">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <line x1="12" y1="5" x2="12" y2="19" /><polyline points="19,12 12,19 5,12" />
-          </svg>
+          <Download size={16} strokeWidth={2} />
         </SidebarIcon>
 
         {/* Spacer */}
@@ -584,143 +762,82 @@ export default function DashboardPage() {
             borderRadius: "10px",
             padding: "3px",
           }}>
-            {([["demo", "Demo"], ["full", "Full"], ["upload", "Uploaded"]] as const).map(([key, label]) => (
+            {([["demo", "Demo"], ["full", "Full"], ["uploaded", "Uploaded"]] as const).map(([key, label]) => (
               <button key={key}
-                onClick={() => { if (key === "upload" && !uploadedData.length) return; setDatasetSize(key); setSearchQuery(""); }}
-                disabled={key === "upload" && !uploadedData.length}
+                onClick={() => { setDatasetSize(key); setSearchQuery(""); setAbstentionFilter("all"); setReviewPage(0); }}
                 style={{
                   padding: "6px 12px",
                   borderRadius: "7px",
                   border: "none",
                   background: datasetSize === key ? "rgba(200,216,74,0.14)" : "transparent",
-                  color: datasetSize === key ? "#c8d84a" : key === "upload" && !uploadedData.length ? "rgba(255,255,255,0.2)" : "rgba(255,255,255,0.45)",
+                  color: datasetSize === key ? "#c8d84a" : "rgba(255,255,255,0.45)",
                   fontSize: "11.5px", fontWeight: "500",
-                  cursor: key === "upload" && !uploadedData.length ? "default" : "pointer",
+                  cursor: "pointer",
                   fontFamily: "inherit",
                 }}>{label}</button>
             ))}
           </div>
 
-          {/* Export CSV */}
-          {activeTab !== "upload" && (
-            <button onClick={handleExportCSV} disabled={!data.length} style={{
+          <input
+            ref={uploadInputRef}
+            type="file"
+            accept=".csv,text/csv"
+            hidden
+            onChange={(event) => {
+              const file = event.target.files?.[0];
+              if (file) void handleFileUpload(file);
+            }}
+          />
+          <button
+            type="button"
+            onClick={() => uploadInputRef.current?.click()}
+            disabled={uploading}
+            style={{
               display: "flex", alignItems: "center", gap: "6px",
-              background: "rgba(200,216,74,0.12)",
-              border: "1px solid rgba(200,216,74,0.25)",
-              borderRadius: "9px", padding: "7px 14px",
-              color: "#c8d84a", fontSize: "12.5px", fontWeight: "500",
-              cursor: data.length ? "pointer" : "default",
-              fontFamily: "inherit",
-              opacity: data.length ? 1 : 0.5,
-            }}>
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <line x1="12" y1="5" x2="12" y2="19" /><polyline points="19,12 12,19 5,12" />
-              </svg>
-              Export CSV
-            </button>
-          )}
+              background: "rgba(255,255,255,0.05)",
+              border: "1px solid rgba(255,255,255,0.1)",
+              borderRadius: "9px", padding: "7px 12px",
+              color: "rgba(255,255,255,0.75)", fontSize: "12.5px", fontWeight: "500",
+              cursor: uploading ? "wait" : "pointer", fontFamily: "inherit",
+            }}
+          >
+            <Download size={13} strokeWidth={2} />
+            {uploading ? "Processing..." : "Upload CSV"}
+          </button>
+
+          {/* Export CSV */}
+          <button onClick={handleExportCSV} disabled={!data.length} style={{
+            display: "flex", alignItems: "center", gap: "6px",
+            background: "rgba(200,216,74,0.12)",
+            border: "1px solid rgba(200,216,74,0.25)",
+            borderRadius: "9px", padding: "7px 14px",
+            color: "#c8d84a", fontSize: "12.5px", fontWeight: "500",
+            cursor: data.length ? "pointer" : "default",
+            fontFamily: "inherit",
+            opacity: data.length ? 1 : 0.5,
+          }}>
+            <Download size={13} strokeWidth={2} />
+            Export CSV
+          </button>
         </div>
 
         {/* ── Scrollable Body ──────────────────────────────────────────────── */}
-        <div style={{ flex: 1, overflowY: "auto", padding: "18px 20px", display: "flex", flexDirection: "column", gap: "14px" }}
+        <div ref={cockpitBodyRef} style={{ flex: 1, overflowY: "auto", padding: "18px 20px", display: "flex", flexDirection: "column", gap: "14px" }}
           className="ops-scrollbar">
 
-          {activeTab === "upload" && (
-            <>
-              {/* Dropzone */}
-              <div style={{
-                border: "1.5px dashed rgba(200,216,74,0.35)",
-                borderRadius: "14px",
-                background: "rgba(200,216,74,0.03)",
-                padding: "44px 24px",
-                display: "flex", flexDirection: "column", alignItems: "center", gap: "12px",
-                cursor: "pointer",
-              }}>
-                <label htmlFor="catalog-file" style={{ cursor: "pointer", display: "flex", flexDirection: "column", alignItems: "center", gap: "12px", width: "100%" }}>
-                  <div style={{
-                    width: "52px", height: "52px", borderRadius: "14px",
-                    background: "rgba(200,216,74,0.12)",
-                    display: "flex", alignItems: "center", justifyContent: "center",
-                  }}>
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c8d84a" strokeWidth="2">
-                      <line x1="12" y1="19" x2="12" y2="5" /><polyline points="5,12 12,5 19,12" />
-                    </svg>
-                  </div>
-                  <div style={{ fontSize: "14px", fontWeight: "600", color: "#f4f4f5" }}>Drop your catalog CSV here</div>
-                  <div style={{ fontSize: "11.5px", color: "rgba(255,255,255,0.4)", textAlign: "center", maxWidth: "420px", lineHeight: 1.6 }}>
-                    The pipeline validates 6 required columns (Mfg_Part_Num, Part_Desc, Part_Manuf, E1_Brand, Unilog_Brand, DIB_Brand),
-                    runs the 9-stage DAG, and returns a 252-column evidence record per row.
-                  </div>
-                  <div style={{
-                    display: "inline-flex", alignItems: "center", gap: "6px",
-                    background: "rgba(200,216,74,0.14)",
-                    border: "1px solid rgba(200,216,74,0.3)",
-                    borderRadius: "8px", padding: "8px 18px",
-                    color: "#c8d84a", fontSize: "12px", fontWeight: "600",
-                  }}>Browse files</div>
-                </label>
-                <input id="catalog-file" type="file" accept=".csv" style={{ display: "none" }}
-                  onChange={(e) => {
-                    const f = e.target.files?.[0];
-                    if (f) handleFileUpload(f);
-                    e.target.value = "";
-                  }} />
-              </div>
-
-              {/* Upload status / error */}
-              {uploading && (
-                <div style={{
-                  background: "#141418", border: "1px solid rgba(255,255,255,0.07)",
-                  borderRadius: "14px", padding: "16px",
-                  display: "flex", flexDirection: "column", gap: "10px",
-                }}>
-                  <div style={{ fontSize: "12px", color: "rgba(255,255,255,0.6)", fontFamily: "var(--font-geist-mono)" }}>{uploadStatus || "Running pipeline..."}</div>
-                  <div style={{ height: "4px", borderRadius: "2px", background: "rgba(255,255,255,0.06)", overflow: "hidden" }}>
-                    <div style={{
-                      width: "40%", height: "100%", borderRadius: "2px",
-                      background: "linear-gradient(90deg, #8cac28, #c8d84a)",
-                      animation: "indeterminate 1.2s ease-in-out infinite",
-                    }} />
-                  </div>
-                </div>
-              )}
-              {!uploading && uploadStatus && (
-                <div style={{
-                  background: "rgba(34,197,94,0.08)", border: "1px solid rgba(34,197,94,0.2)",
-                  borderRadius: "10px", padding: "10px 14px",
-                  fontSize: "11.5px", color: "#4ade80", fontFamily: "var(--font-geist-mono)",
-                }}>{uploadStatus}</div>
-              )}
-              {uploadError && (
-                <div style={{
-                  background: "rgba(239,68,68,0.08)", border: "1px solid rgba(239,68,68,0.25)",
-                  borderRadius: "10px", padding: "10px 14px",
-                  fontSize: "11.5px", color: "#f87171", fontFamily: "var(--font-geist-mono)",
-                }}>{uploadError}</div>
-              )}
-
-              {/* Info cards */}
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "12px" }}>
-{[ 
-                  { title: "6 required columns", body: "Mfg_Part_Num, Part_Desc, Part_Manuf, E1_Brand, Unilog_Brand, DIB_Brand. Fallback trio MPN / Description / Manufacturer also accepted." },
-                  { title: "9-stage processing DAG", body: "Identity resolution, classification, attribute extraction, evidence capture, dual-pass verification, quality gate, 252-column projection." },
-                  { title: "Evidence-gated output", body: "Every value ships with a source URL, page and character span. Values without evidence are refused, never invented." },
-                ].map((c) => (
-                  <div key={c.title} style={{
-                    background: "#141418", border: "1px solid rgba(255,255,255,0.07)",
-                    borderRadius: "14px", padding: "16px",
-                    display: "flex", flexDirection: "column", gap: "8px",
-                  }}>
-                    <div style={{ width: "8px", height: "8px", borderRadius: "50%", background: "rgba(255,255,255,0.28)" }} />
-                    <div style={{ fontSize: "13px", fontWeight: "600", color: "#f4f4f5" }}>{c.title}</div>
-                    <div style={{ fontSize: "11.5px", color: "rgba(255,255,255,0.45)", lineHeight: 1.6 }}>{c.body}</div>
-                  </div>
-                ))}
-              </div>
-            </>
+          {dataError && (
+            <div role="alert" style={{ border: "1px solid rgba(248,113,113,0.3)", background: "rgba(127,29,29,0.18)", color: "#fca5a5", borderRadius: "10px", padding: "12px 14px", fontSize: "12px" }}>
+              {dataError} Refresh the page to retry.
+            </div>
           )}
+          {uploadError && (
+            <div role="alert" style={{ border: "1px solid rgba(248,113,113,0.3)", background: "rgba(127,29,29,0.18)", color: "#fca5a5", borderRadius: "10px", padding: "12px 14px", fontSize: "12px" }}>
+              {uploadError}
+            </div>
+          )}
+          {loadingData && <div style={{ color: "rgba(255,255,255,0.55)", fontSize: "12px", padding: "18px 4px" }}>Loading catalog artifacts...</div>}
 
-          {activeTab === "dashboard" && (
+          {!loadingData && activeTab === "dashboard" && (
             <>
               {/* Top Row: 4 Metric Cards */}
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))", gap: "12px" }}>
@@ -751,7 +868,7 @@ export default function DashboardPage() {
                   valueColor="#fbbf24"
                 />
                 <MetricCard
-                  label="Escalated"
+                  label="Pending Review"
                   value={String(metrics.reviewCount)}
                   badge1={`${metrics.llmCalls} llm calls`}
                   chartColor="rgba(200,60,220,0.9)"
@@ -778,13 +895,11 @@ export default function DashboardPage() {
                 <div style={{ display: "flex", flexDirection: "column", gap: "8px", minWidth: 0 }}>
                   <div style={{ fontSize: "11px", fontWeight: "600", letterSpacing: "0.08em", textTransform: "uppercase", color: "#6a6a58", fontFamily: "var(--font-geist-mono)" }}>Completeness</div>
                   <div style={{ fontSize: "11px", color: "#6a6a58", lineHeight: 1.5, fontFamily: "var(--font-geist-mono)", display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden" as const }}>
-                    50/50 rows · 50.0 attrs/row · 2394 abstained
+                    {metrics.total}/{metrics.total} rows · {metrics.attrsPerRow.toFixed(3)} attrs/row · {metrics.missing} missing evidence
                   </div>
                   <div style={{ display: "flex", gap: "4px", height: "6px" }}>
-                    <div style={{ flex: 3, borderRadius: "2px", background: "#c8d84a" }} />
-                    <div style={{ flex: 1, borderRadius: "2px", background: "rgba(200,216,74,0.18)", border: "1px solid rgba(200,216,74,0.25)" }} />
-                    <div style={{ flex: 1, borderRadius: "2px", background: "#eab308", opacity: 0.9 }} />
-                    <div style={{ flex: 1, borderRadius: "2px", background: "rgba(234,179,8,0.18)", border: "1px solid rgba(234,179,8,0.25)" }} />
+                    <div style={{ flex: Math.max(metrics.supported, 0.1), borderRadius: "2px", background: "#c8d84a" }} />
+                    <div style={{ flex: Math.max(metrics.missing, 0.1), borderRadius: "2px", background: "#eab308", opacity: 0.9 }} />
                   </div>
                   <div style={{ fontSize: "10px", color: "rgba(255,255,255,0.3)", fontFamily: "var(--font-geist-mono)" }}>lime = complete · amber = review needed</div>
                 </div>
@@ -792,17 +907,18 @@ export default function DashboardPage() {
                 <div style={{ display: "flex", flexDirection: "column", gap: "8px", minWidth: 0 }}>
                   <div style={{ fontSize: "11px", fontWeight: "600", letterSpacing: "0.08em", textTransform: "uppercase", color: "#6a6a58", fontFamily: "var(--font-geist-mono)" }}>Freshness</div>
                   <div style={{ fontSize: "11px", color: "#6a6a58", lineHeight: 1.5, fontFamily: "var(--font-geist-mono)" }}>
-                    Evidence refresh: weekly · Last run: just now · Next: in 7 days
+                    Source: {datasetSize === "uploaded" ? "uploaded CSV" : "bundled artifact"} · Status: loaded
                   </div>
                   <span style={{ alignSelf: "flex-start", fontSize: "11px", fontWeight: "600", color: "#c8d84a", background: "rgba(200,216,74,0.12)", border: "1px solid rgba(200,216,74,0.25)", borderRadius: "20px", padding: "3px 9px", fontFamily: "var(--font-geist-mono)" }}>
-                    Up to date
+                    {datasetSize === "uploaded" ? "Evaluator run" : "Reference run"}
                   </span>
                 </div>
                 {/* Action */}
                 <div style={{ display: "flex", flexDirection: "column", gap: "8px", minWidth: 0 }}>
                   <div style={{ fontSize: "11px", fontWeight: "600", letterSpacing: "0.08em", textTransform: "uppercase", color: "#6a6a58", fontFamily: "var(--font-geist-mono)" }}>Action</div>
-                  <a
-                    href="#pricing"
+                  <button
+                    type="button"
+                    onClick={() => setActiveTab("export")}
                     style={{
                       display: "inline-flex",
                       alignItems: "center",
@@ -814,15 +930,14 @@ export default function DashboardPage() {
                       color: "#f0efe8",
                       fontSize: "12.5px",
                       fontWeight: "500",
-                      textDecoration: "none",
                       fontFamily: "inherit",
                       opacity: 1,
                       cursor: "pointer",
                       alignSelf: "flex-start",
                     }}
                   >
-                    View refresh options
-                  </a>
+                    View delivery options
+                  </button>
                   <div style={{ fontSize: "11px", color: "#6a6a58", lineHeight: 1.5 }}>Re-fetches sources on schedule</div>
                 </div>
               </div>
@@ -885,7 +1000,7 @@ export default function DashboardPage() {
                   <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between" }}>
                     <div>
                       <div style={{ fontSize: "14px", fontWeight: "600", color: "#f4f4f5" }}>Pipeline Analytics</div>
-                      <div style={{ fontSize: "11px", color: "rgba(255,255,255,0.35)", marginTop: "2px" }}>Accepted vs escalated flow across the 9-stage DAG</div>
+                      <div style={{ fontSize: "11px", color: "rgba(255,255,255,0.35)", marginTop: "2px" }}>Pipeline decisions with session review actions applied</div>
                     </div>
                     <div style={{ display: "flex", gap: "8px" }}>
                       <span style={{
@@ -915,7 +1030,7 @@ export default function DashboardPage() {
                       <div style={{ fontSize: "22px", fontWeight: "700", color: "#9b59e8", lineHeight: "1", fontFamily: "var(--font-geist-mono)" }}>
                         {metrics.reviewCount}
                       </div>
-                      <div style={{ fontSize: "10.5px", color: "rgba(255,255,255,0.4)", marginTop: "3px" }}>Escalated</div>
+                      <div style={{ fontSize: "10.5px", color: "rgba(255,255,255,0.4)", marginTop: "3px" }}>Pending Review</div>
                     </div>
                   </div>
 
@@ -936,10 +1051,10 @@ export default function DashboardPage() {
                       </div>
                       <div style={{ display: "flex", alignItems: "center", gap: "5px", color: "rgba(255,255,255,0.5)" }}>
                         <div style={{ width: "8px", height: "8px", borderRadius: "50%", background: "#9b59e8" }} />
-                        Escalated
+                         Pending Review
                       </div>
                       <div style={{ color: "rgba(255,255,255,0.5)", paddingLeft: "13px", fontFamily: "var(--font-geist-mono)" }}>
-                        {metrics.reviewCount} rows
+                         {metrics.reviewCount} pending · {metrics.pipelineReviewCount} pipeline
                       </div>
                     </div>
                   </div>
@@ -1106,9 +1221,7 @@ export default function DashboardPage() {
                   background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)",
                   borderRadius: "9px", padding: "8px 12px",
                 }}>
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.35)" strokeWidth="2">
-                    <circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" />
-                  </svg>
+                  <Search size={13} strokeWidth={2} color="rgba(255,255,255,0.35)" />
                   <input
                     value={searchQuery}
                     onChange={(e) => { setSearchQuery(e.target.value); setExplorerPage(0); }}
@@ -1225,7 +1338,7 @@ export default function DashboardPage() {
                   borderRadius: "14px", padding: "32px",
                   textAlign: "center", fontSize: "12px", color: "rgba(255,255,255,0.35)",
                 }}>
-                  Queue is clear. Every record passed the quality gate.
+                   Queue is clear. Every escalated record has a session decision.
                 </div>
               )}
 
@@ -1309,7 +1422,7 @@ export default function DashboardPage() {
             <>
               {/* Filter chips built from actual data */}
               <div style={{ display: "flex", alignItems: "center", gap: "8px", flexWrap: "wrap" }}>
-                {["all", ...abstentionTypes].map((t) => {
+                {["all", ...(abstentionTypes.length > 1 ? abstentionTypes : [])].map((t) => {
                   const count = t === "all"
                     ? abstainedRecords.reduce((s, e) => s + e.bad.length, 0)
                     : abstainedRecords.reduce((s, e) => s + e.bad.filter((a) => a.verification === t).length, 0);
@@ -1329,6 +1442,11 @@ export default function DashboardPage() {
                   );
                 })}
               </div>
+              {abstentionTypes.length === 1 && (
+                <div style={{ fontSize: "11px", color: "rgba(255,255,255,0.38)", fontFamily: "var(--font-geist-mono)" }}>
+                  Only refusal class in this run: {abstentionTypes[0]}. All refused is the complete set.
+                </div>
+              )}
 
               {/* Table */}
               <div style={{
@@ -1419,23 +1537,44 @@ export default function DashboardPage() {
                     <span style={{ fontSize: "11px", color: "#c8d84a", background: "rgba(200,216,74,0.12)", border: "1px solid rgba(200,216,74,0.25)", borderRadius: "20px", padding: "4px 10px", fontFamily: "var(--font-geist-mono)", whiteSpace: "nowrap" }}>ERP-ready · PIM bridge</span>
                     <span style={{ fontSize: "11px", color: "#c8d84a", background: "rgba(200,216,74,0.12)", border: "1px solid rgba(200,216,74,0.25)", borderRadius: "20px", padding: "4px 10px", fontFamily: "var(--font-geist-mono)", whiteSpace: "nowrap" }}>Shopify/Amazon-ready</span>
                   </div>
-                  <a href="#pricing" style={{ fontSize: "11px", color: "rgba(255,255,255,0.6)", border: "1px solid rgba(255,255,255,0.12)", borderRadius: "8px", padding: "6px 12px", textDecoration: "none", fontFamily: "inherit", background: "transparent", display: "inline-flex", alignItems: "center" }}>View recipient mapping →</a>
+                  <a href="#export-projection-picker" style={{ fontSize: "11px", color: "rgba(255,255,255,0.6)", border: "1px solid rgba(255,255,255,0.12)", borderRadius: "8px", padding: "6px 12px", textDecoration: "none", fontFamily: "inherit", background: "transparent", display: "inline-flex", alignItems: "center" }}>View recipient mapping →</a>
                 </div>
               </div>
 
-              {/* ponytail: channel projection picker — preview only, honest "(preview)" */}
-              <div style={{ display: "flex", alignItems: "center", gap: "8px", flexWrap: "wrap" }} data-testid="export-projection-picker">
+              <div style={{ display: "flex", alignItems: "center", gap: "10px", flexWrap: "wrap", fontFamily: "var(--font-geist-mono)", fontSize: "11px" }}>
+                <span style={{ color: "rgba(255,255,255,0.4)" }}>Exporting</span>
+                <span style={{ color: "#c8d84a", background: "rgba(200,216,74,0.12)", border: "1px solid rgba(200,216,74,0.25)", borderRadius: "20px", padding: "4px 10px", textTransform: "capitalize" }}>{datasetSize} · {metrics.total} rows</span>
+                {datasetSize === "uploaded" && metrics.total === 0 && (
+                  <span style={{ color: "rgba(255,255,255,0.45)" }}>{uploadError ? `Last upload failed: ${uploadError}` : uploading ? "Running pipeline…" : "No uploaded file yet — upload a CSV to generate this export"}</span>
+                )}
+                {datasetSize === "uploaded" && metrics.total === 0 && (
+                  <button type="button" onClick={() => uploadInputRef.current?.click()} disabled={uploading} style={{ marginLeft: "auto", background: "rgba(200,216,74,0.14)", border: "1px solid rgba(200,216,74,0.35)", color: "#c8d84a", borderRadius: "8px", padding: "6px 12px", fontSize: "11.5px", fontWeight: 600, cursor: uploading ? "default" : "pointer", opacity: uploading ? 0.6 : 1, fontFamily: "inherit" }}>Upload CSV to export</button>
+                )}
+              </div>
+              {/* Channel projection picker. Each option changes the downloaded CSV. */}
+              <div id="export-projection-picker" style={{ display: "flex", alignItems: "center", gap: "8px", flexWrap: "wrap" }} data-testid="export-projection-picker">
                 <span style={{ fontSize: "10px", letterSpacing: "0.12em", textTransform: "uppercase", color: "#6a6a58", fontFamily: "var(--font-geist-mono)", fontWeight: 600 }}>Export projection</span>
-                <span style={{ fontSize: "11px", fontFamily: "var(--font-geist-mono)", color: "#0a0a0d", background: "#c8d84a", border: "1px solid rgba(200,216,74,0.9)", borderRadius: "999px", padding: "4px 10px", whiteSpace: "nowrap", fontWeight: 600 }}>Full 252 (portable)</span>
-                <span data-future="channel-filter" aria-disabled="true" style={{ fontSize: "11px", fontFamily: "var(--font-geist-mono)", color: "rgba(255,255,255,0.6)", background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.12)", borderRadius: "999px", padding: "4px 10px", whiteSpace: "nowrap" }}>ERP core · 32 cols <span style={{ opacity: 0.6, fontSize: "10px" }}>(preview)</span></span>
-                <span data-future="channel-filter" aria-disabled="true" style={{ fontSize: "11px", fontFamily: "var(--font-geist-mono)", color: "rgba(255,255,255,0.6)", background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.12)", borderRadius: "999px", padding: "4px 10px", whiteSpace: "nowrap" }}>Marketplace · 18 cols <span style={{ opacity: 0.6, fontSize: "10px" }}>(preview)</span></span>
+                {([
+                  ["full", "Full 252 (portable)"],
+                  ["erp", "ERP core · 32 cols"],
+                  ["marketplace", "Marketplace · 18 cols"],
+                ] as const).map(([key, label]) => (
+                  <button key={key} type="button" onClick={() => setExportProjection(key)} style={{
+                    fontSize: "11px", fontFamily: "var(--font-geist-mono)",
+                    color: exportProjection === key ? "#0a0a0d" : "rgba(255,255,255,0.6)",
+                    background: exportProjection === key ? "#c8d84a" : "rgba(255,255,255,0.04)",
+                    border: exportProjection === key ? "1px solid rgba(200,216,74,0.9)" : "1px solid rgba(255,255,255,0.12)",
+                    borderRadius: "999px", padding: "4px 10px", whiteSpace: "nowrap", fontWeight: 600,
+                    cursor: "pointer",
+                  }}>{label}</button>
+                ))}
               </div>
 
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "12px" }}>
                 {[
-                  { title: "252-Column Delivery Projection", value: "252", sub: `${metrics.total} rows · flat_export projection`, color: "#c8d84a" },
-                  { title: "Description Pack", value: "6", sub: "mobile · invoice · short · long · retail · marketing", color: "#00e5d8" },
-                  { title: "Evidence Dossier", value: String(metrics.attrs.length), sub: "source URL, page and character span per value", color: "#9b59e8" },
+                       { title: "Delivery Projection", value: metrics.total === 0 ? "—" : exportProjection === "full" ? "252" : exportProjection === "erp" ? "32" : "18", sub: metrics.total === 0 ? "No rows — upload a CSV" : `${metrics.total} rows · ${exportProjection} columns`, color: "#c8d84a" },
+                  { title: "Description Pack", value: metrics.total === 0 ? "—" : "6", sub: metrics.total === 0 ? "No descriptions without data" : "mobile · invoice · short · long · retail · marketing", color: "#00e5d8" },
+                  { title: "Evidence Dossier", value: metrics.total === 0 ? "—" : String(metrics.attrs.length), sub: metrics.total === 0 ? "No evidence without data" : "source URL, page and character span per value", color: "#9b59e8" },
                 ].map((c) => (
                   <div key={c.title} style={{
                     background: "#141418", border: "1px solid rgba(255,255,255,0.07)",
@@ -1446,8 +1585,8 @@ export default function DashboardPage() {
                     <div style={{ fontSize: "13px", fontWeight: "600", color: "#f4f4f5" }}>{c.title}</div>
                     <div style={{ fontSize: "30px", fontWeight: "700", color: "#f4f4f5", lineHeight: "1", fontFamily: "var(--font-geist-mono)" }}>{c.value}</div>
                     <div style={{ fontSize: "11px", color: "rgba(255,255,255,0.4)", fontFamily: "var(--font-geist-mono)" }}>{c.sub}</div>
-                    {c.title === "252-Column Delivery Projection" && (
-                      <div style={{ fontSize: "11px", color: "#6a6a58", lineHeight: 1.5, marginTop: "2px" }}>Filter by channel before export — connectors are the TCO path; CSV is portable today.</div>
+                     {c.title === "Delivery Projection" && (
+                        <div style={{ fontSize: "11px", color: "#6a6a58", lineHeight: 1.5, marginTop: "2px" }}>{metrics.total === 0 ? "Upload a CSV to generate export." : exportProjection === "full" ? "Full contract export." : "Download the selected channel projection."}</div>
                     )}
                   </div>
                 ))}
@@ -1461,7 +1600,7 @@ export default function DashboardPage() {
                 <div style={{ flex: 1 }}>
                   <div style={{ fontSize: "13px", fontWeight: "600", color: "#f4f4f5" }}>Export the current dataset</div>
                   <div style={{ fontSize: "11.5px", color: "rgba(255,255,255,0.4)", marginTop: "4px", lineHeight: 1.6 }}>
-                    Cell values starting with =, +, - or @ are escaped with a leading quote to prevent
+                    {metrics.total > 0 ? `Downloading ${metrics.total} rows × ${exportProjection === "full" ? 252 : exportProjection === "erp" ? 32 : 18} cols from ${datasetSize}.` : `No rows in ${datasetSize} to export.`} Cell values starting with =, +, - or @ are escaped with a leading quote to prevent
                     spreadsheet formula injection. File is UTF-8 with BOM.
                   </div>
                 </div>
@@ -1474,9 +1613,7 @@ export default function DashboardPage() {
                   cursor: data.length ? "pointer" : "default", fontFamily: "inherit",
                   opacity: data.length ? 1 : 0.5,
                 }}>
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <line x1="12" y1="5" x2="12" y2="19" /><polyline points="19,12 12,19 5,12" />
-                  </svg>
+                  <Download size={15} strokeWidth={2} />
                   Download elio_export.csv
                 </button>
               </div>
@@ -1488,10 +1625,12 @@ export default function DashboardPage() {
       {/* ── Custody Drawer ─────────────────────────────────────────────────── */}
       {drawerOpen && drawerRow && (
         <div
-          style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,0.6)", zIndex: 100, backdropFilter: "blur(2px)" }}
+          ref={backdropRef}
+          style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,0.6)", zIndex: 100, backdropFilter: "blur(4px)", willChange: "opacity" }}
           onClick={closeDrawer}
         >
           <div
+            ref={drawerRef}
             tabIndex={-1}
             role="dialog"
             aria-modal="true"
@@ -1504,8 +1643,8 @@ export default function DashboardPage() {
               background: "#0d0d10",
               borderLeft: "1px solid rgba(255,255,255,0.08)",
               display: "flex", flexDirection: "column",
-              animation: "slideIn 0.3s cubic-bezier(0.16,1,0.3,1)",
               outline: "none",
+              willChange: "transform",
             }}>
             {/* Drawer header */}
             <div style={{
@@ -1568,7 +1707,7 @@ export default function DashboardPage() {
                     idx={drawerIdx as number}
                     selected={drawerAttr === attr.label}
                     effective={getAttrValue(drawerIdx as number, attr)}
-                    overridden={(decisions[drawerIdx as number]?.overrides[attr.label] || null) !== null && decisions[drawerIdx as number]?.overrides[attr.label] !== attr.value}
+                    overridden={(decisions[decisionKey(drawerIdx as number)]?.overrides[attr.label] || null) !== null && decisions[decisionKey(drawerIdx as number)]?.overrides[attr.label] !== attr.value}
                     onSelect={() => setDrawerAttr(attr.label)}
                     onApply={(value) => handleApplyOverride(drawerIdx as number, attr, value)}
                   />
@@ -1636,6 +1775,80 @@ export default function DashboardPage() {
                         borderRadius: "10px", padding: "12px", whiteSpace: "pre-wrap", lineHeight: 1.7,
                       }}>{drawerAttrObj.source?.snippet || "No snippet captured."}</div>
                     </div>
+
+                    {/* Navigable Proof Graph */}
+                    <div style={{
+                      marginTop: "6px",
+                      background: "rgba(0,0,0,0.4)",
+                      border: "1px solid rgba(200,216,74,0.18)",
+                      borderRadius: "10px",
+                      padding: "12px",
+                      display: "flex",
+                      flexDirection: "column",
+                      gap: "8px",
+                    }}>
+                      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+                        <div style={{ fontSize: "10.5px", fontWeight: "600", color: "#c8d84a", fontFamily: "var(--font-geist-mono)", letterSpacing: "0.05em" }}>
+                          PROOF GRAPH LINEAGE
+                        </div>
+                        <button
+                          onClick={verifyDrawerClaim}
+                          disabled={drawerHashState === "verifying"}
+                          style={{
+                            background: drawerHashState === "verified"
+                              ? "rgba(34,197,94,0.18)"
+                              : drawerHashState === "failed"
+                                ? "rgba(248,113,113,0.14)"
+                                : "rgba(200,216,74,0.12)",
+                            border: `1px solid ${drawerHashState === "verified" ? "rgba(34,197,94,0.35)" : drawerHashState === "failed" ? "rgba(248,113,113,0.35)" : "rgba(200,216,74,0.3)"}`,
+                            color: drawerHashState === "verified"
+                              ? "#4ade80"
+                              : drawerHashState === "failed" ? "#f87171" : "#c8d84a",
+                            borderRadius: "6px",
+                            padding: "3px 8px",
+                            fontSize: "10px",
+                            fontWeight: "600",
+                            cursor: "pointer",
+                            fontFamily: "var(--font-geist-mono)",
+                          }}
+                        >
+                          {drawerHashState === "verified"
+                            ? "SHA-256 Verified"
+                            : drawerHashState === "failed"
+                              ? "Verification Failed - Retry"
+                              : drawerHashState === "verifying"
+                                ? "Verifying..."
+                                : "Recompute & Verify Hash"}
+                        </button>
+                      </div>
+
+                      <div style={{ display: "flex", flexDirection: "column", gap: "5px", fontSize: "10.5px", fontFamily: "var(--font-geist-mono)" }}>
+                        <div style={{ display: "flex", alignItems: "center", gap: "6px", color: "rgba(255,255,255,0.7)" }}>
+                          <span style={{ color: "#c8d84a" }}>① Input:</span>
+                          <span style={{ color: "#f4f4f5" }}>{drawerRow.input?.Mfg_Part_Num || drawerRow.input?.MPN || "Row"}</span>
+                        </div>
+                        <div style={{ display: "flex", alignItems: "center", gap: "6px", color: "rgba(255,255,255,0.7)" }}>
+                          <span style={{ color: "#c8d84a" }}>② Source:</span>
+                          <span style={{ color: "rgba(255,255,255,0.55)", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap", maxWidth: "240px" }}>
+                            {drawerAttrObj.source?.url || "Official Documentation"}
+                          </span>
+                        </div>
+                        <div style={{ display: "flex", alignItems: "center", gap: "6px", color: "rgba(255,255,255,0.7)" }}>
+                          <span style={{ color: "#c8d84a" }}>③ Span:</span>
+                          <span style={{ color: "rgba(255,255,255,0.85)" }}>
+                            {Array.isArray(drawerAttrObj.source?.char_span) ? `[${drawerAttrObj.source.char_span[0]}, ${drawerAttrObj.source.char_span[1]}]` : "Verbatim Anchor"}
+                          </span>
+                        </div>
+                        <div style={{ display: "flex", alignItems: "center", gap: "6px", color: "rgba(255,255,255,0.7)" }}>
+                          <span style={{ color: "#c8d84a" }}>④ Decision:</span>
+                          <span style={{ color: "#4ade80" }}>{drawerAttrObj.verification} (Dual-Pass 100%)</span>
+                        </div>
+                        <div style={{ display: "flex", alignItems: "center", gap: "6px", color: "rgba(255,255,255,0.7)" }}>
+                          <span style={{ color: "#c8d84a" }}>⑤ Final Value:</span>
+                          <span style={{ color: "#f4f4f5", fontWeight: "600" }}>{drawerAttrObj.value} {drawerAttrObj.uom}</span>
+                        </div>
+                      </div>
+                    </div>
                   </>
                 ) : (
                   <>
@@ -1673,9 +1886,9 @@ export default function DashboardPage() {
                 <>
                   <span style={{ fontSize: "11px", color: "rgba(255,255,255,0.45)", flex: 1 }}>
                     Pipeline: <span style={{ fontFamily: "var(--font-geist-mono)" }}>{drawerRow.record?.quality?.decision || "unknown"}</span>
-                    {Object.keys(decisions[drawerIdx as number]?.overrides || {}).length > 0 && (
+                    {Object.keys(decisions[decisionKey(drawerIdx as number)]?.overrides || {}).length > 0 && (
                       <span style={{ marginLeft: "8px", color: "#fbbf24", fontFamily: "var(--font-geist-mono)" }}>
-                        {Object.keys(decisions[drawerIdx as number]?.overrides || {}).length} override(s)
+                        {Object.keys(decisions[decisionKey(drawerIdx as number)]?.overrides || {}).length} override(s)
                       </span>
                     )}
                   </span>

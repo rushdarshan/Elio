@@ -49,9 +49,19 @@ def main() -> int:
     try:
         diff = git("diff", "--name-only", f"{FREEZE_COMMIT}..HEAD", "--", "unihack_catalog/")
         changed = [p for p in diff.splitlines() if p]
-        offenders = [p for p in changed if p not in ALLOWLIST]
+        # A post-freeze commit may have touched a file and then reverted it.
+        # The contract is the effective frozen source, not a false green based
+        # on history alone: compare every changed path to the freeze bytes.
+        offenders = [
+            p for p in changed
+            if p not in ALLOWLIST
+            and subprocess.run(
+                ["git", "diff", "--quiet", FREEZE_COMMIT, "--", p],
+                cwd=str(ROOT),
+            ).returncode != 0
+        ]
         failed += check(
-            "no pipeline changes since freeze (allowlisted verification_ledger.py)",
+            "effective pipeline matches freeze (allowlisted verification_ledger.py)",
             not offenders,
             f"unexpected: {offenders}",
         )
@@ -59,11 +69,11 @@ def main() -> int:
         failed += check("freeze diff resolves", False, e.stderr.strip())
 
     try:
-        worktree = git("status", "--porcelain", "--", "unihack_catalog/")
-        dirty = [p.split()[-1] for p in worktree.splitlines() if p]
+        worktree = git("diff", "--name-only", FREEZE_COMMIT, "--", "unihack_catalog/")
+        dirty = [p for p in worktree.splitlines() if p]
         offenders = [p for p in dirty if p not in ALLOWLIST]
         failed += check(
-            "working tree under unihack_catalog/ untouched",
+            "working tree under unihack_catalog/ matches freeze",
             not offenders,
             f"dirty: {offenders}",
         )

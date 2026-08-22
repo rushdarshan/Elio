@@ -28,7 +28,8 @@ are regenerated live by one command - see **Verification** below.
    limits and validity flags
 6. Verification - dual-pass: every value must trace to raw text; failures escalate
 7. Quality - auto_accept only on gold-exempt evidence; everything else goes to review
-8. Export - 252-column projection with UTF-8-sig encoding (Excel-safe)
+8. Abstention - explicit refusal reasons for unsupported or ungrounded values
+9. Export - 252-column projection with UTF-8-sig encoding (Excel-safe)
 
 The four abstention classes (gold-blessed blanks, pendant rows, dual-platform
 chargers, mixed-unit tape) are documented in `docs/FREEZE.md`; blank cells are
@@ -50,9 +51,11 @@ refused-with-reason, never guesses.
 Every headline metric is generated or asserted live by one command:
 
 ```powershell
-python -B scripts\verify_everything.py    # 12-gate acceptance grid + artifacts\metrics.json (~90s)
+python -B scripts\verify_everything.py    # 16-gate acceptance grid + artifacts\metrics.json
 python -B scripts\verify_everything.py --full   # + reruns the heavy holdout evals
 python -B scripts\verify_manifest.py      # SHA256-bound manifest; fails on any byte drift
+python -B scripts\verify_receipt.py       # content-addressed evidence receipt
+python -B scripts\judge_walk.py --live    # artifact walk + live cockpit/API smoke test
 ```
 
 | Gate | Result (Bar 4) |
@@ -69,9 +72,16 @@ python -B scripts\verify_manifest.py      # SHA256-bound manifest; fails on any 
 | Blind critic A/B (26 contested rows) | 17-1 (7 ties) |
 | Fresh upload end-to-end (8 invented adversarial rows) | PASS |
 | UAT ledger (6 cases) + rules linter | PASS |
+| Content-addressed receipt | 106/106 claims verified |
+| Judge walk | PASS (artifact walk; `--live` checks cockpit/API) |
 
 All numbers and their generating commands live in `artifacts/metrics.json`
 - the single source README, FREEZE.md, PITCH.md, and the video read from.
+
+The frozen Bar-4 holdout numbers are bound to the input snapshot used at freeze
+time. The current organizer sample CSV is a separate evaluator fixture; its
+live upload is checked by `scripts/judge_walk.py --live --input` and must not be
+presented as the frozen holdout benchmark.
 
 ## Judge-facing docs
 

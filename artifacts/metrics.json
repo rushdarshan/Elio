@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-20",
+  "generated": "2026-08-22",
   "freeze_commit": "38db2af",
   "gates": {
     "gold": "118/118",
@@ -11,7 +11,9 @@
     "regressions": 0,
     "blind_critic": "17-1 (7 ties)",
     "fresh_upload": "8/8",
-    "export_252": true
+    "export_252": true,
+    "receipt_claims": 106,
+    "judge_walk": true
   },
   "sources": {
     "attrs_per_row": "seed-7 holdout, assisted (FREEZE.md:33) \u2014 `$env:ELIO_ASSISTED=\"1\"; python -B scripts/gauntlet_holdout_eval.py`",
@@ -22,6 +24,8 @@
     "provenance": "adversarial holdout (FREEZE.md:39) \u2014 same command",
     "regressions": "full-export diff vs Bar 3 229ba70 (FREEZE.md:40) \u2014 committed record",
     "blind_critic": "blind critic A/B, 26 contested rows (FREEZE.md:42) \u2014 committed judgment snapshot",
-    "fresh_upload": "fresh-upload end-to-end, 8 invented adversarial rows (FREEZE.md:43) \u2014 committed record"
+    "fresh_upload": "fresh-upload end-to-end, 8 invented adversarial rows (FREEZE.md:43) \u2014 committed record",
+    "receipt_claims": "scripts/verify_receipt.py \u2014 artifacts/receipt.json",
+    "judge_walk": "scripts/judge_walk.py \u2014 artifact/source contract; --live adds cockpit/API smoke"
   }
 }
