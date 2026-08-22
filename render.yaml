@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: elio
+    env: docker
+    plan: free
+    region: singapore # closest to UniHack, change to oregon/frankfurt if needed
+    dockerfilePath: ./Dockerfile
+    branch: main
+    healthCheckPath: /
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3000
+    # No buildCommand/startCommand — Dockerfile handles it
