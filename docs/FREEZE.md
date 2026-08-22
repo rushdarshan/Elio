@@ -1,6 +1,6 @@
 # FREEZE — Bar 5 (category-aware attributes)
 
-Frozen at commit `23b9115` (tag `bar-5-category-aware`), superseding
+Frozen at commit `11dd503` (tag `bar-5-category-aware`, gold rows follow the reference workbook), superseding
 Bar 4 `38db2af`. Every gate in the acceptance table passed on the
 seed-7 holdout, the difficulty-stratified adversarial holdout, the
 full-export diff vs `229ba70`, a blind critic A/B, and a fresh-upload

@@ -14,7 +14,7 @@ sys.path.insert(0, str(ROOT))
 
 from unihack_catalog.stages import run_pipeline
 
-FREEZE_COMMIT = "23b9115"
+FREEZE_COMMIT = "11dd503"
 GOLD_CSV = ROOT / "Unihack_ Expected Output - Delivery Format.csv"
 EXPORT_FULL = ROOT / "Unihack_Full_Export_1000.csv"
 EXPORT_DEMO = ROOT / "demo_export_50.csv"

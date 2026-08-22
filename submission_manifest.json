@@ -1,6 +1,6 @@
 {
   "header": {
-    "freeze_commit": "23b9115",
+    "freeze_commit": "11dd503",
     "freeze_tag": "bar-5-category-aware",
     "generated": "2026-08-23",
     "python": "3.13.7",
@@ -27,8 +27,8 @@
       "role": "frozen-export"
     },
     "docs/FREEZE.md": {
-      "sha256": "21fbb84e4ee728c548041c84fec920930547ececbc44d85b529f70174397d5b7",
-      "size": 5697,
+      "sha256": "435ba631ddceb008089b5509cec195a8ba3c930c66037417e1796395bf1ad106",
+      "size": 5738,
       "role": "frozen-doc"
     },
     "docs/gauntlet-progress.md": {
@@ -127,17 +127,17 @@
       "role": "origin-doc"
     },
     "scripts/check_freeze.py": {
-      "sha256": "b349a35aa368233f544d5609b6262c7550210df9fd3c3f10d6e227e2c89b6567",
+      "sha256": "492762e1ca943cd63c94ed492bc9e2005c6d86b7595a5ec81c67f80c7b4a7ccc",
       "size": 3492,
       "role": "generated"
     },
     "scripts/verify_manifest.py": {
-      "sha256": "cf8df5f5ce175402589d87e081fe28600336417c00bbf8b2d5d24eb8ffd24d1c",
+      "sha256": "ac6871056e46dc077f6768a905aaff2fe2d0aaecce1f3b308dcbfa9be97b877d",
       "size": 5833,
       "role": "generated"
     },
     "scripts/verify_everything.py": {
-      "sha256": "bb3144668f64503712129ce6d1f5d683fe3064017fed98d905a6b88c010f9c99",
+      "sha256": "4d9f4ec37a540b34cbbe19ba0883d4e693f55d41822e0d8b3e56ae892aba319f",
       "size": 12260,
       "role": "generated"
     },
