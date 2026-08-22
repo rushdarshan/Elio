@@ -373,16 +373,24 @@ export default function DashboardPage() {
   useEffect(() => {
     let cancelled = false;
     setLoadingData(true);
+    // ponytail: Full is 1M lines and not pushed to keep clone lean — tolerate 404 so Demo still loads
+    const safeJson = (url: string, fallback: unknown) =>
+      fetch(url).then((r) => { if (!r.ok) throw new Error(String(r.status)); return r.json(); }).catch(() => fallback);
     Promise.all([
-      fetch("/data/demo_results.json").then((r) => r.json()),
-      fetch("/data/full_results.json").then((r) => r.json()),
-      fetch("/data/receipt_chain.json").then((r) => r.json()),
+      safeJson("/data/demo_results.json", []),
+      safeJson("/data/full_results.json", []),
+      safeJson("/data/receipt_chain.json", null),
     ]).then(([demo, full, receipts]) => {
       if (cancelled) return;
       setDemoData(Array.isArray(demo) ? demo : []);
       setFullData(Array.isArray(full) ? full : []);
       setReceiptIndex(receipts && typeof receipts === "object" ? receipts : null);
-      setDataError(null);
+      // only hard-fail if Demo itself is empty — Full is optional
+      if (!Array.isArray(demo) || demo.length === 0) {
+        setDataError("Catalog artifacts could not be loaded.");
+      } else {
+        setDataError(null);
+      }
       setLoadingData(false);
     }).catch(() => {
       if (!cancelled) {
