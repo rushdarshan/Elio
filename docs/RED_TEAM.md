@@ -1,7 +1,7 @@
 # RED_TEAM — What Was Attacked, What Passed, What Remains Untested
 
-An honest attack log for the Bar 4 pipeline (frozen at `38db2af`, tag
-`bar-4-freeze`). Every row below was an actual attack, not a hypothetical.
+An honest attack log for the pipeline (frozen at `bar-5-clean`, tag
+`bar-5-clean`). Every row below was an actual attack, not a hypothetical.
 Numbers match `docs/FREEZE.md` acceptance table and
 `artifacts/metrics.json`.
 

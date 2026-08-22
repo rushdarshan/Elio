@@ -34,7 +34,7 @@ python -B scripts/test_receipt.py
 ## 📁 Repository Structure & Domain Map
 
 ```text
-├── unihack_catalog/             # Frozen Python 9-stage DAG engine (commit 38db2af)
+├── unihack_catalog/             # Frozen Python 9-stage DAG engine (commit bar-5-clean)
 │   ├── stages.py                # 252-column projection & main pipeline entry
 │   ├── models.py                # Pydantic schema: ClaimRecord, SourceEvidence, EnrichedRecord
 │   ├── description_engine.py    # Universal 5-variant description builder (Invoice, Mobile, Short, Long, Mkt)

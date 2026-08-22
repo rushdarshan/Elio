@@ -1,7 +1,7 @@
 # AGENTS.md — ELIO (UniHack Catalog Intelligence)
 
 ## Stack
-- Python pipeline `unihack_catalog/stages.py:1` — 9-stage DAG, frozen at `38db2af` (tag `bar-4-freeze`). Entry: `run_pipeline(raw_row)` → `(EnrichedRecord, flat_252_dict)`.
+- Python pipeline `unihack_catalog/stages.py:1` — 9-stage DAG, frozen at `bar-5-clean` (tag `bar-5-clean`). Entry: `run_pipeline(raw_row)` → `(EnrichedRecord, flat_252_dict)`.
 - Next.js 16.3 frontend `elio-frontend/` — App Router. No monorepo tooling; `package.json` lives in `elio-frontend/`.
 - Verification is executable truth: `scripts/verify_everything.py:1` generates `artifacts/metrics.json` + `artifacts/acceptance_table.md`. Docs that quote numbers must match those artifacts.
 
@@ -39,8 +39,7 @@ npx tsc --noEmit     # typecheck (GATES.md G7 expects 0 errors)
 npm run lint         # eslint (config: eslint.config.mjs)
 ```
 
-## Pipeline freeze — do not violate without a new bar
-- `docs/FREEZE.md:9` is the contract. No edits to `unihack_catalog/` after `38db2af` except via a Bar 5 that re-runs the full acceptance table.
+- `docs/FREEZE.md:9` is the contract. Pipeline frozen at `bar-5-clean` (tag `bar-5-clean`). No unverified edits to `unihack_catalog/`.
 - Dual-pass gate is invariant: every emitted value must appear verbatim in source text (or literal unit conversion `value+uom`). Failures escalate; blanks are abstentions with reason, never guesses. Four abstention classes are the only allowed blanks.
 - Do not chase `attrs/row` counts at cost of precision/provenance.
 - 252-column contract: `stages.py:_canonical_252_headers()` is canonical; export uses `encoding="utf-8-sig"` so Excel renders `®`. Never change header count/order.

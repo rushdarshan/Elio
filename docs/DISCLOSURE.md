@@ -49,7 +49,7 @@ visible in `demo.html` as `[ABSTAINED]` cells with reasons, and in
 
 ## Audit trail
 
-- Frozen commit: `38db2af` (tag `bar-4-freeze`)
+- Frozen commit: `bar-5-clean` (tag `bar-5-clean`)
 - Manifest: `submission_manifest.json` (SHA256-bound evidence set, verified
   by `python -B scripts\verify_manifest.py`)
 - Reproduce: `python -B scripts\verify_everything.py`

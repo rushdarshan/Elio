@@ -182,13 +182,13 @@
       "role": "generated"
     },
     "docs/DISCLOSURE.md": {
-      "sha256": "e40fa9dcab900949357d7a6294d1549e28cb5e4463c669bcd4a8477ef6a306e4",
-      "size": 2400,
+      "sha256": "41e945f62cd492e24d1076c0dce57b7ffdc3706aa5914e49f9e8f60c3ecf55b8",
+      "size": 2403,
       "role": "generated"
     },
     "docs/RED_TEAM.md": {
-      "sha256": "8c1958d8f84f7a649358e1c0e72fe50ebc40e755a4ff34c945deb40ff147a90c",
-      "size": 4771,
+      "sha256": "b8212ef9893314332f38e5cc8ef1ca7a1fcbf75a8d991b4a5332ff7c6c9c8b08",
+      "size": 4768,
       "role": "generated"
     },
     "docs/PITCH.md": {
@@ -237,8 +237,8 @@
       "role": "proof-artifact"
     },
     "docs/00-START_HERE.md": {
-      "sha256": "e1325c14230c21f5ad8bf877aceea33d4cb9c35cb16be280f11de1a20fedf3f7",
-      "size": 6038,
+      "sha256": "609b3334d5a011f3d84509339c2b688eb04a5fbe6325e32de9066b24c434979c",
+      "size": 6042,
       "role": "cold-start-doc"
     }
   }

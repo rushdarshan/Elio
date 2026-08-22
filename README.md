@@ -16,7 +16,7 @@ are regenerated live by one command - see **Verification** below.
 ## Pipeline
 
 9-stage plain-Python DAG (`unihack_catalog/stages.py`), frozen at commit
-`38db2af` (tag `bar-4-freeze`):
+`bar-5-clean` (tag `bar-5-clean`):
 
 1. Ingest - 6 input columns (`Mfg_Part_Num, Part_Desc, E1/Unilog/DIB_Brand, Part_Manuf`)
 2. Entity resolution - word-boundary brand matching, MPN-prefix map, supplier-aware
