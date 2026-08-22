@@ -417,8 +417,10 @@ export default function DashboardPage() {
 
   const metrics = useMemo(() => {
     const attrs = data.flatMap((r) => r.record?.attributes || []);
-    const supported = attrs.filter((a) => a.verification === "supported").length;
-    const spans = attrs.filter((a) => {
+    // ponytail: vary attrs/row by leaf — count filled not slots (dishwasher 12 ≠ disc 5) while keeping 252 slots in export
+    const filled = attrs.filter((a) => a.value && String(a.value).trim().length > 0);
+    const supported = filled.filter((a) => a.verification === "supported").length;
+    const spans = filled.filter((a) => {
       const s = a.source?.char_span;
       return Array.isArray(s) && s.length === 2 && s[1] > s[0];
     }).length;
@@ -430,14 +432,14 @@ export default function DashboardPage() {
      const pendingReviews = data.reduce((count, row, idx) => (
        count + (row.record?.quality?.decision === "review" && !decisions[decisionKey(idx)]?.status ? 1 : 0)
      ), 0);
-     return {
-      total: data.length,
-      attrs,
-      attrsPerRow: data.length ? attrs.length / data.length : 0,
-      supported,
-      missing: attrs.length - supported,
-      evidenceSupport: attrs.length ? (supported / attrs.length) * 100 : 0,
-      charCompliance: attrs.length ? (spans / attrs.length) * 100 : 0,
+      return {
+       total: data.length,
+       attrs: filled,
+       attrsPerRow: data.length ? filled.length / data.length : 0,
+       supported,
+       missing: filled.length - supported,
+       evidenceSupport: filled.length ? (supported / filled.length) * 100 : 0,
+       charCompliance: filled.length ? (spans / filled.length) * 100 : 0,
        decisions: pipelineDecisions,
        reviewCount: pendingReviews,
        pipelineReviewCount: pipelineDecisions["review"] || 0,
@@ -1199,7 +1201,7 @@ export default function DashboardPage() {
                         <td style={{ padding: "12px 10px" }}>
                           {getDecision(i) ? <DecisionPill decision={getDecision(i) as string} /> : <DecisionPill decision={row.record?.quality?.decision || "unknown"} />}
                         </td>
-                        <td style={{ padding: "12px 10px", fontSize: "12px", color: "rgba(255,255,255,0.5)", fontFamily: "var(--font-geist-mono)" }}>{row.record?.attributes?.length ?? 0}</td>
+                        <td style={{ padding: "12px 10px", fontSize: "12px", color: "rgba(255,255,255,0.5)", fontFamily: "var(--font-geist-mono)" }}>{(row.record?.attributes || []).filter((a) => a.value && String(a.value).trim()).length}</td>
                         <td style={{ padding: "12px 10px", color: "rgba(255,255,255,0.3)", fontSize: "13px", textAlign: "right" }}>{"›"}</td>
                       </tr>
                     ))}
@@ -1284,7 +1286,7 @@ export default function DashboardPage() {
                         <td style={{ padding: "12px 10px" }}>
                           {getDecision(idx) ? <DecisionPill decision={getDecision(idx) as string} /> : <DecisionPill decision={row.record?.quality?.decision || "unknown"} />}
                         </td>
-                        <td style={{ padding: "12px 10px", fontSize: "12px", color: "rgba(255,255,255,0.5)", fontFamily: "var(--font-geist-mono)" }}>{row.record?.attributes?.length ?? 0}</td>
+                        <td style={{ padding: "12px 10px", fontSize: "12px", color: "rgba(255,255,255,0.5)", fontFamily: "var(--font-geist-mono)" }}>{(row.record?.attributes || []).filter((a) => a.value && String(a.value).trim()).length}</td>
                         <td style={{ padding: "12px 10px", color: "rgba(255,255,255,0.3)", fontSize: "13px", textAlign: "right" }}>{"›"}</td>
                       </tr>
                     ))}
@@ -1706,9 +1708,9 @@ export default function DashboardPage() {
                 </div>
 
                 <div style={{ fontSize: "12px", fontWeight: "600", color: "#f4f4f5", marginTop: "4px" }}>
-                  Attributes <span style={{ fontSize: "10px", fontFamily: "var(--font-geist-mono)", color: "rgba(255,255,255,0.35)" }}>{drawerRow.record?.attributes?.length ?? 0}</span>
+                  Attributes <span style={{ fontSize: "10px", fontFamily: "var(--font-geist-mono)", color: "rgba(255,255,255,0.35)" }}>{(drawerRow.record?.attributes || []).filter((a) => a.value && String(a.value).trim()).length} / {drawerRow.record?.attributes?.length ?? 0}</span>
                 </div>
-                {(drawerRow.record?.attributes || []).map((attr) => (
+                {(drawerRow.record?.attributes || []).filter((a) => a.value && String(a.value).trim()).map((attr) => (
                   <AttributeRow
                     key={attr.label}
                     attr={attr}
