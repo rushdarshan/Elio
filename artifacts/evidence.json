@@ -1,5 +1,5 @@
 {
-  "freeze_commit": "38db2af",
+  "freeze_commit": "bar-5-clean",
   "generated_from": "demo_input_50.csv",
   "rows": {
     "PDSH4816AF": {
@@ -1924,36 +1924,9 @@
       "fine": "Composite Decking",
       "dept": "Building Materials",
       "n_accepted": 0,
-      "n_abstained": 5,
+      "n_abstained": 2,
       "accepted": [],
       "abstained": [
-        {
-          "mpn": "1513721",
-          "attribute": "Series",
-          "value": null,
-          "uom": "",
-          "status": "abstained",
-          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
-          "export_column": "ATTRIBUTE_VALUE 1"
-        },
-        {
-          "mpn": "1513721",
-          "attribute": "Model",
-          "value": null,
-          "uom": "",
-          "status": "abstained",
-          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
-          "export_column": "ATTRIBUTE_VALUE 2"
-        },
-        {
-          "mpn": "1513721",
-          "attribute": "Number of Wash Cycles",
-          "value": null,
-          "uom": "",
-          "status": "abstained",
-          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
-          "export_column": "ATTRIBUTE_VALUE 3"
-        },
         {
           "mpn": "1513721",
           "attribute": "PART_NUMBER",
@@ -2026,36 +1999,9 @@
       "fine": "Composite Decking",
       "dept": "Building Materials",
       "n_accepted": 0,
-      "n_abstained": 5,
+      "n_abstained": 2,
       "accepted": [],
       "abstained": [
-        {
-          "mpn": "1516880",
-          "attribute": "Series",
-          "value": null,
-          "uom": "",
-          "status": "abstained",
-          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
-          "export_column": "ATTRIBUTE_VALUE 1"
-        },
-        {
-          "mpn": "1516880",
-          "attribute": "Model",
-          "value": null,
-          "uom": "",
-          "status": "abstained",
-          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
-          "export_column": "ATTRIBUTE_VALUE 2"
-        },
-        {
-          "mpn": "1516880",
-          "attribute": "Number of Wash Cycles",
-          "value": null,
-          "uom": "",
-          "status": "abstained",
-          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
-          "export_column": "ATTRIBUTE_VALUE 3"
-        },
         {
           "mpn": "1516880",
           "attribute": "PART_NUMBER",
@@ -2128,36 +2074,9 @@
       "fine": "Composite Decking",
       "dept": "Building Materials",
       "n_accepted": 0,
-      "n_abstained": 5,
+      "n_abstained": 2,
       "accepted": [],
       "abstained": [
-        {
-          "mpn": "543144416",
-          "attribute": "Series",
-          "value": null,
-          "uom": "",
-          "status": "abstained",
-          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
-          "export_column": "ATTRIBUTE_VALUE 1"
-        },
-        {
-          "mpn": "543144416",
-          "attribute": "Model",
-          "value": null,
-          "uom": "",
-          "status": "abstained",
-          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
-          "export_column": "ATTRIBUTE_VALUE 2"
-        },
-        {
-          "mpn": "543144416",
-          "attribute": "Number of Wash Cycles",
-          "value": null,
-          "uom": "",
-          "status": "abstained",
-          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
-          "export_column": "ATTRIBUTE_VALUE 3"
-        },
         {
           "mpn": "543144416",
           "attribute": "PART_NUMBER",
@@ -2378,36 +2297,9 @@
       "fine": "Building Wire",
       "dept": "Electrical",
       "n_accepted": 0,
-      "n_abstained": 5,
+      "n_abstained": 2,
       "accepted": [],
       "abstained": [
-        {
-          "mpn": "96263-46-06",
-          "attribute": "Series",
-          "value": null,
-          "uom": "",
-          "status": "abstained",
-          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
-          "export_column": "ATTRIBUTE_VALUE 1"
-        },
-        {
-          "mpn": "96263-46-06",
-          "attribute": "Model",
-          "value": null,
-          "uom": "",
-          "status": "abstained",
-          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
-          "export_column": "ATTRIBUTE_VALUE 2"
-        },
-        {
-          "mpn": "96263-46-06",
-          "attribute": "Number of Wash Cycles",
-          "value": null,
-          "uom": "",
-          "status": "abstained",
-          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
-          "export_column": "ATTRIBUTE_VALUE 3"
-        },
         {
           "mpn": "96263-46-06",
           "attribute": "PART_NUMBER",

@@ -16,6 +16,7 @@ INPUT_COLS = ["Mfg_Part_Num", "Part_Desc", "Part_Manuf", "E1_Brand", "Unilog_Bra
 DEMO_IN = ROOT / "demo_input_50.csv"
 DEMO_OUT = ROOT / "demo_export_50.csv"
 EVIDENCE = ROOT / "artifacts" / "evidence.json"
+FREEZE_COMMIT = "bar-5-clean"
 
 _UNIT_RE = re.compile(r"\s*(in|mm|v|w|lm|k|awg|ft|dba|ga)\s*$", re.I)
 
@@ -108,7 +109,7 @@ def main() -> int:
             print(f"       {e}")
         return 1
 
-    doc = {"freeze_commit": "38db2af", "generated_from": str(DEMO_IN.name),
+    doc = {"freeze_commit": FREEZE_COMMIT, "generated_from": str(DEMO_IN.name),
            "rows": rows, "row_order": list(rows.keys())}
     EVIDENCE.parent.mkdir(exist_ok=True)
     EVIDENCE.write_text(json.dumps(doc, indent=2) + "\n", encoding="utf-8")

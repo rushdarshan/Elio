@@ -10,7 +10,7 @@ ROOT = Path(__file__).resolve().parent.parent
 EVIDENCE = ROOT / "artifacts" / "evidence.json"
 LOG = ROOT / "artifacts" / "decision_log.jsonl"
 
-FREEZE_COMMIT = "38db2af"
+FREEZE_COMMIT = "bar-5-clean"
 
 # opengeni steal: durable, replayable event log. Every value decision is
 # appended as one line: proposed (pipeline output) -> gate (dual-pass /

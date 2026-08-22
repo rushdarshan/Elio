@@ -443,8 +443,6 @@ def stage_extraction(record: EnrichedRecord, doc: Dict[str, Any]) -> EnrichedRec
     for l in generic:
         if l not in ordered:
             ordered.append(l)
-    if not ordered:
-        ordered = [l for l in _ATTR_LABELS if l in labels][:3]
 
     doc_text = doc["html_text"]
     doc_url = doc["url"]

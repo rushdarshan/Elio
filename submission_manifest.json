@@ -142,8 +142,8 @@
       "role": "generated"
     },
     "scripts/build_evidence.py": {
-      "sha256": "e344b0fd90f1b9fd29e7ac7416ff747ac906fa7b77a9b6c2fb40176ec6a10682",
-      "size": 6252,
+      "sha256": "4d60a470456c5ea2e2e5459acf145cb86068f44810973424286ac6fea4569cd8",
+      "size": 6286,
       "role": "generated"
     },
     "scripts/build_demo_html.py": {
@@ -152,8 +152,8 @@
       "role": "generated"
     },
     "scripts/build_decision_log.py": {
-      "sha256": "29ca61955e24f0ecaf9fbc7d44d81b3ad4a35c640db641eeff24378fe5219099",
-      "size": 5065,
+      "sha256": "201c111f8c76f97a3627a77258539e7c2a5ae89c518f89bf4abb1f2aa4bfd2c4",
+      "size": 5069,
       "role": "generated"
     },
     "demo.html": {
@@ -167,13 +167,13 @@
       "role": "generated"
     },
     "artifacts/evidence.json": {
-      "sha256": "4018083d1c7fa1fd5ac5a8f57159e1faf79a7104be3fe1f39721e533d6c971f2",
-      "size": 96064,
+      "sha256": "b227a2737745fef3ee6377e0f9e443bd49b967de6a8f9117b62f6adfd4ef34ca",
+      "size": 91986,
       "role": "generated"
     },
     "artifacts/decision_log.jsonl": {
-      "sha256": "df0fd4350e6fd01e763c9bdff925716cf5566f9d0698e84099cfbdc83d9cdf77",
-      "size": 76815,
+      "sha256": "5dfee982acfcede2c41348b4a98532f2d278ca731c512c1b3d8fd623502d0fed",
+      "size": 72569,
       "role": "generated"
     },
     "artifacts/acceptance_table.md": {
@@ -227,12 +227,12 @@
       "role": "proof-tool"
     },
     "artifacts/receipt.json": {
-      "sha256": "e8b27adba16632cf889d39b13d3afb8913d4168c835aff4f388dedef7cb96bfa",
-      "size": 73137,
+      "sha256": "919b27cb32b3dd161818b24dde20479f37a54c07d788754bbcaf5c35b5678681",
+      "size": 73141,
       "role": "proof-artifact"
     },
     "elio-frontend/public/data/receipt_chain.json": {
-      "sha256": "77d22886d2d7cd7486fb31b54d2ff28385f894f0c0b409bc0ef36e4d6f3128a3",
+      "sha256": "41c49cd10c40716d165ed55ddfbc476aabf184cb0ca37e88e841b44ff850fbdd",
       "size": 79908,
       "role": "proof-artifact"
     },

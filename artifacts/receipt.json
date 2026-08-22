@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "freeze_commit": "38db2af",
+  "freeze_commit": "bar-5-clean",
   "source_attestation": "artifact-excerpt-only; publisher bytes are not bundled",
   "artifacts": {
     "input": {
@@ -9,11 +9,11 @@
     },
     "evidence": {
       "path": "artifacts/evidence.json",
-      "sha256": "5b776a67f8177af73c33fca08c28219806a8d197a5a793060e911e347956199b"
+      "sha256": "b39ab51fa3b4acb24410b761b931bde95ac0460f79044bb84c82aee3cbe6a09e"
     },
     "decision_log": {
       "path": "artifacts/decision_log.jsonl",
-      "sha256": "122d167536892143c13549da002e0fc69ab99941e8dbf6c5212def1851a92dfa"
+      "sha256": "bac380d253fb15bdbd2bc3e67a193a61ddb91b81ff41d1dd03c96188ff00fd9d"
     },
     "export": {
       "path": "demo_export_50.csv",
@@ -1662,5 +1662,5 @@
       "chain_hash": "b4de5b6645c9649f3c9c815655961ebb12d260bfac56cd318efdb409f0c90ef2"
     }
   ],
-  "receipt_sha256": "1a23fec9b00b9394cbcc96d811d8781acf77a2f0a911058462aa065a5cdd6d6a"
+  "receipt_sha256": "9e1ee26dc4de83e53a9f40a0ce37700974da01d913ff6f47b49546cf46c2ad51"
 }

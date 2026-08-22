@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "receipt_sha256": "1a23fec9b00b9394cbcc96d811d8781acf77a2f0a911058462aa065a5cdd6d6a",
+  "receipt_sha256": "9e1ee26dc4de83e53a9f40a0ce37700974da01d913ff6f47b49546cf46c2ad51",
   "source_attestation": "artifact-excerpt-only; publisher bytes are not bundled",
   "claims": {
     "PDSH4816AF_Material": {
