@@ -9,11 +9,11 @@
     },
     "evidence": {
       "path": "artifacts/evidence.json",
-      "sha256": "4f0c5c29cb37b5cc8bf0edf82cd33fd564b789529d1f3c3fe39e4ccb19fcbf9b"
+      "sha256": "9ae89289e8c4aceb4244040664e0130fd00d4b8ea7379b19b6bafb465b848e8a"
     },
     "decision_log": {
       "path": "artifacts/decision_log.jsonl",
-      "sha256": "09a6093e9b6aa3e3450b4d655c554ec2ed983de5699d0e64b6d8a185fbd795d6"
+      "sha256": "9af98b9fb2eeb023b1bb498d0f276aeef98c7ab920db762ecb1661ebd771925a"
     },
     "export": {
       "path": "demo_export_50.csv",
@@ -1551,5 +1551,5 @@
       "chain_hash": "57a9942900da885c215cf9baf2c9898017169b9af6d51cac0d8ed4efd87623ff"
     }
   ],
-  "receipt_sha256": "52b52e5e32c88986faf1f97e54e8e998031e8cb44b7192910c8ed231a7023acd"
+  "receipt_sha256": "ed8a927dda2b6b6e8619e39baee4139c90a250654cb274972e730f00c7bfb07f"
 }

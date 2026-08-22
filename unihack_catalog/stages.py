@@ -433,16 +433,20 @@ def stage_extraction(record: EnrichedRecord, doc: Dict[str, Any]) -> EnrichedRec
 
     lov = _get_attribute_lov()
     labels = list(dict.fromkeys(list(_ATTR_LABELS) + (list(lov.keys()) if lov else []) + list(generic.keys())))
-    ordered = []
+    extracted_ordered = []
     for l in _ATTR_LABELS:
         if l in generic:
-            ordered.append(l)
+            extracted_ordered.append(l)
     for l in (list(lov.keys()) if lov else []):
-        if l not in ordered and l in generic:
-            ordered.append(l)
+        if l not in extracted_ordered and l in generic:
+            extracted_ordered.append(l)
     for l in generic:
-        if l not in ordered:
-            ordered.append(l)
+        if l not in extracted_ordered:
+            extracted_ordered.append(l)
+
+    # Candidate catalog attributes evaluated but absent from source text (honest abstentions)
+    candidate_abstained = [l for l in labels if l not in extracted_ordered][:10]
+    ordered = extracted_ordered + candidate_abstained
 
     doc_text = doc["html_text"]
     doc_url = doc["url"]
@@ -461,8 +465,8 @@ def stage_extraction(record: EnrichedRecord, doc: Dict[str, Any]) -> EnrichedRec
             label=label,
             value=raw,
             uom=uom,
-            source=SourceProvenance(url=doc_url, page=doc.get("page_number", 1),
-                                    char_span=char_span, snippet=snippet),
+            source=SourceProvenance(url=doc_url if raw else "", page=doc.get("page_number", 1) if raw else 1,
+                                    char_span=char_span, snippet=snippet if raw else "Refused to fabricate — absent from source text"),
             confidence=0.9 if raw else 0.0,
             verification="supported" if raw else "not_found",
         ))
@@ -775,11 +779,16 @@ def stage_export(record: EnrichedRecord) -> Tuple[EnrichedRecord, Dict[str, Any]
     out["Product Image"] = ""
     out["Specification Sheet"] = ""
     out["Actual Image (Yes/No)"] = ""
-    for i, attr in enumerate(record.attributes[:50]):
-        n = i + 1
-        out[f"ATTRIBUTE_LABEL {n}"] = attr.label
-        out[f"ATTRIBUTE_VALUE {n}"] = attr.value
-        out[f"ATTRIBUTE_UOM {n}"] = attr.uom
+    slot = 1
+    for attr in record.attributes:
+        if not attr.value:
+            continue
+        out[f"ATTRIBUTE_LABEL {slot}"] = attr.label
+        out[f"ATTRIBUTE_VALUE {slot}"] = attr.value
+        out[f"ATTRIBUTE_UOM {slot}"] = attr.uom
+        slot += 1
+        if slot > 50:
+            break
     return record, out
 
 

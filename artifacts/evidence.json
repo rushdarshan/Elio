@@ -7,7 +7,7 @@
       "fine": "Dishwashers",
       "dept": "Appliances",
       "n_accepted": 2,
-      "n_abstained": 2,
+      "n_abstained": 12,
       "accepted": [
         {
           "mpn": "PDSH4816AF",
@@ -46,6 +46,96 @@
       "abstained": [
         {
           "mpn": "PDSH4816AF",
+          "attribute": "Series",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "PDSH4816AF",
+          "attribute": "Model",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "PDSH4816AF",
+          "attribute": "Number of Wash Cycles",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "PDSH4816AF",
+          "attribute": "Voltage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "PDSH4816AF",
+          "attribute": "Amperage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "PDSH4816AF",
+          "attribute": "Mounting Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "PDSH4816AF",
+          "attribute": "Plug Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "PDSH4816AF",
+          "attribute": "Size",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "PDSH4816AF",
+          "attribute": "Depth With Door Open",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "PDSH4816AF",
+          "attribute": "Minimum Height",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "PDSH4816AF",
           "attribute": "PART_NUMBER",
           "value": null,
           "uom": "",
@@ -69,7 +159,7 @@
       "fine": "Dishwashers",
       "dept": "Appliances",
       "n_accepted": 2,
-      "n_abstained": 2,
+      "n_abstained": 12,
       "accepted": [
         {
           "mpn": "WDTS7024RZ",
@@ -108,6 +198,96 @@
       "abstained": [
         {
           "mpn": "WDTS7024RZ",
+          "attribute": "Series",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "WDTS7024RZ",
+          "attribute": "Model",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "WDTS7024RZ",
+          "attribute": "Number of Wash Cycles",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "WDTS7024RZ",
+          "attribute": "Voltage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "WDTS7024RZ",
+          "attribute": "Amperage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "WDTS7024RZ",
+          "attribute": "Mounting Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "WDTS7024RZ",
+          "attribute": "Plug Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "WDTS7024RZ",
+          "attribute": "Size",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "WDTS7024RZ",
+          "attribute": "Depth With Door Open",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "WDTS7024RZ",
+          "attribute": "Minimum Height",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "WDTS7024RZ",
           "attribute": "PART_NUMBER",
           "value": null,
           "uom": "",
@@ -131,7 +311,7 @@
       "fine": "Cut-Off Wheels & Discs",
       "dept": "Hardware & Tools",
       "n_accepted": 4,
-      "n_abstained": 2,
+      "n_abstained": 12,
       "accepted": [
         {
           "mpn": "49-94-0073",
@@ -200,6 +380,96 @@
       "abstained": [
         {
           "mpn": "49-94-0073",
+          "attribute": "Series",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "49-94-0073",
+          "attribute": "Model",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "49-94-0073",
+          "attribute": "Number of Wash Cycles",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "49-94-0073",
+          "attribute": "Voltage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "49-94-0073",
+          "attribute": "Amperage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "49-94-0073",
+          "attribute": "Mounting Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "49-94-0073",
+          "attribute": "Plug Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "49-94-0073",
+          "attribute": "Size",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "49-94-0073",
+          "attribute": "Depth With Door Open",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "49-94-0073",
+          "attribute": "Minimum Height",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "49-94-0073",
           "attribute": "PART_NUMBER",
           "value": null,
           "uom": "",
@@ -223,7 +493,7 @@
       "fine": "Cut-Off Wheels & Discs",
       "dept": "Hardware & Tools",
       "n_accepted": 4,
-      "n_abstained": 2,
+      "n_abstained": 12,
       "accepted": [
         {
           "mpn": "49-94-0023",
@@ -292,6 +562,96 @@
       "abstained": [
         {
           "mpn": "49-94-0023",
+          "attribute": "Series",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "49-94-0023",
+          "attribute": "Model",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "49-94-0023",
+          "attribute": "Number of Wash Cycles",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "49-94-0023",
+          "attribute": "Voltage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "49-94-0023",
+          "attribute": "Amperage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "49-94-0023",
+          "attribute": "Mounting Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "49-94-0023",
+          "attribute": "Plug Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "49-94-0023",
+          "attribute": "Size",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "49-94-0023",
+          "attribute": "Depth With Door Open",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "49-94-0023",
+          "attribute": "Minimum Height",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "49-94-0023",
           "attribute": "PART_NUMBER",
           "value": null,
           "uom": "",
@@ -315,7 +675,7 @@
       "fine": "Cut-Off Wheels & Discs",
       "dept": "Hardware & Tools",
       "n_accepted": 4,
-      "n_abstained": 2,
+      "n_abstained": 12,
       "accepted": [
         {
           "mpn": "49-94-0803",
@@ -384,6 +744,96 @@
       "abstained": [
         {
           "mpn": "49-94-0803",
+          "attribute": "Series",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "49-94-0803",
+          "attribute": "Model",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "49-94-0803",
+          "attribute": "Number of Wash Cycles",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "49-94-0803",
+          "attribute": "Voltage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "49-94-0803",
+          "attribute": "Amperage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "49-94-0803",
+          "attribute": "Mounting Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "49-94-0803",
+          "attribute": "Plug Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "49-94-0803",
+          "attribute": "Size",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "49-94-0803",
+          "attribute": "Depth With Door Open",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "49-94-0803",
+          "attribute": "Minimum Height",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "49-94-0803",
           "attribute": "PART_NUMBER",
           "value": null,
           "uom": "",
@@ -407,7 +857,7 @@
       "fine": "Cut-Off Wheels & Discs",
       "dept": "Hardware & Tools",
       "n_accepted": 4,
-      "n_abstained": 2,
+      "n_abstained": 12,
       "accepted": [
         {
           "mpn": "49-94-0039",
@@ -476,6 +926,96 @@
       "abstained": [
         {
           "mpn": "49-94-0039",
+          "attribute": "Series",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "49-94-0039",
+          "attribute": "Model",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "49-94-0039",
+          "attribute": "Number of Wash Cycles",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "49-94-0039",
+          "attribute": "Voltage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "49-94-0039",
+          "attribute": "Amperage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "49-94-0039",
+          "attribute": "Mounting Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "49-94-0039",
+          "attribute": "Plug Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "49-94-0039",
+          "attribute": "Size",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "49-94-0039",
+          "attribute": "Depth With Door Open",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "49-94-0039",
+          "attribute": "Minimum Height",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "49-94-0039",
           "attribute": "PART_NUMBER",
           "value": null,
           "uom": "",
@@ -499,7 +1039,7 @@
       "fine": "Cut-Off Wheels & Discs",
       "dept": "Hardware & Tools",
       "n_accepted": 4,
-      "n_abstained": 2,
+      "n_abstained": 12,
       "accepted": [
         {
           "mpn": "49-94-0053",
@@ -568,6 +1108,96 @@
       "abstained": [
         {
           "mpn": "49-94-0053",
+          "attribute": "Series",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "49-94-0053",
+          "attribute": "Model",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "49-94-0053",
+          "attribute": "Number of Wash Cycles",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "49-94-0053",
+          "attribute": "Voltage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "49-94-0053",
+          "attribute": "Amperage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "49-94-0053",
+          "attribute": "Mounting Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "49-94-0053",
+          "attribute": "Plug Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "49-94-0053",
+          "attribute": "Size",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "49-94-0053",
+          "attribute": "Depth With Door Open",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "49-94-0053",
+          "attribute": "Minimum Height",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "49-94-0053",
           "attribute": "PART_NUMBER",
           "value": null,
           "uom": "",
@@ -591,7 +1221,7 @@
       "fine": "Sanding Belts & Sheets",
       "dept": "Hardware & Tools",
       "n_accepted": 3,
-      "n_abstained": 2,
+      "n_abstained": 12,
       "accepted": [
         {
           "mpn": "DCB518ASTS06G",
@@ -648,6 +1278,96 @@
       "abstained": [
         {
           "mpn": "DCB518ASTS06G",
+          "attribute": "Series",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DCB518ASTS06G",
+          "attribute": "Model",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DCB518ASTS06G",
+          "attribute": "Number of Wash Cycles",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DCB518ASTS06G",
+          "attribute": "Voltage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DCB518ASTS06G",
+          "attribute": "Amperage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DCB518ASTS06G",
+          "attribute": "Mounting Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DCB518ASTS06G",
+          "attribute": "Plug Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DCB518ASTS06G",
+          "attribute": "Depth With Door Open",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DCB518ASTS06G",
+          "attribute": "Minimum Height",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DCB518ASTS06G",
+          "attribute": "Maximum Height",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DCB518ASTS06G",
           "attribute": "PART_NUMBER",
           "value": null,
           "uom": "",
@@ -671,7 +1391,7 @@
       "fine": "Saw Blades",
       "dept": "Hardware & Tools",
       "n_accepted": 1,
-      "n_abstained": 2,
+      "n_abstained": 12,
       "accepted": [
         {
           "mpn": "48-44-2770",
@@ -693,6 +1413,96 @@
         }
       ],
       "abstained": [
+        {
+          "mpn": "48-44-2770",
+          "attribute": "Series",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "48-44-2770",
+          "attribute": "Model",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "48-44-2770",
+          "attribute": "Number of Wash Cycles",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "48-44-2770",
+          "attribute": "Voltage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "48-44-2770",
+          "attribute": "Amperage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "48-44-2770",
+          "attribute": "Mounting Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "48-44-2770",
+          "attribute": "Plug Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "48-44-2770",
+          "attribute": "Size",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "48-44-2770",
+          "attribute": "Depth With Door Open",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "48-44-2770",
+          "attribute": "Minimum Height",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
         {
           "mpn": "48-44-2770",
           "attribute": "PART_NUMBER",
@@ -718,7 +1528,7 @@
       "fine": "Saw Blades",
       "dept": "Hardware & Tools",
       "n_accepted": 2,
-      "n_abstained": 2,
+      "n_abstained": 12,
       "accepted": [
         {
           "mpn": "A-96095",
@@ -760,6 +1570,96 @@
       "abstained": [
         {
           "mpn": "A-96095",
+          "attribute": "Series",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "A-96095",
+          "attribute": "Model",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "A-96095",
+          "attribute": "Number of Wash Cycles",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "A-96095",
+          "attribute": "Voltage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "A-96095",
+          "attribute": "Amperage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "A-96095",
+          "attribute": "Mounting Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "A-96095",
+          "attribute": "Plug Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "A-96095",
+          "attribute": "Size",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "A-96095",
+          "attribute": "Depth With Door Open",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "A-96095",
+          "attribute": "Minimum Height",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "A-96095",
           "attribute": "PART_NUMBER",
           "value": null,
           "uom": "",
@@ -783,7 +1683,7 @@
       "fine": "Saw Blades",
       "dept": "Hardware & Tools",
       "n_accepted": 1,
-      "n_abstained": 2,
+      "n_abstained": 12,
       "accepted": [
         {
           "mpn": "DWA4769",
@@ -805,6 +1705,96 @@
         }
       ],
       "abstained": [
+        {
+          "mpn": "DWA4769",
+          "attribute": "Series",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DWA4769",
+          "attribute": "Model",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DWA4769",
+          "attribute": "Number of Wash Cycles",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DWA4769",
+          "attribute": "Voltage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DWA4769",
+          "attribute": "Amperage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DWA4769",
+          "attribute": "Mounting Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DWA4769",
+          "attribute": "Plug Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DWA4769",
+          "attribute": "Size",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DWA4769",
+          "attribute": "Depth With Door Open",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DWA4769",
+          "attribute": "Minimum Height",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
         {
           "mpn": "DWA4769",
           "attribute": "PART_NUMBER",
@@ -830,7 +1820,7 @@
       "fine": "Diamond Cutting Discs",
       "dept": "Hardware & Tools",
       "n_accepted": 2,
-      "n_abstained": 2,
+      "n_abstained": 12,
       "accepted": [
         {
           "mpn": "49-93-9207",
@@ -872,6 +1862,96 @@
       "abstained": [
         {
           "mpn": "49-93-9207",
+          "attribute": "Series",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "49-93-9207",
+          "attribute": "Model",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "49-93-9207",
+          "attribute": "Number of Wash Cycles",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "49-93-9207",
+          "attribute": "Voltage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "49-93-9207",
+          "attribute": "Amperage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "49-93-9207",
+          "attribute": "Mounting Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "49-93-9207",
+          "attribute": "Plug Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "49-93-9207",
+          "attribute": "Size",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "49-93-9207",
+          "attribute": "Depth With Door Open",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "49-93-9207",
+          "attribute": "Minimum Height",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "49-93-9207",
           "attribute": "PART_NUMBER",
           "value": null,
           "uom": "",
@@ -895,7 +1975,7 @@
       "fine": "Saw Blades",
       "dept": "Hardware & Tools",
       "n_accepted": 1,
-      "n_abstained": 2,
+      "n_abstained": 12,
       "accepted": [
         {
           "mpn": "D0860X",
@@ -917,6 +1997,96 @@
         }
       ],
       "abstained": [
+        {
+          "mpn": "D0860X",
+          "attribute": "Series",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "D0860X",
+          "attribute": "Model",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "D0860X",
+          "attribute": "Number of Wash Cycles",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "D0860X",
+          "attribute": "Voltage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "D0860X",
+          "attribute": "Amperage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "D0860X",
+          "attribute": "Mounting Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "D0860X",
+          "attribute": "Plug Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "D0860X",
+          "attribute": "Size",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "D0860X",
+          "attribute": "Depth With Door Open",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "D0860X",
+          "attribute": "Minimum Height",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
         {
           "mpn": "D0860X",
           "attribute": "PART_NUMBER",
@@ -942,7 +2112,7 @@
       "fine": "Drill Bits",
       "dept": "Hardware & Tools",
       "n_accepted": 1,
-      "n_abstained": 2,
+      "n_abstained": 12,
       "accepted": [
         {
           "mpn": "DPH12B",
@@ -961,6 +2131,96 @@
         }
       ],
       "abstained": [
+        {
+          "mpn": "DPH12B",
+          "attribute": "Series",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DPH12B",
+          "attribute": "Model",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DPH12B",
+          "attribute": "Number of Wash Cycles",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DPH12B",
+          "attribute": "Voltage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DPH12B",
+          "attribute": "Amperage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DPH12B",
+          "attribute": "Mounting Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DPH12B",
+          "attribute": "Plug Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DPH12B",
+          "attribute": "Size",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DPH12B",
+          "attribute": "Depth With Door Open",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DPH12B",
+          "attribute": "Minimum Height",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
         {
           "mpn": "DPH12B",
           "attribute": "PART_NUMBER",
@@ -986,7 +2246,7 @@
       "fine": "Drill Bits",
       "dept": "Hardware & Tools",
       "n_accepted": 1,
-      "n_abstained": 2,
+      "n_abstained": 12,
       "accepted": [
         {
           "mpn": "DPH26B",
@@ -1005,6 +2265,96 @@
         }
       ],
       "abstained": [
+        {
+          "mpn": "DPH26B",
+          "attribute": "Series",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DPH26B",
+          "attribute": "Model",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DPH26B",
+          "attribute": "Number of Wash Cycles",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DPH26B",
+          "attribute": "Voltage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DPH26B",
+          "attribute": "Amperage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DPH26B",
+          "attribute": "Mounting Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DPH26B",
+          "attribute": "Plug Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DPH26B",
+          "attribute": "Size",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DPH26B",
+          "attribute": "Depth With Door Open",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DPH26B",
+          "attribute": "Minimum Height",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
         {
           "mpn": "DPH26B",
           "attribute": "PART_NUMBER",
@@ -1030,7 +2380,7 @@
       "fine": "Drill Bits",
       "dept": "Hardware & Tools",
       "n_accepted": 2,
-      "n_abstained": 2,
+      "n_abstained": 12,
       "accepted": [
         {
           "mpn": "DSQ26B",
@@ -1069,6 +2419,96 @@
       "abstained": [
         {
           "mpn": "DSQ26B",
+          "attribute": "Series",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DSQ26B",
+          "attribute": "Model",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DSQ26B",
+          "attribute": "Number of Wash Cycles",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DSQ26B",
+          "attribute": "Voltage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DSQ26B",
+          "attribute": "Amperage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DSQ26B",
+          "attribute": "Mounting Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DSQ26B",
+          "attribute": "Plug Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DSQ26B",
+          "attribute": "Size",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DSQ26B",
+          "attribute": "Depth With Door Open",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DSQ26B",
+          "attribute": "Minimum Height",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DSQ26B",
           "attribute": "PART_NUMBER",
           "value": null,
           "uom": "",
@@ -1092,7 +2532,7 @@
       "fine": "Drill Bits",
       "dept": "Hardware & Tools",
       "n_accepted": 2,
-      "n_abstained": 2,
+      "n_abstained": 12,
       "accepted": [
         {
           "mpn": "DCD1007B",
@@ -1131,6 +2571,96 @@
       "abstained": [
         {
           "mpn": "DCD1007B",
+          "attribute": "Series",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DCD1007B",
+          "attribute": "Model",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DCD1007B",
+          "attribute": "Number of Wash Cycles",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DCD1007B",
+          "attribute": "Amperage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DCD1007B",
+          "attribute": "Mounting Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DCD1007B",
+          "attribute": "Plug Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DCD1007B",
+          "attribute": "Size",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DCD1007B",
+          "attribute": "Depth With Door Open",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DCD1007B",
+          "attribute": "Minimum Height",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DCD1007B",
+          "attribute": "Maximum Height",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DCD1007B",
           "attribute": "PART_NUMBER",
           "value": null,
           "uom": "",
@@ -1154,7 +2684,7 @@
       "fine": "Screwdrivers",
       "dept": "Hardware & Tools",
       "n_accepted": 2,
-      "n_abstained": 2,
+      "n_abstained": 12,
       "accepted": [
         {
           "mpn": "220USB25U",
@@ -1196,6 +2726,96 @@
       "abstained": [
         {
           "mpn": "220USB25U",
+          "attribute": "Series",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "220USB25U",
+          "attribute": "Model",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "220USB25U",
+          "attribute": "Number of Wash Cycles",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "220USB25U",
+          "attribute": "Voltage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "220USB25U",
+          "attribute": "Amperage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "220USB25U",
+          "attribute": "Mounting Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "220USB25U",
+          "attribute": "Plug Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "220USB25U",
+          "attribute": "Size",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "220USB25U",
+          "attribute": "Depth With Door Open",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "220USB25U",
+          "attribute": "Minimum Height",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "220USB25U",
           "attribute": "PART_NUMBER",
           "value": null,
           "uom": "",
@@ -1219,7 +2839,7 @@
       "fine": "Nailers",
       "dept": "Hardware & Tools",
       "n_accepted": 4,
-      "n_abstained": 2,
+      "n_abstained": 12,
       "accepted": [
         {
           "mpn": "XNB04Z",
@@ -1294,6 +2914,96 @@
       "abstained": [
         {
           "mpn": "XNB04Z",
+          "attribute": "Series",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "XNB04Z",
+          "attribute": "Model",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "XNB04Z",
+          "attribute": "Number of Wash Cycles",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "XNB04Z",
+          "attribute": "Amperage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "XNB04Z",
+          "attribute": "Mounting Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "XNB04Z",
+          "attribute": "Plug Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "XNB04Z",
+          "attribute": "Depth With Door Open",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "XNB04Z",
+          "attribute": "Minimum Height",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "XNB04Z",
+          "attribute": "Maximum Height",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "XNB04Z",
+          "attribute": "Sound Level",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "XNB04Z",
           "attribute": "PART_NUMBER",
           "value": null,
           "uom": "",
@@ -1317,7 +3027,7 @@
       "fine": "Nailers",
       "dept": "Hardware & Tools",
       "n_accepted": 4,
-      "n_abstained": 2,
+      "n_abstained": 12,
       "accepted": [
         {
           "mpn": "XNB06Z",
@@ -1392,6 +3102,96 @@
       "abstained": [
         {
           "mpn": "XNB06Z",
+          "attribute": "Series",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "XNB06Z",
+          "attribute": "Model",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "XNB06Z",
+          "attribute": "Number of Wash Cycles",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "XNB06Z",
+          "attribute": "Amperage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "XNB06Z",
+          "attribute": "Mounting Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "XNB06Z",
+          "attribute": "Plug Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "XNB06Z",
+          "attribute": "Depth With Door Open",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "XNB06Z",
+          "attribute": "Minimum Height",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "XNB06Z",
+          "attribute": "Maximum Height",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "XNB06Z",
+          "attribute": "Sound Level",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "XNB06Z",
           "attribute": "PART_NUMBER",
           "value": null,
           "uom": "",
@@ -1415,7 +3215,7 @@
       "fine": "Nailers",
       "dept": "Hardware & Tools",
       "n_accepted": 1,
-      "n_abstained": 2,
+      "n_abstained": 12,
       "accepted": [
         {
           "mpn": "2909-20",
@@ -1437,6 +3237,96 @@
         }
       ],
       "abstained": [
+        {
+          "mpn": "2909-20",
+          "attribute": "Series",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "2909-20",
+          "attribute": "Model",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "2909-20",
+          "attribute": "Number of Wash Cycles",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "2909-20",
+          "attribute": "Voltage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "2909-20",
+          "attribute": "Amperage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "2909-20",
+          "attribute": "Mounting Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "2909-20",
+          "attribute": "Plug Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "2909-20",
+          "attribute": "Size",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "2909-20",
+          "attribute": "Depth With Door Open",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "2909-20",
+          "attribute": "Minimum Height",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
         {
           "mpn": "2909-20",
           "attribute": "PART_NUMBER",
@@ -1462,7 +3352,7 @@
       "fine": "LED Bulbs",
       "dept": "Lighting",
       "n_accepted": 1,
-      "n_abstained": 2,
+      "n_abstained": 12,
       "accepted": [
         {
           "mpn": "65-572R1",
@@ -1481,6 +3371,96 @@
         }
       ],
       "abstained": [
+        {
+          "mpn": "65-572R1",
+          "attribute": "Series",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "65-572R1",
+          "attribute": "Model",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "65-572R1",
+          "attribute": "Number of Wash Cycles",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "65-572R1",
+          "attribute": "Voltage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "65-572R1",
+          "attribute": "Amperage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "65-572R1",
+          "attribute": "Mounting Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "65-572R1",
+          "attribute": "Plug Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "65-572R1",
+          "attribute": "Size",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "65-572R1",
+          "attribute": "Depth With Door Open",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "65-572R1",
+          "attribute": "Minimum Height",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
         {
           "mpn": "65-572R1",
           "attribute": "PART_NUMBER",
@@ -1506,7 +3486,7 @@
       "fine": "LED Bulbs",
       "dept": "Lighting",
       "n_accepted": 2,
-      "n_abstained": 2,
+      "n_abstained": 12,
       "accepted": [
         {
           "mpn": "573386",
@@ -1545,6 +3525,96 @@
       "abstained": [
         {
           "mpn": "573386",
+          "attribute": "Series",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "573386",
+          "attribute": "Model",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "573386",
+          "attribute": "Number of Wash Cycles",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "573386",
+          "attribute": "Voltage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "573386",
+          "attribute": "Amperage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "573386",
+          "attribute": "Mounting Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "573386",
+          "attribute": "Plug Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "573386",
+          "attribute": "Size",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "573386",
+          "attribute": "Depth With Door Open",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "573386",
+          "attribute": "Minimum Height",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "573386",
           "attribute": "PART_NUMBER",
           "value": null,
           "uom": "",
@@ -1568,7 +3638,7 @@
       "fine": "Motion Sensor Lighting",
       "dept": "Lighting",
       "n_accepted": 2,
-      "n_abstained": 2,
+      "n_abstained": 12,
       "accepted": [
         {
           "mpn": "S11445",
@@ -1607,6 +3677,96 @@
       "abstained": [
         {
           "mpn": "S11445",
+          "attribute": "Series",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "S11445",
+          "attribute": "Model",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "S11445",
+          "attribute": "Number of Wash Cycles",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "S11445",
+          "attribute": "Voltage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "S11445",
+          "attribute": "Amperage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "S11445",
+          "attribute": "Mounting Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "S11445",
+          "attribute": "Plug Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "S11445",
+          "attribute": "Size",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "S11445",
+          "attribute": "Depth With Door Open",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "S11445",
+          "attribute": "Minimum Height",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "S11445",
           "attribute": "PART_NUMBER",
           "value": null,
           "uom": "",
@@ -1630,7 +3790,7 @@
       "fine": "LED Bulbs",
       "dept": "Lighting",
       "n_accepted": 3,
-      "n_abstained": 2,
+      "n_abstained": 12,
       "accepted": [
         {
           "mpn": "391227",
@@ -1684,6 +3844,96 @@
       "abstained": [
         {
           "mpn": "391227",
+          "attribute": "Series",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "391227",
+          "attribute": "Model",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "391227",
+          "attribute": "Number of Wash Cycles",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "391227",
+          "attribute": "Voltage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "391227",
+          "attribute": "Amperage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "391227",
+          "attribute": "Mounting Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "391227",
+          "attribute": "Plug Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "391227",
+          "attribute": "Size",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "391227",
+          "attribute": "Depth With Door Open",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "391227",
+          "attribute": "Minimum Height",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "391227",
           "attribute": "PART_NUMBER",
           "value": null,
           "uom": "",
@@ -1707,7 +3957,7 @@
       "fine": "LED Bulbs",
       "dept": "Lighting",
       "n_accepted": 2,
-      "n_abstained": 2,
+      "n_abstained": 12,
       "accepted": [
         {
           "mpn": "573410",
@@ -1746,6 +3996,96 @@
       "abstained": [
         {
           "mpn": "573410",
+          "attribute": "Series",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "573410",
+          "attribute": "Model",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "573410",
+          "attribute": "Number of Wash Cycles",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "573410",
+          "attribute": "Voltage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "573410",
+          "attribute": "Amperage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "573410",
+          "attribute": "Mounting Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "573410",
+          "attribute": "Plug Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "573410",
+          "attribute": "Size",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "573410",
+          "attribute": "Depth With Door Open",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "573410",
+          "attribute": "Minimum Height",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "573410",
           "attribute": "PART_NUMBER",
           "value": null,
           "uom": "",
@@ -1769,7 +4109,7 @@
       "fine": "LED Bulbs",
       "dept": "Lighting",
       "n_accepted": 2,
-      "n_abstained": 2,
+      "n_abstained": 12,
       "accepted": [
         {
           "mpn": "566679",
@@ -1808,6 +4148,96 @@
       "abstained": [
         {
           "mpn": "566679",
+          "attribute": "Series",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "566679",
+          "attribute": "Model",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "566679",
+          "attribute": "Number of Wash Cycles",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "566679",
+          "attribute": "Voltage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "566679",
+          "attribute": "Amperage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "566679",
+          "attribute": "Mounting Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "566679",
+          "attribute": "Plug Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "566679",
+          "attribute": "Size",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "566679",
+          "attribute": "Depth With Door Open",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "566679",
+          "attribute": "Minimum Height",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "566679",
           "attribute": "PART_NUMBER",
           "value": null,
           "uom": "",
@@ -1831,9 +4261,99 @@
       "fine": "Composite Decking",
       "dept": "Building Materials",
       "n_accepted": 0,
-      "n_abstained": 2,
+      "n_abstained": 12,
       "accepted": [],
       "abstained": [
+        {
+          "mpn": "1513721",
+          "attribute": "Series",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "1513721",
+          "attribute": "Model",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "1513721",
+          "attribute": "Number of Wash Cycles",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "1513721",
+          "attribute": "Voltage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "1513721",
+          "attribute": "Amperage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "1513721",
+          "attribute": "Mounting Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "1513721",
+          "attribute": "Plug Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "1513721",
+          "attribute": "Size",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "1513721",
+          "attribute": "Depth With Door Open",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "1513721",
+          "attribute": "Minimum Height",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
         {
           "mpn": "1513721",
           "attribute": "PART_NUMBER",
@@ -1859,7 +4379,7 @@
       "fine": "Composite Decking",
       "dept": "Building Materials",
       "n_accepted": 1,
-      "n_abstained": 2,
+      "n_abstained": 12,
       "accepted": [
         {
           "mpn": "543007412",
@@ -1881,6 +4401,96 @@
         }
       ],
       "abstained": [
+        {
+          "mpn": "543007412",
+          "attribute": "Series",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "543007412",
+          "attribute": "Model",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "543007412",
+          "attribute": "Number of Wash Cycles",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "543007412",
+          "attribute": "Voltage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "543007412",
+          "attribute": "Amperage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "543007412",
+          "attribute": "Mounting Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "543007412",
+          "attribute": "Plug Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "543007412",
+          "attribute": "Size",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "543007412",
+          "attribute": "Depth With Door Open",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "543007412",
+          "attribute": "Minimum Height",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
         {
           "mpn": "543007412",
           "attribute": "PART_NUMBER",
@@ -1906,9 +4516,99 @@
       "fine": "Composite Decking",
       "dept": "Building Materials",
       "n_accepted": 0,
-      "n_abstained": 2,
+      "n_abstained": 12,
       "accepted": [],
       "abstained": [
+        {
+          "mpn": "1516880",
+          "attribute": "Series",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "1516880",
+          "attribute": "Model",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "1516880",
+          "attribute": "Number of Wash Cycles",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "1516880",
+          "attribute": "Voltage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "1516880",
+          "attribute": "Amperage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "1516880",
+          "attribute": "Mounting Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "1516880",
+          "attribute": "Plug Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "1516880",
+          "attribute": "Size",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "1516880",
+          "attribute": "Depth With Door Open",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "1516880",
+          "attribute": "Minimum Height",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
         {
           "mpn": "1516880",
           "attribute": "PART_NUMBER",
@@ -1934,7 +4634,7 @@
       "fine": "Composite Decking",
       "dept": "Building Materials",
       "n_accepted": 1,
-      "n_abstained": 2,
+      "n_abstained": 12,
       "accepted": [
         {
           "mpn": "AGB15520AW",
@@ -1956,6 +4656,96 @@
         }
       ],
       "abstained": [
+        {
+          "mpn": "AGB15520AW",
+          "attribute": "Series",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "AGB15520AW",
+          "attribute": "Model",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "AGB15520AW",
+          "attribute": "Number of Wash Cycles",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "AGB15520AW",
+          "attribute": "Voltage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "AGB15520AW",
+          "attribute": "Amperage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "AGB15520AW",
+          "attribute": "Mounting Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "AGB15520AW",
+          "attribute": "Plug Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "AGB15520AW",
+          "attribute": "Size",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "AGB15520AW",
+          "attribute": "Depth With Door Open",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "AGB15520AW",
+          "attribute": "Minimum Height",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
         {
           "mpn": "AGB15520AW",
           "attribute": "PART_NUMBER",
@@ -1981,9 +4771,99 @@
       "fine": "Composite Decking",
       "dept": "Building Materials",
       "n_accepted": 0,
-      "n_abstained": 2,
+      "n_abstained": 12,
       "accepted": [],
       "abstained": [
+        {
+          "mpn": "543144416",
+          "attribute": "Series",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "543144416",
+          "attribute": "Model",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "543144416",
+          "attribute": "Number of Wash Cycles",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "543144416",
+          "attribute": "Voltage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "543144416",
+          "attribute": "Amperage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "543144416",
+          "attribute": "Mounting Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "543144416",
+          "attribute": "Plug Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "543144416",
+          "attribute": "Size",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "543144416",
+          "attribute": "Depth With Door Open",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "543144416",
+          "attribute": "Minimum Height",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
         {
           "mpn": "543144416",
           "attribute": "PART_NUMBER",
@@ -2009,7 +4889,7 @@
       "fine": "Receptacles",
       "dept": "Electrical",
       "n_accepted": 1,
-      "n_abstained": 2,
+      "n_abstained": 12,
       "accepted": [
         {
           "mpn": "R00-GFNT1-00K",
@@ -2031,6 +4911,96 @@
         }
       ],
       "abstained": [
+        {
+          "mpn": "R00-GFNT1-00K",
+          "attribute": "Series",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "R00-GFNT1-00K",
+          "attribute": "Model",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "R00-GFNT1-00K",
+          "attribute": "Number of Wash Cycles",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "R00-GFNT1-00K",
+          "attribute": "Voltage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "R00-GFNT1-00K",
+          "attribute": "Mounting Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "R00-GFNT1-00K",
+          "attribute": "Plug Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "R00-GFNT1-00K",
+          "attribute": "Size",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "R00-GFNT1-00K",
+          "attribute": "Depth With Door Open",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "R00-GFNT1-00K",
+          "attribute": "Minimum Height",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "R00-GFNT1-00K",
+          "attribute": "Maximum Height",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
         {
           "mpn": "R00-GFNT1-00K",
           "attribute": "PART_NUMBER",
@@ -2056,7 +5026,7 @@
       "fine": "Building Wire",
       "dept": "Electrical",
       "n_accepted": 3,
-      "n_abstained": 2,
+      "n_abstained": 12,
       "accepted": [
         {
           "mpn": "2/2/4 UD ALUM",
@@ -2113,6 +5083,96 @@
       "abstained": [
         {
           "mpn": "2/2/4 UD ALUM",
+          "attribute": "Series",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "2/2/4 UD ALUM",
+          "attribute": "Model",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "2/2/4 UD ALUM",
+          "attribute": "Number of Wash Cycles",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "2/2/4 UD ALUM",
+          "attribute": "Voltage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "2/2/4 UD ALUM",
+          "attribute": "Amperage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "2/2/4 UD ALUM",
+          "attribute": "Mounting Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "2/2/4 UD ALUM",
+          "attribute": "Plug Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "2/2/4 UD ALUM",
+          "attribute": "Size",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "2/2/4 UD ALUM",
+          "attribute": "Depth With Door Open",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "2/2/4 UD ALUM",
+          "attribute": "Minimum Height",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "2/2/4 UD ALUM",
           "attribute": "PART_NUMBER",
           "value": null,
           "uom": "",
@@ -2136,7 +5196,7 @@
       "fine": "Receptacles",
       "dept": "Electrical",
       "n_accepted": 2,
-      "n_abstained": 2,
+      "n_abstained": 12,
       "accepted": [
         {
           "mpn": "R62-GFTA1-0KW",
@@ -2178,6 +5238,96 @@
       "abstained": [
         {
           "mpn": "R62-GFTA1-0KW",
+          "attribute": "Series",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "R62-GFTA1-0KW",
+          "attribute": "Model",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "R62-GFTA1-0KW",
+          "attribute": "Number of Wash Cycles",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "R62-GFTA1-0KW",
+          "attribute": "Voltage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "R62-GFTA1-0KW",
+          "attribute": "Mounting Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "R62-GFTA1-0KW",
+          "attribute": "Plug Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "R62-GFTA1-0KW",
+          "attribute": "Size",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "R62-GFTA1-0KW",
+          "attribute": "Depth With Door Open",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "R62-GFTA1-0KW",
+          "attribute": "Minimum Height",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "R62-GFTA1-0KW",
+          "attribute": "Maximum Height",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "R62-GFTA1-0KW",
           "attribute": "PART_NUMBER",
           "value": null,
           "uom": "",
@@ -2201,9 +5351,99 @@
       "fine": "Building Wire",
       "dept": "Electrical",
       "n_accepted": 0,
-      "n_abstained": 2,
+      "n_abstained": 12,
       "accepted": [],
       "abstained": [
+        {
+          "mpn": "96263-46-06",
+          "attribute": "Series",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "96263-46-06",
+          "attribute": "Model",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "96263-46-06",
+          "attribute": "Number of Wash Cycles",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "96263-46-06",
+          "attribute": "Voltage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "96263-46-06",
+          "attribute": "Amperage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "96263-46-06",
+          "attribute": "Mounting Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "96263-46-06",
+          "attribute": "Plug Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "96263-46-06",
+          "attribute": "Size",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "96263-46-06",
+          "attribute": "Depth With Door Open",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "96263-46-06",
+          "attribute": "Minimum Height",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
         {
           "mpn": "96263-46-06",
           "attribute": "PART_NUMBER",
@@ -2229,7 +5469,7 @@
       "fine": "Receptacles",
       "dept": "Electrical",
       "n_accepted": 1,
-      "n_abstained": 2,
+      "n_abstained": 12,
       "accepted": [
         {
           "mpn": "R56-CBR15-00T",
@@ -2251,6 +5491,96 @@
         }
       ],
       "abstained": [
+        {
+          "mpn": "R56-CBR15-00T",
+          "attribute": "Series",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "R56-CBR15-00T",
+          "attribute": "Model",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "R56-CBR15-00T",
+          "attribute": "Number of Wash Cycles",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "R56-CBR15-00T",
+          "attribute": "Voltage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "R56-CBR15-00T",
+          "attribute": "Mounting Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "R56-CBR15-00T",
+          "attribute": "Plug Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "R56-CBR15-00T",
+          "attribute": "Size",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "R56-CBR15-00T",
+          "attribute": "Depth With Door Open",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "R56-CBR15-00T",
+          "attribute": "Minimum Height",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "R56-CBR15-00T",
+          "attribute": "Maximum Height",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
         {
           "mpn": "R56-CBR15-00T",
           "attribute": "PART_NUMBER",
@@ -2276,7 +5606,7 @@
       "fine": "Receptacles",
       "dept": "Electrical",
       "n_accepted": 1,
-      "n_abstained": 2,
+      "n_abstained": 12,
       "accepted": [
         {
           "mpn": "G1941-UPC",
@@ -2298,6 +5628,96 @@
         }
       ],
       "abstained": [
+        {
+          "mpn": "G1941-UPC",
+          "attribute": "Series",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "G1941-UPC",
+          "attribute": "Model",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "G1941-UPC",
+          "attribute": "Number of Wash Cycles",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "G1941-UPC",
+          "attribute": "Voltage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "G1941-UPC",
+          "attribute": "Amperage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "G1941-UPC",
+          "attribute": "Mounting Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "G1941-UPC",
+          "attribute": "Plug Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "G1941-UPC",
+          "attribute": "Size",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "G1941-UPC",
+          "attribute": "Depth With Door Open",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "G1941-UPC",
+          "attribute": "Minimum Height",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
         {
           "mpn": "G1941-UPC",
           "attribute": "PART_NUMBER",
@@ -2323,7 +5743,7 @@
       "fine": "Dryers",
       "dept": "Appliances",
       "n_accepted": 1,
-      "n_abstained": 2,
+      "n_abstained": 12,
       "accepted": [
         {
           "mpn": "DR7004WG",
@@ -2345,6 +5765,96 @@
         }
       ],
       "abstained": [
+        {
+          "mpn": "DR7004WG",
+          "attribute": "Series",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DR7004WG",
+          "attribute": "Model",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DR7004WG",
+          "attribute": "Number of Wash Cycles",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DR7004WG",
+          "attribute": "Voltage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DR7004WG",
+          "attribute": "Amperage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DR7004WG",
+          "attribute": "Mounting Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DR7004WG",
+          "attribute": "Plug Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DR7004WG",
+          "attribute": "Size",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DR7004WG",
+          "attribute": "Depth With Door Open",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DR7004WG",
+          "attribute": "Minimum Height",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
         {
           "mpn": "DR7004WG",
           "attribute": "PART_NUMBER",
@@ -2370,7 +5880,7 @@
       "fine": "Dryers",
       "dept": "Appliances",
       "n_accepted": 1,
-      "n_abstained": 2,
+      "n_abstained": 12,
       "accepted": [
         {
           "mpn": "DR5004WG",
@@ -2392,6 +5902,96 @@
         }
       ],
       "abstained": [
+        {
+          "mpn": "DR5004WG",
+          "attribute": "Series",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DR5004WG",
+          "attribute": "Model",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DR5004WG",
+          "attribute": "Number of Wash Cycles",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DR5004WG",
+          "attribute": "Voltage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DR5004WG",
+          "attribute": "Amperage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DR5004WG",
+          "attribute": "Mounting Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DR5004WG",
+          "attribute": "Plug Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DR5004WG",
+          "attribute": "Size",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DR5004WG",
+          "attribute": "Depth With Door Open",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DR5004WG",
+          "attribute": "Minimum Height",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
         {
           "mpn": "DR5004WG",
           "attribute": "PART_NUMBER",
@@ -2417,7 +6017,7 @@
       "fine": "Dryers",
       "dept": "Appliances",
       "n_accepted": 1,
-      "n_abstained": 2,
+      "n_abstained": 12,
       "accepted": [
         {
           "mpn": "DC5004WE",
@@ -2439,6 +6039,96 @@
         }
       ],
       "abstained": [
+        {
+          "mpn": "DC5004WE",
+          "attribute": "Series",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DC5004WE",
+          "attribute": "Model",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DC5004WE",
+          "attribute": "Number of Wash Cycles",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DC5004WE",
+          "attribute": "Voltage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DC5004WE",
+          "attribute": "Amperage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DC5004WE",
+          "attribute": "Mounting Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DC5004WE",
+          "attribute": "Plug Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DC5004WE",
+          "attribute": "Size",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DC5004WE",
+          "attribute": "Depth With Door Open",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DC5004WE",
+          "attribute": "Minimum Height",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
         {
           "mpn": "DC5004WE",
           "attribute": "PART_NUMBER",
@@ -2464,7 +6154,7 @@
       "fine": "Dryers",
       "dept": "Appliances",
       "n_accepted": 1,
-      "n_abstained": 2,
+      "n_abstained": 12,
       "accepted": [
         {
           "mpn": "DV2000WG",
@@ -2486,6 +6176,96 @@
         }
       ],
       "abstained": [
+        {
+          "mpn": "DV2000WG",
+          "attribute": "Series",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DV2000WG",
+          "attribute": "Model",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DV2000WG",
+          "attribute": "Number of Wash Cycles",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DV2000WG",
+          "attribute": "Voltage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DV2000WG",
+          "attribute": "Amperage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DV2000WG",
+          "attribute": "Mounting Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DV2000WG",
+          "attribute": "Plug Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DV2000WG",
+          "attribute": "Size",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DV2000WG",
+          "attribute": "Depth With Door Open",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DV2000WG",
+          "attribute": "Minimum Height",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
         {
           "mpn": "DV2000WG",
           "attribute": "PART_NUMBER",
@@ -2511,7 +6291,7 @@
       "fine": "Fascia",
       "dept": "Building Materials",
       "n_accepted": 1,
-      "n_abstained": 2,
+      "n_abstained": 12,
       "accepted": [
         {
           "mpn": "543076936",
@@ -2530,6 +6310,96 @@
         }
       ],
       "abstained": [
+        {
+          "mpn": "543076936",
+          "attribute": "Series",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "543076936",
+          "attribute": "Model",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "543076936",
+          "attribute": "Number of Wash Cycles",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "543076936",
+          "attribute": "Voltage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "543076936",
+          "attribute": "Amperage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "543076936",
+          "attribute": "Mounting Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "543076936",
+          "attribute": "Plug Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "543076936",
+          "attribute": "Depth With Door Open",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "543076936",
+          "attribute": "Minimum Height",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "543076936",
+          "attribute": "Maximum Height",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
         {
           "mpn": "543076936",
           "attribute": "PART_NUMBER",
@@ -2555,7 +6425,7 @@
       "fine": "Safety Eyewear",
       "dept": "Hardware & Tools",
       "n_accepted": 2,
-      "n_abstained": 2,
+      "n_abstained": 12,
       "accepted": [
         {
           "mpn": "TSDKAP218-G2",
@@ -2597,6 +6467,96 @@
       "abstained": [
         {
           "mpn": "TSDKAP218-G2",
+          "attribute": "Series",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "TSDKAP218-G2",
+          "attribute": "Model",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "TSDKAP218-G2",
+          "attribute": "Number of Wash Cycles",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "TSDKAP218-G2",
+          "attribute": "Voltage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "TSDKAP218-G2",
+          "attribute": "Amperage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "TSDKAP218-G2",
+          "attribute": "Mounting Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "TSDKAP218-G2",
+          "attribute": "Plug Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "TSDKAP218-G2",
+          "attribute": "Size",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "TSDKAP218-G2",
+          "attribute": "Depth With Door Open",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "TSDKAP218-G2",
+          "attribute": "Minimum Height",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "TSDKAP218-G2",
           "attribute": "PART_NUMBER",
           "value": null,
           "uom": "",
@@ -2620,7 +6580,7 @@
       "fine": "Impact Drivers",
       "dept": "Hardware & Tools",
       "n_accepted": 3,
-      "n_abstained": 2,
+      "n_abstained": 12,
       "accepted": [
         {
           "mpn": "DCF964B",
@@ -2677,6 +6637,96 @@
       "abstained": [
         {
           "mpn": "DCF964B",
+          "attribute": "Series",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DCF964B",
+          "attribute": "Model",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DCF964B",
+          "attribute": "Number of Wash Cycles",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DCF964B",
+          "attribute": "Amperage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DCF964B",
+          "attribute": "Mounting Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DCF964B",
+          "attribute": "Plug Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DCF964B",
+          "attribute": "Depth With Door Open",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DCF964B",
+          "attribute": "Minimum Height",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DCF964B",
+          "attribute": "Maximum Height",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DCF964B",
+          "attribute": "Sound Level",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "DCF964B",
           "attribute": "PART_NUMBER",
           "value": null,
           "uom": "",
@@ -2700,7 +6750,7 @@
       "fine": "Railings",
       "dept": "Building Materials",
       "n_accepted": 3,
-      "n_abstained": 2,
+      "n_abstained": 12,
       "accepted": [
         {
           "mpn": "543300257",
@@ -2760,6 +6810,96 @@
       "abstained": [
         {
           "mpn": "543300257",
+          "attribute": "Series",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "543300257",
+          "attribute": "Model",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "543300257",
+          "attribute": "Number of Wash Cycles",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "543300257",
+          "attribute": "Voltage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "543300257",
+          "attribute": "Amperage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "543300257",
+          "attribute": "Mounting Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "543300257",
+          "attribute": "Plug Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "543300257",
+          "attribute": "Size",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "543300257",
+          "attribute": "Depth With Door Open",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "543300257",
+          "attribute": "Minimum Height",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "543300257",
           "attribute": "PART_NUMBER",
           "value": null,
           "uom": "",
@@ -2783,7 +6923,7 @@
       "fine": "Rotary Tools",
       "dept": "Hardware & Tools",
       "n_accepted": 2,
-      "n_abstained": 2,
+      "n_abstained": 12,
       "accepted": [
         {
           "mpn": "3100-1/15",
@@ -2825,6 +6965,96 @@
       "abstained": [
         {
           "mpn": "3100-1/15",
+          "attribute": "Series",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "3100-1/15",
+          "attribute": "Model",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "3100-1/15",
+          "attribute": "Number of Wash Cycles",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "3100-1/15",
+          "attribute": "Voltage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "3100-1/15",
+          "attribute": "Amperage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "3100-1/15",
+          "attribute": "Mounting Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "3100-1/15",
+          "attribute": "Plug Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "3100-1/15",
+          "attribute": "Size",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "3100-1/15",
+          "attribute": "Depth With Door Open",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "3100-1/15",
+          "attribute": "Minimum Height",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "3100-1/15",
           "attribute": "PART_NUMBER",
           "value": null,
           "uom": "",
@@ -2848,7 +7078,7 @@
       "fine": "Sanding Belts & Sheets",
       "dept": "Hardware & Tools",
       "n_accepted": 1,
-      "n_abstained": 2,
+      "n_abstained": 12,
       "accepted": [
         {
           "mpn": "578808",
@@ -2867,6 +7097,96 @@
         }
       ],
       "abstained": [
+        {
+          "mpn": "578808",
+          "attribute": "Series",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "578808",
+          "attribute": "Model",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "578808",
+          "attribute": "Number of Wash Cycles",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "578808",
+          "attribute": "Voltage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "578808",
+          "attribute": "Amperage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "578808",
+          "attribute": "Mounting Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "578808",
+          "attribute": "Plug Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "578808",
+          "attribute": "Depth With Door Open",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "578808",
+          "attribute": "Minimum Height",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "578808",
+          "attribute": "Maximum Height",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
         {
           "mpn": "578808",
           "attribute": "PART_NUMBER",
@@ -2892,7 +7212,7 @@
       "fine": "Fascia",
       "dept": "Building Materials",
       "n_accepted": 1,
-      "n_abstained": 2,
+      "n_abstained": 12,
       "accepted": [
         {
           "mpn": "1516876",
@@ -2911,6 +7231,96 @@
         }
       ],
       "abstained": [
+        {
+          "mpn": "1516876",
+          "attribute": "Series",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "1516876",
+          "attribute": "Model",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "1516876",
+          "attribute": "Number of Wash Cycles",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "1516876",
+          "attribute": "Voltage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "1516876",
+          "attribute": "Amperage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "1516876",
+          "attribute": "Mounting Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "1516876",
+          "attribute": "Plug Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "1516876",
+          "attribute": "Depth With Door Open",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "1516876",
+          "attribute": "Minimum Height",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "1516876",
+          "attribute": "Maximum Height",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
         {
           "mpn": "1516876",
           "attribute": "PART_NUMBER",
@@ -2936,7 +7346,7 @@
       "fine": "Sanding Belts & Sheets",
       "dept": "Hardware & Tools",
       "n_accepted": 1,
-      "n_abstained": 2,
+      "n_abstained": 12,
       "accepted": [
         {
           "mpn": "9A-570-320",
@@ -2955,6 +7365,96 @@
         }
       ],
       "abstained": [
+        {
+          "mpn": "9A-570-320",
+          "attribute": "Series",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "9A-570-320",
+          "attribute": "Model",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "9A-570-320",
+          "attribute": "Number of Wash Cycles",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "9A-570-320",
+          "attribute": "Voltage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "9A-570-320",
+          "attribute": "Amperage Rating",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "9A-570-320",
+          "attribute": "Mounting Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "9A-570-320",
+          "attribute": "Plug Type",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "9A-570-320",
+          "attribute": "Depth With Door Open",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "9A-570-320",
+          "attribute": "Minimum Height",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
+        {
+          "mpn": "9A-570-320",
+          "attribute": "Maximum Height",
+          "value": null,
+          "uom": "",
+          "status": "abstained",
+          "reason": "no traceable source evidence for this attribute \u2014 dual-pass abstention (FREEZE.md:17-19)",
+          "export_column": null
+        },
         {
           "mpn": "9A-570-320",
           "attribute": "PART_NUMBER",
