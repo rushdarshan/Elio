@@ -1,8 +1,8 @@
 {
   "header": {
-    "freeze_commit": "38db2af",
-    "freeze_tag": "bar-4-freeze",
-    "generated": "2026-08-22",
+    "freeze_commit": "23b9115",
+    "freeze_tag": "bar-5-category-aware",
+    "generated": "2026-08-23",
     "python": "3.13.7",
     "deps": {
       "pandas": "2.3.0",
@@ -27,8 +27,8 @@
       "role": "frozen-export"
     },
     "docs/FREEZE.md": {
-      "sha256": "33e87511c6f0cad04d144801877fcfded95a4fd44fafc60b9f770beefbca05a1",
-      "size": 5092,
+      "sha256": "21fbb84e4ee728c548041c84fec920930547ececbc44d85b529f70174397d5b7",
+      "size": 5697,
       "role": "frozen-doc"
     },
     "docs/gauntlet-progress.md": {
@@ -127,17 +127,17 @@
       "role": "origin-doc"
     },
     "scripts/check_freeze.py": {
-      "sha256": "da6f0b84576d33966cac67bc388032954695bdd57f5cdb6aaab8017fa78d3380",
-      "size": 3484,
+      "sha256": "b349a35aa368233f544d5609b6262c7550210df9fd3c3f10d6e227e2c89b6567",
+      "size": 3492,
       "role": "generated"
     },
     "scripts/verify_manifest.py": {
-      "sha256": "1a6d62de4c0253ecd4ec531adf565d4df3af28efc464b6b3c2e4b84a6bfd582f",
-      "size": 5825,
+      "sha256": "cf8df5f5ce175402589d87e081fe28600336417c00bbf8b2d5d24eb8ffd24d1c",
+      "size": 5833,
       "role": "generated"
     },
     "scripts/verify_everything.py": {
-      "sha256": "f044f4ea10461db54185864a6fdad74e6a6d706a72661374e3205070f68a4bcb",
+      "sha256": "bb3144668f64503712129ce6d1f5d683fe3064017fed98d905a6b88c010f9c99",
       "size": 12260,
       "role": "generated"
     },
@@ -162,7 +162,7 @@
       "role": "generated"
     },
     "artifacts/metrics.json": {
-      "sha256": "16922760ca9e4394d355b5ba2942975bdcae9a84e4d5a1942ce9aa17a1297eb6",
+      "sha256": "cd86cdde8a9cbb1515f382b2b71f42ffbce5ae7b5f164d9acb738d32f8ab5fdd",
       "size": 1661,
       "role": "generated"
     },
@@ -172,7 +172,7 @@
       "role": "generated"
     },
     "artifacts/decision_log.jsonl": {
-      "sha256": "0d8cf042983c8c93e826143ba5ebb5bd8dd67e5256d50c53d8995d25331ded81",
+      "sha256": "676f1e918ad842acc961c95548b2f8111e443a817ebf0c6d6265dcaa9f97ce25",
       "size": 932704,
       "role": "generated"
     },
@@ -222,17 +222,17 @@
       "role": "proof-test"
     },
     "scripts/judge_walk.py": {
-      "sha256": "dfc81c48482dd92d25ced911b6cb6beae8d4073ad03656b0913b8710d3a7a586",
+      "sha256": "1c8a77e0cc055e9132f9c045bd66be1fbf2590da0f0acff84711f4e6dabc1045",
       "size": 8815,
       "role": "proof-tool"
     },
     "artifacts/receipt.json": {
-      "sha256": "f8df2b6165f456ebd784d61995521d237ceacfb69647580ec95e0edb9b0feabd",
+      "sha256": "adcf84151f93178a7cfd7f8f11efbb20a928c5692047202cdc1e918041a33ffd",
       "size": 85714,
       "role": "proof-artifact"
     },
     "elio-frontend/public/data/receipt_chain.json": {
-      "sha256": "17863fc7de3553f37faa1a66627bdc2aa6b28b4b55cc0d95d0e2b0868bb64f20",
+      "sha256": "81bb7daaea7c254fea21d32b7f91c676b7d59a3c8e8b75cef1b17771ac04b004",
       "size": 94296,
       "role": "proof-artifact"
     },

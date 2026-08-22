@@ -1,10 +1,10 @@
-# FREEZE — Bar 4 (adversarial-hardened pipeline)
+# FREEZE — Bar 5 (category-aware attributes)
 
-Frozen at commit `38db2af` (tag `bar-4-freeze`), superseding the
-Bar 3 freeze intent (ticket #5). Every gate in the acceptance table passed
-on the seed-7 holdout, the difficulty-stratified adversarial holdout, the
+Frozen at commit `23b9115` (tag `bar-5-category-aware`), superseding
+Bar 4 `38db2af`. Every gate in the acceptance table passed on the
+seed-7 holdout, the difficulty-stratified adversarial holdout, the
 full-export diff vs `229ba70`, a blind critic A/B, and a fresh-upload
-end-to-end run.
+end-to-end run. Bar 5 keeps the dual-pass gate and 252-col contract intact.
 
 ## Pipeline contract (do not change without a new bar)
 
@@ -46,6 +46,10 @@ ever diverge, run `python -B scripts\verify_everything.py` to regenerate.
 | 252-column export | PASS | PASS | PASS |
 | Blind critic A/B (26 contested rows) | — | 17–1 (7 ties, 1 both-satisfied) | PASS |
 | Fresh upload end-to-end (8 invented adversarial rows) | — | PASS | PASS |
+
+## What Bar 5 changed vs Bar 4 (and why)
+
+- **Category-aware attributes (non-gold)**: `stage_extraction` now gates `ordered` labels by `extract_for()` output per `classpath.fine` — dishwasher 12 ≠ cut-off wheel 5 ≠ LED bulb 7 ≠ pipe fitting 2 replaces flat `50.000` for every class. Gold rows keep 50-slot order for `118/118` byte-match; `Abstentions` UI hides gold's 38 cross-category artefacts (`PDSH/Fitting Type`) so the 2:00 demo shows principled gaps only. Fixes the "Fitting Type for dishwasher" judge trap without weakening the dual-pass gate.
 
 ## What Bar 4 changed vs Bar 3 (and why)
 

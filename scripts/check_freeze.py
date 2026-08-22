@@ -6,8 +6,8 @@ sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
 ROOT = Path(__file__).resolve().parent.parent
 
-FREEZE_COMMIT = "38db2af"
-FREEZE_TAG = "bar-4-freeze"
+FREEZE_COMMIT = "23b9115"
+FREEZE_TAG = "bar-5-category-aware"
 # Allowlisted post-freeze addition: UAT verification tooling, not pipeline code.
 ALLOWLIST = {"unihack_catalog/verification_ledger.py"}
 

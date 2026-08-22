@@ -11,8 +11,8 @@ sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 ROOT = Path(__file__).resolve().parent.parent
 MANIFEST = ROOT / "submission_manifest.json"
 
-FREEZE_COMMIT = "38db2af"
-FREEZE_TAG = "bar-4-freeze"
+FREEZE_COMMIT = "23b9115"
+FREEZE_TAG = "bar-5-category-aware"
 
 # Known submission-surface files: (repo-relative path, role label).
 # Frozen artifacts must always exist; generated outputs are included by
