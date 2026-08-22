@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+:root {
+  /* Light Theme (Landing & Pitch) */
+  --bg-light: #fcfbf7;
+  --bg-light-accent: #f7f5f0;
+  --text-light-primary: #18181b;
+  --text-light-secondary: #52525b;
+  
+  /* Dark Theme (Data-Ops Cockpit) */
+  --bg-dark: #09090b;
+  --bg-dark-card: #18181b;
+  --bg-dark-hover: #27272a;
+  --text-dark-primary: #f4f4f5;
+  --text-dark-secondary: #a1a1aa;
+  
+  /* Shared Colors */
+  --accent-brand: #2563eb;
+  --accent-green: #22c55e;
+  --accent-amber: #f59e0b;
+}
+
+body {
+  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Card panel styling (flat Entry Surface per DESIGN.md) */
+.glass-panel {
+  background: var(--bg-dark-card);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Custom scrollbar matching dark cockpit */
+.ops-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.ops-scrollbar::-webkit-scrollbar-track {
+  background: #09090b;
+}
+.ops-scrollbar::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 3px;
+}
+.ops-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #3f3f46;
+}
+
+/* Tabular styling defaults */
+th, td {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes indeterminate {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(300%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+

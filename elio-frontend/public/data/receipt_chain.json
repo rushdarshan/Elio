@@ -1,0 +1,2021 @@
+{
+  "schema_version": 1,
+  "receipt_sha256": "d39e6a6b7272fa4f8e391a9b57bcf3f8d2e8df74da972a2d1d1db152dfb391c5",
+  "source_attestation": "artifact-excerpt-only; publisher bytes are not bundled",
+  "claims": {
+    "PDSH4816AF_Series": {
+      "mpn": "PDSH4816AF",
+      "attribute": "Series",
+      "value": "Professional Series",
+      "uom": "",
+      "export_column": "ATTRIBUTE_VALUE 1",
+      "source_text": "E, Dishwasher, Professional Series, PDSH4816AF\nIN",
+      "source_hash": "3bb672836d435f5b7dfbcd65a8d6026d1d4dd726f71274308ee45e5f2637d06a",
+      "char_span": [
+        640,
+        659
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "8547def1c5f9c2c328c68b8a9393404b2b9b49ffdeb9ec1f7bab8c0e15c1d551",
+      "claim_hash": "27416535b4752b6520daf6740086e7cb6aa7b0f9237f67ae8b6a8d78e46825b9",
+      "decision_hash": "df3feab1f7f74fbcbaf32efdc9224461860a285140a82184b92458653ab2259e",
+      "output_hash": "c54639ff61eed3214051e9fd9aa62babb587ddd8b9e31f7771dea5a4dcb02a34",
+      "chain_hash": "cceced4c9070fd56cc67eef3e2bb02ce6eb133dfb8b1af8cc9afe744e0c72401"
+    },
+    "PDSH4816AF_Number of Wash Cycles": {
+      "mpn": "PDSH4816AF",
+      "attribute": "Number of Wash Cycles",
+      "value": "5",
+      "uom": "",
+      "export_column": "ATTRIBUTE_VALUE 3",
+      "source_text": "DISHWASHER LEG 5 SST 120V 15A 5",
+      "source_hash": "f2d22640ca7742bf8678b086376c8bce2dab851711bbf52223c7d76d9fb623f7",
+      "char_span": [
+        701,
+        702
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "8547def1c5f9c2c328c68b8a9393404b2b9b49ffdeb9ec1f7bab8c0e15c1d551",
+      "claim_hash": "f372375f9d51e86785780a6267026855f604c2ecd1b25512532aa3963e2d129b",
+      "decision_hash": "d467d7bf72de8d02ae21379be20510470a070fe308e504c7c71c66d02bc26669",
+      "output_hash": "90ba7e7bc4afe82d9eb0ef0e0893af0bd7632d3b0dc3790af4db5c8e6185a541",
+      "chain_hash": "377d06bab1574fa1da2fb587873e0065fd58f6fbdbff35185d2b154d847f34c8"
+    },
+    "PDSH4816AF_Voltage Rating": {
+      "mpn": "PDSH4816AF",
+      "attribute": "Voltage Rating",
+      "value": "120",
+      "uom": "V",
+      "export_column": "ATTRIBUTE_VALUE 4",
+      "source_text": "SHER LEG 5 SST 120V 15A 50-1/4IN\n",
+      "source_hash": "a35a89a1ad7f27347151a3d5d81cdbbd72b18de19b8324b4008f678b6908ba7f",
+      "char_span": [
+        707,
+        710
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "8547def1c5f9c2c328c68b8a9393404b2b9b49ffdeb9ec1f7bab8c0e15c1d551",
+      "claim_hash": "0ca3f3edba4ed1a26740057ba42ca61eae7abac61a6c78f9769ab53f89699be3",
+      "decision_hash": "e027b9ae06ad6b3d53d49bf1ec907a2566761030b0ef7ba0cf723ecfb13e7b59",
+      "output_hash": "05a29aeedfa5de4e0255ba10542ee927cafdb2c372b4a01124864f28fb68c2bc",
+      "chain_hash": "8110f41a5bd6ea89e4a6e53bbe01992805502bdb8e9ac17d32a07d5dcb8ea38a"
+    },
+    "PDSH4816AF_Amperage Rating": {
+      "mpn": "PDSH4816AF",
+      "attribute": "Amperage Rating",
+      "value": "15",
+      "uom": "A",
+      "export_column": "ATTRIBUTE_VALUE 5",
+      "source_text": "LEG 5 SST 120V 15A 50-1/4IN\nSHOR",
+      "source_hash": "5002acfeaf347a4fc95b6bb1d436cd00d36d2204ab0d1f84ace1946eec34fa4a",
+      "char_span": [
+        712,
+        714
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "8547def1c5f9c2c328c68b8a9393404b2b9b49ffdeb9ec1f7bab8c0e15c1d551",
+      "claim_hash": "af660c1ec1ff3464f2065b8c951bb0d7b3321285d5a1da3f9dbeb65bc60e8e63",
+      "decision_hash": "d727cdba9249ff3ab8abd146d8f2203058359fa4129313d574978d633aef3a88",
+      "output_hash": "cff5e2b34269a633fd969dd44f5a5aaaa5f7e9d9fc046acc34d53e7a68e2adb4",
+      "chain_hash": "ab9a5ed5fb305bc54618f82093e2d3fc1f948dda1da6b7b4a326a17077da3c8e"
+    },
+    "PDSH4816AF_Mounting Type": {
+      "mpn": "PDSH4816AF",
+      "attribute": "Mounting Type",
+      "value": "Leg",
+      "uom": "",
+      "export_column": "ATTRIBUTE_VALUE 6",
+      "source_text": "h CleanBoost™, Leg Mounting, 5-Wa",
+      "source_hash": "2bef80a52f12670fe273feeb65930dd1e69576961766f71ccb492484b0f9f6d0",
+      "char_span": [
+        809,
+        812
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "8547def1c5f9c2c328c68b8a9393404b2b9b49ffdeb9ec1f7bab8c0e15c1d551",
+      "claim_hash": "777a2ea5e132b8c174e457d16e6bfb3bc73022f7ff9bce61932a4b22cdea6978",
+      "decision_hash": "ffff92cf485b2dea1d17cf8c155b6d1710a7e41f01f2069b90d81b1af705372c",
+      "output_hash": "576547aa453a8a81c30599df4261305a56566930db2ec6d38b8d1654f9053a27",
+      "chain_hash": "bcae7835e01c8b853b97aa8580a55847768ec75d8d38ce7af0a41ae953aa4320"
+    },
+    "PDSH4816AF_Size": {
+      "mpn": "PDSH4816AF",
+      "attribute": "Size",
+      "value": "24 in W x 24-1/4 in D",
+      "uom": "",
+      "export_column": "ATTRIBUTE_VALUE 8",
+      "source_text": " Leg Mounting, 24 in W x 24-1/4 in D, 50-1/4 in Dep",
+      "source_hash": "4aad2f60fdd5cce3fa2af6b1028f3fecc223fa7bc8b73c7e6716115ad8e2cf70",
+      "char_span": [
+        969,
+        990
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "8547def1c5f9c2c328c68b8a9393404b2b9b49ffdeb9ec1f7bab8c0e15c1d551",
+      "claim_hash": "071de1d3cac69b78503ccf8ee6927667e1548a42f639002c64688280d05c2a76",
+      "decision_hash": "8c08f43bf2303750f092873c1e88e080f74eaa721265b6c15bd05af07723753b",
+      "output_hash": "5eeaf080ad299b63111426d507f3e343dfb1229bb51421396ba7c704a8fe5c5c",
+      "chain_hash": "09c9f33e515d34aad1292b66ff0de34001f0a5f743de24773e6cc3f76cc15ba2"
+    },
+    "PDSH4816AF_Depth With Door Open": {
+      "mpn": "PDSH4816AF",
+      "attribute": "Depth With Door Open",
+      "value": "50-1/4",
+      "uom": "in",
+      "export_column": "ATTRIBUTE_VALUE 9",
+      "source_text": "5 SST 120V 15A 50-1/4IN\nSHORT_DESC: ",
+      "source_hash": "3ba3744d1ab5aaa7e550e2d1fa6b272164f0812358e93174d9bfe602423a2c29",
+      "char_span": [
+        716,
+        722
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "8547def1c5f9c2c328c68b8a9393404b2b9b49ffdeb9ec1f7bab8c0e15c1d551",
+      "claim_hash": "0f6945439f1446d15a71ae53a9ae64cb0b8cf19b6f19cd46b7a77acbae7c75b3",
+      "decision_hash": "6c4c2dd0bf9b6fed13b399d00f5c8fcffac6433bcfafc104f19889f8844762b8",
+      "output_hash": "38417164535d0e3a093ddc8f001bdff815dd6eefb1ee91a543df009040d24f94",
+      "chain_hash": "698c8941e16236e2bdd8bf937bbc57136519b4243cae19aa9867f49f01b92fef"
+    },
+    "PDSH4816AF_Minimum Height": {
+      "mpn": "PDSH4816AF",
+      "attribute": "Minimum Height",
+      "value": "8-1/2 in Upper Rack, 11-1/4 in Lower Rack",
+      "uom": "",
+      "export_column": "ATTRIBUTE_VALUE 10",
+      "source_text": "ith Door Open, 8-1/2 in Upper Rack, 11-1/4 in Lower Rack Minimum Height",
+      "source_hash": "c6ef9759c9bc318e3b4497766e88528df23f7cd119fed033feb5062bb5b02460",
+      "char_span": [
+        1024,
+        1065
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "8547def1c5f9c2c328c68b8a9393404b2b9b49ffdeb9ec1f7bab8c0e15c1d551",
+      "claim_hash": "896d38f996c3e9dede10ab053d4fbec3dc90f6558c25c3369ada995a8d977460",
+      "decision_hash": "69ac487b22d8715b84de72ad59fdad559a528141b77d614598d8142491b327e0",
+      "output_hash": "704ef6d8c32a67a4e203f876f84f6e5e9a54405c16672ae0c92cc7662c1b951d",
+      "chain_hash": "138d796fdcd8534cea5bc2fe180e415e384fd7f9fe7f95e210c3bdbd394ebe55"
+    },
+    "PDSH4816AF_Maximum Height": {
+      "mpn": "PDSH4816AF",
+      "attribute": "Maximum Height",
+      "value": "10-3/8 in Upper Rack, 13-1/4 in Lower Rack",
+      "uom": "",
+      "export_column": "ATTRIBUTE_VALUE 11",
+      "source_text": "inimum Height, 10-3/8 in Upper Rack, 13-1/4 in Lower Rack Maximum Height",
+      "source_hash": "d64a162e950709bd248699072c247e702a7505fea7fa58ad25573473407fc3e7",
+      "char_span": [
+        1082,
+        1124
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "8547def1c5f9c2c328c68b8a9393404b2b9b49ffdeb9ec1f7bab8c0e15c1d551",
+      "claim_hash": "09012a99120d8a64513120ebafc562a6633653e82cd740d7c5694ba01ed86f2c",
+      "decision_hash": "8cc0842c37c0ce5f97df59955b1e9a8042a9c6d0ee29003a1d88627e1163d5fd",
+      "output_hash": "5e9ced771b1d1a918446d2926fd2b47d510747444a8922faafb7c70ed81a764d",
+      "chain_hash": "c648d8065718710e4864c3ee3e1b9e6bb05b50be40da5b50ae761ce237541fb2"
+    },
+    "PDSH4816AF_Sound Level": {
+      "mpn": "PDSH4816AF",
+      "attribute": "Sound Level",
+      "value": "47",
+      "uom": "dBA",
+      "export_column": "ATTRIBUTE_VALUE 12",
+      "source_text": "aximum Height, 47 dBA Sound Leve",
+      "source_hash": "7a10f9b2c3a37877381c401733079d552187fca6b631ce65b817843649bfde14",
+      "char_span": [
+        1141,
+        1143
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "8547def1c5f9c2c328c68b8a9393404b2b9b49ffdeb9ec1f7bab8c0e15c1d551",
+      "claim_hash": "e615def8c824307ba5229dd0887284a4e38f6b39a2ae8cb0c0de2150616f081e",
+      "decision_hash": "8c4fbef1cec8caa5ee0fdd81bc5660162cee17315b0213ac1328799f31a870b4",
+      "output_hash": "01ca7a3a7faf9bf4797a125ab2975d452b6ea0bf7df605e44913a8f055b06406",
+      "chain_hash": "3204b1fe7b239f7d4949de2d9f671f6bf4456b901a28521c67f1509a5237c7a5"
+    },
+    "PDSH4816AF_Material": {
+      "mpn": "PDSH4816AF",
+      "attribute": "Material",
+      "value": "Stainless Steel",
+      "uom": "",
+      "export_column": "ATTRIBUTE_VALUE 13",
+      "source_text": " 5-Wash Cycle, Stainless Steel\nLONG_DESC1: FR",
+      "source_hash": "e49e24cf3a2814d571288484bf2b7ec05464661d6247a00b09174f050a06d955",
+      "char_span": [
+        837,
+        852
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "8547def1c5f9c2c328c68b8a9393404b2b9b49ffdeb9ec1f7bab8c0e15c1d551",
+      "claim_hash": "0aff33ec103e2d57aba9d4a421bf14978fb5777608932c8d001c07c7a0b104fd",
+      "decision_hash": "573f1ab729cd3d47856d1729e7ace9eb1487c5c150a9d6f59a8872c2f9f18adb",
+      "output_hash": "f710ffe67bd53c3f52324a7ff6265031ee76b54dc6841d7d73a04e19f062450f",
+      "chain_hash": "289e57c8a34aeebb99d6bd71024b8757fd69511e887939d299d729266319c552"
+    },
+    "PDSH4816AF_Additional Information": {
+      "mpn": "PDSH4816AF",
+      "attribute": "Additional Information",
+      "value": "240 kW-hr Annual Energy, 1 to 12 hr Delay Start Hours",
+      "uom": "",
+      "export_column": "ATTRIBUTE_VALUE 15",
+      "source_text": "l Information: 240 kW-hr Annual Energy, 1 to 12 hr Delay Start Hours\nRETAIL_DESC: P",
+      "source_hash": "fd2a81dec55d13a676042cb9c0194bce84805922b9357d8b7710e04dc590e9eb",
+      "char_span": [
+        1202,
+        1255
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "8547def1c5f9c2c328c68b8a9393404b2b9b49ffdeb9ec1f7bab8c0e15c1d551",
+      "claim_hash": "44c743abd6ea1b3fa840751d3354d3945306a70878dab7cc01f6726003825ce0",
+      "decision_hash": "b3c94e0a5dfec6cf1f1226b9bdb320451b266137f3189460865bb9f9a4e1deeb",
+      "output_hash": "9c22602f076801ae8a47436dbc10203ed5004ed5d3b084f065ca3f180dabb9c1",
+      "chain_hash": "95b1b6c5412f1603ec68e4ad169152949a15dcaf61005491eafb3a280aa80dbf"
+    },
+    "WDTS7024RZ_Series": {
+      "mpn": "WDTS7024RZ",
+      "attribute": "Series",
+      "value": "Eco Series",
+      "uom": "",
+      "export_column": "ATTRIBUTE_VALUE 1",
+      "source_text": "l, Dishwasher, Eco Series, WDTS7024RZ, B",
+      "source_hash": "10d4f6be1f363fee6532fae19c5f61ad2382c2bd75135859e14184437293ebdc",
+      "char_span": [
+        839,
+        849
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "179eaf662bb8a4dcaa080817962457ee749de131d9310e24866686ed872e364b",
+      "claim_hash": "2852e8805fc83ad6112569465a4c95f9f12e4344baf34734bd401fef751b6fd2",
+      "decision_hash": "6578ff3932987b0e07de2189feeeaa332c433c8762647e3b4be8fc580be8204e",
+      "output_hash": "a1535ffd03e808b1c0c34724e0039de7e98881545d8ea608d04e9603b64d478b",
+      "chain_hash": "aa7e173b57955d0b21266826186e22820c1a6015475c367c2324e7271303001d"
+    },
+    "WDTS7024RZ_Voltage Rating": {
+      "mpn": "WDTS7024RZ",
+      "attribute": "Voltage Rating",
+      "value": "120",
+      "uom": "V",
+      "export_column": "ATTRIBUTE_VALUE 4",
+      "source_text": " BLTLN SST SST 120V 10A 41DBA\nSHO",
+      "source_hash": "d08f6766bfbc0ceb81b3e9eae42867d4c67ec77fea323e9b0178758302ed2313",
+      "char_span": [
+        920,
+        923
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "179eaf662bb8a4dcaa080817962457ee749de131d9310e24866686ed872e364b",
+      "claim_hash": "cf4211ae9839dfca4f978e5bde11ea2af3fe44e1ab0064774434a3d7313c104a",
+      "decision_hash": "10b3d968f1376f13d4cffb21c46cfd28955a6b10a2528c2a396888724a27d067",
+      "output_hash": "db2dbe6f9072dc669f3a634f3b13b24eb28adaf8d1cd0d6642e79302881b3a76",
+      "chain_hash": "b71b3a9bd4838e21613fdae27eebacebe0d63bcd8d336c2f52ff7d0d5f27b79c"
+    },
+    "WDTS7024RZ_Amperage Rating": {
+      "mpn": "WDTS7024RZ",
+      "attribute": "Amperage Rating",
+      "value": "10",
+      "uom": "A",
+      "export_column": "ATTRIBUTE_VALUE 5",
+      "source_text": "N SST SST 120V 10A 41DBA\nSHORT_D",
+      "source_hash": "465d94194d8118ff7791ed11fb3d4c6848548453a152765ec000b66178a18632",
+      "char_span": [
+        925,
+        927
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "179eaf662bb8a4dcaa080817962457ee749de131d9310e24866686ed872e364b",
+      "claim_hash": "27478b69125da828b3512a03872546a60f666f01bc824b36032d8835f55143bd",
+      "decision_hash": "ac14c14d66a66254ce57189e424612c426fd76954736990ff8b0794196677f48",
+      "output_hash": "250a8998df351a29164cf1e3318b118fb35165a79d7996b7974d5eb3dac147d7",
+      "chain_hash": "61aa856660d977d3d28d02bc941aeb78d50c81c09af82365a882c2ba444f3146"
+    },
+    "WDTS7024RZ_Mounting Type": {
+      "mpn": "WDTS7024RZ",
+      "attribute": "Mounting Type",
+      "value": "Built-in",
+      "uom": "",
+      "export_column": "ATTRIBUTE_VALUE 6",
+      "source_text": "s, WDTS7024RZ, Built-in Mounting\nINVOI",
+      "source_hash": "8aee63670671ac5474340aa952b8f6b6b4698cfb40a56a336d01bb5b4d36dbd7",
+      "char_span": [
+        863,
+        871
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "179eaf662bb8a4dcaa080817962457ee749de131d9310e24866686ed872e364b",
+      "claim_hash": "354c1c87a5f71c6f2772b048a66d1dd8ec4091350ac64796c00ee341eb47854b",
+      "decision_hash": "5c561c34d2972cbd3bdd3a24d99af5e62298134a99a6c258d1bfc224024b0dcb",
+      "output_hash": "87d8097b62fbb1d013fa4e7d30fd341857292d61eb0e66ed2fc146eacf355b66",
+      "chain_hash": "100d44b612314e26591ba079a4b21348e75218a088165bc18070bf3359617a12"
+    },
+    "WDTS7024RZ_Size": {
+      "mpn": "WDTS7024RZ",
+      "attribute": "Size",
+      "value": "33-7/16 in H x 23-7/8 in W x 22-5/8 in D",
+      "uom": "",
+      "export_column": "ATTRIBUTE_VALUE 8",
+      "source_text": "t-in Mounting, 33-7/16 in H x 23-7/8 in W x 22-5/8 in D, 50-3/16 in De",
+      "source_hash": "6a96b467db00703ab23add8921db77cebe69849b2bef1881a8f98b5039c93db4",
+      "char_span": [
+        1123,
+        1163
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "179eaf662bb8a4dcaa080817962457ee749de131d9310e24866686ed872e364b",
+      "claim_hash": "22162a9d2b57a9f2bb3fdf35eb2787360e099e11f5b6f3d8530f56cdeea47954",
+      "decision_hash": "30be165b184be7629c5c42cb85e7546a15aff95d195844cc7c39069322c20d8a",
+      "output_hash": "7a822de3dad053bb18a9a65394ac7c2e814528018f5a97c00e05e18b131d431e",
+      "chain_hash": "ac77b1e26ce60725cf5a3dfa73193c78f645fbba845ed9298157806a1bbb370e"
+    },
+    "WDTS7024RZ_Depth With Door Open": {
+      "mpn": "WDTS7024RZ",
+      "attribute": "Depth With Door Open",
+      "value": "50-3/16",
+      "uom": "in",
+      "export_column": "ATTRIBUTE_VALUE 9",
+      "source_text": "x 22-5/8 in D, 50-3/16 in Depth With ",
+      "source_hash": "d1f23adda72a4a15949561f4bdda8edacf2026581ab496400419ca095513ed41",
+      "char_span": [
+        1165,
+        1172
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "179eaf662bb8a4dcaa080817962457ee749de131d9310e24866686ed872e364b",
+      "claim_hash": "21615f4183bcda7a6e7aceb3a91f63a71c50cdfb9a818198c498760280cfd726",
+      "decision_hash": "209711117f1c887d6fc65547b85653a6b8d9f12ef16b37f00d04b792815c586c",
+      "output_hash": "f77540e51a8805a1bff18445d352918a56f26d13a3efa0bf544abdb66bb4a1a6",
+      "chain_hash": "520d90a433e0a1d8a8f60507eed135fcbacc3cadecde922bf25b5891522bf869"
+    },
+    "WDTS7024RZ_Minimum Height": {
+      "mpn": "WDTS7024RZ",
+      "attribute": "Minimum Height",
+      "value": "33-7/16",
+      "uom": "in",
+      "export_column": "ATTRIBUTE_VALUE 10",
+      "source_text": "t-in Mounting, 33-7/16 in H x 23-7/8 ",
+      "source_hash": "c95d7a6d97331d855ca03ffbacf632b882a7caccd3f8cb267d0cc9d3f9755e77",
+      "char_span": [
+        1123,
+        1130
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "179eaf662bb8a4dcaa080817962457ee749de131d9310e24866686ed872e364b",
+      "claim_hash": "5bc9364adc5c6c82582fa94b650f4203d7b3973d06851aef8f9673d50c0170d1",
+      "decision_hash": "3165666aab9fbcb1c006f566faf1e4d9b6ccdfd62728085dddf540dd33d9b61a",
+      "output_hash": "01bc7614990d3d42554ddf77e6f000d1a0ec06b819b4693f3f0c98fbbc4d0f17",
+      "chain_hash": "a17ba7ba5d82c3938cabb4b350e3fe76fdbfa88bcf9677a08ebb3f012cecfe8b"
+    },
+    "WDTS7024RZ_Sound Level": {
+      "mpn": "WDTS7024RZ",
+      "attribute": "Sound Level",
+      "value": "41",
+      "uom": "dBA",
+      "export_column": "ATTRIBUTE_VALUE 12",
+      "source_text": "l/documents/202412/owners-manual",
+      "source_hash": "a1935333ab95331baaa459e0805547b7ba8f658679f203af6bcc88c404e2e529",
+      "char_span": [
+        185,
+        187
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "179eaf662bb8a4dcaa080817962457ee749de131d9310e24866686ed872e364b",
+      "claim_hash": "45c7672a21c7e6862190fa29462811e10f26fbff7cacf49187f4e21bf1d36df0",
+      "decision_hash": "8a9d509e2f8e599cd673bfe2e10c2565b88d1fde3f47ee8b4e291547d567c035",
+      "output_hash": "8d9fdd04ee409d88eb93ffe1fa038bea5169ff5afaa2c594f170893819cecb38",
+      "chain_hash": "d472db2d35ec70e878b85a667d38bc7b147ebd3e25787b864b280e609684cc85"
+    },
+    "WDTS7024RZ_Material": {
+      "mpn": "WDTS7024RZ",
+      "attribute": "Material",
+      "value": "Stainless Steel",
+      "uom": "",
+      "export_column": "ATTRIBUTE_VALUE 13",
+      "source_text": "t-in Mounting, Stainless Steel, Stainless Ste",
+      "source_hash": "4a1c50dc5faea8684c4122f5930a09e1c9e41b54680364d05c29b12dd8475762",
+      "char_span": [
+        1011,
+        1026
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "179eaf662bb8a4dcaa080817962457ee749de131d9310e24866686ed872e364b",
+      "claim_hash": "e2d0fc8f621e5e58b0abdf03fbde6937877f6d67326d5aba9ee85a7f6c95c67b",
+      "decision_hash": "4b904053d1b9bf43fd444a9ba9383cd175cdce1f28196b3e8977aee937494d50",
+      "output_hash": "bad0e17762d6ab64bb5ffd8fa7055bb41d7b8ad91edc77a4031a75b8e20e6d54",
+      "chain_hash": "189a7d52e740005beb0faea1d66dfc3650a604c5e769701fbd3d6c2c58a5cdbd"
+    },
+    "WDTS7024RZ_Color": {
+      "mpn": "WDTS7024RZ",
+      "attribute": "Color",
+      "value": "Stainless Steel",
+      "uom": "",
+      "export_column": "ATTRIBUTE_VALUE 14",
+      "source_text": "t-in Mounting, Stainless Steel, Stainless Ste",
+      "source_hash": "4a1c50dc5faea8684c4122f5930a09e1c9e41b54680364d05c29b12dd8475762",
+      "char_span": [
+        1011,
+        1026
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "179eaf662bb8a4dcaa080817962457ee749de131d9310e24866686ed872e364b",
+      "claim_hash": "aef059b98ad2d16f8b632a6b74e4b979d3aa4a83463aad60d2fab35ec3475957",
+      "decision_hash": "f4c3d5693bf1fc3fca6fcfe9e1382bfafb5488f381fcfc4634c536bc934a0e5c",
+      "output_hash": "449dc516a3dbbea5cb02eba5ca8a6fb13dcf6093641f465cec7e9b2a25be18ec",
+      "chain_hash": "2e33bdd118f2a36eeaf43fdac5f2953388e777032e015148e3181187545d9412"
+    },
+    "WDTS7024RZ_Additional Information": {
+      "mpn": "WDTS7024RZ",
+      "attribute": "Additional Information",
+      "value": "Folding Tines, Leak Detection System, Moisture Repellent Silverware Basket, Normal Cycle, Quick Wash Cycle, Sani Rinse Option, Sensor Cycle, Triple Wash Spray",
+      "uom": "",
+      "export_column": "ATTRIBUTE_VALUE 15",
+      "source_text": "l Information: Folding Tines, Leak Detection System, Moisture Repellent Silverware Basket, Normal Cycle, Quick Wash Cycle, Sani Rinse Option, Sensor Cycle, Triple Wash Spray\nRETAIL_DESC: E",
+      "source_hash": "cbc0fc6d3a09ed00c4b328bece4b1f7492bdfc51d99b0c7d4539025c6db2c634",
+      "char_span": [
+        1303,
+        1461
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "179eaf662bb8a4dcaa080817962457ee749de131d9310e24866686ed872e364b",
+      "claim_hash": "8caa8e069bba21eefca3842ff46f2a36beb0efecb0add4c03902ee7956283514",
+      "decision_hash": "f757ba9f4f3e035e58c29b7bc9c5b1a26a99a043e610dcd65d841b2d290d38ea",
+      "output_hash": "7a9dd587416ed1ebb293f901d5df80177c0c104a478a9d63856f4c1dfe6c3f20",
+      "chain_hash": "1eb3623ffe98d157568a16b84c804a8ea6f0da53a585d3fafa73818fcb3fa397"
+    },
+    "49-94-0073_Material": {
+      "mpn": "49-94-0073",
+      "attribute": "Material",
+      "value": "Metal",
+      "uom": "",
+      "export_column": "ATTRIBUTE_VALUE 13",
+      "source_text": "lw 14\"x1/8\"x1\" Metal Cut Off Disc",
+      "source_hash": "e99ca8bcb32180912110eac0d16febfd2034577cffd5e54894595d97cfd5987d",
+      "char_span": [
+        28,
+        33
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "1a6d729a728ff491aba6f9861fb80951268808fe8d60591b9eaf33bcecb2035f",
+      "claim_hash": "539c70a15d6d4c29095b467a2f2c5a89e104fb12670098909f09990bc8aa7a3f",
+      "decision_hash": "3c1bde7bfaf1712fe6bf3a64c008c5766940722cb3cb9113a807a9640a6d25bd",
+      "output_hash": "cb6cead5210bf47575c0498d3fdb08c595cc941cde9c709ec90df44974d120b5",
+      "chain_hash": "6061e7c5bc579682b88f5e30a8d223f54f2a99403742bbe0d68f7a67efd132b1"
+    },
+    "49-94-0073_Diameter": {
+      "mpn": "49-94-0073",
+      "attribute": "Diameter",
+      "value": "14 in",
+      "uom": "",
+      "export_column": "ATTRIBUTE_VALUE 29",
+      "source_text": "49-94-0073 Milw 14\"x1/8\"x1\" Metal Cut Off Disc",
+      "source_hash": "354ea3676927b2ece981ddd8bfb77c32d58d8455fb64a91671ef945261aebb80",
+      "char_span": [
+        0,
+        0
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "1a6d729a728ff491aba6f9861fb80951268808fe8d60591b9eaf33bcecb2035f",
+      "claim_hash": "533b312436f7747e1eaa2e0822cd17979fd6e5a73898e882fab7f333f3ac7f6d",
+      "decision_hash": "fac58d143242e92617b3b96e259f3283d51683f5366778b3ec0b843a8c1c39fe",
+      "output_hash": "bfcacb451122091a5951f91458e6a43aa94aa4dbb493b56820b64eb917497103",
+      "chain_hash": "84747dce47bf8e0a58951f192840399117d20dd013d87a9f44b1eb2134fd6afc"
+    },
+    "49-94-0073_Arbor Size": {
+      "mpn": "49-94-0073",
+      "attribute": "Arbor Size",
+      "value": "1 in",
+      "uom": "",
+      "export_column": "ATTRIBUTE_VALUE 30",
+      "source_text": "49-94-0073 Milw 14\"x1/8\"x1\" Metal Cut Off Disc",
+      "source_hash": "354ea3676927b2ece981ddd8bfb77c32d58d8455fb64a91671ef945261aebb80",
+      "char_span": [
+        0,
+        0
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "1a6d729a728ff491aba6f9861fb80951268808fe8d60591b9eaf33bcecb2035f",
+      "claim_hash": "af4a776f5a9ca0c3ddbea368cd8d6648eda8a391efe29574b6b5079d20c15b29",
+      "decision_hash": "0f558a739fef0a9f4a9a91d75424c75fa6fb98e95425147042f7a4b642c033a5",
+      "output_hash": "0fbcc659c55accc96f0095f8910b1f6eb841d6719543acc19a4b2d95f6876e9f",
+      "chain_hash": "f33949d8ab1fffb225f3ae64ab8d2ba143390b11f09097d23d952c79adf3c9cc"
+    },
+    "49-94-0073_Thickness": {
+      "mpn": "49-94-0073",
+      "attribute": "Thickness",
+      "value": "1/8 in",
+      "uom": "",
+      "export_column": "ATTRIBUTE_VALUE 34",
+      "source_text": "49-94-0073 Milw 14\"x1/8\"x1\" Metal Cut Off Disc",
+      "source_hash": "354ea3676927b2ece981ddd8bfb77c32d58d8455fb64a91671ef945261aebb80",
+      "char_span": [
+        0,
+        0
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "1a6d729a728ff491aba6f9861fb80951268808fe8d60591b9eaf33bcecb2035f",
+      "claim_hash": "79449329f15d3a3af819a3d5fff3ef13229a9339495b96f85f73f31b354cc8cf",
+      "decision_hash": "d18796bbba1796379baaf3c2a2717b8452d4f382749e74410e08a7ea9d9067a3",
+      "output_hash": "13d1056af0a4d1202ffd4dd4f27de18162a59a658a74d1813d4dd59fd75d9196",
+      "chain_hash": "0ec95d770d9da20815337c66320cc59419ba6ff71c1ae3ebe52593e634dd4ac3"
+    },
+    "49-94-0023_Material": {
+      "mpn": "49-94-0023",
+      "attribute": "Material",
+      "value": "Metal",
+      "uom": "",
+      "export_column": "ATTRIBUTE_VALUE 13",
+      "source_text": " 6\"x.045\"x7/8\" Metal Cut Off Disc",
+      "source_hash": "e064e4d1714360b608c490a7d9fd00a7b149e21ca2c4bf582f1fa40150133fb0",
+      "char_span": [
+        30,
+        35
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "d2c0ece74aeff3fe5293b3ea4ac214e4fbc3e9d130d95088d65013d9a2f98d7e",
+      "claim_hash": "151870ccd45175a4c9ba5f2ed1210f56c927686e907282b1e5cc1ac038fd351f",
+      "decision_hash": "84a43c4447580f70680580fb3f9b89a191487f9d4a9c71cee96b718b5d12e663",
+      "output_hash": "9c960bbdd11316ede19ffb9aa56ffe35da8d4c866b38224a6da9de8acc409d44",
+      "chain_hash": "b4636eaf754f3b8c2370b21abb0eb5fe225f4185499afe809968c0a650265414"
+    },
+    "49-94-0023_Diameter": {
+      "mpn": "49-94-0023",
+      "attribute": "Diameter",
+      "value": "6 in",
+      "uom": "",
+      "export_column": "ATTRIBUTE_VALUE 29",
+      "source_text": "49-94-0023 Milw 6\"x.045\"x7/8\" Metal Cut Off Disc",
+      "source_hash": "6cd948d8f8225d378d33f66aba59a4ba2d11e32f0c657a00f2ce3ee172e3e62c",
+      "char_span": [
+        0,
+        0
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "d2c0ece74aeff3fe5293b3ea4ac214e4fbc3e9d130d95088d65013d9a2f98d7e",
+      "claim_hash": "3f7d8b418eb59adc5595c616c3abbf07c8b06b69d1141fd80c85b26184f781b9",
+      "decision_hash": "081c410eac3bc1d7cfeafdaa4ff7ef8ae1240fce5b8df51fd736669401de7b42",
+      "output_hash": "f7023039f5488fd0fbfdd0f774e59588ec9175043c50efdcacae0f70448dbc1c",
+      "chain_hash": "de96a1ec27d711c442c2d9bd3cb0c8feacf81f5da93cc218e219d053f606d44d"
+    },
+    "49-94-0023_Arbor Size": {
+      "mpn": "49-94-0023",
+      "attribute": "Arbor Size",
+      "value": "7/8 in",
+      "uom": "",
+      "export_column": "ATTRIBUTE_VALUE 30",
+      "source_text": "49-94-0023 Milw 6\"x.045\"x7/8\" Metal Cut Off Disc",
+      "source_hash": "6cd948d8f8225d378d33f66aba59a4ba2d11e32f0c657a00f2ce3ee172e3e62c",
+      "char_span": [
+        0,
+        0
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "d2c0ece74aeff3fe5293b3ea4ac214e4fbc3e9d130d95088d65013d9a2f98d7e",
+      "claim_hash": "8c9ebc274974809d1184ab23ab6f91e9d1a5b0f86cf376e8db7d04b7e869cd8a",
+      "decision_hash": "3d499c3118558ab91458c51f4fd30aa0eef3943434edde82655e2dee284e75dd",
+      "output_hash": "58cd23a04f99bef325cc04857f4620346b23c540792582e37fb9358367ad5188",
+      "chain_hash": "d991e3f8994b21952a2b59f83b48dfbc770f616d36905e986d337f54c3a17f22"
+    },
+    "49-94-0023_Thickness": {
+      "mpn": "49-94-0023",
+      "attribute": "Thickness",
+      "value": "0.045 in",
+      "uom": "",
+      "export_column": "ATTRIBUTE_VALUE 34",
+      "source_text": "49-94-0023 Milw 6\"x.045\"x7/8\" Metal Cut Off Disc",
+      "source_hash": "6cd948d8f8225d378d33f66aba59a4ba2d11e32f0c657a00f2ce3ee172e3e62c",
+      "char_span": [
+        0,
+        0
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "d2c0ece74aeff3fe5293b3ea4ac214e4fbc3e9d130d95088d65013d9a2f98d7e",
+      "claim_hash": "c2b5ac6a150523798a5710f6203326fce5a52221e65fa0add4079a0f363e89cb",
+      "decision_hash": "f7017bd282e63e4b19c70521024b551c32dc7120fae2855538480a0d5fa1ace8",
+      "output_hash": "2d1dc1096d3b62b99c1e2cd331ea5b588c76509b9429c0826a8dbd1e2e9acc0c",
+      "chain_hash": "66ab0c16f70df7fb828d9037f02bd993f393d5b498a61e9288a1b0d23eea3bbe"
+    },
+    "49-94-0803_Material": {
+      "mpn": "49-94-0803",
+      "attribute": "Material",
+      "value": "Metal",
+      "uom": "",
+      "export_column": "ATTRIBUTE_VALUE 13",
+      "source_text": "1/8\"x7/8\" Dual Metal Cut and Grind ",
+      "source_hash": "3f31491f204c09b0b720801ec8d565ab7ff42cfc81241a7e9220f9e02e8be564",
+      "char_span": [
+        38,
+        43
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "32542162a331c44b5b4a367785d2acf0523d6c3778e2303757ddf8f42ac7b214",
+      "claim_hash": "1d632874feb581b8d94997d23a2f78862650a6a980bd5464e1d06b0b44fe2a6d",
+      "decision_hash": "802b9312052fb38437b68c3847aa500ba403c61f4559410213c7ce92b2657a69",
+      "output_hash": "d0f044b6b35ca99cd63fede8bc855fc4e208676a437defb19200e0f22767228f",
+      "chain_hash": "6ad7bd7198c8e212a19b171976c0a8baec572aa3592513d85b3d63095bb54aa9"
+    },
+    "49-94-0803_Diameter": {
+      "mpn": "49-94-0803",
+      "attribute": "Diameter",
+      "value": "4-1/2 in",
+      "uom": "",
+      "export_column": "ATTRIBUTE_VALUE 29",
+      "source_text": "49-94-0803 Milw 4-1/2\"x1/8\"x7/8\" Dual Metal Cut and Grind Di",
+      "source_hash": "a5a27a8dcc31f09b70b2ff961852eb44ca6d041091c08ef20a4a2fe7662d6f1c",
+      "char_span": [
+        0,
+        0
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "32542162a331c44b5b4a367785d2acf0523d6c3778e2303757ddf8f42ac7b214",
+      "claim_hash": "5503bbf6e2d80ba551cf895951344d7785c63984eff81e1803b694382c55eed8",
+      "decision_hash": "a0d6e7d594e7ee679002a302c988e8a17800f738938889154a2325c1996b9af8",
+      "output_hash": "f775cfa3b5094e330361e695aa5dff8e957fd7813d17f3ed039335dbfc80e10a",
+      "chain_hash": "48fd23f42a4d1056c367694c0fd8955d2e464c51c68625752ecbfa05235fe26b"
+    },
+    "49-94-0803_Arbor Size": {
+      "mpn": "49-94-0803",
+      "attribute": "Arbor Size",
+      "value": "7/8 in",
+      "uom": "",
+      "export_column": "ATTRIBUTE_VALUE 30",
+      "source_text": "49-94-0803 Milw 4-1/2\"x1/8\"x7/8\" Dual Metal Cut and Grind Di",
+      "source_hash": "a5a27a8dcc31f09b70b2ff961852eb44ca6d041091c08ef20a4a2fe7662d6f1c",
+      "char_span": [
+        0,
+        0
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "32542162a331c44b5b4a367785d2acf0523d6c3778e2303757ddf8f42ac7b214",
+      "claim_hash": "645db87f08c18f45e77da88ce27c40d1d303ccbbdbab2c7907ab5262a04b7456",
+      "decision_hash": "ec03fe2297224d9d7ed2dd3534c1d8f758e0a146c5a04a394f974df9f3e46069",
+      "output_hash": "d01f5791410049a0751985fe3278deeda8683a02dfe71fd3a307f2f2946e5a34",
+      "chain_hash": "7fdc282cc229c1f6395a47cdfc1e6dcc026e8e0f82b838f4a21a33d65df7172b"
+    },
+    "49-94-0803_Thickness": {
+      "mpn": "49-94-0803",
+      "attribute": "Thickness",
+      "value": "1/8 in",
+      "uom": "",
+      "export_column": "ATTRIBUTE_VALUE 34",
+      "source_text": "49-94-0803 Milw 4-1/2\"x1/8\"x7/8\" Dual Metal Cut and Grind Di",
+      "source_hash": "a5a27a8dcc31f09b70b2ff961852eb44ca6d041091c08ef20a4a2fe7662d6f1c",
+      "char_span": [
+        0,
+        0
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "32542162a331c44b5b4a367785d2acf0523d6c3778e2303757ddf8f42ac7b214",
+      "claim_hash": "67e838c7b61dad1789fc318cdc8c2c70382abb862e3a6f1ec3021c94d1b409ab",
+      "decision_hash": "70a34d887b2545bdee69af5546c3a0be668cba47e96f5fdfb9c198f989b2c242",
+      "output_hash": "ceca8f4c44eea44337828757ac3635a05be640879889cdc2c56514feabc4a209",
+      "chain_hash": "322c26369c0ab58c7fac61630c5c56d34d3f38b37850134158191ab8ec462bb9"
+    },
+    "49-94-0039_Material": {
+      "mpn": "49-94-0039",
+      "attribute": "Material",
+      "value": "Metal",
+      "uom": "",
+      "export_column": "ATTRIBUTE_VALUE 13",
+      "source_text": "x1/8\"x5/8\" DKO Metal Cut Off Disc",
+      "source_hash": "0b5a9ac2653dfded44779bd64409f4799fe654586bd66cbc32954f2efe8660df",
+      "char_span": [
+        33,
+        38
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "659c1337702875906d9ced86c21d902bd200206ac8aedda9a11d5d611d71cfba",
+      "claim_hash": "6575290a0aa6d8ff3f2094b8c67c1b9c3de8d7a47f285caf0b733fff45e21fcc",
+      "decision_hash": "0b1776fccdafd892802eff588b8743caf51f628fbefd1d2c03b5a9b00fb943db",
+      "output_hash": "329bccdb66c76bbefea5dcb66eb2f7ab18590433bcabab1366b509852c296974",
+      "chain_hash": "86363a5c34ca9470c96c48749f4a83c5f93bd15270b3a0c490559304f42923c3"
+    },
+    "49-94-0039_Diameter": {
+      "mpn": "49-94-0039",
+      "attribute": "Diameter",
+      "value": "7 in",
+      "uom": "",
+      "export_column": "ATTRIBUTE_VALUE 29",
+      "source_text": "49-94-0039 Milw 7\"x1/8\"x5/8\" DKO Metal Cut Off Disc",
+      "source_hash": "5a90bbafd99f2ea983938b53ba3b614e108528603a3e62d3dffd4aecd0e7db99",
+      "char_span": [
+        0,
+        0
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "659c1337702875906d9ced86c21d902bd200206ac8aedda9a11d5d611d71cfba",
+      "claim_hash": "5dc1f5f11c1bc2189f4ca15e78ef37cdf329ecf2e1bd2dacd3cc0e0149b50aeb",
+      "decision_hash": "6d7fae80b1c750eca62e6364fbc85b376e249481e501c6679bd9702b5a84fef2",
+      "output_hash": "3c85565196d4ee7123b8978adc8f87e26ec00c18a673caf11cd09dd581adcf81",
+      "chain_hash": "d738017e2235ae0300edbb0821f7903026b07cf3d967857bfb19d42153bab70f"
+    },
+    "49-94-0039_Arbor Size": {
+      "mpn": "49-94-0039",
+      "attribute": "Arbor Size",
+      "value": "5/8 in",
+      "uom": "",
+      "export_column": "ATTRIBUTE_VALUE 30",
+      "source_text": "49-94-0039 Milw 7\"x1/8\"x5/8\" DKO Metal Cut Off Disc",
+      "source_hash": "5a90bbafd99f2ea983938b53ba3b614e108528603a3e62d3dffd4aecd0e7db99",
+      "char_span": [
+        0,
+        0
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "659c1337702875906d9ced86c21d902bd200206ac8aedda9a11d5d611d71cfba",
+      "claim_hash": "e32a2f61c13b7ebb35c1a2cff199eacb5a806ea1e296a0f7242c48dc548a2399",
+      "decision_hash": "81967781278f5348167c777c55559822f4f30970877312adf999df6f852d7d71",
+      "output_hash": "c3425a63aaf81bca0501705c5412bfcbd6eef9bc2159d7b94243397e84c9e5cd",
+      "chain_hash": "a4995b8405d37bc24d828ea34d290ced9f09d902bee96ce353edfb4e88fbf2a6"
+    },
+    "49-94-0039_Thickness": {
+      "mpn": "49-94-0039",
+      "attribute": "Thickness",
+      "value": "1/8 in",
+      "uom": "",
+      "export_column": "ATTRIBUTE_VALUE 34",
+      "source_text": "49-94-0039 Milw 7\"x1/8\"x5/8\" DKO Metal Cut Off Disc",
+      "source_hash": "5a90bbafd99f2ea983938b53ba3b614e108528603a3e62d3dffd4aecd0e7db99",
+      "char_span": [
+        0,
+        0
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "659c1337702875906d9ced86c21d902bd200206ac8aedda9a11d5d611d71cfba",
+      "claim_hash": "af20e29ed13dd1b19cc838a3f9002429ef85efc6938cb6439ced357a530e7768",
+      "decision_hash": "7b36107e054c308991c672278136e369b8a0c0a7c3b964e8bb09c44df3471128",
+      "output_hash": "b3a7e661f4d721adf574a4942b4922aa7aeb6da5401fe24fb8ba46118ed23893",
+      "chain_hash": "92e76b254807055773465002e25b9dd76e60b7da75bfe4046c32e1817f0efb74"
+    },
+    "49-94-0053_Material": {
+      "mpn": "49-94-0053",
+      "attribute": "Material",
+      "value": "Metal",
+      "uom": "",
+      "export_column": "ATTRIBUTE_VALUE 13",
+      "source_text": "lw 12\"x1/8\"x1\" Metal Cut Off Disc",
+      "source_hash": "f9731f605fb23229019b3dc520ea6ac76e8862617047ef1f21fc7137f8240245",
+      "char_span": [
+        28,
+        33
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "9b29368759884878e1d11d70e85e8be2eb0558446ab274f98edea931dbe64ad0",
+      "claim_hash": "80cc5e8735c967417678e0ce2ce8a7e13de0d20fcf9bc3374b2c99c9ecdf26a0",
+      "decision_hash": "9d846b6e79cc2ac46ca1741ed1408483dda5edc650b07e8f96dde6e88a9df95d",
+      "output_hash": "eefab5a95dbd648228ba0bdcf455eec22bf1eae4cd01ac4d9753307bf1c4c1f0",
+      "chain_hash": "6ab4c299e7cfa465ffaa0e9d386e8267fd678a776c4864e6c7c43d4d0c8dd325"
+    },
+    "49-94-0053_Diameter": {
+      "mpn": "49-94-0053",
+      "attribute": "Diameter",
+      "value": "12 in",
+      "uom": "",
+      "export_column": "ATTRIBUTE_VALUE 29",
+      "source_text": "49-94-0053 Milw 12\"x1/8\"x1\" Metal Cut Off Disc",
+      "source_hash": "c1bd1d454cff14fd22ffb59e2febf6590b7dee362a3d67ed5323b50e966c76cd",
+      "char_span": [
+        0,
+        0
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "9b29368759884878e1d11d70e85e8be2eb0558446ab274f98edea931dbe64ad0",
+      "claim_hash": "d0ebfc7f7fb3f42a6db4bd5be45477d43acde8ea9ab5203f160f2671043a36fd",
+      "decision_hash": "cf1ee2ec486ece655bb1a4d3f6167929b9b496e9dac1675e34e2ad1798961579",
+      "output_hash": "ac982a03a85cd4b259d908ad3059728f256be3e18c7d197a85598a4018605e82",
+      "chain_hash": "71e377495d1d6c08106dd745e9e2d606f7007cef5a8f42b1148e27f09fda2b31"
+    },
+    "49-94-0053_Arbor Size": {
+      "mpn": "49-94-0053",
+      "attribute": "Arbor Size",
+      "value": "1 in",
+      "uom": "",
+      "export_column": "ATTRIBUTE_VALUE 30",
+      "source_text": "49-94-0053 Milw 12\"x1/8\"x1\" Metal Cut Off Disc",
+      "source_hash": "c1bd1d454cff14fd22ffb59e2febf6590b7dee362a3d67ed5323b50e966c76cd",
+      "char_span": [
+        0,
+        0
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "9b29368759884878e1d11d70e85e8be2eb0558446ab274f98edea931dbe64ad0",
+      "claim_hash": "22c0851ee994b869c7eb3f5edac0ba0abc942b7886f0140623e83b214d1df33d",
+      "decision_hash": "f7f2cc4f7594833f9733b5d2032a552a61f7b5bc0ded18ef9fa78a3f42147c62",
+      "output_hash": "5e48406786f5fed5eedb50e7acfce9b079dc75ec20a6d1119bb0fe08c2ef870f",
+      "chain_hash": "bc7c5e7a2495dae8da0a86ddbeae2b3baf188c7569e053db14ee7d2e64831c2d"
+    },
+    "49-94-0053_Thickness": {
+      "mpn": "49-94-0053",
+      "attribute": "Thickness",
+      "value": "1/8 in",
+      "uom": "",
+      "export_column": "ATTRIBUTE_VALUE 34",
+      "source_text": "49-94-0053 Milw 12\"x1/8\"x1\" Metal Cut Off Disc",
+      "source_hash": "c1bd1d454cff14fd22ffb59e2febf6590b7dee362a3d67ed5323b50e966c76cd",
+      "char_span": [
+        0,
+        0
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "9b29368759884878e1d11d70e85e8be2eb0558446ab274f98edea931dbe64ad0",
+      "claim_hash": "08238b86d19752029599eacfaf9fb309b8a4c2c2a57df881f03f112a4d15c64a",
+      "decision_hash": "806bd5a34b4de4f5dd70ae3013b5e6a0eae1f44a044234c82721fd4ce92d2ffa",
+      "output_hash": "9cc53ae7a6ae17eb8a159c69a9bf7b7b16558d0c710eb5bbd46161f78ebcbd8b",
+      "chain_hash": "4b351bbc5cacc4ccf071077aad9e53cf065b31e79a20fd92f265942861858154"
+    },
+    "DCB518ASTS06G_Size": {
+      "mpn": "DCB518ASTS06G",
+      "attribute": "Size",
+      "value": "1/2 in x 18 in",
+      "uom": "",
+      "export_column": "ATTRIBUTE_VALUE 8",
+      "source_text": "DCB518ASTS06G Diablo 1/2\"x18\" - Sanding Belt 6pc",
+      "source_hash": "e2f4c8306483311079b772019d5571e337d51b6ebcd559c19781df4938885ad6",
+      "char_span": [
+        0,
+        0
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "68048a85ab908e81e9aab30f6e736a091b79a3ff6618f42b77c8be203ca361a2",
+      "claim_hash": "413a7494018d64956962089ead84d117d8c081f69f2c0c7521b14afd6054d5c9",
+      "decision_hash": "f84ee86bc26dbe4f49154d310d39894e3d62f7327799f8f7245348e724d5b10f",
+      "output_hash": "f28eb6cbadfccf0d3216418c5ac1c3adf038a56ab0e9b0127a3f91ce1b925ed2",
+      "chain_hash": "fa02632068ca32ee4a79d2000445356e290dcdd5e64fbcb96189c331362960db"
+    },
+    "DCB518ASTS06G_Quantity": {
+      "mpn": "DCB518ASTS06G",
+      "attribute": "Quantity",
+      "value": "6",
+      "uom": "",
+      "export_column": "ATTRIBUTE_VALUE 32",
+      "source_text": "DCB518ASTS06G Diablo 1/2\"x1",
+      "source_hash": "24d99716600071b22133b57f536dffdfdfa776690efaba65a165e7a0999e357d",
+      "char_span": [
+        11,
+        12
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "68048a85ab908e81e9aab30f6e736a091b79a3ff6618f42b77c8be203ca361a2",
+      "claim_hash": "ef3094bdf9df829cea6059164000aa42ffebe7689c351f6ca74b39b8279253da",
+      "decision_hash": "7fe183c7e07764d2e10aa7ae3884fbf9b55d663782778ac2c8247d07330e3b95",
+      "output_hash": "3188091bf680ff2c8fbba8c0365e6d36f42871e0d91c7b85481649ccfeccaf7e",
+      "chain_hash": "c6cd970eb13a5151e4689d816130515bceba35ae25065d75db7c2c1fc287b355"
+    },
+    "DCB518ASTS06G_Type": {
+      "mpn": "DCB518ASTS06G",
+      "attribute": "Type",
+      "value": "Sanding",
+      "uom": "",
+      "export_column": "ATTRIBUTE_VALUE 33",
+      "source_text": "blo 1/2\"x18\" - Sanding Belt 6pc",
+      "source_hash": "b76f32fab2f7dcee9b33e675b9d43a2cfdd77289948c46d0a4ac24bda7686696",
+      "char_span": [
+        32,
+        39
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "68048a85ab908e81e9aab30f6e736a091b79a3ff6618f42b77c8be203ca361a2",
+      "claim_hash": "2c261604e4f4b42cd2112c8cb597b1c3064114e10e1fdeb4496e24fa1e9e7ca6",
+      "decision_hash": "b3a70fd5eb6f92a4f48f123d7f5fb3e6913c7e6c02cf0f31cc946dfb08dec1ce",
+      "output_hash": "d1a7a22f7e48df617716fe176c368985beca00fc75bf9161a53ddd3260b042a3",
+      "chain_hash": "8407869b7efd05dc934d2e3b6c5f638f5e41e224b40e65e717eb86e53e7097b3"
+    },
+    "48-44-2770_Type": {
+      "mpn": "48-44-2770",
+      "attribute": "Type",
+      "value": "Blade",
+      "uom": "",
+      "export_column": "ATTRIBUTE_VALUE 33",
+      "source_text": "rs Replacement Blade",
+      "source_hash": "2d491e875dbfad7c9fc6a6e35f046b46336fb28298b02f524a525322341b2776",
+      "char_span": [
+        50,
+        55
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "e09426f1ece20664aa1e256da9d57100fbcbd06a7c798aab75c61d30e8050ec8",
+      "claim_hash": "c30827e1073c18b85518556a4a5f2619fdefddd8685aca49361fb98b986b019c",
+      "decision_hash": "9737ad5b1c327300f4c67d6e94f1589b94b54d9bc38f9742569567d5e3335cbd",
+      "output_hash": "b09b2539df12333cfd2ec1937841805d50f57cb1ad4ab3c0964e0b9c7baf5640",
+      "chain_hash": "5e41b681703f2dc293f2e679872093faffb209f3095b4cb8634ffc953397ef88"
+    },
+    "A-96095_Type": {
+      "mpn": "A-96095",
+      "attribute": "Type",
+      "value": "Saw Blade",
+      "uom": "",
+      "export_column": "ATTRIBUTE_VALUE 33",
+      "source_text": "ita 5-7/8\" 32T Saw Blade",
+      "source_hash": "22efbf63236a10d4c5b8561e2d13b57687fc5fc4ed2e86cd7a49035d5bbe2d9e",
+      "char_span": [
+        26,
+        35
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "83aa7cc47a1d26df3c75b87c24adc59ddc9dcde772e6b94b93983c4eac911377",
+      "claim_hash": "ce254acc0b39ae9f1ccc804cd23939ce4ed08ec75be32c88c67e6d5678be1cbc",
+      "decision_hash": "f8a5159855b405ea4b4193a60eac21ca0cbadd2ddb0c8da102cf984d56f71fa2",
+      "output_hash": "722f6a31e123fdf12981ca5a0cc94f0806eefda6590d7b8d7e0c8c4ac5a85e17",
+      "chain_hash": "4dc9344bd22b44bd5b8b88fc88c97f6b7b8688d56d353cc49ed6e3478affec93"
+    },
+    "A-96095_Number of Teeth": {
+      "mpn": "A-96095",
+      "attribute": "Number of Teeth",
+      "value": "32",
+      "uom": "",
+      "export_column": "ATTRIBUTE_VALUE 36",
+      "source_text": " Makita 5-7/8\" 32T Saw Blade",
+      "source_hash": "378973c5a27e0135b5ec577ac48c1f3d0c2f192000dcf4c84d75adbc942abf16",
+      "char_span": [
+        22,
+        24
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "83aa7cc47a1d26df3c75b87c24adc59ddc9dcde772e6b94b93983c4eac911377",
+      "claim_hash": "02d63f31edf412ac7e759c0ba2e35bd9cc3d500760491c9ce43183f16a0a2cca",
+      "decision_hash": "c7d701356d81517ef67317ae830f9c6a7f27c364ec451c646948974a4da51817",
+      "output_hash": "3de2ce47236bc6238a0275c7ef7aa4d93fb566ff8404540ae943f3e3dcaec207",
+      "chain_hash": "4db0e82b9cffdb8b4e2bd7b936bf476af8422566c9363681a18e7ec103dd30ce"
+    },
+    "DWA4769_Type": {
+      "mpn": "DWA4769",
+      "attribute": "Type",
+      "value": "Blade",
+      "uom": "",
+      "export_column": "ATTRIBUTE_VALUE 33",
+      "source_text": "m Glass Tile - Blade 10\"",
+      "source_hash": "73a60945b3fe7e5998f05b944f6f82df89e64ffe9ade2dfd3083bc549522ca53",
+      "char_span": [
+        32,
+        37
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "1b172d21737de8f81eb810601b39f0334ba9d52fec7342a2d02e0ebba24913c3",
+      "claim_hash": "0c913f3b6a94390d77c044f8a7044fed0b54dbab977752c0f799035ce4c5167d",
+      "decision_hash": "813a945e7585a4d161db80adf66d66e8c52c414676762e4def03c1774a370882",
+      "output_hash": "8643b1727f50d7019f324988c0abcb000eac0aad4fe8a91f80dcde1d70b7c886",
+      "chain_hash": "1794b6e33dddae9ace943e0ceaa843539244ddafe734ff458d8e1e20f95c1b15"
+    },
+    "49-93-9207_Material": {
+      "mpn": "49-93-9207",
+      "attribute": "Material",
+      "value": "Diamond",
+      "uom": "",
+      "export_column": "ATTRIBUTE_VALUE 13",
+      "source_text": "3-9207 Milw 7\" Diamond - Tile Blade",
+      "source_hash": "64018ee6ef5996b62a8c9edbefd0ebfc4bc4a7df4e23c81f31259e315afca591",
+      "char_span": [
+        19,
+        26
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "71f2818d315d12f311e3f19d3a721e99ed3f4891ef82ce8f0bbedc6e1dd8ef1f",
+      "claim_hash": "7d7f6263257d91c7792e8a9c16eca8387f89bafbf38c04a61c55a4c2686307ea",
+      "decision_hash": "66c91bbd162ba41cbd7d1e66d1302f33556680d096df4805dacda9cc370ea49d",
+      "output_hash": "2ebb104f9e4b1ce12b5ed3b87a3acda77c2047b07f2efd1640224ab5bb10a7fa",
+      "chain_hash": "d141320dd2182ddf53a0301187829759ccd50795351383532b036d35de589cc3"
+    },
+    "49-93-9207_Type": {
+      "mpn": "49-93-9207",
+      "attribute": "Type",
+      "value": "Tile Blade",
+      "uom": "",
+      "export_column": "ATTRIBUTE_VALUE 33",
+      "source_text": "w 7\" Diamond - Tile Blade",
+      "source_hash": "77bca430423d5a1ae3c11dddd4e306908f8a8e2595dba8c8ab269734287c4c23",
+      "char_span": [
+        29,
+        39
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "71f2818d315d12f311e3f19d3a721e99ed3f4891ef82ce8f0bbedc6e1dd8ef1f",
+      "claim_hash": "4a1921824d93ddc8fc9537f8d8181fe4de15f596f476590a1af911704afb2183",
+      "decision_hash": "89a143f8286ba6403ee6167b350c3ed6fef3d7e408d6f1d23d43b0e08db4665e",
+      "output_hash": "3a9c84139ce41bfae0ec87028e3bf5f9b10e7bea88659118daca19ba3aeb122a",
+      "chain_hash": "650ed9291579ed69569beee4422bb19a644169d1d183b4d4b4db0f9541ba8f69"
+    },
+    "D0860X_Type": {
+      "mpn": "D0860X",
+      "attribute": "Type",
+      "value": "Saw Blade",
+      "uom": "",
+      "export_column": "ATTRIBUTE_VALUE 33",
+      "source_text": " - Fine Finish Saw Blade",
+      "source_hash": "8c7e79ab5a639e318b0ed67131d878f67a45e784a1accacca6e4efd2ccedef5d",
+      "char_span": [
+        44,
+        53
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "d7be5889141fee9903c6a427c672d401e8610e2a45351743b1b7b31062ae5e32",
+      "claim_hash": "30bde8ad7427d5d4b8291c116ecd3a2a56e933d827c93e563e5af7318669acc3",
+      "decision_hash": "7c95501fddaacb5653ba79ddbe302d7a7bbb039348ccd0f048d03a16712bcbe2",
+      "output_hash": "008e66a0ad2ba30fda390695f58d767f741312e26a383cad7df982c6ce8ff05b",
+      "chain_hash": "312c32fa5705e62e85106d9dc0b760b5097858b9a550f48af69068b427f1f0fa"
+    },
+    "DPH12B_Diameter": {
+      "mpn": "DPH12B",
+      "attribute": "Diameter",
+      "value": "2 in",
+      "uom": "",
+      "export_column": "ATTRIBUTE_VALUE 29",
+      "source_text": "DPH12B 2\" #1 Phillips Drive - Bit",
+      "source_hash": "71e13005a129ba7d0580e16793c51b9de1743ba3d25bc97567a9304b0e7be202",
+      "char_span": [
+        0,
+        0
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "9760237a3bf1eef08494d34024e7c3767828e1cfc1c145a37a341a7a2ebe841b",
+      "claim_hash": "1338e9e79a497afa2e2858f658a588b09de155be104080a2bc8c344c9d56374b",
+      "decision_hash": "526e13d299d50770552538c8abfeac5f31ade1ec7ec0f1150268e76fc0562c25",
+      "output_hash": "fcf05d8a007236a9f23c904790906c8b38ddeaeb3a4770b48d3236546fe657bb",
+      "chain_hash": "5616b22d392bdcca7f54351176f3b9846f9b114dc5cc41f2c6b93aa86c28ee0d"
+    },
+    "DPH26B_Diameter": {
+      "mpn": "DPH26B",
+      "attribute": "Diameter",
+      "value": "6 in",
+      "uom": "",
+      "export_column": "ATTRIBUTE_VALUE 29",
+      "source_text": "DPH26B 6\" #2 Phillips Drive - Bit",
+      "source_hash": "32a1bc355813ea683cab40e151d690ab72ff8549e758d831314d4f716ffb3743",
+      "char_span": [
+        0,
+        0
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "2a9e24b3c7fdef85f2fd0b76f3bec7f54d4ad04b0e3764b5beac784bf2cba65e",
+      "claim_hash": "7b8e00c22f49a6d6a168f923ff94a6471376b5f63d892ead83a223a22297a3fb",
+      "decision_hash": "ce05b3646f08a8d0c750fe76b00e569f8442e2fb242e09b9c89c6861e826073c",
+      "output_hash": "7793ee33071855b23e3cf869f514f9751235eb2bb78a3a26317483dfb192df26",
+      "chain_hash": "1cd17ee02e830fdcd67f7123e34c2023c23587cdbceca1a1b3e3a170cf87122e"
+    },
+    "DSQ26B_Diameter": {
+      "mpn": "DSQ26B",
+      "attribute": "Diameter",
+      "value": "6 in",
+      "uom": "",
+      "export_column": "ATTRIBUTE_VALUE 29",
+      "source_text": "DSQ26B 6\" #2 Square Drive Bit",
+      "source_hash": "cfe1515754e623d5068f5e006a0056ef43fc326ce7150dc64a94794dee9e9d11",
+      "char_span": [
+        0,
+        0
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "5392910854218ff41550c725c88b441fa3c01ca248d8990baa88330099beff38",
+      "claim_hash": "8efe8f1c7e520969803deb0aec2dfd74c2c64e3e441c25d05f7aeea721ba9fbc",
+      "decision_hash": "3aa114aa08255b696cfa8a284e1eabc7b63364515f335f6eba4eb44169b4e8b1",
+      "output_hash": "664c9b7dd89d01c67ef2718710ed8e4901dcf926863a00252303de8ec6dec789",
+      "chain_hash": "3a0b8a5820a67b7de0d91b2f7a24b63ae547fad04d9cbeebf608b55644ce2b55"
+    },
+    "DSQ26B_Shank Type": {
+      "mpn": "DSQ26B",
+      "attribute": "Shank Type",
+      "value": "Square",
+      "uom": "",
+      "export_column": "ATTRIBUTE_VALUE 35",
+      "source_text": "DSQ26B 6\" #2 Square Drive Bit",
+      "source_hash": "cfe1515754e623d5068f5e006a0056ef43fc326ce7150dc64a94794dee9e9d11",
+      "char_span": [
+        13,
+        19
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "5392910854218ff41550c725c88b441fa3c01ca248d8990baa88330099beff38",
+      "claim_hash": "790e18da3e62ec42af55ea2de42421b014035bac6894571deb1a3f89aaf16495",
+      "decision_hash": "8971b26a82b6f722aff3497d9b1d550fbbd67abc0ae73a547d18bacf779cdb4a",
+      "output_hash": "e8993d0d9ae29b73221e14ee08b1779842f22c8bf6fb20923b9599a5485cf53b",
+      "chain_hash": "35b946fb11638de79b52bedab8da08ccc9975374f3e28af77c89c87011dcedc5"
+    },
+    "DCD1007B_Voltage Rating": {
+      "mpn": "DCD1007B",
+      "attribute": "Voltage Rating",
+      "value": "20",
+      "uom": "V",
+      "export_column": "ATTRIBUTE_VALUE 4",
+      "source_text": "CD1007B Dewalt 20V Cordless - 1/",
+      "source_hash": "151e58ebdd402948bbc625076c05ac3adf591c74cf35e9669f9670bc6ff97ea0",
+      "char_span": [
+        16,
+        18
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "43d494ccb09b58f69a86e789f57666c22a41fdfeca6622088e5bebf4d8c1d6c1",
+      "claim_hash": "7702fd1eba5c05533610ac6428bc2895f39d1b48d76991217018822f970d38a1",
+      "decision_hash": "6dd77483ec0b0fe91fa7e84655c712029a5a3872615fb070f52514d9c7725227",
+      "output_hash": "64aa7149b38f0adcd37f94bd22bc70caae1a8adbc8d74d696ac7f867424c926a",
+      "chain_hash": "a3f275db1b5816c035942e9dff019df3ed837c5c7b730b751848e604983614d7"
+    },
+    "DCD1007B_Diameter": {
+      "mpn": "DCD1007B",
+      "attribute": "Diameter",
+      "value": "1/2 in",
+      "uom": "",
+      "export_column": "ATTRIBUTE_VALUE 29",
+      "source_text": "DCD1007B Dewalt 20V Cordless - 1/2\" Hammer Drill (Bare)",
+      "source_hash": "28c2c89a4add00fc9b555ca031623e8616dc2a4e0d9313d8571c6ddf8ab8f9a4",
+      "char_span": [
+        0,
+        0
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "43d494ccb09b58f69a86e789f57666c22a41fdfeca6622088e5bebf4d8c1d6c1",
+      "claim_hash": "815a78a1d39e75d47af6b007abcd02c46786e93bed51e76b96244e57d3ba9960",
+      "decision_hash": "6f37ec1e998a3bcf0652d5ad285955f3768e8a8ff395c911d12532f020c85beb",
+      "output_hash": "eee30f55d0dc131d10a81883e801b58b37df1437df0d77d89ed61d1df8906b30",
+      "chain_hash": "5f16d6649aece898894ec08d9fc967543b58df367d9e74a9b5c47a41a9324bfc"
+    },
+    "220USB25U_Quantity": {
+      "mpn": "220USB25U",
+      "attribute": "Quantity",
+      "value": "25",
+      "uom": "",
+      "export_column": "ATTRIBUTE_VALUE 32",
+      "source_text": "220USB25U Vessel Screwd",
+      "source_hash": "fc91018da863536e0470ccf5419f2b90d9c65405a669d743998a8a3881923550",
+      "char_span": [
+        6,
+        8
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "461be6f92a9601293464bc9965bc461b6a3811b50bfc8f4e4d119f4aa2c74f11",
+      "claim_hash": "cf4257433220082aaf05e4ba025a988143c582299f04e59dd3561984b3c6292f",
+      "decision_hash": "108e5f5b29811e5875ae811946e2a5c231456978366e8acc103b12aa10dc29b2",
+      "output_hash": "26a1d3b8c0db0343efe07a2bf4db6dcdbc8b33bd0d5e70b825411b616aeea18e",
+      "chain_hash": "7f5204e55cf74ed2b0027108f2173016548930858c809b6a8a6ac968576ce40e"
+    },
+    "220USB25U_Type": {
+      "mpn": "220USB25U",
+      "attribute": "Type",
+      "value": "Screwdriver",
+      "uom": "",
+      "export_column": "ATTRIBUTE_VALUE 33",
+      "source_text": "0USB25U Vessel Screwdriver w/25pc Bit Set",
+      "source_hash": "1358d713e35f7f4637072e6c3c81fbaf406729b8ebfea114b2412b7de5229cd7",
+      "char_span": [
+        17,
+        28
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "461be6f92a9601293464bc9965bc461b6a3811b50bfc8f4e4d119f4aa2c74f11",
+      "claim_hash": "680642e491fd5e753fbbe99eddcd692dbe720269f8de6811a4f75491fe6b2e65",
+      "decision_hash": "6b0964730e8bb6f81ab20ff183208a9a2ac344b09e438fb431320682d8e01f6d",
+      "output_hash": "57e50cf57486dd52133d64ea47d5982f95a4a74fccca2982dacc9a910cba51ad",
+      "chain_hash": "0d52d890aec921073f31dc499be29520524012f8edc54b04a91ceefc5b1bb4ae"
+    },
+    "XNB04Z_Voltage Rating": {
+      "mpn": "XNB04Z",
+      "attribute": "Voltage Rating",
+      "value": "18",
+      "uom": "V",
+      "export_column": "ATTRIBUTE_VALUE 4",
+      "source_text": "XNB04Z Makita 18V 2\" Brad Naile",
+      "source_hash": "d41cfddb9a0a46336d5630458cf51bdc8751e0c5530a159a096ab57a97c3389b",
+      "char_span": [
+        14,
+        16
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "f4a96683e1c3ae9aa005bbda07d52204bab5ce0a4f0258ea91155b778a73508b",
+      "claim_hash": "99eea44efe7e5bae8db39e40d514eb7ec847f4a810d7a2525276c8e8e668164c",
+      "decision_hash": "52e7174d5178656a29adb6b1c1806493d0e8caac73cb6c35e05b081ebbed95a7",
+      "output_hash": "4c0c8a8e0747a485693aea31b2d6cfb5ecb4c50b0edf5cf21421aced027121fd",
+      "chain_hash": "bca7fabc37a200457fa691ac624a14d37cf4cbfede02bc81551a75487d7b76e8"
+    },
+    "XNB04Z_Size": {
+      "mpn": "XNB04Z",
+      "attribute": "Size",
+      "value": "2 in",
+      "uom": "",
+      "export_column": "ATTRIBUTE_VALUE 8",
+      "source_text": "XNB04Z Makita 18V 2\" Brad Nailer 18GA (Bare)",
+      "source_hash": "aa38706726da63cdf93642e51e29f44aa28195d74f014c42f55cb337a461907c",
+      "char_span": [
+        0,
+        0
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "f4a96683e1c3ae9aa005bbda07d52204bab5ce0a4f0258ea91155b778a73508b",
+      "claim_hash": "739490b7f25b6fa3dc7b2ad1716eff012cdaa7e410a97f947c3cc02192e26149",
+      "decision_hash": "54883350727ff04b03a6dae807aaea5847139a2a96ad2f44641fa660eb4f068e",
+      "output_hash": "3cbf53e448b9cbfd52a20e86a3178d46d98ca54e8aac1db4ab34cb3a805875cf",
+      "chain_hash": "5a69ef512df7fde2998865171809d9e2dc713625752549efe107e43ec48a0e67"
+    },
+    "XNB04Z_Type": {
+      "mpn": "XNB04Z",
+      "attribute": "Type",
+      "value": "Brad Nailer",
+      "uom": "",
+      "export_column": "ATTRIBUTE_VALUE 33",
+      "source_text": " Makita 18V 2\" Brad Nailer 18GA (Bare)",
+      "source_hash": "8453c0ad9f58f1b5518d86135760c11363fdbf2ec44d62c6adf8ba93ae0b58b0",
+      "char_span": [
+        21,
+        32
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "f4a96683e1c3ae9aa005bbda07d52204bab5ce0a4f0258ea91155b778a73508b",
+      "claim_hash": "7721152f3d1e52e80b22e520eca19ca34a0ddb41c0e53cc88a57325ae12fd4e6",
+      "decision_hash": "6241e0b666f7d19319a98874eb5081ffdf3d44b15fb3bae404ca7a2be5e83cb5",
+      "output_hash": "8c114b69791e81a4993e61be0f94838d31b77781d39912fc8c890c2a8a14142a",
+      "chain_hash": "58a5e70b0cda6c0facf08af2809b0a46f0e19123a3e1b71aa51d5766b8babbcc"
+    },
+    "XNB04Z_Gauge": {
+      "mpn": "XNB04Z",
+      "attribute": "Gauge",
+      "value": "18",
+      "uom": "GA",
+      "export_column": "ATTRIBUTE_VALUE 48",
+      "source_text": "XNB04Z Makita 18V 2\" Brad Naile",
+      "source_hash": "d41cfddb9a0a46336d5630458cf51bdc8751e0c5530a159a096ab57a97c3389b",
+      "char_span": [
+        14,
+        16
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "f4a96683e1c3ae9aa005bbda07d52204bab5ce0a4f0258ea91155b778a73508b",
+      "claim_hash": "cf37288ee2b43b367dabd4c71dca98db08b4e0f0d0246e558831290cbcfaaa8c",
+      "decision_hash": "29904b030ed7be57b90675ecbc76cba638e72a6dd61f81793d4ee2f7bc241f35",
+      "output_hash": "26f3974d60716d51bb39e068a60ce798c4c754ea7cb9a1b32096ca5aaf5c90da",
+      "chain_hash": "75da9e9e6e3392dabf52d0bfd7762abd9f655d0d3d89db1a74009d8501fc37bc"
+    },
+    "XNB06Z_Voltage Rating": {
+      "mpn": "XNB06Z",
+      "attribute": "Voltage Rating",
+      "value": "18",
+      "uom": "V",
+      "export_column": "ATTRIBUTE_VALUE 4",
+      "source_text": "XNB06Z Makita 18V 2-1/2\" Angled",
+      "source_hash": "f33ebbef0216fb1a46861a6939b3abe46fccacd9134b5a1cf0ddb8fcd040938e",
+      "char_span": [
+        14,
+        16
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "ce038d08d96bc7a5920ab4b5502381e3e0054b369323ab5068f67a1dd1bb2eed",
+      "claim_hash": "1b0064063e217f2a78bfc0e1cc3211d9d29c882f251c5fed18dd31a51cd7f965",
+      "decision_hash": "fde9b5ac35dc88277c7951fbc32ed241c7e18310d1cdc4278ec01155b0da2458",
+      "output_hash": "23bed4c1a1726aaa734d93f842b519f35445dc703ba7ffedbc68a20260f5b115",
+      "chain_hash": "78299f10baf6bd978697680a14948b3f471f2a280a1b2e9d7664022aec19022a"
+    },
+    "XNB06Z_Size": {
+      "mpn": "XNB06Z",
+      "attribute": "Size",
+      "value": "2-1/2 in",
+      "uom": "",
+      "export_column": "ATTRIBUTE_VALUE 8",
+      "source_text": "XNB06Z Makita 18V 2-1/2\" Angled Finish Nailer 16GA",
+      "source_hash": "20bcbe25339c77e6a8c075b4e6614099538d9c17ebba5d6f6b2f6c9473ae9b8d",
+      "char_span": [
+        0,
+        0
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "ce038d08d96bc7a5920ab4b5502381e3e0054b369323ab5068f67a1dd1bb2eed",
+      "claim_hash": "322555168b64893adeeb1dd524145c5b89e353a4c93e7fe8598cf44d65e52d42",
+      "decision_hash": "7fbcedd1d2241ecfd729fd1d9a76c101d8e1ec18e436f1685230b4d436ef9ea7",
+      "output_hash": "bd7db9c509fcf13a11ea5e48f29e186d96c459d6b61c405b333dad775ab30ebb",
+      "chain_hash": "547fb2af072bf40998f6f997a0d18bea6e17e74d86a5b3e2283da25f4f457e12"
+    },
+    "XNB06Z_Type": {
+      "mpn": "XNB06Z",
+      "attribute": "Type",
+      "value": "Finish Nailer",
+      "uom": "",
+      "export_column": "ATTRIBUTE_VALUE 33",
+      "source_text": " 2-1/2\" Angled Finish Nailer 16GA",
+      "source_hash": "783df3a4fcae07ae39c9bf86dda2c2417457e87108010d50d0d52cb35c397bcf",
+      "char_span": [
+        32,
+        45
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "ce038d08d96bc7a5920ab4b5502381e3e0054b369323ab5068f67a1dd1bb2eed",
+      "claim_hash": "9fd5a717b1251779889d395dff0d389c450324f0a8adebab211ef5c25c7fcc68",
+      "decision_hash": "0aad8b5e43ec061c1a07c08f238e799f7caced1d4663ec56dff07b5ea2bd7452",
+      "output_hash": "b393148cc834cab600cae37cd3fc5c823a5106bd314bf99564c16ddaf877405d",
+      "chain_hash": "33baf855056e4f698c60c7a1298486bb81c2e446e68555776bf9a3d28ffd7657"
+    },
+    "XNB06Z_Gauge": {
+      "mpn": "XNB06Z",
+      "attribute": "Gauge",
+      "value": "16",
+      "uom": "GA",
+      "export_column": "ATTRIBUTE_VALUE 48",
+      "source_text": " Finish Nailer 16GA",
+      "source_hash": "4bf72da6295bb3cfee9f34b9b10f3dbc09c794142df0a34f223f50a89fa0acbf",
+      "char_span": [
+        46,
+        48
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "ce038d08d96bc7a5920ab4b5502381e3e0054b369323ab5068f67a1dd1bb2eed",
+      "claim_hash": "1e1d4cfc4968bf524f6fa28038de4c55596d96768b6d2dde0518834950b71773",
+      "decision_hash": "44bd614cdb9a8edbc37a3f7ef3a785542c201d1767eda24979529dd4e00a954e",
+      "output_hash": "1b2e9ef816844eaf0ba2ae4aa994ed445fc7814f4168182fa894888d778b9a00",
+      "chain_hash": "8622644d11f2af34911e80b6252967f5e0976f0ffe5c82e4750e3a7e627e3ad2"
+    },
+    "2909-20_Type": {
+      "mpn": "2909-20",
+      "attribute": "Type",
+      "value": "Roofing Nailer",
+      "uom": "",
+      "export_column": "ATTRIBUTE_VALUE 33",
+      "source_text": "2909-20 Milw Roofing Nailer - M18",
+      "source_hash": "efe19d99ca3a66827bd8c84e0a6001cda8bfacd5175fb266430e9c7e2c517744",
+      "char_span": [
+        13,
+        27
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "90d2089ae283bdc38061ab1087801d25450bf4f257f0cd7b53f4012e4f542da5",
+      "claim_hash": "e3d5f56c175fb0daa3c77d300636409d16dd67e165a21b45df5acc94661b0308",
+      "decision_hash": "fc2e2992406982734a764b1143e5136b18be28a862145b8a268ae503276a7839",
+      "output_hash": "b3aa8f46ffa311d7c108d454be4aca7108d76163fbd7658fc7cfbb2678b72879",
+      "chain_hash": "427f1c9d65fc22ba6a0ea5613f21de171d285cc2243eb1240854851ee10bd9e8"
+    },
+    "65-572R1_Type": {
+      "mpn": "65-572R1",
+      "attribute": "Type",
+      "value": "LED",
+      "uom": "",
+      "export_column": "ATTRIBUTE_VALUE 33",
+      "source_text": "65572 Satco 2x4 Led Flat Panel",
+      "source_hash": "23cbe901caf359b5376e2dab96f351615bf07baa2c6884254c4239b610a63168",
+      "char_span": [
+        0,
+        0
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "7bccaf6c86a566fe3f953f922bcfd060d08549cd836279d4601ed369c5571289",
+      "claim_hash": "7791488da3c0cdc88838e6a40971897396554e22e942ad9add647ee2cbbd3f19",
+      "decision_hash": "63d38b0161f69ace4669bb761ed2af7c591386bde31d626c9f3518685a1dd8dd",
+      "output_hash": "29a55622332417a21d3839ed3d04c1ef32e8c76390e70e1c693154adc844d6f8",
+      "chain_hash": "894a52047e67aa4d9b6c0c56133835088256a69b6a5f517087f90701935aef85"
+    },
+    "573386_Type": {
+      "mpn": "573386",
+      "attribute": "Type",
+      "value": "LED",
+      "uom": "",
+      "export_column": "ATTRIBUTE_VALUE 33",
+      "source_text": "573386 60W Led Med 27k 2pk",
+      "source_hash": "43cf827ca9463e22e912dca1849b6808999e479ef732754244cfd55f507c8d3d",
+      "char_span": [
+        0,
+        0
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "30993b9a481b44253795f2114a688927e53511963d3c2143be980405ea8180b4",
+      "claim_hash": "7477ecb7e52977932f15bd8f9e2b4abeb7ff1fc652b82ed5f8a670bdd1f1ab5c",
+      "decision_hash": "09e233f06de88072031af3e14a1b7c62e6124746ae129a058702b3189255a8b5",
+      "output_hash": "8769f51d9dc739f01b2c3f499707dfa17747429f7393632d2bcdc8fff23a616b",
+      "chain_hash": "ad967c6c162664fe386f515ef6ace514aa2620fef9f864c65f6d27b0301077ad"
+    },
+    "573386_Wattage": {
+      "mpn": "573386",
+      "attribute": "Wattage",
+      "value": "60",
+      "uom": "W",
+      "export_column": "ATTRIBUTE_VALUE 37",
+      "source_text": "573386 60W Led Med 27k 2",
+      "source_hash": "29128e889d82677f22b55209d58c5521bd2ee20ecae94731ea19d4c009040565",
+      "char_span": [
+        7,
+        9
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "30993b9a481b44253795f2114a688927e53511963d3c2143be980405ea8180b4",
+      "claim_hash": "1addaa73e8a38f76507453dcfda0175dae16a537c18d0ef9646f50ae8275ca24",
+      "decision_hash": "f83f16d85e0e44a354128a963b11c5ff00258a6dc9c33957447b685e183f6079",
+      "output_hash": "4abd5e9d3244677f9325656393d953fe2cf155c07b12e0a15e621c54be217c30",
+      "chain_hash": "d8374dbbefa585849044eb18eab40446a544bc96ff56a02e86b91ec7a164238d"
+    },
+    "S11445_Type": {
+      "mpn": "S11445",
+      "attribute": "Type",
+      "value": "LED",
+      "uom": "",
+      "export_column": "ATTRIBUTE_VALUE 33",
+      "source_text": "S11445 12W Led Med 30k Motion",
+      "source_hash": "295004e8114eb768904146792f3c2a9fcf5c60f8ccb50ec706c2fc430b4f577e",
+      "char_span": [
+        0,
+        0
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "aa1ef1d36f6e27c6b9792a5ed857b25a995e284cefeb6565a8228458534914f8",
+      "claim_hash": "18a85e60607a74e2b27cc84640d60a30f81732769277b23a48cbbfe4b665ac72",
+      "decision_hash": "084c4fad8d1cc270a243c8061b05485e779af58646a9365f6d9553817b6066ed",
+      "output_hash": "f05ea533dfb87d7fdc406bb52949a79626aeeaa44929cc180696f7fd8cdecda3",
+      "chain_hash": "9becc6f3649409bb0c32816a2c7eb386713fff8ec298c78bc51ef3804267541f"
+    },
+    "S11445_Wattage": {
+      "mpn": "S11445",
+      "attribute": "Wattage",
+      "value": "12",
+      "uom": "W",
+      "export_column": "ATTRIBUTE_VALUE 37",
+      "source_text": "S11445 12W Led Med 30k M",
+      "source_hash": "c7c6d2d43e8b747b49abba67526c79f3b36a6b26c44fc53e1e9a429b82918a0a",
+      "char_span": [
+        7,
+        9
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "aa1ef1d36f6e27c6b9792a5ed857b25a995e284cefeb6565a8228458534914f8",
+      "claim_hash": "e2a20e9d5864e57ba83971cbaa5596a56ef61d8ed900eb4885ebf376f3feabe5",
+      "decision_hash": "2468ce7a3f4d8d19b2b5c20a3138f74e35cc3fcd43ebf90cb94e1776c8610452",
+      "output_hash": "ae314f383e532ea502c57c194228fa3ef58b1dad6348ee9b1c8533e46aae6b5d",
+      "chain_hash": "711a8cb66226626d4a61952a41e5741184530c64aa67696d0b5a21d16d78abd9"
+    },
+    "391227_Diameter": {
+      "mpn": "391227",
+      "attribute": "Diameter",
+      "value": "12 in",
+      "uom": "",
+      "export_column": "ATTRIBUTE_VALUE 29",
+      "source_text": "391227 32W Led 12\" T9 30K",
+      "source_hash": "a4b2147ba74e362b3a1299f8d8ae775ab6c3f22a181cd8896608744fae69f76e",
+      "char_span": [
+        0,
+        0
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "5dd883803f2837ddd31083cca6468fde442fb471990aaea8f9bcd009b66c819b",
+      "claim_hash": "ed5fed50f609ff6a7b777e69a7f143cf76544103e168cddc32ce95c4dcfa64c6",
+      "decision_hash": "89cd4581844c81d385fb5b9f6ceee0ee17c61f150466a1a137b7a1e8b2f7ed7a",
+      "output_hash": "3d8e4a7018a72e5c49468bca9c56e0a11719c19fe9f73408ad33f143d09f8adc",
+      "chain_hash": "afb979a6db7ad01afbc983e1e59d8e941812f52a28586f0bc8b6fc7d54e173cf"
+    },
+    "391227_Type": {
+      "mpn": "391227",
+      "attribute": "Type",
+      "value": "LED",
+      "uom": "",
+      "export_column": "ATTRIBUTE_VALUE 33",
+      "source_text": "391227 32W Led 12\" T9 30K",
+      "source_hash": "a4b2147ba74e362b3a1299f8d8ae775ab6c3f22a181cd8896608744fae69f76e",
+      "char_span": [
+        0,
+        0
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "5dd883803f2837ddd31083cca6468fde442fb471990aaea8f9bcd009b66c819b",
+      "claim_hash": "f7c7bc066129984db4741dd7d6146f0a1ab32a31a757246b7f1ee12b0018f3c5",
+      "decision_hash": "4df2d97a397763178c85193e410068f23ee696d3ba0ae4fa7ea2fb5b7ed63bc7",
+      "output_hash": "0c7f995c5000440d0d75d423b1f9e8e81572d630e38ca398cab43291768b1063",
+      "chain_hash": "2310f5be2514437790168e6d8af8166c94621ddde8f0be733fa3f326a6e58dae"
+    },
+    "391227_Wattage": {
+      "mpn": "391227",
+      "attribute": "Wattage",
+      "value": "32",
+      "uom": "W",
+      "export_column": "ATTRIBUTE_VALUE 37",
+      "source_text": "391227 32W Led 12\" T9 30",
+      "source_hash": "7de25c26cf9422968049df8cf6a7d6c510f7bbc12463755d1e74656698ff8fcc",
+      "char_span": [
+        7,
+        9
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "5dd883803f2837ddd31083cca6468fde442fb471990aaea8f9bcd009b66c819b",
+      "claim_hash": "ab7a82af0645aafc6ae5961bedea52d0b20a8ca90a37b7c75f5f1ed21bdaa712",
+      "decision_hash": "d5a0f410332b9a69d60e2876e4038aab95772f4fcd28226a4b283707f4769369",
+      "output_hash": "2b353cdf9801c8927496cad79824810b4f303f2a9d3b459c01732ddadadde979",
+      "chain_hash": "b749332acd4a186d593668a525bfa64824e3fbad53f14bd5d51a0cc18db671fe"
+    },
+    "573410_Type": {
+      "mpn": "573410",
+      "attribute": "Type",
+      "value": "LED",
+      "uom": "",
+      "export_column": "ATTRIBUTE_VALUE 33",
+      "source_text": "573410 40W Led A19 Med 27k 2pk",
+      "source_hash": "0f40443a243c1daf99ba1687fce7065d029c6c5b7a04c37a565600001cdaedf5",
+      "char_span": [
+        0,
+        0
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "747adf42d5f1024a3ae4cfab9118a947486928f65eae6824161c758e00faf401",
+      "claim_hash": "de905a4bf8be460560fa19ab3fa789f8fe23f369163818e8ceda9b15edcd4583",
+      "decision_hash": "41667e3cf22f281af650d2c45da64fcc8840ede15d3303e2903cfaebdbbc3e13",
+      "output_hash": "78e5f01d018f6f2e88cde31c7b6cd803183b0df0e16cf824bcd113a5166c4ed0",
+      "chain_hash": "eb4adf6687f269f60f0569fd5d0a9c8b1a5e6c083af64e439c4a5790c3a5d564"
+    },
+    "573410_Wattage": {
+      "mpn": "573410",
+      "attribute": "Wattage",
+      "value": "40",
+      "uom": "W",
+      "export_column": "ATTRIBUTE_VALUE 37",
+      "source_text": "573410 40W Led A19 Med 2",
+      "source_hash": "6c77daa1bbada4dc5f57062ef3a58dcc5217ab087256ec2f4e017d3437ea35c5",
+      "char_span": [
+        7,
+        9
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "747adf42d5f1024a3ae4cfab9118a947486928f65eae6824161c758e00faf401",
+      "claim_hash": "a08cc700e88e0ed9ea3b7b74d68ec6f9dc24914bc8eb35aaf778795e05e9bc1b",
+      "decision_hash": "cae561e7a8236f14a0e38663628e6cefb7419f1c22af8adf72d235dd72793053",
+      "output_hash": "05a13168ca0f64bb95606754acfa42d3cfb3b04b2c93ab6677579793c546476c",
+      "chain_hash": "47f9d1429f80c12804dca6e681d1cc834beb63ef4c35b65ff6dbed4d25a32d0c"
+    },
+    "566679_Type": {
+      "mpn": "566679",
+      "attribute": "Type",
+      "value": "LED",
+      "uom": "",
+      "export_column": "ATTRIBUTE_VALUE 33",
+      "source_text": "566679 40W Led Med 27k 3pk",
+      "source_hash": "8ec14f627ca6e3b984b5cc4ad54cd100dd11495a3d0044193aa47ed024a9da16",
+      "char_span": [
+        0,
+        0
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "817eb8385c5cbaad081bc53470f74fef707beed7de64db9966a5100f29675f02",
+      "claim_hash": "804b2e08163a19b53e0a4783aa213627d1e0c521613bc02a8aaa573c76cfbbac",
+      "decision_hash": "c08a6d1971dcf65b22bd535cd42f0bfb75a71d424f02a3f0965791f3392a9866",
+      "output_hash": "b9d1ce8dcbf686fcab064ab8e61c391298042fdd5e7db777984e69b689a67afc",
+      "chain_hash": "9cb8adad3764f1a6b8ffcfc334c6861fc6d0594c2e55ce86eeb3c2982cfcaf67"
+    },
+    "566679_Wattage": {
+      "mpn": "566679",
+      "attribute": "Wattage",
+      "value": "40",
+      "uom": "W",
+      "export_column": "ATTRIBUTE_VALUE 37",
+      "source_text": "566679 40W Led Med 27k 3",
+      "source_hash": "272bbd96f888ee083c56feae94128f75bb0bf25f41d943f57cf1e5396b5a48e1",
+      "char_span": [
+        7,
+        9
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "817eb8385c5cbaad081bc53470f74fef707beed7de64db9966a5100f29675f02",
+      "claim_hash": "c7c87f05241f35d4d943bc6d32499e40cb0afd0e1e0f100685480b773f24115c",
+      "decision_hash": "ff6f5dd79a8692010db57ccf1d34f64611aa96f65ef916c22b6ce29bb71e857a",
+      "output_hash": "7847446e040913f4685e45e0eaf23259335de0565513bc8d4a17fadd7a9dab9f",
+      "chain_hash": "584bb419da207abbfb2ec67b13b351d983129d897cf5b9ae3c7c99a467b2725d"
+    },
+    "543007412_Grade": {
+      "mpn": "543007412",
+      "attribute": "Grade",
+      "value": "Select",
+      "uom": "",
+      "export_column": "ATTRIBUTE_VALUE 46",
+      "source_text": "Grooved - Trex Select 2.0 Decking",
+      "source_hash": "2cf1c4f84f91896c2220ef9f855502b01e6b2970cc14f78c7c1bef8e4ba3c7d4",
+      "char_span": [
+        41,
+        47
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "85f144433b9be2cdeef856559bf3a2cf69a406cb88ba7e6f3ceafbc2add087c8",
+      "claim_hash": "c4deb1de2b6e7342478fe33363498355bce11d3efdcfc5875a96e1af19021b8e",
+      "decision_hash": "988332c9a5a1d710115b6593033b3bd79cccc6244a81544733eefbbc5756a71e",
+      "output_hash": "459af129b760282ca0f59c75043a1cee16d0f62d20aefea26ebf7affaac40e8d",
+      "chain_hash": "c5edb8fb79b44efc227194adca76f5b968f58be18827abf75e069442066e64c8"
+    },
+    "AGB15520AW_Material": {
+      "mpn": "AGB15520AW",
+      "attribute": "Material",
+      "value": "PVC",
+      "uom": "",
+      "export_column": "ATTRIBUTE_VALUE 13",
+      "source_text": " Landmark Azek PVC Decking",
+      "source_hash": "cba94cb15903a74802a226b5d03b1e86d95f617ad04f938f5ee5f466f77c2d7c",
+      "char_span": [
+        47,
+        50
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "d537767c309fd764bf4a8cc224dec3f48ec622b8a3b46406a560e23b93f5afc6",
+      "claim_hash": "71e751e0e76d917b3f410cb9ebbd265bbacfad38ca5a9340c0b1ea0e39834723",
+      "decision_hash": "a5f0f0233fe1fa7c3ce805acade3452850946b8ec67db487b3a0d6772f61de9c",
+      "output_hash": "ce6190a57f8f88b157bca9d4899540fa078185c95d62e52496bf2a9658842c03",
+      "chain_hash": "730ac5b4f0f639ab1a96bff2fef39bd940b565a63038390e7ac582c0d779d283"
+    },
+    "R00-GFNT1-00K_Amperage Rating": {
+      "mpn": "R00-GFNT1-00K",
+      "attribute": "Amperage Rating",
+      "value": "15",
+      "uom": "A",
+      "export_column": "ATTRIBUTE_VALUE 5",
+      "source_text": "R00GFNT100K 15A Outlet Br",
+      "source_hash": "9402258db31147564f9742813d2417794803e2d9e9e3e3620b7378b8fa2588ec",
+      "char_span": [
+        12,
+        14
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "30c101f5731edf5ac969ad161f6997d164382cc4dfd5962e3698e0c4b5f774f0",
+      "claim_hash": "041e6ffc33cfdf0738304b180f3b2c7d5e0c127efe599cc3a6ec0b95484ea255",
+      "decision_hash": "53beb1eda81599c3b482cc9e1314710a1aae239c38a64393ede102ec9eda6c4e",
+      "output_hash": "6284d53d9e8ee64e92312ee06fd4b793fd32fdbf48fc8a7ef21690c4658e76e0",
+      "chain_hash": "de7e565ec5001fd92c458b65d6d5efc916e039f83173f792d37545be9f00be47"
+    },
+    "2/2/4 UD ALUM_Material": {
+      "mpn": "2/2/4 UD ALUM",
+      "attribute": "Material",
+      "value": "Aluminum",
+      "uom": "",
+      "export_column": "ATTRIBUTE_VALUE 13",
+      "source_text": "2/2/4 UD Aluminum Triplex Wire (",
+      "source_hash": "8cd4e0ec67ee46540dc03b0f65bcb01d3e8443335393fa435c2ad4b5e1b46c73",
+      "char_span": [
+        9,
+        17
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "39f307be6d4ec3604bd50c82dbb4f6c2c2aade5f7be3c766bdc92f5b43457e00",
+      "claim_hash": "f77a67222af70dd6f89b0217a2c277e5417abda4ab00f02626468c8f0733d4b6",
+      "decision_hash": "d785c147821af716112795d089a8ab0df754feb8e065050e1bdf18ad067013c5",
+      "output_hash": "645a26c2918e480387819e2518b6e8f97994ccceea0056794872e954b93c56ac",
+      "chain_hash": "1e508d798a5f4d1595a0736a1522f556fadab5020d9e9c2e9aa84b8a11b76dad"
+    },
+    "2/2/4 UD ALUM_Wire Gauge": {
+      "mpn": "2/2/4 UD ALUM",
+      "attribute": "Wire Gauge",
+      "value": "2",
+      "uom": "AWG",
+      "export_column": "ATTRIBUTE_VALUE 42",
+      "source_text": "2/2/4 UD Aluminu",
+      "source_hash": "b637e67bc919eeed1db451242eafe7224d6b1c891fa7b84522eeb3abcc7437d6",
+      "char_span": [
+        0,
+        1
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "39f307be6d4ec3604bd50c82dbb4f6c2c2aade5f7be3c766bdc92f5b43457e00",
+      "claim_hash": "a0d10dd2c2f99059b6dc5b84027ed5f1600beabfaf374c567ddfd1b3084ce3bd",
+      "decision_hash": "c89513c86605189d780faf4519687c07d8b6598510f3a6d7fed66d63aa79a19f",
+      "output_hash": "36405ef856f8a5e868a153ab5c128d6118da1bce2bd087d92dc72be2a924de77",
+      "chain_hash": "e54f6e8cc9407c22e480d58235dc4d0de63ae3c419f7e389f72b76dea7f0359e"
+    },
+    "2/2/4 UD ALUM_Number of Conductors": {
+      "mpn": "2/2/4 UD ALUM",
+      "attribute": "Number of Conductors",
+      "value": "3",
+      "uom": "",
+      "export_column": "ATTRIBUTE_VALUE 43",
+      "source_text": "2/2/4 UD Aluminum Triplex Wire (Linear Foot)",
+      "source_hash": "49318846a30454157d4ee65bd5f3f5395a3b13a5b060fad413646a601eae5cfa",
+      "char_span": [
+        0,
+        0
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "39f307be6d4ec3604bd50c82dbb4f6c2c2aade5f7be3c766bdc92f5b43457e00",
+      "claim_hash": "f157d6c6bf202db19171c12dbb94f11f8cfe1c3b504796518c0871cec70e42ba",
+      "decision_hash": "f0650887551b5d77ffd1ed323771c942cdd7e3cedf745b7b9471bbf772e2e2fc",
+      "output_hash": "eb61151ddf4b61bb74d6eba8ca6eea3fc2a025d7fe63d626d18a582303ba22a4",
+      "chain_hash": "eeccdf8d9d56edc585ec59500ac7e1f8f4a4ec4a6bf707c28c7aa4dd964fda22"
+    },
+    "R62-GFTA1-0KW_Amperage Rating": {
+      "mpn": "R62-GFTA1-0KW",
+      "attribute": "Amperage Rating",
+      "value": "15",
+      "uom": "A",
+      "export_column": "ATTRIBUTE_VALUE 5",
+      "source_text": "R92GFTA10KW 15A GFCI Outlet W",
+      "source_hash": "3cce63642b3d51615dcf41b60eb7cb7fc89d2e616c6601ea6b9685daf832105c",
+      "char_span": [
+        12,
+        14
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "844b334dd56229a6d1713450ddace2f729ce6937f5a68ad5f9dee06003a4020e",
+      "claim_hash": "ddad4d97db2d46ded2c9cf090233dee831436e124095aea503deb928b53c05f9",
+      "decision_hash": "22f5fb47ee75a9ed1b5d9714f76578eaacf4d00c675c49d545aeb19535424b3b",
+      "output_hash": "1f06d0199701a5d30a9336b2ec7869c9ea5fdffd97cbe1437733ff82ed122bf7",
+      "chain_hash": "5a348a8076aa4f8d88140963c4b11f3ee462e07fa881ffe6a9922c79699c4b46"
+    },
+    "R62-GFTA1-0KW_Type": {
+      "mpn": "R62-GFTA1-0KW",
+      "attribute": "Type",
+      "value": "GFCI",
+      "uom": "",
+      "export_column": "ATTRIBUTE_VALUE 33",
+      "source_text": "92GFTA10KW 15A GFCI Outlet Wh",
+      "source_hash": "d4d1dce8e27c13d6192f171e0b13accc56a35e9e10572288ed9484c6b6e59bdd",
+      "char_span": [
+        16,
+        20
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "844b334dd56229a6d1713450ddace2f729ce6937f5a68ad5f9dee06003a4020e",
+      "claim_hash": "5944be56434adcc1a19000dcdeba00952dfc42c559e56612083394731df93378",
+      "decision_hash": "c603e874b937ebacc5ad47be190d04f5bd56f421f878063c3f79babc2ce32565",
+      "output_hash": "3ee970c872a917ddcb7cdc77955298ec7881a77b6752316460c761d79306d559",
+      "chain_hash": "099d9bcbee3a458034a19d561bc8e116292f9acd636bc02ee860b74eba27d249"
+    },
+    "R56-CBR15-00T_Amperage Rating": {
+      "mpn": "R56-CBR15-00T",
+      "attribute": "Amperage Rating",
+      "value": "15",
+      "uom": "A",
+      "export_column": "ATTRIBUTE_VALUE 5",
+      "source_text": "R56CBR1500T 15A Outlet ",
+      "source_hash": "aa648ea72f2c3978bbf0e8580199eeeb1b24ea498634d0f82091655e933a8eb4",
+      "char_span": [
+        6,
+        8
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "d7f1f7879542efa5a9ae9bd2f1b5e9192076bf0436cff3b35f60298e685645fe",
+      "claim_hash": "bf3750219031d4a4b76d7ab9fa5185ba285ec4fa9eee14c07909d9660930a151",
+      "decision_hash": "f9a56429ee3a55c50b464e8c9727ebd610b37c7c011d655bb6aaddedb10d9e1d",
+      "output_hash": "82d4aa52d69f92a318a69e5c7e04fd3f7642289fc21dd6b8df2a7008f0ae821b",
+      "chain_hash": "676c9bbff6899ea065c17e1e9257a51142d6ddbe046fd07a8a5417c422de9a0c"
+    },
+    "G1941-UPC_Type": {
+      "mpn": "G1941-UPC",
+      "attribute": "Type",
+      "value": "Cover",
+      "uom": "",
+      "export_column": "ATTRIBUTE_VALUE 33",
+      "source_text": "G1941UPC 4\" Sq Cover Sw/Outlet",
+      "source_hash": "5fa78f5a64c81a3a285640754c3322ec2202154fd247d7b807ef8e08957f9efb",
+      "char_span": [
+        15,
+        20
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "7da2ca51d438b3cb5d7565a53a97620cf6ca769ac28ff5de4bd3380448b60e45",
+      "claim_hash": "93af6c3a89ff5baa9707edeb985aeab94b4f738f665ec51d6ceb16d7acf480dd",
+      "decision_hash": "879dede06e005eeaf98823891f4b04c1d0c9d2127f79a1395caa06b97dc816d2",
+      "output_hash": "3842e9e727d8d8f798309a18222a1a16f1a04fd37f5bdc0d8dab0d449bacaa7c",
+      "chain_hash": "11ca67bd1068e0458c2b646f731f6511c2827d5be5840eaeb5afc78b80084065"
+    },
+    "543076936_Size": {
+      "mpn": "543076936",
+      "attribute": "Size",
+      "value": "1 in x 12 in",
+      "uom": "",
+      "export_column": "ATTRIBUTE_VALUE 8",
+      "source_text": "1x12-12' Cinnamon Cove - Trex Enhance Naturals Fascia",
+      "source_hash": "51b0c54fb88b74e1c8cc2f582b25020ebe3ecac330347971636c73faef60f6e1",
+      "char_span": [
+        0,
+        0
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "d6ff252ec2101935d8ad2bd1394818a590786625bf7caf7f1b93026af57ec503",
+      "claim_hash": "4b09485a4129cd2f21faf806f1a38c7183d758fa424487f1b3b50f55174ef6fb",
+      "decision_hash": "a04afa66a45ad88f165c021e00ea43a18b7542e89f4e3a5cfec297f5d5855e67",
+      "output_hash": "019ae4293f67f99c86ba3abdc22fcf29249d7ef4fbd9d09a34b098fcf9f840d9",
+      "chain_hash": "9cf16c07fd34e8e198a9e01c209ac37b26a0050cfbeef730a822a4fd76e3e2de"
+    },
+    "TSDKAP218-G2_Color": {
+      "mpn": "TSDKAP218-G2",
+      "attribute": "Color",
+      "value": "Black",
+      "uom": "",
+      "export_column": "ATTRIBUTE_VALUE 14",
+      "source_text": " Safety - Khor Black Frame Polarize",
+      "source_hash": "cc4a780b1961f8ca6eb920a4f3efb242c8ceb93f32d19f7ae42e83820adaa835",
+      "char_span": [
+        32,
+        37
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "85789d0428baad21049b6d048147b7b8e3f19f5bd214cf3babd94dfd36007793",
+      "claim_hash": "c1d0262b0558510587220fa3005893a8759412179c051f6cc65891f73c0ca3eb",
+      "decision_hash": "04848805984d3b0d05f57a150a859eaae012c0a4b105a7af6f3250610fc35c26",
+      "output_hash": "edf603c90c41574bb71f30cac8c9b989354d6e7e8b36e5ce99bde0d42e2aa310",
+      "chain_hash": "b9c83ca7d522cd5ce3a75d45e6d2389e24cce3f7eb6da88486dfb41f06e8406c"
+    },
+    "TSDKAP218-G2_Type": {
+      "mpn": "TSDKAP218-G2",
+      "attribute": "Type",
+      "value": "Black Frame",
+      "uom": "",
+      "export_column": "ATTRIBUTE_VALUE 33",
+      "source_text": " Safety - Khor Black Frame Polarized",
+      "source_hash": "9e88703c6f37a2dba783278e784d70ebe785fcb2edc59743be336eac97fb8661",
+      "char_span": [
+        32,
+        43
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "85789d0428baad21049b6d048147b7b8e3f19f5bd214cf3babd94dfd36007793",
+      "claim_hash": "77b3a36bbd7653c5428d5d93e1fa6454ba6810ab32d2caf185fabd7eb5ec6333",
+      "decision_hash": "536928e6e32845bcdbb989c08e2be602a52cce5631c76b450f9cc160114d0d17",
+      "output_hash": "e540c986d9a8b87066c64d722f9e147a1ed9812c952a18e1d3806c36d5e3971a",
+      "chain_hash": "22ae0e29c2299d66d1a50657f5c12438e0144a835f7f2b358fdd7ce419193f14"
+    },
+    "DCF964B_Voltage Rating": {
+      "mpn": "DCF964B",
+      "attribute": "Voltage Rating",
+      "value": "20",
+      "uom": "V",
+      "export_column": "ATTRIBUTE_VALUE 4",
+      "source_text": "DCF964B Dewalt 20V 3/4\" Impact -",
+      "source_hash": "d748d6ccd6826ddc245dae8984eff202c81bf6422fabbb4269ac58dfd9a051fa",
+      "char_span": [
+        15,
+        17
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "84b2208e9a3bda4b0dcadba8a1aff416105f6e0184c1555fe82211fe33dc515b",
+      "claim_hash": "2a98eed6b44cecf37ca3c723ca12ed6c4a8ce8d7fa362dcc8e2b757436277a9a",
+      "decision_hash": "f2f1feb07953dac058293d6c149a445ece46230225483ab2ba415c9125ff8b15",
+      "output_hash": "5d215163f9b090c7c3225b5614e36710f1896765847221eae33ade5b25aa41a2",
+      "chain_hash": "42c58c65157672bf565c65d597f1ea92ab9241073fb31a378c8f9354d271aa77"
+    },
+    "DCF964B_Size": {
+      "mpn": "DCF964B",
+      "attribute": "Size",
+      "value": "3/4 in",
+      "uom": "",
+      "export_column": "ATTRIBUTE_VALUE 8",
+      "source_text": "DCF964B Dewalt 20V 3/4\" Impact - Wrench (Bare)",
+      "source_hash": "dc39737c709b7b5f72452b1e10648f07b5794c99e35f93bafa99feb31c7dd57e",
+      "char_span": [
+        0,
+        0
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "84b2208e9a3bda4b0dcadba8a1aff416105f6e0184c1555fe82211fe33dc515b",
+      "claim_hash": "1461187c1a02828dde807b7a1da1fb6d63371fbf76843136a5d3af93cea547f2",
+      "decision_hash": "094a8bc91882fb701c6d72b97fe69511ea1dc27e28b1c27da62d18071829af25",
+      "output_hash": "04cd225b3ba7eeb45061041a8e36718784d638fb8a4a90031f516703a58e46d9",
+      "chain_hash": "43199c04afb6c06fd718ecd418e693389fa681410347d70e750a30ce9b984c77"
+    },
+    "DCF964B_Type": {
+      "mpn": "DCF964B",
+      "attribute": "Type",
+      "value": "Impact",
+      "uom": "",
+      "export_column": "ATTRIBUTE_VALUE 33",
+      "source_text": "ewalt 20V 3/4\" Impact - Wrench (Bare",
+      "source_hash": "c7d178ec6fc318e4bea08f55bf59573cf131e248fdc7b4fc84dbc1616ded4665",
+      "char_span": [
+        24,
+        30
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "84b2208e9a3bda4b0dcadba8a1aff416105f6e0184c1555fe82211fe33dc515b",
+      "claim_hash": "6da6b10a051159f8b9e888028caa2c6468875bc62798a1afee87fe5b9eb6eafa",
+      "decision_hash": "74499c803a5f2942e77eb816bd6da726c9f28944da101ba8419ec7641f4ba790",
+      "output_hash": "3e6ec79893056fb26142cbbed0d9f5a3cc8febc6d086ad4ad5e98654a416b732",
+      "chain_hash": "0b1ca700a87cd074e20edbb33b483d6d230532c89bf959b8476a8a16c30b051e"
+    },
+    "543300257_Material": {
+      "mpn": "543300257",
+      "attribute": "Material",
+      "value": "Alum",
+      "uom": "",
+      "export_column": "ATTRIBUTE_VALUE 13",
+      "source_text": "il w/Rnd Black Alum Baluster",
+      "source_hash": "cc2d0186ca81f43bde9efdc658640b5720a9af89397b9b57044ad27ad442d752",
+      "char_span": [
+        49,
+        53
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "93f2bda910ce4e88bcee7917fe1d3c76091e1e19ebdebb28b2976f18670b35ac",
+      "claim_hash": "d8969c001a09727a594ec200800d1386bb898e7c822db5957392785c5e5be16d",
+      "decision_hash": "0ba6a7ed8958c406d49f783495260c8f688da5f272890f13a2e912868a0de64b",
+      "output_hash": "4147a0f07f54f7527e5d054d647d491671ec0663dfabe8f4e8f453e098dbdfdf",
+      "chain_hash": "10b3096ecfd258f4fba85e92d29a3a9a78ffc91615d0ac02b136439db93767bd"
+    },
+    "543300257_Color": {
+      "mpn": "543300257",
+      "attribute": "Color",
+      "value": "Black",
+      "uom": "",
+      "export_column": "ATTRIBUTE_VALUE 14",
+      "source_text": "6' Black Select Classic",
+      "source_hash": "77b3aa9760c0f931a479929e92613ca1ee3f638c84f7a099396fe2ab46487c73",
+      "char_span": [
+        3,
+        8
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "93f2bda910ce4e88bcee7917fe1d3c76091e1e19ebdebb28b2976f18670b35ac",
+      "claim_hash": "2958312aa5cb676253ad2e95b870e7fc9c8c06bc14c4aec01ecf1b32399d9494",
+      "decision_hash": "d6f389317b6ae850816ac79c817cebe929ab13fd2993ffd32bcfa4cd65d6a744",
+      "output_hash": "f8eae929470e0e0ee3c0e0872a55b2aeb34268c36e47543432a3df7ed3bfeb33",
+      "chain_hash": "64ccc1603a3e2d1590976228472c96a581ccf9d92e0c12be268ddd1ee262cbd8"
+    },
+    "543300257_Type": {
+      "mpn": "543300257",
+      "attribute": "Type",
+      "value": "Rail",
+      "uom": "",
+      "export_column": "ATTRIBUTE_VALUE 33",
+      "source_text": "lassic Stair - Rail w/Rnd Black Al",
+      "source_hash": "60a7ff913d459534b501fe3005ac0cc6a0de04bb5ea180d47071e9d663e42835",
+      "char_span": [
+        32,
+        36
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "93f2bda910ce4e88bcee7917fe1d3c76091e1e19ebdebb28b2976f18670b35ac",
+      "claim_hash": "76d95ef6c1c078e912fc4303038b4fa6d43413301fee185e1576a4d50a37733f",
+      "decision_hash": "8f75664a0203f832d3a8ba663621f853a03d20e351dce4a960acbcf424b3df24",
+      "output_hash": "730a6c9f0833f492b71106ae6b18fe32457c0623271d252c532bdc05dc104a4e",
+      "chain_hash": "1b74108df06ec93d1c7bf9fed7ff4f1ba1bdf2fb817bde9032cc0af4747da20f"
+    },
+    "3100-1/15_Quantity": {
+      "mpn": "3100-1/15",
+      "attribute": "Quantity",
+      "value": "15",
+      "uom": "",
+      "export_column": "ATTRIBUTE_VALUE 32",
+      "source_text": "3100-1/15 Dremel Rotary ",
+      "source_hash": "df760b5cfd7158c38ec62fc887582c992c2915220b0c0dfe48dd55a2f8f5499a",
+      "char_span": [
+        7,
+        9
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "f88c2888b227faaeb64b6fcaf6abe58b57090509b27babd69ff4cf3ede7e54f9",
+      "claim_hash": "97344ac44041605eb83f09436c6dbad650296a0a5c6a5ea949ef71d74cafedac",
+      "decision_hash": "0f708b18cae04e1795f348ab319d5f3fe02992cacf87aedfb725c750101b8dd0",
+      "output_hash": "6b4a0bd69122ca25f104e8494e7a3e948520719444f2a5b85dd8aac6335499cc",
+      "chain_hash": "84ff4b6c018e82121bfcd65ae418dc6319597db16785969b4808765dd4875e26"
+    },
+    "3100-1/15_Type": {
+      "mpn": "3100-1/15",
+      "attribute": "Type",
+      "value": "Rotary Tool",
+      "uom": "",
+      "export_column": "ATTRIBUTE_VALUE 33",
+      "source_text": "00-1/15 Dremel Rotary Tool - Kit 15pc",
+      "source_hash": "4c5ebcf7a5c9d699e83b2e7b28e6ef5c631a76768d96d10e62d87ce8b4917c8e",
+      "char_span": [
+        17,
+        28
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "f88c2888b227faaeb64b6fcaf6abe58b57090509b27babd69ff4cf3ede7e54f9",
+      "claim_hash": "7d7e9c0b483122f4451eecf8aabffb3e3c314bb9f2fc575b8325ca3836be3bbd",
+      "decision_hash": "95a9b9e38be6af2be03076ef7911c8501729a00885e0017b3654483eb889fc71",
+      "output_hash": "28d55408fc4410ce97fb993fc2508472be038177953f88e39130bfc46711be44",
+      "chain_hash": "1bfbb630af1b5736c45f3afa55779cd4108faf13204e191e203c2dc40de45b9f"
+    },
+    "578808_Size": {
+      "mpn": "578808",
+      "attribute": "Size",
+      "value": "3 x 4",
+      "uom": "",
+      "export_column": "ATTRIBUTE_VALUE 8",
+      "source_text": "578808 Festool 3x4 M GR PRO/10",
+      "source_hash": "1c642056015c33fd828a92350a3050010b287f3f3ba991314d28d8295fa18355",
+      "char_span": [
+        0,
+        0
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "23e3c8814d3a3d22a672d12069ace0b3901e4b69cbd42cc0bb33daedab57c1d4",
+      "claim_hash": "8891ebdc1fdbdbdf76b37b3b0ead7b48795d65c97a38b0beee750b045cbe100d",
+      "decision_hash": "b3b11a967bd864305f9ec0e86c0f2c6ce1765ffe6ee640a3fc25175e0c9e425b",
+      "output_hash": "3417aff269f50f9c0fdc795cd928743d116cc6859b897cc602e2a05ea18043c1",
+      "chain_hash": "535ac105141681621da6e314226e2da5001a5f42af7ebab15cbca10af9bad5c8"
+    },
+    "1516876_Size": {
+      "mpn": "1516876",
+      "attribute": "Size",
+      "value": "1 in x 8 in",
+      "uom": "",
+      "export_column": "ATTRIBUTE_VALUE 8",
+      "source_text": "1x8-12' Golden Hour - Trex Enhance Naturals Fascia",
+      "source_hash": "f9a988e2004cc7254a1697bc2326d0b1b3fd4fbdf0a742a5f70ec5e0efac5575",
+      "char_span": [
+        0,
+        0
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "67defa014bcf0f143df93bb387a89f9eaf43d0ad6908f813aef00c35600be893",
+      "claim_hash": "08d136c02c738a7d7eec0ec401e46ca7b6673b6bbca6b85e34833e2dca90f519",
+      "decision_hash": "634280a00ecb5236e5530289554455032f99c472144a2b0b574c062ec4a1d8ab",
+      "output_hash": "cf648a9098e06bc046830fdc25fb5a8e85ec115c4de5d882e7911152edd69805",
+      "chain_hash": "836684bdd10deae12baa07b163ef363306cc5f0b07e12ee57d6b7d295b6ab547"
+    },
+    "9A-570-320_Size": {
+      "mpn": "9A-570-320",
+      "attribute": "Size",
+      "value": "2.75 x 30",
+      "uom": "",
+      "export_column": "ATTRIBUTE_VALUE 8",
+      "source_text": "9A-570-320 Abranet 2.75x30",
+      "source_hash": "77cde73d8212e46c08aebf23620efd072e9201c47fe2068bdacedbd450fd269f",
+      "char_span": [
+        0,
+        0
+      ],
+      "source_kind": "workbook",
+      "input_row_hash": "9e6a048a4f82f62281390a93f4dc0b5c631fdec8d7a67c074081d25196bf125d",
+      "claim_hash": "d2d7ecb4db04b71a7725714e21f60fc4aebd6b90608b203163599fb4557b1c69",
+      "decision_hash": "a4b1cef37bfc32180855694dc1064b2c89891e34feff6f7b762dba72aa0bd9ef",
+      "output_hash": "c43ce2c584108da8cd8d4d273f1e255e18a1060293033784c7ae720c525639d7",
+      "chain_hash": "23615a08e80bf6b8d0570ac6b9b6cf95492ddb6ca683f320edc856a9330cb650"
+    }
+  }
+}

@@ -17,11 +17,9 @@ COPY data ./data
 # Install minimal Python deps (no requirements.txt in repo)
 RUN pip3 install --no-cache-dir pandas pydantic openpyxl
 
-# Node deps + build
-COPY elio-frontend/package.json elio-frontend/package-lock.json* ./elio-frontend/
-RUN cd elio-frontend && npm install
-
+# Node deps + build — single COPY so missing lockfile doesn't break build
 COPY elio-frontend ./elio-frontend
+RUN cd elio-frontend && npm install
 # Copy repo-level files needed at runtime (artifacts for demo data)
 COPY artifacts ./artifacts
 COPY app.py ./app.py
