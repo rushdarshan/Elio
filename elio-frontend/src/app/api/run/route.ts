@@ -34,15 +34,24 @@ export async function POST(request: NextRequest) {
 
     if (missing.length > 0 && !hasFallback) {
       return NextResponse.json({
-        error: `Missing required columns: ${missing.join(', ')}`
+        error: `Missing required columns: ${missing.join(', ')} (or fallback: MPN, Description, Manufacturer)`
       }, { status: 400 });
     }
 
     // Generate SHA-256 hash of the input file
     const hash = crypto.createHash('sha256').update(buffer).digest('hex');
 
-    // Create temporary file paths
-    const tempDir = path.join(process.cwd(), 'tmp');
+    // Resolve project root dynamically (handles both cwd in elio-frontend and root)
+    let projectRoot = process.cwd();
+    if (!fs.existsSync(path.join(projectRoot, 'unihack_catalog'))) {
+      const parent = path.resolve(projectRoot, '..');
+      if (fs.existsSync(path.join(parent, 'unihack_catalog'))) {
+        projectRoot = parent;
+      }
+    }
+
+    // Create temporary file paths in projectRoot/tmp
+    const tempDir = path.join(projectRoot, 'tmp');
     if (!fs.existsSync(tempDir)) {
       fs.mkdirSync(tempDir, { recursive: true });
     }
@@ -61,21 +70,16 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'CSV must contain at least one data row' }, { status: 400 });
     }
 
-    // Resolve parent directory where app.py and unihack_catalog live
-    const parentDir = path.resolve(process.cwd(), '..');
-    const pythonScript = path.join(parentDir, 'scripts/run_pipeline_cli.py');
-
-    // Run python pipeline script
-    // Ensure we use the correct virtual environment Python or fallback to global python
+    const pythonScript = path.join(projectRoot, 'scripts', 'run_pipeline_cli.py');
     const pythonCmd = process.platform === 'win32' ? 'python' : 'python3';
-    const command = `"${pythonCmd}" "${pythonScript}" --input "${tempInputPath}" --output "${tempOutputPath}"`;
+    const command = `"${pythonCmd}" -B "${pythonScript}" --input "${tempInputPath}" --output "${tempOutputPath}"`;
 
-    console.log(`Running command: ${command}`);
-    await execAsync(command, { cwd: parentDir, timeout: 120_000, maxBuffer: 10 * 1024 * 1024 });
+    console.log(`Running pipeline command: ${command}`);
+    await execAsync(command, { cwd: projectRoot, timeout: 120_000, maxBuffer: 20 * 1024 * 1024 });
 
     // Read pipeline results JSON
     if (!fs.existsSync(tempOutputPath)) {
-      return NextResponse.json({ error: 'Pipeline run failed to write results' }, { status: 500 });
+      return NextResponse.json({ error: 'Pipeline run failed to produce output file' }, { status: 500 });
     }
 
     const rawResults = fs.readFileSync(tempOutputPath, 'utf-8');
@@ -86,8 +90,8 @@ export async function POST(request: NextRequest) {
 
     // Clean up temporary files
     try {
-      fs.unlinkSync(tempInputPath);
-      fs.unlinkSync(tempOutputPath);
+      if (fs.existsSync(tempInputPath)) fs.unlinkSync(tempInputPath);
+      if (fs.existsSync(tempOutputPath)) fs.unlinkSync(tempOutputPath);
     } catch (e) {
       console.error('Error cleaning up temp files:', e);
     }
@@ -101,7 +105,7 @@ export async function POST(request: NextRequest) {
     console.error('Pipeline API Route Error:', error);
     return NextResponse.json({
       error: 'An internal error occurred during pipeline execution.',
-      details: error.message || error
+      details: error?.message || String(error)
     }, { status: 500 });
   }
 }

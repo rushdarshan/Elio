@@ -424,29 +424,34 @@ export default function DashboardPage() {
       const s = a.source?.char_span;
       return Array.isArray(s) && s.length === 2 && s[1] > s[0];
     }).length;
-     const pipelineDecisions: Record<string, number> = {};
-     for (const r of data) {
-       const d = r.record?.quality?.decision || "unknown";
-       pipelineDecisions[d] = (pipelineDecisions[d] || 0) + 1;
-     }
-     const pendingReviews = data.reduce((count, row, idx) => (
-       count + (row.record?.quality?.decision === "review" && !decisions[decisionKey(idx)]?.status ? 1 : 0)
-     ), 0);
-      return {
-       total: data.length,
-       attrs: filled,
-       attrsPerRow: data.length ? filled.length / data.length : 0,
-       supported,
-       missing: filled.length - supported,
-       evidenceSupport: filled.length ? (supported / filled.length) * 100 : 0,
-       charCompliance: filled.length ? (spans / filled.length) * 100 : 0,
-       decisions: pipelineDecisions,
-       reviewCount: pendingReviews,
-       pipelineReviewCount: pipelineDecisions["review"] || 0,
+    const zeroAttrRows = data.filter((r) => {
+      const rowAttrs = r.record?.attributes || [];
+      return !rowAttrs.some((a) => a.value && String(a.value).trim().length > 0);
+    }).length;
+    const pipelineDecisions: Record<string, number> = {};
+    for (const r of data) {
+      const d = r.record?.quality?.decision || "unknown";
+      pipelineDecisions[d] = (pipelineDecisions[d] || 0) + 1;
+    }
+    const pendingReviews = data.reduce((count, row, idx) => (
+      count + (row.record?.quality?.decision === "review" && !decisions[decisionKey(idx)]?.status ? 1 : 0)
+    ), 0);
+    return {
+      total: data.length,
+      attrs: filled,
+      attrsPerRow: data.length ? filled.length / data.length : 0,
+      supported,
+      missing: filled.length - supported,
+      zeroAttrRows,
+      evidenceSupport: filled.length ? (supported / filled.length) * 100 : 0,
+      charCompliance: filled.length ? (spans / filled.length) * 100 : 0,
+      decisions: pipelineDecisions,
+      reviewCount: pendingReviews,
+      pipelineReviewCount: pipelineDecisions["review"] || 0,
       llmCalls: data.reduce((s, r) => s + (r.record?.cost?.llm_calls || 0), 0),
       estUsd: data.reduce((s, r) => s + (r.record?.cost?.estimated_usd || 0), 0),
     };
-   }, [data, decisions]);
+  }, [data, decisions]);
 
   const getDecision = (idx: number) => decisions[decisionKey(idx)]?.status || null;
   const getAttrValue = (idx: number, attr: Attribute) => decisions[decisionKey(idx)]?.overrides[attr.label] ?? attr.value;
@@ -475,10 +480,18 @@ export default function DashboardPage() {
     setUploading(true);
     setUploadError(null);
     try {
-      const response = await fetch("/api/run", { method: "POST", body: (() => { const form = new FormData(); form.append("file", file); return form; })() });
-      const payload = await response.json();
+      const form = new FormData();
+      form.append("file", file);
+      const response = await fetch("/api/run", { method: "POST", body: form });
+      const rawText = await response.text();
+      let payload: any;
+      try {
+        payload = JSON.parse(rawText);
+      } catch {
+        throw new Error(`Server returned non-JSON response (${response.status} ${response.statusText}): ${rawText.slice(0, 160)}`);
+      }
       if (!response.ok || !Array.isArray(payload.results) || payload.results.length !== payload.rowCount) {
-        throw new Error(payload.error || "Upload did not produce a complete result.");
+        throw new Error(payload.error || payload.details || `Upload failed with status ${response.status}`);
       }
       setUploadedData(payload.results);
       setDatasetSize("uploaded");
@@ -537,16 +550,21 @@ export default function DashboardPage() {
 
   const verifyDrawerClaim = async () => {
     if (!drawerRow || !drawerAttrObj) return;
-    const key = `${drawerRow.input?.MPN || ""}_${drawerAttrObj.label}`;
+    const key = `${drawerRow.input?.MPN || drawerRow.input?.Mfg_Part_Num || ""}_${drawerAttrObj.label}`;
+    const claim = receiptIndex?.claims[key];
+    if (!claim) {
+      // Abstained/missing claim has no receipt entry
+      setVerifiedHashes((prev) => ({ ...prev, [key]: "idle" }));
+      return;
+    }
     setVerifiedHashes((prev) => ({ ...prev, [key]: "verifying" }));
     try {
-      const claim = receiptIndex?.claims[key];
-      if (!claim || !drawerRow.flat_export) throw new Error("No receipt claim for this value");
+      if (!drawerRow.flat_export) throw new Error("No export record for this value");
       const input = drawerRow.input || {};
       const inputRowHash = await sha256Hex(canonicalJson({
-        Mfg_Part_Num: input.MPN || "",
-        Part_Desc: input.Description || "",
-        Part_Manuf: input.Manufacturer || "",
+        Mfg_Part_Num: input.MPN || input.Mfg_Part_Num || "",
+        Part_Desc: input.Description || input.Part_Desc || "",
+        Part_Manuf: input.Manufacturer || input.Part_Manuf || "",
         E1_Brand: input.E1_Brand || "",
         Unilog_Brand: input.Unilog_Brand || "",
         DIB_Brand: input.DIB_Brand || "",
@@ -581,7 +599,7 @@ export default function DashboardPage() {
         decision_hash: decisionHash,
         output_hash: outputHash,
       }));
-      const matches = claim.mpn === input.MPN
+      const matches = (claim.mpn === input.MPN || claim.mpn === input.Mfg_Part_Num)
         && claim.attribute === drawerAttrObj.label
         && claim.value === drawerAttrObj.value
         && claim.uom === drawerAttrObj.uom
@@ -648,8 +666,9 @@ export default function DashboardPage() {
     : null;
   const drawerDecision = drawerIdx !== null ? getDecision(drawerIdx) : null;
   const drawerProofKey = drawerRow && drawerAttrObj
-    ? `${drawerRow.input?.MPN || ""}_${drawerAttrObj.label}`
+    ? `${drawerRow.input?.MPN || drawerRow.input?.Mfg_Part_Num || ""}_${drawerAttrObj.label}`
     : "";
+  const drawerHasReceiptClaim = Boolean(drawerProofKey && receiptIndex?.claims[drawerProofKey]);
   const drawerHashState = verifiedHashes[drawerProofKey] || "idle";
 
   const statusBarBars = [55, 70, 60, 80, 65, 75, 85, 70, 88, 78, 82, 90];
@@ -863,6 +882,7 @@ export default function DashboardPage() {
                   label="Evidence Support"
                   value={`${metrics.evidenceSupport.toFixed(1)}%`}
                   badge1={`${metrics.supported} values`}
+                  badge2={metrics.zeroAttrRows > 0 ? { text: `${metrics.zeroAttrRows} unextracted`, color: "#f87171", bg: "rgba(248,113,113,0.12)", border: "rgba(248,113,113,0.25)" } : undefined}
                   chartColor="rgba(200,216,74,0.9)"
                   bars={supportBars}
                   gradStart="#2e3208" gradEnd="#171a00"
@@ -870,7 +890,7 @@ export default function DashboardPage() {
                 <MetricCard
                   label="Missing Evidence"
                   value={String(metrics.missing)}
-                  badge1={`${metrics.charCompliance.toFixed(0)}% spans`}
+                  badge1={`${metrics.charCompliance.toFixed(0)}% verified spans`}
                   badge2={{ text: "refused", color: "#fbbf24", bg: "rgba(245,158,11,0.12)", border: "rgba(245,158,11,0.25)" }}
                   chartColor="rgba(245,158,11,0.9)"
                   bars={missingBars}
@@ -905,7 +925,7 @@ export default function DashboardPage() {
                 <div style={{ display: "flex", flexDirection: "column", gap: "8px", minWidth: 0 }}>
                   <div style={{ fontSize: "11px", fontWeight: "600", letterSpacing: "0.08em", textTransform: "uppercase", color: "#6a6a58", fontFamily: "var(--font-geist-mono)" }}>Completeness</div>
                   <div style={{ fontSize: "11px", color: "#6a6a58", lineHeight: 1.5, fontFamily: "var(--font-geist-mono)", display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden" as const }}>
-                    {metrics.total}/{metrics.total} rows · {metrics.attrsPerRow.toFixed(3)} attrs/row · {metrics.missing} missing evidence
+                    {metrics.total}/{metrics.total} rows · {metrics.attrsPerRow.toFixed(3)} attrs/row · {metrics.missing} missing · {metrics.zeroAttrRows} unextracted
                   </div>
                   <div style={{ display: "flex", gap: "4px", height: "6px" }}>
                     <div style={{ flex: Math.max(metrics.supported, 0.1), borderRadius: "2px", background: "#c8d84a" }} />
@@ -1801,35 +1821,50 @@ export default function DashboardPage() {
                         <div style={{ fontSize: "10.5px", fontWeight: "600", color: "#c8d84a", fontFamily: "var(--font-geist-mono)", letterSpacing: "0.05em" }}>
                           PROOF GRAPH LINEAGE
                         </div>
-                        <button
-                          onClick={verifyDrawerClaim}
-                          disabled={drawerHashState === "verifying"}
-                          style={{
-                            background: drawerHashState === "verified"
-                              ? "rgba(34,197,94,0.18)"
-                              : drawerHashState === "failed"
-                                ? "rgba(248,113,113,0.14)"
-                                : "rgba(200,216,74,0.12)",
-                            border: `1px solid ${drawerHashState === "verified" ? "rgba(34,197,94,0.35)" : drawerHashState === "failed" ? "rgba(248,113,113,0.35)" : "rgba(200,216,74,0.3)"}`,
-                            color: drawerHashState === "verified"
-                              ? "#4ade80"
-                              : drawerHashState === "failed" ? "#f87171" : "#c8d84a",
+                        {!drawerHasReceiptClaim ? (
+                          <span style={{
+                            background: "rgba(245,158,11,0.12)",
+                            border: "1px solid rgba(245,158,11,0.25)",
+                            color: "#fbbf24",
                             borderRadius: "6px",
                             padding: "3px 8px",
                             fontSize: "10px",
                             fontWeight: "600",
-                            cursor: "pointer",
                             fontFamily: "var(--font-geist-mono)",
-                          }}
-                        >
-                          {drawerHashState === "verified"
-                            ? "SHA-256 Verified"
-                            : drawerHashState === "failed"
-                              ? "Verification Failed - Retry"
-                              : drawerHashState === "verifying"
-                                ? "Verifying..."
-                                : "Recompute & Verify Hash"}
-                        </button>
+                          }}>
+                            Abstained — No Claim to Verify
+                          </span>
+                        ) : (
+                          <button
+                            onClick={verifyDrawerClaim}
+                            disabled={drawerHashState === "verifying"}
+                            style={{
+                              background: drawerHashState === "verified"
+                                ? "rgba(34,197,94,0.18)"
+                                : drawerHashState === "failed"
+                                  ? "rgba(248,113,113,0.14)"
+                                  : "rgba(200,216,74,0.12)",
+                              border: `1px solid ${drawerHashState === "verified" ? "rgba(34,197,94,0.35)" : drawerHashState === "failed" ? "rgba(248,113,113,0.35)" : "rgba(200,216,74,0.3)"}`,
+                              color: drawerHashState === "verified"
+                                ? "#4ade80"
+                                : drawerHashState === "failed" ? "#f87171" : "#c8d84a",
+                              borderRadius: "6px",
+                              padding: "3px 8px",
+                              fontSize: "10px",
+                              fontWeight: "600",
+                              cursor: "pointer",
+                              fontFamily: "var(--font-geist-mono)",
+                            }}
+                          >
+                            {drawerHashState === "verified"
+                              ? "SHA-256 Verified"
+                              : drawerHashState === "failed"
+                                ? "Verification Failed - Retry"
+                                : drawerHashState === "verifying"
+                                  ? "Verifying..."
+                                  : "Recompute & Verify Hash"}
+                          </button>
+                        )}
                       </div>
 
                       <div style={{ display: "flex", flexDirection: "column", gap: "5px", fontSize: "10.5px", fontFamily: "var(--font-geist-mono)" }}>

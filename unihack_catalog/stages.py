@@ -590,16 +590,19 @@ def stage_description_generation(record: EnrichedRecord) -> EnrichedRecord:
     # MOBILE_DESC: 60-80 chars. When the brand name is contained in the manufacturer
     # name (Whirlpool in Whirlpool Corporation), lead with the brand only and append
     # mounting; otherwise lead with manufacturer + brand.
-    brand_plain = brand.replace("\u00ae", "")
+    brand_plain = brand.replace("\u00ae", "").strip()
     if manuf and brand_plain.lower() in manuf.lower():
-        mobile = f"{brand_plain}, {item_type}, {series}, {mpn}"
+        m_parts = [p for p in [brand_plain, item_type, series, mpn] if p and str(p).strip()]
+        mobile = ", ".join(m_parts)
         if mount and len(mobile) + len(mount) + 11 <= 80:
             mobile += f", {mount} Mounting"
     else:
-        mobile = f"{manuf} {brand_plain}, {item_type}, {series}, {mpn}"
+        lead = f"{manuf} {brand_plain}".strip()
+        m_parts = [p for p in [lead, item_type, series, mpn] if p and str(p).strip()]
+        mobile = ", ".join(m_parts)
 
     # SHORT_DESC / RETAIL_DESC: brand, series, MPN, item type, key attributes.
-    short_parts = [brand, series, mpn, item_type]
+    short_parts = [p for p in [brand, series, mpn, item_type] if p and str(p).strip()]
     short_tail = []
     if mount:
         short_tail.append(f"{mount} Mounting")
@@ -613,7 +616,8 @@ def stage_description_generation(record: EnrichedRecord) -> EnrichedRecord:
     if short_tail:
         short += ", " + ", ".join(short_tail)
 
-    retail_parts = [f"{series} {item_type}".strip()]
+    item_headline = f"{series} {item_type}".strip() if series else item_type
+    retail_parts = [item_headline]
     if mount:
         retail_parts.append(f"{mount} Mounting")
     if cycles:
@@ -622,7 +626,7 @@ def stage_description_generation(record: EnrichedRecord) -> EnrichedRecord:
         retail_parts.append(mat)
     if col:
         retail_parts.append(col)
-    retail = ", ".join(retail_parts)
+    retail = ", ".join(p for p in retail_parts if p and str(p).strip())
 
     # LONG_DESC1: full attribute sentence — brand, series, wash cycles, voltage,
     # amperage, mounting, size, depth, min/max height, sound, material, color, additional info.
