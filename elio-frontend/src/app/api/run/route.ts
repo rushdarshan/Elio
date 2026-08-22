@@ -8,8 +8,8 @@ import crypto from 'crypto';
 const execAsync = promisify(exec);
 
 // Limits for live web deployment
-const MAX_FILE_SIZE_BYTES = 5 * 1024 * 1024; // 5 MB
-const MAX_ROW_COUNT = 500; // Cap live web demo to 500 rows per upload
+const MAX_FILE_SIZE_BYTES = 50 * 1024 * 1024; // 50 MB
+const MAX_ROW_COUNT = 5000; // Supports full 1000-row catalogs and large multi-category batches
 const RATE_LIMIT_WINDOW_MS = 60 * 1000; // 1 minute
 const MAX_REQUESTS_PER_WINDOW = 15;
 const MAX_CONCURRENT_JOBS = 2;
