@@ -74,7 +74,10 @@ def main() -> int:
             if a.value:
                 ev = None
                 if a.source and a.source.snippet:
-                    ev = {"text": a.source.snippet, "char_span": a.source.char_span, "kind": "workbook"}
+                    span = a.source.char_span
+                    if isinstance(span, list) and len(span) == 2 and span[1] <= span[0]:
+                        span = None
+                    ev = {"text": a.source.snippet, "char_span": span, "kind": "workbook"}
                 else:
                     loc = locate(rec.input.raw_text, a.value, a.uom)
                     if loc:

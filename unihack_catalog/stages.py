@@ -422,8 +422,8 @@ def stage_extraction(record: EnrichedRecord, doc: Dict[str, Any]) -> EnrichedRec
     try:
         from .category_extractors import extract_for
         generic.update(extract_for(record.input.raw_text))
-    except Exception:
-        pass
+    except Exception as exc:
+        record.quality.review_reasons.append(f"Category extraction fallback: {exc}")
     if os.environ.get("ELIO_ASSISTED") == "1":
         # Bar 3: LLM proposal layer — fills labels extractors left empty.
         # Acceptance still happens downstream in stage_verification's dual-pass.
@@ -455,17 +455,15 @@ def stage_extraction(record: EnrichedRecord, doc: Dict[str, Any]) -> EnrichedRec
                 raw, uom = _fmt_spec(g[0], g[1]), g[1]
             else:
                 raw = str(g)
-        raw = raw.strip()
-        raw = re.sub(r'^(\d+)\.0$', r'\1', raw)  # "5.0" -> "5"
-        uom = _canon_uom(uom)
         start, end, snippet = _locate(doc_text, raw)
+        char_span = [start, end] if (end > start and start >= 0) else None
         attributes.append(AttributeRecord(
             label=label,
             value=raw,
             uom=uom,
             source=SourceProvenance(url=doc_url, page=doc.get("page_number", 1),
-                                    char_span=[start, end], snippet=snippet),
-            confidence=0.9,
+                                    char_span=char_span, snippet=snippet),
+            confidence=0.9 if raw else 0.0,
             verification="supported" if raw else "not_found",
         ))
 

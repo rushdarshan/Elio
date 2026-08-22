@@ -85,7 +85,7 @@ def _validate_span(span: Any) -> None:
         or len(span) != 2
         or any(isinstance(part, bool) or not isinstance(part, int) for part in span)
         or span[0] < 0
-        or span[1] < span[0]
+        or span[1] <= span[0]
     ):
         raise ReceiptError(f"invalid character span: {span!r}")
 

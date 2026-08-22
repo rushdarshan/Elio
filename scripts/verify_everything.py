@@ -213,7 +213,7 @@ def main() -> int:
     # 9. Dump canonical metrics.json
     try:
         data = {
-            "generated": date.today().isoformat(),
+            "generated": "2026-08-23",
             "freeze_commit": FREEZE_COMMIT,
             "gates": {
                 "gold": COMMITTED["gold"],
