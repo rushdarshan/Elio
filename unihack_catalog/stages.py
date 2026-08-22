@@ -1,6 +1,7 @@
 import re
 import os
 import json
+import hashlib
 from typing import List, Dict, Any, Tuple, Optional
 
 from .models import (
@@ -34,14 +35,6 @@ _TAXONOMY_FALLBACK = {
     "nipple": ("Plumbing", "Fittings", "Pipe Fittings", "Plumbing>Fittings>Pipe Fittings"),
 }
 
-# ponytail: gold-mined brand vocab — mfr_url is a template; {mpn} is substituted at export
-_GOLD_BRAND_VOCAB = {
-    "FRIGIDAIRE\u00ae": {"manufacturer": "Rheem Manufacturing",
-                         "mfr_url": "https://www.frigidaire.com/en/p/owner-center/product-support/{mpn}"},
-    "Whirlpool\u00ae": {"manufacturer": "Whirlpool Corporation",
-                        "mfr_url": "https://learnwhirlpool.com/smartsearchresults?searchtext={mpn}"},
-}
-
 # ponytail: MPN-prefix -> brand for appliance model numbers (PDSH = Frigidaire, WDTS = Whirlpool).
 # Extend per new manufacturer prefix; description scan takes precedence anyway.
 _MPN_PREFIX_BRANDS = {
@@ -71,7 +64,7 @@ _MPN_PREFIX_BRANDS = {
 }
 
 # ponytail: Part_Manuf is the supplier field; distributor names must never be
-# surfaced as OEM manufacturers (gold resolves Rheem/Whirlpool, not APPDE).
+# surfaced as OEM manufacturers (e.g., resolve Rheem/Whirlpool, not APPDE).
 _DISTRIBUTOR_BLACKLIST = {
     "Appliance Dealers Cooperative", "Jam Industrial Supply LLC", "Parksite",
     "Palmer Donavin Mfg Company", "U S Lumber", "Westwood Lumber Sales",
@@ -98,77 +91,6 @@ _ATTR_LABELS = [
     "Mounting Type", "Plug Type", "Size", "Depth With Door Open", "Minimum Height",
     "Maximum Height", "Sound Level", "Material", "Color", "Additional Information",
 ]
-
-# ponytail: gold-mined spec defaults for known models — the terse input cannot derive
-# these; the organizer gold CSV is the sanctioned source. Extend per new model MPN.
-_GOLD_SPEC_DEFAULTS = {
-    "PDSH4816AF": {
-        "Series": ("Professional Series", ""),
-        "Number of Wash Cycles": ("5", ""),
-        "Voltage Rating": (120, "V"),
-        "Amperage Rating": (15, "A"),
-        "Mounting Type": ("Leg", ""),
-        "Size": ("24 in W x 24-1/4 in D", ""),
-        "Depth With Door Open": (50.25, "in"),
-        "Minimum Height": ("8-1/2 in Upper Rack, 11-1/4 in Lower Rack", ""),
-        "Maximum Height": ("10-3/8 in Upper Rack, 13-1/4 in Lower Rack", ""),
-        "Sound Level": (47, "dBA"),
-        "Material": ("Stainless Steel", ""),
-        "Additional Information": ("240 kW-hr Annual Energy, 1 to 12 hr Delay Start Hours", ""),
-    },
-    "WDTS7024RZ": {
-        "Series": ("Eco Series", ""),
-        "Voltage Rating": (120, "V"),
-        "Amperage Rating": (10, "A"),
-        "Mounting Type": ("Built-in", ""),
-        "Size": ("33-7/16 in H x 23-7/8 in W x 22-5/8 in D", ""),
-        "Depth With Door Open": (50.1875, "in"),
-        "Minimum Height": ("33-7/16", "in"),
-        "Sound Level": (41, "dBA"),
-        "Material": ("Stainless Steel", ""),
-        "Color": ("Stainless Steel", ""),
-        "Additional Information": ("Folding Tines, Leak Detection System, Moisture Repellent Silverware Basket, Normal Cycle, Quick Wash Cycle, Sani Rinse Option, Sensor Cycle, Triple Wash Spray", ""),
-    },
-}
-
-# ponytail: gold-mined export extras (feature phrases, marketing copy, item features,
-# doc refs) — same sanctioned-source pattern as the spec defaults above.
-_GOLD_EXPORT_EXTRAS = {
-    "PDSH4816AF": {
-        "feature": "CleanBoost\u2122",
-        "with": "With CleanBoost\u2122",
-        "marketing": "",
-        "ref_urls": [],
-        "item_features": [],
-        # asset/document pointers per the reference workbook's own convention
-        "approvals": "ASSE 1006|CEE Tier 2 Qualified|cUL Listed|ENERGY STAR Certified|NSF Certified|UL Listed",
-        "warranty": "1 Year Manufacturer, 1 Year Labor and Parts",
-        "asset_image": "FRIGIDAIRE_PDSH4816AF.jpg",
-        "alt_images": [f"FRIGIDAIRE_PDSH4816AF_{i}.jpg" for i in range(1, 5)],
-        "spec_sheet": "FRIGIDAIRE_PDSH4816AF_Specification_Sheet.pdf",
-        "actual_image": "Yes",
-    },
-    "WDTS7024RZ": {
-        "feature": "",
-        "with": "With Washing 3rd Rack, Water Repellent Silverware Basket",
-        # ponytail: gold's own workbook URL for this MPN is truncated (missing
-        # final Z) — matching the bar byte-for-byte wins the comparison.
-        "mfr_url": "https://learnwhirlpool.com/smartsearchresults?searchtext=WDTS7024R",
-        "marketing": "Load more and run less with our quietest and largest capacity dishwasher. "
-                     "A 3rd Rack provides dedicated space for mugs and bowls, while an adjustable "
-                     "2nd Rack helps fit all the dishes and pans your family piles up.",
-        "ref_urls": ["https://www.whirlpool.com/content/dam/global/documents/202412/owners-manual-w11323304-revj.pdf",
-                     "https://www.whirlpool.com/content/dam/global/documents/202406/installation-instructions-w11323304-revG.pdf"],
-        "item_features": ["3rd rack with extra wash action", "Adjustable 2nd Rack", "41 dBA",
-                          "Moisture Repellent Silverware Basket", "Sensor cycle", "Sani Rinse Option",
-                          "Leak Detection System", "Folding Tines", "Normal cycle", "Triple Wash Spray",
-                          "Quick Wash Cycle"],
-        "asset_image": "Whirlpool_WDTS7024RZ.jpg",
-        "alt_images": [],
-        "spec_sheet": "Whirlpool_WDTS7024RZ_Specification_Sheet.pdf",
-        "actual_image": "Yes",
-    },
-}
 
 
 def _safe(fn_name: str, fallback: Any) -> Any:
@@ -214,7 +136,6 @@ def _get_brand_vocab() -> Dict[str, Dict[str, str]]:
     except Exception:
         pass
     merged = dict(vocab)
-    merged.update(_GOLD_BRAND_VOCAB)
     merged.update(_safe("get_brand_vocab", {}) or {})
     return merged
 
@@ -378,11 +299,6 @@ def stage_entity_resolution(record: EnrichedRecord) -> EnrichedRecord:
     info = vocab[key]
     mfr = str(info.get("manufacturer") or "Unknown Manufacturer")
     url = str(info.get("mfr_url") or "").replace("{mpn}", record.input.mpn)
-    extras = _GOLD_EXPORT_EXTRAS.get(record.input.mpn.upper(), {})
-    if extras.get("mfr_url"):
-        # ponytail: gold's own workbook URL for this MPN (its truncated
-        # WDTS7024R) — byte-matching the bar wins the comparison.
-        url = extras["mfr_url"]
     brand_label = key
     if info.get("supplier"):
         # ponytail: supplier keys (e.g. "Milwaukee Accessory") resolve their
@@ -438,24 +354,14 @@ def stage_document_fetch(record: EnrichedRecord) -> Tuple[EnrichedRecord, Dict[s
     # workbook (sanctioned source, sha256-hashed); live fetches (whirlpool 403,
     # frigidaire timeout) are logged as unavailable, not faked.
     pointer_url = mfr.mfr_url or ""
-    # Render the workbook's own populated cells as the evidence text, so every
-    # snippet/char_span points at real, verifiable text from the cited document.
-    lines: List[str] = []
-    try:
-        import pandas as pd
-        df = pd.read_csv(_GOLD_CSV, encoding="utf-8-sig")
-        row = df[df["Mfg_Part_Num"].astype(str).str.strip().str.upper()
-                 == record.input.mpn.upper()].iloc[0]
-        for col in df.columns:
-            v = row[col]
-            if isinstance(v, str) and v.strip():
-                lines.append(f"{col}: {v.strip()}")
-    except Exception:
-        pass
-    html_text = record.input.raw_text + ("\n" + "\n".join(lines) if lines else "")
+    # ponytail: evidence text is the input description only. The organizer
+    # answer-key CSV is never cited as a source document — citing the answer
+    # key as "evidence" for values copied from it is fabrication.
+    html_text = record.input.raw_text
+    doc_hash = hashlib.sha256(html_text.encode("utf-8")).hexdigest()[:16]
     evidence_doc = {
-        "url": f"file:///{os.path.abspath(_GOLD_CSV).replace(os.sep, '/')}",
-        "content_hash": f"sha256:{REF_FILE_HASH}",
+        "url": "",
+        "content_hash": f"sha256:{doc_hash}",
         "html_text": html_text,
         "page_number": 1,
         "pointer_url": pointer_url,
@@ -512,55 +418,40 @@ def _locate(text: str, value: str) -> Tuple[int, int, str]:
 
 
 def stage_extraction(record: EnrichedRecord, doc: Dict[str, Any]) -> EnrichedRecord:
-    spec = _GOLD_SPEC_DEFAULTS.get(record.input.mpn.upper(), {})
-    generic = _generic_extraction(record.input.raw_text) if not spec else {}
+    generic = _generic_extraction(record.input.raw_text)
     try:
         from .category_extractors import extract_for
         generic.update(extract_for(record.input.raw_text))
     except Exception:
         pass
-    if os.environ.get("ELIO_ASSISTED") == "1" and not spec:
+    if os.environ.get("ELIO_ASSISTED") == "1":
         # Bar 3: LLM proposal layer — fills labels extractors left empty.
         # Acceptance still happens downstream in stage_verification's dual-pass.
-        # Gold-spec rows are excluded: their exports are locked (zero regressions).
         from .llm_proposals import propose
         proposals = propose(record.input.raw_text)
         generic = {**proposals, **generic}  # extractor wins ties; proposals fill gaps
 
     lov = _get_attribute_lov()
-    # ponytail: gold rows follow the reference workbook itself — same labels,
-    # same order, same values as the sanctioned source (no 50-slot ask).
-    # Non-gold rows stay category-aware: vary attrs/row by leaf.
-    gt = GOLD_ATTR_TRIPLES.get(record.input.mpn.upper(), {})
-    if gt or spec:
-        ordered = list(gt.keys()) or list(spec.keys())
-    else:
-        labels = list(dict.fromkeys(list(_ATTR_LABELS) + (list(lov.keys()) if lov else []) + list(generic.keys())))
-        ordered = []
-        for l in _ATTR_LABELS:
-            if l in generic:
-                ordered.append(l)
-        for l in (list(lov.keys()) if lov else []):
-            if l not in ordered and l in generic:
-                ordered.append(l)
-        for l in generic:
-            if l not in ordered:
-                ordered.append(l)
-        if not ordered:
-            ordered = [l for l in _ATTR_LABELS if l in labels][:3]
+    labels = list(dict.fromkeys(list(_ATTR_LABELS) + (list(lov.keys()) if lov else []) + list(generic.keys())))
+    ordered = []
+    for l in _ATTR_LABELS:
+        if l in generic:
+            ordered.append(l)
+    for l in (list(lov.keys()) if lov else []):
+        if l not in ordered and l in generic:
+            ordered.append(l)
+    for l in generic:
+        if l not in ordered:
+            ordered.append(l)
+    if not ordered:
+        ordered = [l for l in _ATTR_LABELS if l in labels][:3]
 
     doc_text = doc["html_text"]
     doc_url = doc["url"]
     attributes = []
     for label in ordered:
         raw, uom = "", ""
-        if label in gt:
-            v, u = gt[label]
-            raw, uom = _fmt_spec(v, u), u
-        elif label in spec:
-            v, u = spec[label]
-            raw, uom = _fmt_spec(v, u), u
-        elif label in generic:
+        if label in generic:
             g = generic[label]
             if isinstance(g, tuple):
                 raw, uom = _fmt_spec(g[0], g[1]), g[1]
@@ -576,7 +467,7 @@ def stage_extraction(record: EnrichedRecord, doc: Dict[str, Any]) -> EnrichedRec
             uom=uom,
             source=SourceProvenance(url=doc_url, page=doc.get("page_number", 1),
                                     char_span=[start, end], snippet=snippet),
-            confidence=0.95 if label in spec else 0.9,
+            confidence=0.9,
             verification="supported" if raw else "not_found",
         ))
 
@@ -593,53 +484,45 @@ def stage_verification(record: EnrichedRecord) -> EnrichedRecord:
         reasons.append("Taxonomy classification failed: no keyword matched.")
     if not [a for a in record.attributes if a.value]:
         reasons.append("No attributes extracted.")
-    a_map = _attr_map(record)
-    critical = {"Size", "Depth With Door Open", "Minimum Height", "Maximum Height"}
-    gold_t = GOLD_ATTR_TRIPLES.get(record.input.mpn.upper(), {})
-    missing_critical = [l for l in critical
-                        if l not in a_map or not a_map[l].value]
-    if gold_t:
-        # Only flag criticals the reference workbook actually populates —
-        # a value gold leaves empty is not a gap.
-        missing_critical = [l for l in missing_critical if gold_t.get(l, ("", ""))[0]]
-    if missing_critical:
-        reasons.append(f"Flight-critical attributes missing: {', '.join(missing_critical)}")
-    if not gold_t:
-        # P5 dual-pass: every emitted value must trace back to the input text
-        # (or a literal unit/number conversion of it). Gold rows are
-        # spec-sourced from the sanctioned workbook, so they are exempt.
-        text_l = record.input.raw_text.lower()
-        _EXPANSIONS = {"stainless steel": {"ss", "sst", "s/s"}, "stainless": {"ss", "sst"},
-                       "white": {"wh", "wt"}, "black": {"bk", "blk"},
-                       "bronze": {"bz"}, "matte black": {"mb"},
-                       "composite": {"trex", "azek", "timbertech"}}
-        bad = []
-        for a in record.attributes:
-            v = a.value.strip()
-            if not v:
-                continue
-            vl = v.lower()
-            base = re.sub(r'\s*(in|mm|v|w|lm|k|awg|ft|dba|ga)\s*$', '', vl)
-            ok = vl in text_l or base in text_l or re.search(r'\b\d+\b', v) and vl.split()[0] in text_l
-            if not ok and " x " in vl:
-                # ponytail: composed values ("Square x Hex") pass when every
-                # part is a verbatim, word-bounded token in the text.
-                ok = all(re.search(r"(?<![a-z0-9])" + re.escape(p) + r"(?![a-z0-9])", text_l)
-                         for p in vl.split(" x "))
-            if not ok and base.startswith("0.") and base[1:] in text_l:
-                ok = True  # ".045" written as "0.045"
-            if not ok and vl.replace("-", "") in text_l.replace("-", ""):
-                ok = True  # "cut-off" vs "cut off" punctuation normalization
-            for canon, abbrs in _EXPANSIONS.items():
-                if vl == canon and any(ab in text_l for ab in abbrs):
-                    ok = True
-            if not ok and a.label == "Color Temperature" and re.search(r"\b\d{2}k\b", text_l):
-                # "27K" shorthand: NNk in the text converts to NN00 K
-                ok = vl.rstrip("k").strip() == str(int(re.search(r"\b(\d{2})k\b", text_l).group(1)) * 100)
-            if not ok:
-                bad.append(a.label)
-        if bad:
-            reasons.append(f"Dual-pass verification failed: {', '.join(bad[:5])}")
+    
+    # Dual-pass verification: every emitted value must trace back to the input text
+    # (or a literal unit/number conversion of it).
+    text_l = record.input.raw_text.lower()
+    _EXPANSIONS = {
+        "stainless steel": {"ss", "sst", "s/s"},
+        "stainless": {"ss", "sst"},
+        "white": {"wh", "wt"},
+        "black": {"bk", "blk"},
+        "bronze": {"bz"},
+        "matte black": {"mb"},
+        "composite": {"trex", "azek", "timbertech"},
+    }
+    bad = []
+    for a in record.attributes:
+        v = a.value.strip()
+        if not v:
+            continue
+        vl = v.lower()
+        base = re.sub(r'\s*(in|mm|v|w|lm|k|awg|ft|dba|ga)\s*$', '', vl)
+        ok = vl in text_l or base in text_l or (re.search(r'\b\d+\b', v) and vl.split()[0] in text_l)
+        if not ok and " x " in vl:
+            # Composed values ("Square x Hex") pass when every part is a verbatim, word-bounded token.
+            ok = all(re.search(r"(?<![a-z0-9])" + re.escape(p) + r"(?![a-z0-9])", text_l)
+                     for p in vl.split(" x "))
+        if not ok and base.startswith("0.") and base[1:] in text_l:
+            ok = True  # ".045" written as "0.045"
+        if not ok and vl.replace("-", "") in text_l.replace("-", ""):
+            ok = True  # "cut-off" vs "cut off" punctuation normalization
+        for canon, abbrs in _EXPANSIONS.items():
+            if vl == canon and any(ab in text_l for ab in abbrs):
+                ok = True
+        if not ok and a.label == "Color Temperature" and re.search(r"\b\d{2}k\b", text_l):
+            # "27K" shorthand: NNk in the text converts to NN00 K
+            ok = vl.rstrip("k").strip() == str(int(re.search(r"\b(\d{2})k\b", text_l).group(1)) * 100)
+        if not ok:
+            bad.append(a.label)
+    if bad:
+        reasons.append(f"Dual-pass verification failed: {', '.join(bad[:5])}")
     decision = "review" if reasons else "auto_accept"
     record.quality = QualityDecision(decision=decision, field_error_budget=0.02, review_reasons=reasons)
     return record
@@ -708,8 +591,7 @@ def stage_description_generation(record: EnrichedRecord) -> EnrichedRecord:
 
     # MOBILE_DESC: 60-80 chars. When the brand name is contained in the manufacturer
     # name (Whirlpool in Whirlpool Corporation), lead with the brand only and append
-    # mounting; otherwise lead with manufacturer + brand (matches both gold rows).
-    extras = _GOLD_EXPORT_EXTRAS.get(mpn.upper(), {})
+    # mounting; otherwise lead with manufacturer + brand.
     brand_plain = brand.replace("\u00ae", "")
     if manuf and brand_plain.lower() in manuf.lower():
         mobile = f"{brand_plain}, {item_type}, {series}, {mpn}"
@@ -730,8 +612,6 @@ def stage_description_generation(record: EnrichedRecord) -> EnrichedRecord:
     if col:
         short_tail.append(col)
     short = " ".join(short_parts)
-    if extras.get("feature"):
-        short += f" With {extras['feature']}"
     if short_tail:
         short += ", " + ", ".join(short_tail)
 
@@ -746,18 +626,14 @@ def stage_description_generation(record: EnrichedRecord) -> EnrichedRecord:
         retail_parts.append(col)
     retail = ", ".join(retail_parts)
 
-    # LONG_DESC1: full attribute sentence in gold order — brand + feature, series,
-    # wash cycles, voltage, amperage, mounting, size, depth, min/max height, sound,
-    # material, color, additional info. Units keep a space before the unit.
+    # LONG_DESC1: full attribute sentence — brand, series, wash cycles, voltage,
+    # amperage, mounting, size, depth, min/max height, sound, material, color, additional info.
     minh = val("Minimum Height")
     minh_uom = uom("Minimum Height")
     maxh = val("Maximum Height")
     long_parts = []
     if brand != "Unbranded":
-        head = f"{brand} {item_type}"
-        if extras.get("feature"):
-            head += f" With {extras['feature']}"
-        long_parts.append(head)
+        long_parts.append(f"{brand} {item_type}")
     if series:
         long_parts.append(series)
     if cycles:
@@ -793,8 +669,8 @@ def stage_description_generation(record: EnrichedRecord) -> EnrichedRecord:
     short_text, short_ok = _trim(short, 120)
     long_text, long_ok = _trim(long_desc, 500)
     retail_text, retail_ok = _trim(retail, 200)
-    marketing_text = str(extras.get("marketing") or "")
-    marketing_ok = bool(marketing_text)
+    marketing_text = ""
+    marketing_ok = False
 
     record.descriptions = Descriptions(
         mobile=DescriptionDetail(text=mobile_text, chars=len(mobile_text), valid=mobile_valid),
@@ -807,7 +683,7 @@ def stage_description_generation(record: EnrichedRecord) -> EnrichedRecord:
     return record
 
 
-# --- STAGE 9: Export (exact 252-header contract from the gold CSV) ---
+# --- STAGE 9: Export (exact 252-header contract from the delivery template) ---
 _GOLD_CSV = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
                          "Unihack_ Expected Output - Delivery Format.csv")
 
@@ -817,22 +693,17 @@ def _fallback_headers() -> List[str]:
          "PART_NUMBER", "Dept", "Class", "Fine", "SKU - MY_PART_NUMBER", "Mfg_Part_Num",
          "Part_Desc", "E1_Brand", "Unilog_Brand", "DIB_Brand", "Part_Manuf",
          "MANUFACTURER_NAME", "BRAND_NAME", "TRADE_NAME", "MANUFACTURER_PART_NUMBER",
-         "ALTERNATE_PART_NUMBER", "Classpath", "MOBILE_DESC", "INVOICE_DESC", "SHORT_DESC",
-         "LONG_DESC1", "RETAIL_DESC", "MARKETING_DESCRIPTION"]
-    h += [f"ITEM_FEATURES_{i}" for i in range(1, 21)]
-    h += ["With", "Standard/Approvals", "Prop 65", "Application", "Includes", "Product Name"]
-    h += [f"ATTRIBUTE_{k} {n}" for n in range(1, 51) for k in ("LABEL", "VALUE", "UOM")]
-    h += ["UPC", "EAN", "GTIN", "UNSPSC", "Warranty", "List Price", "Selling Qty",
-          "Selling UOM", "Standard Packaging Information", "LENGTH", "LENGTH_UOM",
-          "HEIGHT", "HEIGHT_UOM", "WIDTH", "WIDTH_UOM", "WEIGHT", "WEIGHT_UOM",
-          "VOLUME", "VOLUME_UOM", "Product Image"]
-    h += [f"Alternate Image {i}" for i in range(1, 5)]
-    h += ["SDS", "SDS_1", "Warranty Information", "Catalog", "Specification Sheet",
-          "Instruction/Installation Manual", "Service Manual", "Owners/User Manual",
-          "Line Drawing", "MTR", "RoHS", "Full Engineering Drawing", "Energy Star Guide",
-          "Technical Bulletin", "Submittal", "Compatibility Chart", "Size Chart",
-          "Product Label/Insert", "Video Link", "Video Link 1", "Country Of Origin",
-          "Discontinued", "Actual Image (Yes/No)"]
+         "MOBILE_DESC", "INVOICE_DESC", "SHORT_DESC", "LONG_DESC1", "RETAIL_DESC",
+         "MARKETING_DESCRIPTION", "With", "Product Name", "Standard/Approvals",
+         "Warranty", "Product Image", "Alternate Image 1", "Alternate Image 2",
+         "Alternate Image 3", "Alternate Image 4", "Specification Sheet",
+         "Actual Image (Yes/No)"]
+    for i in range(1, 51):
+        h.extend([f"ATTRIBUTE_LABEL {i}", f"ATTRIBUTE_VALUE {i}", f"ATTRIBUTE_UOM {i}"])
+    for i in range(1, 21):
+        h.append(f"ITEM_FEATURES_{i}")
+    for i in range(1, 45):
+        h.append(f"UNSPSC_SPECIFIC_ATTRIBUTES_{i}")
     return h
 
 
@@ -850,44 +721,6 @@ def _load_export_headers() -> List[str]:
 EXPORT_HEADERS = _load_export_headers()
 
 
-def _load_gold_triples() -> Dict[str, Dict[str, Tuple[str, str]]]:
-    """Attribute label/value/uom triples verbatim from the reference workbook.
-    Pandas-serialized exactly (float 5.0 -> "5.0") so exports byte-match the bar."""
-    try:
-        import pandas as pd
-        df = pd.read_csv(_GOLD_CSV, encoding="utf-8-sig")
-        triples: Dict[str, Dict[str, Tuple[str, str]]] = {}
-        for _, row in df.iterrows():
-            mpn = str(row["Mfg_Part_Num"]).strip().upper()
-            t: Dict[str, Tuple[str, str]] = {}
-            for n in range(1, 51):
-                lab = row.get(f"ATTRIBUTE_LABEL {n}")
-                if pd.isna(lab) or not str(lab).strip():
-                    continue
-                val, uom = row.get(f"ATTRIBUTE_VALUE {n}"), row.get(f"ATTRIBUTE_UOM {n}")
-                t[str(lab).strip()] = (
-                    "" if pd.isna(val) else str(val).strip(),
-                    "" if pd.isna(uom) else str(uom).strip(),
-                )
-            triples[mpn] = t
-        return triples
-    except Exception:
-        return {}
-
-
-GOLD_ATTR_TRIPLES = _load_gold_triples()
-
-# ponytail: sha256 of the reference workbook — the evidence ledger's document hash
-def _ref_file_hash() -> str:
-    try:
-        import hashlib
-        return hashlib.sha256(open(_GOLD_CSV, "rb").read()).hexdigest()[:16]
-    except Exception:
-        return ""
-
-
-REF_FILE_HASH = _ref_file_hash()
-
 # Reference data kept for backwards compatibility with app.py
 REF_DATA = _loader.load_brands_manufacturers() if _loader else {}
 UOMS = _get_uom_map()
@@ -895,9 +728,6 @@ UOMS = _get_uom_map()
 
 def stage_export(record: EnrichedRecord) -> Tuple[EnrichedRecord, Dict[str, Any]]:
     out = {h: "" for h in EXPORT_HEADERS}
-    extras = _GOLD_EXPORT_EXTRAS.get(record.input.mpn.upper(), {})
-    # ponytail: gold-mined MFR URL already applied at entity resolution; export
-    # just echoes the identity (single source of truth).
     out["MFR URL"] = record.identity.manufacturer.mfr_url or ""
     # PART_NUMBER/SKU are distributor-side IDs absent from the 6-column input —
     # honest blank, never a duplicate of the MPN.
@@ -921,29 +751,18 @@ def stage_export(record: EnrichedRecord) -> Tuple[EnrichedRecord, Dict[str, Any]
     out["LONG_DESC1"] = record.descriptions.long.text
     out["RETAIL_DESC"] = record.descriptions.retail.text
     out["MARKETING_DESCRIPTION"] = record.descriptions.marketing.text
-    out["With"] = str(extras.get("with") or "")
-    refs = extras.get("ref_urls") or []
-    for i, url in enumerate(refs[:5]):
-        out[f"Ref URL {i + 1}"] = url
-    for i, feat in enumerate((extras.get("item_features") or [])[:20]):
-        out[f"ITEM_FEATURES_{i + 1}"] = feat
+    out["With"] = ""
     out["Product Name"] = _item_type(record)
-    # asset/document pointers (gold-mined names; images hosted by the MFR)
-    out["Standard/Approvals"] = str(extras.get("approvals") or "")
-    out["Warranty"] = str(extras.get("warranty") or "")
-    out["Product Image"] = str(extras.get("asset_image") or "")
-    for i, img in enumerate((extras.get("alt_images") or [])[:4]):
-        out[f"Alternate Image {i + 1}"] = img
-    out["Specification Sheet"] = str(extras.get("spec_sheet") or "")
-    out["Actual Image (Yes/No)"] = str(extras.get("actual_image") or "")
+    out["Standard/Approvals"] = ""
+    out["Warranty"] = ""
+    out["Product Image"] = ""
+    out["Specification Sheet"] = ""
+    out["Actual Image (Yes/No)"] = ""
     for i, attr in enumerate(record.attributes[:50]):
         n = i + 1
         out[f"ATTRIBUTE_LABEL {n}"] = attr.label
-        # ponytail: for models in the reference workbook, emit its verbatim
-        # triple (pandas-serialized: "5.0" stays "5.0") — byte-matching the bar.
-        gold_v, gold_u = GOLD_ATTR_TRIPLES.get(record.input.mpn.upper(), {}).get(attr.label, (None, None))
-        out[f"ATTRIBUTE_VALUE {n}"] = attr.value if gold_v is None else gold_v
-        out[f"ATTRIBUTE_UOM {n}"] = attr.uom if gold_u is None else gold_u
+        out[f"ATTRIBUTE_VALUE {n}"] = attr.value
+        out[f"ATTRIBUTE_UOM {n}"] = attr.uom
     return record, out
 
 

@@ -36,10 +36,10 @@ def surface_pipeline() -> None:
     metrics = load_json(ROOT / "artifacts" / "metrics.json")
     gates = metrics.get("gates", {})
     expected = {
-        "gold": "118/118",
+        "gold": "17/118",
         "dpf": 0,
         "other_pct": 0.4,
-        "attrs_per_row": 2.156,
+        "attrs_per_row": 1.524,
         "adversarial": "589/589 @ 100%",
         "provenance": 1.0,
         "regressions": 0,
@@ -48,8 +48,8 @@ def surface_pipeline() -> None:
     for key, value in expected.items():
         if gates.get(key) != value:
             raise ValueError(f"metrics.gates.{key} is {gates.get(key)!r}, expected {value!r}")
-    if metrics.get("freeze_commit") != "23b9115":
-        raise ValueError("metrics is not bound to frozen commit 23b9115")
+    if metrics.get("freeze_commit") != "bar-5-clean":
+        raise ValueError("metrics is not bound to frozen commit bar-5-clean")
 
 
 def surface_evidence() -> dict:

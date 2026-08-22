@@ -11,3 +11,7 @@ gauntlet-loop/
 scripts/.gauntlet_results.pkl
 # live agent tooling vendored in the working tree — must not ship
 .agents/
+.cortexkit/
+tmp/
+~$*.pptx
+graphify-out/cache/

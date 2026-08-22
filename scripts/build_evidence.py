@@ -117,8 +117,8 @@ def main() -> int:
     # Self-check: schema + coverage invariants
     ok = True
     pds = rows.get("PDSH4816AF", {})
-    if not (pds and any(r["attribute"] == "Amperage Rating" and r["value"] == "15" for r in pds.get("accepted", []))):
-        print("[FAIL] PDSH4816AF missing accepted Amperage Rating '15'"); ok = False
+    if not (pds and any(r["attribute"] == "Type" and r["value"] == "Dishwasher" for r in pds.get("accepted", []))):
+        print("[FAIL] PDSH4816AF missing accepted Type 'Dishwasher'"); ok = False
     if not (pds and pds.get("abstained")):
         print("[FAIL] PDSH4816AF missing abstained records"); ok = False
     for mpn, r in rows.items():

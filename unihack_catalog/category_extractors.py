@@ -37,7 +37,9 @@ CATEGORY_TRIGGERS: Dict[str, List[str]] = {
                    "wall tap", "voltage detector", "cover", "hanger"],
     "railing": ["railing", "rail", "baluster", "post", "sleeve"],
     "mortar": ["mortar"],
-    "appliances": ["freezer", "coffee", "espresso", "cooktop", "toaster", "beverage", "mocrowave"],
+    "appliances": ["dishwasher", "refrigerator", "freezer", "microwave", "mocrowave",
+                    "coffee", "espresso", "cooktop", "toaster", "beverage", "range",
+                    "oven", "washer", "dryer"],
     "windows-doors": ["skylight", "skylt", "hopper", "slider", "threshold", "patio"],
     "roofing-siding": ["rib", "ice guard", "eaveguard", "shingle", "duration", "soffit",
                        "soff", "rainscreen", "smart lap", "smart pan", "sheathing",
@@ -512,12 +514,40 @@ def _extract_mortar(t: str) -> Dict[str, Any]:
 
 def _extract_appliances(t: str) -> Dict[str, Any]:
     out: Dict[str, Any] = {}
-    for typ, kw in [("Coffee", "coffee"), ("Espresso", "espresso"),
-                    ("Cooktop", "cooktop"), ("Toaster", "toaster"), ("Freezer", "freezer"),
-                    ("Beverage", "beverage"), ("Mocrowave", "mocrowave")]:
+    for typ, kw in [("Dishwasher", "dishwasher"), ("Refrigerator", "refrigerator"), ("Fridge", "fridge"),
+                    ("Microwave", "microwave"), ("Mocrowave", "mocrowave"),
+                    ("Cooktop", "cooktop"), ("Range", "range"), ("Oven", "oven"),
+                    ("Washer", "washer"), ("Dryer", "dryer"), ("Freezer", "freezer"),
+                    ("Coffee Maker", "coffee"), ("Espresso", "espresso"), ("Toaster", "toaster"),
+                    ("Beverage Center", "beverage")]:
         if kw in t:
             out["Type"] = typ
             break
+    ser = re.search(r'\b([A-Za-z0-9]+(?:\s+[A-Za-z0-9]+)?\s+Series)\b', t, re.IGNORECASE)
+    if ser:
+        out["Series"] = ser.group(1).title()
+    elif "gallery" in t:
+        out["Series"] = "Gallery"
+    elif "profile" in t:
+        out["Series"] = "Profile"
+    if "built-in" in t or "builtin" in t:
+        out["Mounting Type"] = "Built-In"
+    elif "freestanding" in t:
+        out["Mounting Type"] = "Freestanding"
+    cycles = re.search(r'(\d+)\s*[- ]*(?:wash\s*)?cycles?\b', t, re.IGNORECASE)
+    if cycles:
+        out["Number of Wash Cycles"] = cycles.group(1)
+    dba = re.search(r'\b(\d+)\s*dba\b', t, re.IGNORECASE)
+    if dba:
+        out["Sound Level"] = (int(dba.group(1)), "dBA")
+    v = re.search(r'\b(\d{2,3})\s*v\b', t, re.IGNORECASE)
+    if v:
+        out["Voltage Rating"] = (int(v.group(1)), "V")
+    amp = re.search(r'\b(\d+(?:\.\d+)?)\s*a\b', t, re.IGNORECASE)
+    if amp:
+        out["Amperage Rating"] = (int(amp.group(1)), "A")
+    if "stainless steel" in t or re.search(r'\bss\b', t):
+        out["Material"] = "Stainless Steel"
     m = re.search(r'%s\s*"' % _MEAS, t)
     if m:
         out["Size"] = _inches(m.group(1))
@@ -527,6 +557,8 @@ def _extract_appliances(t: str) -> Dict[str, Any]:
     c = _color(t)
     if c:
         out["Color"] = c
+    elif "stainless" in t:
+        out["Color"] = "Stainless Steel"
     return out
 
 

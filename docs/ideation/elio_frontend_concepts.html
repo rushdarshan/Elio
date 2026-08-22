@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ELIO Frontend — Concept Ideation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0b0f19;
+            --card-bg: rgba(22, 28, 45, 0.4);
+            --border-color: rgba(255, 255, 255, 0.08);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --sky-blue: #38bdf8;
+            --indigo: #6366f1;
+            --emerald: #10b981;
+            --amber: #f59e0b;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: var(--bg-color);
+            color: var(--text-primary);
+            min-height: 100vh;
+            padding: 40px 24px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            margin-bottom: 40px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 24px;
+        }
+
+        h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--sky-blue), var(--indigo));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 8px;
+        }
+
+        .meta-desc {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+        }
+
+        .section-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.5rem;
+            margin: 32px 0 16px;
+            color: var(--sky-blue);
+        }
+
+        .idea-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .idea-card:hover {
+            border-color: rgba(99, 102, 241, 0.3);
+        }
+
+        .idea-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .idea-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        .rank-badge {
+            background: rgba(99, 102, 241, 0.2);
+            color: var(--sky-blue);
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .idea-desc {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 16px;
+        }
+
+        .critique-box {
+            background: rgba(245, 158, 11, 0.05);
+            border-left: 3px solid var(--amber);
+            padding: 12px 16px;
+            border-radius: 0 8px 8px 0;
+            margin-top: 12px;
+            font-size: 0.9rem;
+        }
+
+        .critique-title {
+            font-weight: 600;
+            color: var(--amber);
+            margin-bottom: 4px;
+        }
+
+        .verdict {
+            display: inline-block;
+            margin-top: 12px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            padding: 4px 12px;
+            border-radius: 6px;
+        }
+
+        .verdict.win {
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--emerald);
+        }
+
+        .verdict.rejected {
+            background: rgba(239, 68, 68, 0.15);
+            color: #ef4444;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>ELIO Frontend — Concept Ideation</h1>
+            <p class="meta-desc">Ranked candidate feature designs and adversarial critiques for the ELIO Next.js Web Application.</p>
+        </header>
+
+        <h2 class="section-title">Candidate Feature Designs</h2>
+
+        <!-- Idea 1 -->
+        <div class="idea-card">
+            <div class="idea-header">
+                <span class="idea-title">1. Trust-Gated Custody Panel (Visual Evidence Drawer)</span>
+                <span class="rank-badge">Rank 1 — Primary Winner</span>
+            </div>
+            <p class="idea-desc">An interactive slide-over drawer that displays the custody chain when a user clicks any cell in the metrics or results grid. It shows the source URL, exact character span, and a highlighted verbatim text snippet from the raw workbook text to prove no values were hallucinated.</p>
+            <div class="critique-box">
+                <div class="critique-title">Adversarial Critique</div>
+                <p>Needs character-offset tracking from the Python backend. If the raw text does not contain exact matching sub-strings due to normalizations (e.g. 2x2 -> 2 ft x 2 ft), character spans must be mapped correctly to prevent mismatch highlights.</p>
+            </div>
+            <span class="verdict win">VERDICT: SELECTED FOR BRAINSTORMING</span>
+        </div>
+
+        <!-- Idea 2 -->
+        <div class="idea-card">
+            <div class="idea-header">
+                <span class="idea-title">2. Live-Scoring Review Queue (Split-Pane Worklist)</span>
+                <span class="rank-badge">Rank 2 — Secondary Winner</span>
+            </div>
+            <p class="idea-desc">A split-screen interface displaying flagged rows on the left and an edit form on the right. Making overrides immediately recalculates metrics (precision, coverage, abstention rates) dynamically on the dashboard, with overrides saved to decision_log.jsonl.</p>
+            <div class="critique-box">
+                <div class="critique-title">Adversarial Critique</div>
+                <p>Metrics recalculation must be instantaneous without triggering full pipeline re-runs (which would slow down the ops workflow). Re-computation should run as a lightweight front-end logic layer.</p>
+            </div>
+            <span class="verdict win">VERDICT: SELECTED FOR BRAINSTORMING</span>
+        </div>
+
+        <!-- Idea 3 -->
+        <div class="idea-card">
+            <div class="idea-header">
+                <span class="idea-title">3. Interactive Sankey/Stream Pipeline Tracker</span>
+                <span class="rank-badge">Rank 3 — Defer</span>
+            </div>
+            <p class="idea-desc">A graphical flow diagram representing the 9-stage Python DAG in real time, visualizing row volume and drop-off rates visually.</p>
+            <div class="critique-box">
+                <div class="critique-title">Adversarial Critique</div>
+                <p>Overly complex and visually distracting for short 2-3 second synchronous runs of small datasets. A simple progress bar combined with immediate dashboard loading is cleaner and maps better to the target audience (judges who want speed).</p>
+            </div>
+            <span class="verdict rejected">VERDICT: DEFERRED (Over-engineered for V1)</span>
+        </div>
+
+        <!-- Idea 4 -->
+        <div class="idea-card">
+            <div class="idea-header">
+                <span class="idea-title">4. Clear-Badge Abstention Matrix</span>
+                <span class="rank-badge">Rank 4 — Integrate</span>
+            </div>
+            <p class="idea-desc">A grid dashboard grouping all unextracted cells by their specific logical reason (e.g. missing evidence, distributor blacklist, unsupported category).</p>
+            <div class="critique-box">
+                <div class="critique-title">Adversarial Critique</div>
+                <p>A separate full matrix view creates layout redundancy. It is cleaner to integrate these tags directly into the tabular Evidence Explorer as inline badges, allowing the user to filter the main explorer table by "Abstention Reasons".</p>
+            </div>
+            <span class="verdict rejected">VERDICT: INTEGRATED INTO EVIDENCE EXPLORER</span>
+        </div>
+    </div>
+</body>
+</html>

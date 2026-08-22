@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-20T00:00:00.000Z",
+  "title": "Design System: ELIO",
+  "extensions": {
+    "colorMeta": {
+      "primary": { "role": "primary", "displayName": "Brand Blue", "canonical": "#2563eb", "tonalRamp": ["#172554", "#1e3a8a", "#1d4ed8", "#2563eb", "#3b82f6", "#60a5fa", "#93c5fd", "#dbeafe"] },
+      "primary-soft": { "role": "primary", "displayName": "Deep Blue", "canonical": "#1d4ed8", "tonalRamp": ["#172554", "#1e3a8a", "#1d4ed8", "#2563eb", "#3b82f6", "#60a5fa", "#93c5fd", "#dbeafe"] },
+      "neutral-bg-dark": { "role": "neutral", "displayName": "Ledger Black", "canonical": "#09090b", "tonalRamp": ["#09090b", "#111113", "#18181b", "#202023", "#27272a", "#3f3f46", "#71717a", "#d4d4d8"] },
+      "neutral-surface-dark": { "role": "neutral", "displayName": "Entry Surface", "canonical": "#18181b", "tonalRamp": ["#09090b", "#111113", "#18181b", "#202023", "#27272a", "#3f3f46", "#71717a", "#d4d4d8"] },
+      "neutral-hover-dark": { "role": "neutral", "displayName": "Hover Surface", "canonical": "#27272a", "tonalRamp": ["#09090b", "#111113", "#18181b", "#202023", "#27272a", "#3f3f46", "#71717a", "#d4d4d8"] },
+      "neutral-text-dark": { "role": "neutral", "displayName": "Ink Light", "canonical": "#f4f4f5", "tonalRamp": ["#09090b", "#27272a", "#52525b", "#71717a", "#a1a1aa", "#d4d4d8", "#e4e4e7", "#f4f4f5"] },
+      "neutral-text-secondary-dark": { "role": "neutral", "displayName": "Ink Muted", "canonical": "#a1a1aa", "tonalRamp": ["#09090b", "#27272a", "#52525b", "#71717a", "#a1a1aa", "#d4d4d8", "#e4e4e7", "#f4f4f5"] },
+      "neutral-bg-light": { "role": "neutral", "displayName": "Paper", "canonical": "#fcfbf7", "tonalRamp": ["#09090b", "#27272a", "#52525b", "#71717a", "#a1a1aa", "#d4d4d8", "#f7f5f0", "#fcfbf7"] },
+      "neutral-surface-light": { "role": "neutral", "displayName": "Paper Accent", "canonical": "#f7f5f0", "tonalRamp": ["#09090b", "#27272a", "#52525b", "#71717a", "#a1a1aa", "#d4d4d8", "#f7f5f0", "#fcfbf7"] },
+      "neutral-text-light": { "role": "neutral", "displayName": "Ink Dark", "canonical": "#18181b", "tonalRamp": ["#09090b", "#18181b", "#27272a", "#3f3f46", "#52525b", "#71717a", "#d4d4d8", "#f4f4f5"] },
+      "neutral-text-secondary-light": { "role": "neutral", "displayName": "Ink Dark Muted", "canonical": "#52525b", "tonalRamp": ["#09090b", "#18181b", "#27272a", "#3f3f46", "#52525b", "#71717a", "#d4d4d8", "#f4f4f5"] },
+      "semantic-verified": { "role": "secondary", "displayName": "Verified Green", "canonical": "#22c55e", "tonalRamp": ["#14532d", "#166534", "#15803d", "#16a34a", "#22c55e", "#4ade80", "#86efac", "#bbf7d0"] },
+      "semantic-review": { "role": "tertiary", "displayName": "Review Amber", "canonical": "#f59e0b", "tonalRamp": ["#451a03", "#78350f", "#92400e", "#b45309", "#d97706", "#f59e0b", "#fbbf24", "#fde68a"] },
+      "highlight-snippet": { "role": "tertiary", "displayName": "Highlight Amber", "canonical": "#f59e0b", "tonalRamp": ["#451a03", "#78350f", "#92400e", "#b45309", "#d97706", "#f59e0b", "#fbbf24", "#fde68a"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Landing headline and largest dashboard numerals; appears rarely." },
+      "title": { "displayName": "Title", "purpose": "Section headers, card titles, panel headings." },
+      "body": { "displayName": "Body", "purpose": "Prose on both surfaces; capped at ~65ch on light." },
+      "mono": { "displayName": "Mono Data", "purpose": "Every datum, identifier, metric, MPN, tag, footnote." }
+    },
+    "shadows": [
+      { "name": "drawer", "value": "0 25px 50px -12px rgba(0,0,0,0.35)", "purpose": "The evidence drawer only." },
+      { "name": "lift", "value": "0 4px 12px rgba(0,0,0,0.12)", "purpose": "Landing upload card at rest; small hover-lift on interactive cards." }
+    ],
+    "motion": [
+      { "name": "ease-drawer-in", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Evidence drawer entrance; one-beat, exponential ease-out, 300ms." },
+      { "name": "ease-hover", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Hover lifts and surface transitions; 150ms." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The single forward action per screen (Upload, Download).",
+      "html": "<button class=\"ds-btn-primary\">Upload Catalog</button>",
+      "css": ".ds-btn-primary { background: #2563eb; color: #f4f4f5; font-family: var(--font-geist-mono), ui-monospace, monospace; font-size: 0.8125rem; font-weight: 600; padding: 12px 20px; border: none; border-radius: 6px; cursor: pointer; transition: background 150ms cubic-bezier(0.16, 1, 0.3, 1), transform 150ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn-primary:hover { background: #1d4ed8; } .ds-btn-primary:focus-visible { outline: 2px solid #2563eb; outline-offset: 2px; } .ds-btn-primary:active { transform: scale(0.98); }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "In-console navigation and secondary actions.",
+      "html": "<button class=\"ds-btn-ghost\">Back to Dashboard</button>",
+      "css": ".ds-btn-ghost { background: transparent; color: #a1a1aa; font-size: 0.875rem; padding: 8px 12px; border: none; border-radius: 6px; cursor: pointer; transition: background 150ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn-ghost:hover { background: #27272a; color: #f4f4f5; } .ds-btn-ghost:focus-visible { outline: 2px solid #2563eb; outline-offset: 2px; }"
+    },
+    {
+      "name": "Status Chip",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "A single verdict per chip; color always matches its meaning.",
+      "html": "<span class=\"ds-chip ds-chip-review\">Evidence Blocker</span>",
+      "css": ".ds-chip { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-geist-mono), ui-monospace, monospace; font-size: 0.625rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; padding: 6px 10px; border-radius: 6px; } .ds-chip-review { color: #f59e0b; background: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.2); } .ds-chip-verified { color: #22c55e; background: rgba(34, 197, 94, 0.1); border: 1px solid rgba(34, 197, 94, 0.2); }"
+    },
+    {
+      "name": "Bench Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "The standard entry surface on the dark bench.",
+      "html": "<div class=\"ds-card\"><div class=\"ds-card-metric\">2.156</div><div class=\"ds-card-label\">Attributes per Row</div></div>",
+      "css": ".ds-card { background: #18181b; color: #f4f4f5; border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; padding: 24px; } .ds-card-metric { font-family: var(--font-geist-mono), ui-monospace, monospace; font-size: 2.25rem; font-weight: 800; color: #2563eb; line-height: 1; } .ds-card-label { margin-top: 8px; font-family: var(--font-geist-mono), ui-monospace, monospace; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: #a1a1aa; }"
+    },
+    {
+      "name": "Custody Drawer",
+      "kind": "custom",
+      "refersTo": "card",
+      "description": "The signature evidence pane: value, source, and the highlighted span that proves the connection.",
+      "html": "<aside class=\"ds-drawer\"><div class=\"ds-drawer-label\">Raw Evidence source</div><div class=\"ds-snippet\">The manufacturer lists <mark class=\"ds-mark\">2400mAh</mark> as the battery capacity on page 4.</div><a class=\"ds-src\" href=\"#\">https://example.com/spec-sheet.pdf</a></aside>",
+      "css": ".ds-drawer { position: fixed; right: 0; top: 0; bottom: 0; width: 850px; max-width: 100%; background: #09090b; border-left: 1px solid rgba(255,255,255,0.08); box-shadow: 0 25px 50px -12px rgba(0,0,0,0.35); padding: 24px; display: flex; flex-direction: column; gap: 24px; animation: ds-in 300ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-drawer-label { font-family: var(--font-geist-mono), ui-monospace, monospace; font-size: 0.625rem; text-transform: uppercase; letter-spacing: 0.05em; color: #a1a1aa; } .ds-snippet { font-family: var(--font-geist-mono), ui-monospace, monospace; font-size: 0.8125rem; line-height: 1.6; color: #d4d4d8; background: rgba(24,24,27,0.6); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; padding: 16px; } .ds-mark { background: rgba(245, 158, 11, 0.2); color: #fbbf24; border-bottom: 1px solid rgba(245, 158, 11, 0.5); padding: 1px 4px; font-weight: 700; } .ds-src { font-family: var(--font-geist-mono), ui-monospace, monospace; font-size: 0.75rem; color: #2563eb; text-decoration: none; } .ds-src:hover { text-decoration: underline; } @keyframes ds-in { from { transform: translateX(100%); } to { transform: translateX(0); } }"
+    },
+    {
+      "name": "Search Field",
+      "kind": "input",
+      "refersTo": "card",
+      "description": "The console's front door; the strongest element on the Explorer screen.",
+      "html": "<input class=\"ds-search\" type=\"search\" placeholder=\"Search by MPN, brand, or description...\">",
+      "css": ".ds-search { width: 100%; background: #18181b; color: #f4f4f5; font-family: var(--font-geist-mono), ui-monospace, monospace; font-size: 0.875rem; padding: 16px 20px; border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; outline: none; transition: border-color 150ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-search::placeholder { color: #52525b; } .ds-search:focus { border-color: #2563eb; } .ds-search:focus-visible { outline: 2px solid #2563eb; outline-offset: 2px; }"
+    },
+    {
+      "name": "Sidebar Nav",
+      "kind": "nav",
+      "refersTo": "card",
+      "description": "Column of mono labels; the active surface is the console's wayfinder.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-nav-item is-active\" href=\"#\">Dashboard</a><a class=\"ds-nav-item\" href=\"#\">Explorer</a><a class=\"ds-nav-item\" href=\"#\">Review</a><a class=\"ds-nav-item\" href=\"#\">Abstention</a><a class=\"ds-nav-item\" href=\"#\">Export</a></nav>",
+      "css": ".ds-nav { display: flex; flex-direction: column; gap: 2px; } .ds-nav-item { display: block; font-family: var(--font-geist-mono), ui-monospace, monospace; font-size: 0.75rem; padding: 8px 12px; border-radius: 6px; color: #a1a1aa; text-decoration: none; transition: background 150ms cubic-bezier(0.16, 1, 0.3, 1), color 150ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-nav-item:hover { background: #27272a; } .ds-nav-item.is-active { color: #2563eb; background: rgba(37, 99, 235, 0.1); } .ds-nav-item:focus-visible { outline: 2px solid #2563eb; outline-offset: 2px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Ledger",
+    "overview": "Every surface in ELIO is a page from a provenance ledger. The dark cockpit is the working book: rows, hairline rules, mono numerals, and verdicts recorded in ink. The light landing is the front cover: crisp, calm, one blue mark of ownership. Nothing on any page is decorative; each element is either an entry, a rule, or a recorded verdict. The system is deliberately unfashionable. It rejects the AI-slop dashboard reflex: no bento-card grids, no invented metrics, no gradient accents, no glowing badges, no infinite pulse animations. It equally rejects neon crypto/cyberpunk styling: no glow, no garish gradients, no tech-larp. ELIO's confidence comes from what the pipeline actually proves, and the visual system exists to make that proof legible. Color is a semantic vocabulary, not decoration. Blue is the interactive hand of the console. Green marks values verified against source evidence. Amber marks refusals, escalations, and review states. Neutrals are the bench itself. Any color that does not carry one of those meanings is a mistake.",
+    "keyCharacteristics": [
+      "Dark working surface, light front cover; two tones, one identity.",
+      "Mono numerals and identifiers for every data point; sans for prose.",
+      "Hairline rules separate; hover-lift and the drawer separate deeper.",
+      "Motion is a one-beat acknowledgment (drawer in, hover lift), never a loop.",
+      "The honesty contract is visual: abstentions are amber and explained, never blank."
+    ],
+    "rules": [
+      { "name": "The One Meaning Rule", "body": "Each verdict color owns exactly one meaning and never leaks. Green never decorates a header; amber never marks a generic warning; blue never marks a status.", "section": "colors" },
+      { "name": "The No-Pure-White Rule", "body": "The landing surface is warm paper, never #ffffff. Pure white reads as unowned SaaS chrome.", "section": "colors" },
+      { "name": "The Mono Data Rule", "body": "All data is mono. Any number that is not in mono type is a heading, not a datum.", "section": "typography" },
+      { "name": "The Flat-By-Default Rule", "body": "Surfaces are flat at rest. Shadows exist only where the ledger physically lifts (drawer, upload card, hover). Never a glow, never a neon edge.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do derive every number on screen from the loaded data. A metric that cannot be computed must not exist.",
+      "Do show abstentions as amber refusals with a stated reason; the reason is the product's personality.",
+      "Do use mono for every datum, identifier, and footnote.",
+      "Do use Brand Blue for interaction and only interaction.",
+      "Do let flat surfaces carry hairline rules; reserve shadows for the drawer and the upload card.",
+      "Do cap light-surface prose at ~65ch.",
+      "Do keep the two surfaces consistent: the same verdict colors, the same mono voice, on both sides of the light/dark door."
+    ],
+    "donts": [
+      "Don't build bento-card grids, invent metrics, use gradient accents, glowing badges, or infinite pulse animations (AI-slop dashboard anti-reference).",
+      "Don't use glow, garish gradients, or tech-larp styling (neon crypto/cyberpunk anti-reference).",
+      "Don't use an em dash anywhere. Comma, colon, semicolon, period, or parentheses instead. Also not --.",
+      "Don't leave a border-left or border-right greater than 1px as a colored accent stripe. Use full borders, background tints, or nothing.",
+      "Don't use gradient text (background-clip: text). Emphasis is weight and size, never a gradient.",
+      "Don't hardcode a metric that pretends a run happened. Zero-filled dashboards are lies.",
+      "Don't show a refusal as a blank cell. Every abstention is amber and explained.",
+      "Don't use pure black or pure white anywhere; tint neutrals toward the brand.",
+      "Don't name-drop product aesthetics (like Linear, like Stripe); describe the quality instead."
+    ]
+  }
+}
