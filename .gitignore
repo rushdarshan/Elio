@@ -5,13 +5,17 @@ __pycache__/
 *.log
 session-*.md
 ours_output.json
-competitors/uni-hack/
+competitors/
 gauntlet-loop/
-# regenerable evidence cache — untracked via `git rm --cached` (bar 8: clean git status)
+# regenerable evidence cache
 scripts/.gauntlet_results.pkl
-# live agent tooling vendored in the working tree — must not ship
+# live agent tooling
 .agents/
 .cortexkit/
 tmp/
-~$*.pptx
+*.pptx
+*.png
+elio_export*.csv
 graphify-out/cache/
+node_modules/
+.next/

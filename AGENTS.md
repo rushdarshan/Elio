@@ -11,7 +11,7 @@
 - `elio-frontend/src/app/` — `page.tsx:1` re-exports `landing/page.tsx`; `app/dashboard/page.tsx` is the single-file cockpit; `api/run/route.ts` handles `FormData(file)` → temp file → `run_pipeline` via child process
 - `graphify-out/` — generated knowledge graph (`graph.json`, `graph.html`, `GRAPH_REPORT.md`). Regenerate with `graphify update .` after code changes (see `graphify-out/CLAUDE.md`)
 - `artifacts/` — canonical generated outputs (`metrics.json`, `evidence.json`, `decision_log.jsonl`, `stress_test_suite.csv`)
-- `docs/FREEZE.md`, `docs/PITCH.md`, `GATES.md`, `PLAN.md` — freeze contract, acceptance table, leaf checks
+- `docs/FREEZE.md`, `docs/PITCH.md`, `docs/GATES.md`, `docs/PLAN.md` — freeze contract, acceptance table, leaf checks
 
 ## Commands (PowerShell; use `-B` to suppress `.pyc`)
 ```powershell
